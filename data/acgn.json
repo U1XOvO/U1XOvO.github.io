@@ -1,0 +1,2332 @@
+{
+  "intro": "Steam and Nintendo Switch game collections.",
+  "nintendoSwitch": {
+    "source": "小黑盒 Nintendo Switch 公开分享页",
+    "sourceUrl": "https://web.xiaoheihe.cn/account/switch_bind/home?userid=10708519&is_share=1",
+    "checkedOn": "2026-08-22",
+    "totalGames": 41,
+    "games": [
+      {
+        "id": "010057A01E4D4000",
+        "name": "月姬 -A piece of blue glass moon-",
+        "image": "/images/nintendo-switch/010057A01E4D4000.webp",
+        "imageAlt": "月姬 -A piece of blue glass moon- Nintendo Switch game cover"
+      },
+      {
+        "id": "01004B10157F2000",
+        "name": "女神异闻录5 皇家版",
+        "image": "/images/nintendo-switch/01004B10157F2000.webp",
+        "imageAlt": "女神异闻录5 皇家版 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100CB000A142000",
+        "name": "逆转裁判123 成步堂精选集",
+        "image": "/images/nintendo-switch/0100CB000A142000.webp",
+        "imageAlt": "逆转裁判123 成步堂精选集 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100F4401940A000",
+        "name": "超侦探事件簿 雾雨谜宫",
+        "image": "/images/nintendo-switch/0100F4401940A000.webp",
+        "imageAlt": "超侦探事件簿 雾雨谜宫 Nintendo Switch game cover"
+      },
+      {
+        "id": "01001C8016B4E000",
+        "name": "FIFA 23 传承版",
+        "image": "/images/nintendo-switch/01001C8016B4E000.webp",
+        "imageAlt": "FIFA 23 传承版 Nintendo Switch game cover"
+      },
+      {
+        "id": "010023301E41C000",
+        "name": "命运之夜重制版",
+        "image": "/images/nintendo-switch/010023301E41C000.webp",
+        "imageAlt": "命运之夜重制版 Nintendo Switch game cover"
+      },
+      {
+        "id": "010012A017F18000",
+        "name": "魔法使之夜",
+        "image": "/images/nintendo-switch/010012A017F18000.webp",
+        "imageAlt": "魔法使之夜 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100C2500FC20000",
+        "name": "喷射战士3",
+        "image": "/images/nintendo-switch/0100C2500FC20000.webp",
+        "imageAlt": "喷射战士3 Nintendo Switch game cover"
+      },
+      {
+        "id": "01001F5010DFA000",
+        "name": "宝可梦传说 阿尔宙斯",
+        "image": "/images/nintendo-switch/01001F5010DFA000.webp",
+        "imageAlt": "宝可梦传说 阿尔宙斯 Nintendo Switch game cover"
+      },
+      {
+        "id": "01006FE013472000",
+        "name": "马里奥派对 超级巨星",
+        "image": "/images/nintendo-switch/01006FE013472000.webp",
+        "imageAlt": "马里奥派对 超级巨星 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100F3100DA46000",
+        "name": "初音未来：歌姬计划 Mega39's",
+        "image": "/images/nintendo-switch/0100F3100DA46000.webp",
+        "imageAlt": "初音未来：歌姬计划 Mega39's Nintendo Switch game cover"
+      },
+      {
+        "id": "0100F28011892000",
+        "name": "胡闹厨房：全都好吃",
+        "image": "/images/nintendo-switch/0100F28011892000.webp",
+        "imageAlt": "胡闹厨房：全都好吃 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100152000022000",
+        "name": "马里奥赛车8 豪华版",
+        "image": "/images/nintendo-switch/0100152000022000.webp",
+        "imageAlt": "马里奥赛车8 豪华版 Nintendo Switch game cover"
+      },
+      {
+        "id": "01005BD010872000",
+        "name": "女神异闻录5 乱战 魅影攻手",
+        "image": "/images/nintendo-switch/01005BD010872000.webp",
+        "imageAlt": "女神异闻录5 乱战 魅影攻手 Nintendo Switch game cover"
+      },
+      {
+        "id": "040043D025038000",
+        "name": "Resident Evil 7 biohazard Gold Edition",
+        "image": "/images/nintendo-switch/040043D025038000.webp",
+        "imageAlt": "Resident Evil 7 biohazard Gold Edition Nintendo Switch game cover"
+      },
+      {
+        "id": "01001E9023920000",
+        "name": "空之轨迹 the 1st",
+        "image": "/images/nintendo-switch/01001E9023920000.webp",
+        "imageAlt": "空之轨迹 the 1st Nintendo Switch game cover"
+      },
+      {
+        "id": "010013C00E930000",
+        "name": "空洞骑士：丝之歌",
+        "image": "/images/nintendo-switch/010013C00E930000.webp",
+        "imageAlt": "空洞骑士：丝之歌 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100B0701AA78000",
+        "name": "Fate / 武士遗迹",
+        "image": "/images/nintendo-switch/0100B0701AA78000.webp",
+        "imageAlt": "Fate / 武士遗迹 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100559011740000",
+        "name": "怪物猎人：崛起",
+        "image": "/images/nintendo-switch/0100559011740000.webp",
+        "imageAlt": "怪物猎人：崛起 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100AA50140CA000",
+        "name": "弹丸论破S：超高校级的南国掷骰合宿",
+        "image": "/images/nintendo-switch/0100AA50140CA000.webp",
+        "imageAlt": "弹丸论破S：超高校级的南国掷骰合宿 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100F2C0115B6000",
+        "name": "塞尔达传说：王国之泪",
+        "image": "/images/nintendo-switch/0100F2C0115B6000.webp",
+        "imageAlt": "塞尔达传说：王国之泪 Nintendo Switch game cover"
+      },
+      {
+        "id": "01006A800016E000",
+        "name": "任天堂全明星大乱斗 特别版",
+        "image": "/images/nintendo-switch/01006A800016E000.webp",
+        "imageAlt": "任天堂全明星大乱斗 特别版 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100ACA017E4E000",
+        "name": "NBA 2K23",
+        "image": "/images/nintendo-switch/0100ACA017E4E000.webp",
+        "imageAlt": "NBA 2K23 Nintendo Switch game cover"
+      },
+      {
+        "id": "01001AC013DEC000",
+        "name": "大家一起阅读空气。3 ──传承篇──",
+        "image": "/images/nintendo-switch/01001AC013DEC000.webp",
+        "imageAlt": "大家一起阅读空气。3 ──传承篇── Nintendo Switch game cover"
+      },
+      {
+        "id": "0100A5A00918C000",
+        "name": "青梅竹马是人鱼姬",
+        "image": "/images/nintendo-switch/0100A5A00918C000.webp",
+        "imageAlt": "青梅竹马是人鱼姬 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100D9500FC66000",
+        "name": "Apex英雄",
+        "image": "/images/nintendo-switch/0100D9500FC66000.webp",
+        "imageAlt": "Apex英雄 Nintendo Switch game cover"
+      },
+      {
+        "id": "010062B01525C000",
+        "name": "女神异闻录4 黄金版",
+        "image": "/images/nintendo-switch/010062B01525C000.webp",
+        "imageAlt": "女神异闻录4 黄金版 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100A3800D40C000",
+        "name": "生化危机6",
+        "image": "/images/nintendo-switch/0100A3800D40C000.webp",
+        "imageAlt": "生化危机6 Nintendo Switch game cover"
+      },
+      {
+        "id": "01002EF01A316000",
+        "name": "土豆兄弟",
+        "image": "/images/nintendo-switch/01002EF01A316000.webp",
+        "imageAlt": "土豆兄弟 Nintendo Switch game cover"
+      },
+      {
+        "id": "010040600C5CE000",
+        "name": "俄罗斯方块99",
+        "image": "/images/nintendo-switch/010040600C5CE000.webp",
+        "imageAlt": "俄罗斯方块99 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100C3800049C000",
+        "name": "怪物猎人GU",
+        "image": "/images/nintendo-switch/0100C3800049C000.webp",
+        "imageAlt": "怪物猎人GU Nintendo Switch game cover"
+      },
+      {
+        "id": "0100215015C20000",
+        "name": "亚托莉：我挚爱的时光",
+        "image": "/images/nintendo-switch/0100215015C20000.webp",
+        "imageAlt": "亚托莉：我挚爱的时光 Nintendo Switch game cover"
+      },
+      {
+        "id": "01001AC00ED72000",
+        "name": "在这苍穹展翅",
+        "image": "/images/nintendo-switch/01001AC00ED72000.webp",
+        "imageAlt": "在这苍穹展翅 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100A6F00A0FE000",
+        "name": "THE数字解谜",
+        "image": "/images/nintendo-switch/0100A6F00A0FE000.webp",
+        "imageAlt": "THE数字解谜 Nintendo Switch game cover"
+      },
+      {
+        "id": "0100F43008C44000",
+        "name": "宝可梦传说 Z-A",
+        "image": "/images/nintendo-switch/0100F43008C44000.webp",
+        "imageAlt": "宝可梦传说 Z-A Nintendo Switch game cover"
+      },
+      {
+        "id": "01000D20140F0000",
+        "name": "超级枪弹辩驳2 再会了绝望学园 Anniversary Edition",
+        "image": "/images/nintendo-switch/01000D20140F0000.webp",
+        "imageAlt": "超级枪弹辩驳2 再会了绝望学园 Anniversary Edition Nintendo Switch game cover"
+      },
+      {
+        "id": "01001AB0140F2000",
+        "name": "新枪弹辩驳V3 大家的自相残杀新学期 Anniversary Edition",
+        "image": "/images/nintendo-switch/01001AB0140F2000.webp",
+        "imageAlt": "新枪弹辩驳V3 大家的自相残杀新学期 Anniversary Edition Nintendo Switch game cover"
+      },
+      {
+        "id": "01003A400C3DA000",
+        "name": "YouTube",
+        "image": "/images/nintendo-switch/01003A400C3DA000.webp",
+        "imageAlt": "YouTube Nintendo Switch game cover"
+      },
+      {
+        "id": "0100BF70140EE000",
+        "name": "弹丸论破：希望学园与绝望高校生 周年版",
+        "image": "/images/nintendo-switch/0100BF70140EE000.webp",
+        "imageAlt": "弹丸论破：希望学园与绝望高校生 周年版 Nintendo Switch game cover"
+      },
+      {
+        "id": "0400181025036000",
+        "name": "Resident Evil Village Gold Edition",
+        "image": "/images/nintendo-switch/0400181025036000.webp",
+        "imageAlt": "Resident Evil Village Gold Edition Nintendo Switch game cover"
+      },
+      {
+        "id": "0400DD10240BC000",
+        "name": "生化危机9:安魂曲",
+        "image": "/images/nintendo-switch/0400DD10240BC000.webp",
+        "imageAlt": "生化危机9:安魂曲 Nintendo Switch game cover"
+      }
+    ]
+  },
+  "shelves": [],
+  "steam": {
+    "source": "Steam Community public games page",
+    "sourceUrl": "https://steamcommunity.com/id/U1X0217/games/?tab=all",
+    "checkedOn": "2026-08-22",
+    "profile": {
+      "source": "Steam Community public profile",
+      "sourceUrl": "https://steamcommunity.com/id/U1X0217/",
+      "checkedOn": "2026-08-22",
+      "handle": "U1X0217",
+      "screenshot": "/images/steam-profile-header.png",
+      "screenshotMobile": "/images/steam-profile-header-mobile.png",
+      "screenshotAlt": "Steam Community profile header with an anime avatar, profile name, level badge, and illustrated background",
+      "screenshotWidth": 2080,
+      "screenshotHeight": 465,
+      "screenshotMobileWidth": 1100,
+      "screenshotMobileHeight": 465
+    },
+    "totalGames": 181,
+    "games": [
+      {
+        "appid": 730,
+        "name": "Counter-Strike 2",
+        "image": "/images/steam/730.jpg",
+        "imageAlt": "Counter-Strike 2 Steam game cover"
+      },
+      {
+        "appid": 1172470,
+        "name": "Apex Legends",
+        "image": "/images/steam/1172470.jpg",
+        "imageAlt": "Apex Legends Steam game cover"
+      },
+      {
+        "appid": 230410,
+        "name": "Warframe 星际战甲",
+        "image": "/images/steam/230410.jpg",
+        "imageAlt": "Warframe 星际战甲 Steam game cover"
+      },
+      {
+        "appid": 578080,
+        "name": "PUBG: BATTLEGROUNDS",
+        "image": "/images/steam/578080.jpg",
+        "imageAlt": "PUBG: BATTLEGROUNDS Steam game cover"
+      },
+      {
+        "appid": 4000,
+        "name": "Garry's Mod",
+        "image": "/images/steam/4000.jpg",
+        "imageAlt": "Garry's Mod Steam game cover"
+      },
+      {
+        "appid": 1905180,
+        "name": "OBS Studio",
+        "image": "/images/steam/1905180.jpg",
+        "imageAlt": "OBS Studio Steam game cover"
+      },
+      {
+        "appid": 431960,
+        "name": "Wallpaper Engine：壁纸引擎",
+        "image": "/images/steam/431960.jpg",
+        "imageAlt": "Wallpaper Engine：壁纸引擎 Steam game cover"
+      },
+      {
+        "appid": 1238810,
+        "name": "《战地风云 5》",
+        "image": "/images/steam/1238810.jpg",
+        "imageAlt": "《战地风云 5》 Steam game cover"
+      },
+      {
+        "appid": 251570,
+        "name": "7 Days to Die",
+        "image": "/images/steam/251570.jpg",
+        "imageAlt": "7 Days to Die Steam game cover"
+      },
+      {
+        "appid": 2161700,
+        "name": "女神异闻录３ Reload",
+        "image": "/images/steam/2161700.jpg",
+        "imageAlt": "女神异闻录３ Reload Steam game cover"
+      },
+      {
+        "appid": 374320,
+        "name": "DARK SOULS™ III",
+        "image": "/images/steam/374320.jpg",
+        "imageAlt": "DARK SOULS™ III Steam game cover"
+      },
+      {
+        "appid": 239140,
+        "name": "Dying Light",
+        "image": "/images/steam/239140.jpg",
+        "imageAlt": "Dying Light Steam game cover"
+      },
+      {
+        "appid": 1245620,
+        "name": "艾尔登法环",
+        "image": "/images/steam/1245620.jpg",
+        "imageAlt": "艾尔登法环 Steam game cover"
+      },
+      {
+        "appid": 582010,
+        "name": "Monster Hunter: World",
+        "image": "/images/steam/582010.jpg",
+        "imageAlt": "Monster Hunter: World Steam game cover"
+      },
+      {
+        "appid": 2246340,
+        "name": "Monster Hunter Wilds",
+        "image": "/images/steam/2246340.jpg",
+        "imageAlt": "Monster Hunter Wilds Steam game cover"
+      },
+      {
+        "appid": 2458530,
+        "name": "魔女的夜宴",
+        "image": "/images/steam/2458530.jpg",
+        "imageAlt": "魔女的夜宴 Steam game cover"
+      },
+      {
+        "appid": 271590,
+        "name": "Grand Theft Auto V 传承版",
+        "image": "/images/steam/271590.jpg",
+        "imageAlt": "Grand Theft Auto V 传承版 Steam game cover"
+      },
+      {
+        "appid": 289070,
+        "name": "Sid Meier's Civilization VI",
+        "image": "/images/steam/289070.jpg",
+        "imageAlt": "Sid Meier's Civilization VI Steam game cover"
+      },
+      {
+        "appid": 570940,
+        "name": "DARK SOULS™: REMASTERED",
+        "image": "/images/steam/570940.jpg",
+        "imageAlt": "DARK SOULS™: REMASTERED Steam game cover"
+      },
+      {
+        "appid": 304930,
+        "name": "Unturned",
+        "image": "/images/steam/304930.jpg",
+        "imageAlt": "Unturned Steam game cover"
+      },
+      {
+        "appid": 552520,
+        "name": "Far Cry 5",
+        "image": "/images/steam/552520.jpg",
+        "imageAlt": "Far Cry 5 Steam game cover"
+      },
+      {
+        "appid": 1903340,
+        "name": "光与影：33号远征队",
+        "image": "/images/steam/1903340.jpg",
+        "imageAlt": "光与影：33号远征队 Steam game cover"
+      },
+      {
+        "appid": 814380,
+        "name": "Sekiro™: Shadows Die Twice",
+        "image": "/images/steam/814380.jpg",
+        "imageAlt": "Sekiro™: Shadows Die Twice Steam game cover"
+      },
+      {
+        "appid": 1144400,
+        "name": "千恋＊万花",
+        "image": "/images/steam/1144400.jpg",
+        "imageAlt": "千恋＊万花 Steam game cover"
+      },
+      {
+        "appid": 1568590,
+        "name": "Goose Goose Duck",
+        "image": "/images/steam/1568590.jpg",
+        "imageAlt": "Goose Goose Duck Steam game cover"
+      },
+      {
+        "appid": 567640,
+        "name": "新枪弹辩驳V3 大家自相残杀的新学期",
+        "image": "/images/steam/567640.jpg",
+        "imageAlt": "新枪弹辩驳V3 大家自相残杀的新学期 Steam game cover"
+      },
+      {
+        "appid": 1325860,
+        "name": "VTube Studio",
+        "image": "/images/steam/1325860.jpg",
+        "imageAlt": "VTube Studio Steam game cover"
+      },
+      {
+        "appid": 880940,
+        "name": "Pummel Party",
+        "image": "/images/steam/880940.jpg",
+        "imageAlt": "Pummel Party Steam game cover"
+      },
+      {
+        "appid": 550,
+        "name": "Left 4 Dead 2",
+        "image": "/images/steam/550.jpg",
+        "imageAlt": "Left 4 Dead 2 Steam game cover"
+      },
+      {
+        "appid": 1329410,
+        "name": "雀魂麻将",
+        "image": "/images/steam/1329410.jpg",
+        "imageAlt": "雀魂麻将 Steam game cover"
+      },
+      {
+        "appid": 857450,
+        "name": "ISLAND",
+        "image": "/images/steam/857450.jpg",
+        "imageAlt": "ISLAND Steam game cover"
+      },
+      {
+        "appid": 945360,
+        "name": "Among Us",
+        "image": "/images/steam/945360.jpg",
+        "imageAlt": "Among Us Steam game cover"
+      },
+      {
+        "appid": 413420,
+        "name": "超級槍彈辯駁2 再會了絕望學園",
+        "image": "/images/steam/413420.jpg",
+        "imageAlt": "超級槍彈辯駁2 再會了絕望學園 Steam game cover"
+      },
+      {
+        "appid": 1446780,
+        "name": "MONSTER HUNTER RISE",
+        "image": "/images/steam/1446780.jpg",
+        "imageAlt": "MONSTER HUNTER RISE Steam game cover"
+      },
+      {
+        "appid": 433850,
+        "name": "Z1 Battle Royale",
+        "image": "/images/steam/433850.jpg",
+        "imageAlt": "Z1 Battle Royale Steam game cover"
+      },
+      {
+        "appid": 346110,
+        "name": "ARK: Survival Evolved",
+        "image": "/images/steam/346110.jpg",
+        "imageAlt": "ARK: Survival Evolved Steam game cover"
+      },
+      {
+        "appid": 3101040,
+        "name": "魔法少女的魔女审判",
+        "image": "/images/steam/3101040.jpg",
+        "imageAlt": "魔法少女的魔女审判 Steam game cover"
+      },
+      {
+        "appid": 3590,
+        "name": "Plants vs. Zombies: Game of the Year",
+        "image": "/images/steam/3590.jpg",
+        "imageAlt": "Plants vs. Zombies: Game of the Year Steam game cover"
+      },
+      {
+        "appid": 238460,
+        "name": "BattleBlock Theater",
+        "image": "/images/steam/238460.jpg",
+        "imageAlt": "BattleBlock Theater Steam game cover"
+      },
+      {
+        "appid": 1794680,
+        "name": "Vampire Survivors - 吸血鬼幸存者",
+        "image": "/images/steam/1794680.jpg",
+        "imageAlt": "Vampire Survivors - 吸血鬼幸存者 Steam game cover"
+      },
+      {
+        "appid": 1196590,
+        "name": "Resident Evil Village",
+        "image": "/images/steam/1196590.jpg",
+        "imageAlt": "Resident Evil Village Steam game cover"
+      },
+      {
+        "appid": 1222140,
+        "name": "底特律：化身为人",
+        "image": "/images/steam/1222140.jpg",
+        "imageAlt": "底特律：化身为人 Steam game cover"
+      },
+      {
+        "appid": 2052410,
+        "name": "魔法使之夜",
+        "image": "/images/steam/2052410.jpg",
+        "imageAlt": "魔法使之夜 Steam game cover"
+      },
+      {
+        "appid": 1475810,
+        "name": "Ghostwire: Tokyo",
+        "image": "/images/steam/1475810.jpg",
+        "imageAlt": "Ghostwire: Tokyo Steam game cover"
+      },
+      {
+        "appid": 218620,
+        "name": "PAYDAY 2",
+        "image": "/images/steam/218620.jpg",
+        "imageAlt": "PAYDAY 2 Steam game cover"
+      },
+      {
+        "appid": 841370,
+        "name": "NBA 2K19",
+        "image": "/images/steam/841370.jpg",
+        "imageAlt": "NBA 2K19 Steam game cover"
+      },
+      {
+        "appid": 447040,
+        "name": "Watch_Dogs 2",
+        "image": "/images/steam/447040.jpg",
+        "imageAlt": "Watch_Dogs 2 Steam game cover"
+      },
+      {
+        "appid": 994910,
+        "name": "Poker Master - 德州扑克,轮盘,21点,百家乐,奥马哈,老虎机,提恩帕蒂,麻将,斗地主,港式五张,斗牛,十三水",
+        "image": "/images/steam/994910.jpg",
+        "imageAlt": "Poker Master - 德州扑克,轮盘,21点,百家乐,奥马哈,老虎机,提恩帕蒂,麻将,斗地主,港式五张,斗牛,十三水 Steam game cover"
+      },
+      {
+        "appid": 1966720,
+        "name": "Lethal Company",
+        "image": "/images/steam/1966720.jpg",
+        "imageAlt": "Lethal Company Steam game cover"
+      },
+      {
+        "appid": 418370,
+        "name": "Resident Evil 7 Biohazard",
+        "image": "/images/steam/418370.jpg",
+        "imageAlt": "Resident Evil 7 Biohazard Steam game cover"
+      },
+      {
+        "appid": 2947440,
+        "name": "SILENT HILL f",
+        "image": "/images/steam/2947440.jpg",
+        "imageAlt": "SILENT HILL f Steam game cover"
+      },
+      {
+        "appid": 359550,
+        "name": "彩虹六号：围攻",
+        "image": "/images/steam/359550.jpg",
+        "imageAlt": "彩虹六号：围攻 Steam game cover"
+      },
+      {
+        "appid": 3350200,
+        "name": "情感反诈模拟器",
+        "image": "/images/steam/3350200.jpg",
+        "imageAlt": "情感反诈模拟器 Steam game cover"
+      },
+      {
+        "appid": 967050,
+        "name": "Pacify",
+        "image": "/images/steam/967050.jpg",
+        "imageAlt": "Pacify Steam game cover"
+      },
+      {
+        "appid": 2357570,
+        "name": "《守望先锋®》",
+        "image": "/images/steam/2357570.jpg",
+        "imageAlt": "《守望先锋®》 Steam game cover"
+      },
+      {
+        "appid": 2215430,
+        "name": "Ghost of Tsushima导演剪辑版",
+        "image": "/images/steam/2215430.jpg",
+        "imageAlt": "Ghost of Tsushima导演剪辑版 Steam game cover"
+      },
+      {
+        "appid": 477160,
+        "name": "人类一败涂地 / Human Fall Flat",
+        "image": "/images/steam/477160.jpg",
+        "imageAlt": "人类一败涂地 / Human Fall Flat Steam game cover"
+      },
+      {
+        "appid": 977950,
+        "name": "冰与火之舞 A Dance of Fire and Ice",
+        "image": "/images/steam/977950.jpg",
+        "imageAlt": "冰与火之舞 A Dance of Fire and Ice Steam game cover"
+      },
+      {
+        "appid": 939960,
+        "name": "Far Cry New Dawn",
+        "image": "/images/steam/939960.jpg",
+        "imageAlt": "Far Cry New Dawn Steam game cover"
+      },
+      {
+        "appid": 105600,
+        "name": "Terraria",
+        "image": "/images/steam/105600.jpg",
+        "imageAlt": "Terraria Steam game cover"
+      },
+      {
+        "appid": 413150,
+        "name": "Stardew Valley",
+        "image": "/images/steam/413150.jpg",
+        "imageAlt": "Stardew Valley Steam game cover"
+      },
+      {
+        "appid": 865360,
+        "name": "We Were Here Together",
+        "image": "/images/steam/865360.jpg",
+        "imageAlt": "We Were Here Together Steam game cover"
+      },
+      {
+        "appid": 774861,
+        "name": "Project Winter",
+        "image": "/images/steam/774861.jpg",
+        "imageAlt": "Project Winter Steam game cover"
+      },
+      {
+        "appid": 1238840,
+        "name": "Battlefield™ 1",
+        "image": "/images/steam/1238840.jpg",
+        "imageAlt": "Battlefield™ 1 Steam game cover"
+      },
+      {
+        "appid": 242760,
+        "name": "The Forest",
+        "image": "/images/steam/242760.jpg",
+        "imageAlt": "The Forest Steam game cover"
+      },
+      {
+        "appid": 383150,
+        "name": "Dead Island Definitive Edition",
+        "image": "/images/steam/383150.jpg",
+        "imageAlt": "Dead Island Definitive Edition Steam game cover"
+      },
+      {
+        "appid": 3081410,
+        "name": "《战地风云™ 6》Beta 公测",
+        "image": "/images/steam/3081410.jpg",
+        "imageAlt": "《战地风云™ 6》Beta 公测 Steam game cover",
+        "coverSource": "https://shared.fastly.steamstatic.com/store_item_assets//steam/apps/3081410/c1c6bd6faa26a30d88f5438b05d61645cfff65b9/header.jpg?t=1754319580"
+      },
+      {
+        "appid": 460930,
+        "name": "幽灵行动：荒野",
+        "image": "/images/steam/460930.jpg",
+        "imageAlt": "幽灵行动：荒野 Steam game cover"
+      },
+      {
+        "appid": 714010,
+        "name": "Aimlabs",
+        "image": "/images/steam/714010.jpg",
+        "imageAlt": "Aimlabs Steam game cover"
+      },
+      {
+        "appid": 420110,
+        "name": "NEKOPARA Vol. 2",
+        "image": "/images/steam/420110.jpg",
+        "imageAlt": "NEKOPARA Vol. 2 Steam game cover"
+      },
+      {
+        "appid": 668580,
+        "name": "原子之心",
+        "image": "/images/steam/668580.jpg",
+        "imageAlt": "原子之心 Steam game cover"
+      },
+      {
+        "appid": 2536840,
+        "name": "GINKA",
+        "image": "/images/steam/2536840.jpg",
+        "imageAlt": "GINKA Steam game cover"
+      },
+      {
+        "appid": 385800,
+        "name": "NEKOPARA Vol. 0",
+        "image": "/images/steam/385800.jpg",
+        "imageAlt": "NEKOPARA Vol. 0 Steam game cover"
+      },
+      {
+        "appid": 1517290,
+        "name": "《战地风云™ 2042》",
+        "image": "/images/steam/1517290.jpg",
+        "imageAlt": "《战地风云™ 2042》 Steam game cover"
+      },
+      {
+        "appid": 1097150,
+        "name": "糖豆人",
+        "image": "/images/steam/1097150.jpg",
+        "imageAlt": "糖豆人 Steam game cover"
+      },
+      {
+        "appid": 958260,
+        "name": "DEAD OR ALIVE Xtreme Venus Vacation",
+        "image": "/images/steam/958260.jpg",
+        "imageAlt": "DEAD OR ALIVE Xtreme Venus Vacation Steam game cover"
+      },
+      {
+        "appid": 582160,
+        "name": "刺客信条：起源",
+        "image": "/images/steam/582160.jpg",
+        "imageAlt": "刺客信条：起源 Steam game cover"
+      },
+      {
+        "appid": 1172620,
+        "name": "Sea of Thieves",
+        "image": "/images/steam/1172620.jpg",
+        "imageAlt": "Sea of Thieves Steam game cover"
+      },
+      {
+        "appid": 1262240,
+        "name": "植物大战僵尸™: 和睦小镇保卫战",
+        "image": "/images/steam/1262240.jpg",
+        "imageAlt": "植物大战僵尸™: 和睦小镇保卫战 Steam game cover"
+      },
+      {
+        "appid": 294100,
+        "name": "边缘世界 RimWorld",
+        "image": "/images/steam/294100.jpg",
+        "imageAlt": "边缘世界 RimWorld Steam game cover"
+      },
+      {
+        "appid": 203160,
+        "name": "Tomb Raider",
+        "image": "/images/steam/203160.jpg",
+        "imageAlt": "Tomb Raider Steam game cover"
+      },
+      {
+        "appid": 1620690,
+        "name": "Rubber Bandits: Summer Prologue",
+        "image": "/images/steam/1620690.jpg",
+        "imageAlt": "Rubber Bandits: Summer Prologue Steam game cover"
+      },
+      {
+        "appid": 2396980,
+        "name": "Fate/stay night REMASTERED",
+        "image": "/images/steam/2396980.jpg",
+        "imageAlt": "Fate/stay night REMASTERED Steam game cover"
+      },
+      {
+        "appid": 2881650,
+        "name": "前方高能",
+        "image": "/images/steam/2881650.jpg",
+        "imageAlt": "前方高能 Steam game cover"
+      },
+      {
+        "appid": 333600,
+        "name": "NEKOPARA Vol. 1",
+        "image": "/images/steam/333600.jpg",
+        "imageAlt": "NEKOPARA Vol. 1 Steam game cover"
+      },
+      {
+        "appid": 412020,
+        "name": "地铁：离乡",
+        "image": "/images/steam/412020.jpg",
+        "imageAlt": "地铁：离乡 Steam game cover"
+      },
+      {
+        "appid": 620,
+        "name": "Portal 2",
+        "image": "/images/steam/620.jpg",
+        "imageAlt": "Portal 2 Steam game cover"
+      },
+      {
+        "appid": 2075730,
+        "name": "《使命召唤®：现代战争®II 2022》公开试玩",
+        "image": "/images/steam/2075730.jpg",
+        "imageAlt": "《使命召唤®：现代战争®II 2022》公开试玩 Steam game cover"
+      },
+      {
+        "appid": 1451940,
+        "name": "主播女孩重度依赖",
+        "image": "/images/steam/1451940.jpg",
+        "imageAlt": "主播女孩重度依赖 Steam game cover"
+      },
+      {
+        "appid": 1332010,
+        "name": "Stray",
+        "image": "/images/steam/1332010.jpg",
+        "imageAlt": "Stray Steam game cover"
+      },
+      {
+        "appid": 348950,
+        "name": "Ame no Marginal -Rain Marginal-",
+        "image": "/images/steam/348950.jpg",
+        "imageAlt": "Ame no Marginal -Rain Marginal- Steam game cover"
+      },
+      {
+        "appid": 1619990,
+        "name": "超击突破先行测试服",
+        "image": "/images/steam/1619990.jpg",
+        "imageAlt": "超击突破先行测试服 Steam game cover"
+      },
+      {
+        "appid": 413410,
+        "name": "Danganronpa: Trigger Happy Havoc",
+        "image": "/images/steam/413410.jpg",
+        "imageAlt": "Danganronpa: Trigger Happy Havoc Steam game cover"
+      },
+      {
+        "appid": 2947240,
+        "name": "你的眼眸命中我心头",
+        "image": "/images/steam/2947240.jpg",
+        "imageAlt": "你的眼眸命中我心头 Steam game cover"
+      },
+      {
+        "appid": 1938090,
+        "name": "使命召唤®",
+        "image": "/images/steam/1938090.jpg",
+        "imageAlt": "使命召唤® Steam game cover"
+      },
+      {
+        "appid": 601150,
+        "name": "Devil May Cry 5",
+        "image": "/images/steam/601150.jpg",
+        "imageAlt": "Devil May Cry 5 Steam game cover"
+      },
+      {
+        "appid": 1146630,
+        "name": "妖语",
+        "image": "/images/steam/1146630.jpg",
+        "imageAlt": "妖语 Steam game cover"
+      },
+      {
+        "appid": 1662840,
+        "name": "Parquet",
+        "image": "/images/steam/1662840.jpg",
+        "imageAlt": "Parquet Steam game cover"
+      },
+      {
+        "appid": 1089350,
+        "name": "NBA 2K20",
+        "image": "/images/steam/1089350.jpg",
+        "imageAlt": "NBA 2K20 Steam game cover"
+      },
+      {
+        "appid": 227300,
+        "name": "Euro Truck Simulator 2",
+        "image": "/images/steam/227300.jpg",
+        "imageAlt": "Euro Truck Simulator 2 Steam game cover"
+      },
+      {
+        "appid": 1469250,
+        "name": "Rubber Bandits: Christmas Prologue",
+        "image": "/images/steam/1469250.jpg",
+        "imageAlt": "Rubber Bandits: Christmas Prologue Steam game cover"
+      },
+      {
+        "appid": 3418570,
+        "name": "Summer Pockets REFLECTION BLUE",
+        "image": "/images/steam/3418570.jpg",
+        "imageAlt": "Summer Pockets REFLECTION BLUE Steam game cover",
+        "coverSource": "https://shared.fastly.steamstatic.com/store_item_assets//steam/apps/3418570/3ecfde9ce2b88e00514a2986a5e8b8fc91b37420/header.jpg?t=1756793980"
+      },
+      {
+        "appid": 1191210,
+        "name": "Seek Girl Ⅲ",
+        "image": "/images/steam/1191210.jpg",
+        "imageAlt": "Seek Girl Ⅲ Steam game cover"
+      },
+      {
+        "appid": 1091500,
+        "name": "赛博朋克 2077",
+        "image": "/images/steam/1091500.jpg",
+        "imageAlt": "赛博朋克 2077 Steam game cover"
+      },
+      {
+        "appid": 1277930,
+        "name": "Riddle Joker",
+        "image": "/images/steam/1277930.jpg",
+        "imageAlt": "Riddle Joker Steam game cover"
+      },
+      {
+        "appid": 899970,
+        "name": "NEKOPARA Extra",
+        "image": "/images/steam/899970.jpg",
+        "imageAlt": "NEKOPARA Extra Steam game cover"
+      },
+      {
+        "appid": 1263370,
+        "name": "Seek Girl:Fog Ⅰ",
+        "image": "/images/steam/1263370.jpg",
+        "imageAlt": "Seek Girl:Fog Ⅰ Steam game cover"
+      },
+      {
+        "appid": 589590,
+        "name": "Kindergarten",
+        "image": "/images/steam/589590.jpg",
+        "imageAlt": "Kindergarten Steam game cover"
+      },
+      {
+        "appid": 238320,
+        "name": "Outlast",
+        "image": "/images/steam/238320.jpg",
+        "imageAlt": "Outlast Steam game cover"
+      },
+      {
+        "appid": 1212830,
+        "name": "Seek Girl Ⅳ",
+        "image": "/images/steam/1212830.jpg",
+        "imageAlt": "Seek Girl Ⅳ Steam game cover"
+      },
+      {
+        "appid": 1230140,
+        "name": "ATRI -My Dear Moments-",
+        "image": "/images/steam/1230140.jpg",
+        "imageAlt": "ATRI -My Dear Moments- Steam game cover"
+      },
+      {
+        "appid": 442070,
+        "name": "Drawful 2",
+        "image": "/images/steam/442070.jpg",
+        "imageAlt": "Drawful 2 Steam game cover"
+      },
+      {
+        "appid": 1449560,
+        "name": "Metro Exodus Enhanced Edition",
+        "image": "/images/steam/1449560.jpg",
+        "imageAlt": "Metro Exodus Enhanced Edition Steam game cover"
+      },
+      {
+        "appid": 774171,
+        "name": "Muse Dash",
+        "image": "/images/steam/774171.jpg",
+        "imageAlt": "Muse Dash Steam game cover"
+      },
+      {
+        "appid": 998930,
+        "name": "Seek Girl",
+        "image": "/images/steam/998930.jpg",
+        "imageAlt": "Seek Girl Steam game cover"
+      },
+      {
+        "appid": 1393410,
+        "name": "Seek Girl V",
+        "image": "/images/steam/1393410.jpg",
+        "imageAlt": "Seek Girl V Steam game cover"
+      },
+      {
+        "appid": 71340,
+        "name": "Sonic Generations",
+        "image": "/images/steam/71340.jpg",
+        "imageAlt": "Sonic Generations Steam game cover"
+      },
+      {
+        "appid": 503300,
+        "name": "Super Star",
+        "image": "/images/steam/503300.jpg",
+        "imageAlt": "Super Star Steam game cover"
+      },
+      {
+        "appid": 1060670,
+        "name": "Taboos: Cracks",
+        "image": "/images/steam/1060670.jpg",
+        "imageAlt": "Taboos: Cracks Steam game cover"
+      },
+      {
+        "appid": 20900,
+        "name": "The Witcher: Enhanced Edition",
+        "image": "/images/steam/20900.jpg",
+        "imageAlt": "The Witcher: Enhanced Edition Steam game cover"
+      },
+      {
+        "appid": 1044620,
+        "name": "苍之彼方的四重奏",
+        "image": "/images/steam/1044620.jpg",
+        "imageAlt": "苍之彼方的四重奏 Steam game cover"
+      },
+      {
+        "appid": 1125480,
+        "name": "初恋日记",
+        "image": "/images/steam/1125480.jpg",
+        "imageAlt": "初恋日记 Steam game cover"
+      },
+      {
+        "appid": 2593370,
+        "name": "饿殍：明末千里行",
+        "image": "/images/steam/2593370.jpg",
+        "imageAlt": "饿殍：明末千里行 Steam game cover"
+      },
+      {
+        "appid": 3155290,
+        "name": "哥哥，早起前要一直抱紧我哦！",
+        "image": "/images/steam/3155290.jpg",
+        "imageAlt": "哥哥，早起前要一直抱紧我哦！ Steam game cover"
+      },
+      {
+        "appid": 1188540,
+        "name": "Apex Aim Trainer",
+        "image": "/images/steam/1188540.jpg",
+        "imageAlt": "Apex Aim Trainer Steam game cover"
+      },
+      {
+        "appid": 439700,
+        "name": "H1Z1: Test Server",
+        "image": "/images/steam/439700.jpg",
+        "imageAlt": "H1Z1: Test Server Steam game cover"
+      },
+      {
+        "appid": 1987080,
+        "name": "Inside the Backrooms",
+        "image": "/images/steam/1987080.jpg",
+        "imageAlt": "Inside the Backrooms Steam game cover"
+      },
+      {
+        "appid": 1434480,
+        "name": "爱上火车-Last Run!!-",
+        "image": "/images/steam/1434480.jpg",
+        "imageAlt": "爱上火车-Last Run!!- Steam game cover"
+      },
+      {
+        "appid": 1406990,
+        "name": "NEKOPARA Vol. 4",
+        "image": "/images/steam/1406990.jpg",
+        "imageAlt": "NEKOPARA Vol. 4 Steam game cover"
+      },
+      {
+        "appid": 1419730,
+        "name": "Seek Girl Ⅵ",
+        "image": "/images/steam/1419730.jpg",
+        "imageAlt": "Seek Girl Ⅵ Steam game cover"
+      },
+      {
+        "appid": 819030,
+        "name": "STEINS;GATE ELITE",
+        "image": "/images/steam/819030.jpg",
+        "imageAlt": "STEINS;GATE ELITE Steam game cover"
+      },
+      {
+        "appid": 292030,
+        "name": "巫师 3：狂猎",
+        "image": "/images/steam/292030.jpg",
+        "imageAlt": "巫师 3：狂猎 Steam game cover"
+      },
+      {
+        "appid": 1178490,
+        "name": "港诡实录",
+        "image": "/images/steam/1178490.jpg",
+        "imageAlt": "港诡实录 Steam game cover"
+      },
+      {
+        "appid": 3780110,
+        "name": "梅染倾情琉璃塔",
+        "image": "/images/steam/3780110.jpg",
+        "imageAlt": "梅染倾情琉璃塔 Steam game cover",
+        "coverSource": "https://shared.fastly.steamstatic.com/store_item_assets//steam/apps/3780110/2c39e92ca95559d9d881fd5e22820eef997ef973/header.jpg?t=1778253366"
+      },
+      {
+        "appid": 1238680,
+        "name": "巧可甜恋",
+        "image": "/images/steam/1238680.jpg",
+        "imageAlt": "巧可甜恋 Steam game cover"
+      },
+      {
+        "appid": 702050,
+        "name": "沙耶之歌",
+        "image": "/images/steam/702050.jpg",
+        "imageAlt": "沙耶之歌 Steam game cover"
+      },
+      {
+        "appid": 1829980,
+        "name": "星光咖啡馆与死神之蝶",
+        "image": "/images/steam/1829980.jpg",
+        "imageAlt": "星光咖啡馆与死神之蝶 Steam game cover"
+      },
+      {
+        "appid": 1567800,
+        "name": "星空列车与白的旅行",
+        "image": "/images/steam/1567800.jpg",
+        "imageAlt": "星空列车与白的旅行 Steam game cover"
+      },
+      {
+        "appid": 2430690,
+        "name": "幸运草的约定",
+        "image": "/images/steam/2430690.jpg",
+        "imageAlt": "幸运草的约定 Steam game cover"
+      },
+      {
+        "appid": 407530,
+        "name": "ARK: Survival Of The Fittest",
+        "image": "/images/steam/407530.jpg",
+        "imageAlt": "ARK: Survival Of The Fittest Steam game cover"
+      },
+      {
+        "appid": 113200,
+        "name": "The Binding of Isaac",
+        "image": "/images/steam/113200.jpg",
+        "imageAlt": "The Binding of Isaac Steam game cover"
+      },
+      {
+        "appid": 10,
+        "name": "Counter-Strike",
+        "image": "/images/steam/10.jpg",
+        "imageAlt": "Counter-Strike Steam game cover"
+      },
+      {
+        "appid": 80,
+        "name": "Counter-Strike: Condition Zero",
+        "image": "/images/steam/80.jpg",
+        "imageAlt": "Counter-Strike: Condition Zero Steam game cover"
+      },
+      {
+        "appid": 100,
+        "name": "Counter-Strike: Condition Zero Deleted Scenes",
+        "image": "/images/steam/100.jpg",
+        "imageAlt": "Counter-Strike: Condition Zero Deleted Scenes Steam game cover"
+      },
+      {
+        "appid": 555950,
+        "name": "Danganronpa Another Episode: Ultra Despair Girls",
+        "image": "/images/steam/555950.jpg",
+        "imageAlt": "Danganronpa Another Episode: Ultra Despair Girls Steam game cover"
+      },
+      {
+        "appid": 489830,
+        "name": "The Elder Scrolls V: Skyrim Special Edition",
+        "image": "/images/steam/489830.jpg",
+        "imageAlt": "The Elder Scrolls V: Skyrim Special Edition Steam game cover"
+      },
+      {
+        "appid": 601430,
+        "name": "The Evil Within 2",
+        "image": "/images/steam/601430.jpg",
+        "imageAlt": "The Evil Within 2 Steam game cover"
+      },
+      {
+        "appid": 2076040,
+        "name": "THE FINALS PLAYTEST",
+        "image": "/images/steam/2076040.jpg",
+        "imageAlt": "THE FINALS PLAYTEST Steam game cover"
+      },
+      {
+        "appid": 3240220,
+        "name": "Grand Theft Auto V 增强版",
+        "image": "/images/steam/3240220.jpg",
+        "imageAlt": "Grand Theft Auto V 增强版 Steam game cover"
+      },
+      {
+        "appid": 1167700,
+        "name": "hallucination - 幻觉",
+        "image": "/images/steam/1167700.jpg",
+        "imageAlt": "hallucination - 幻觉 Steam game cover"
+      },
+      {
+        "appid": 1126290,
+        "name": "Lost",
+        "image": "/images/steam/1126290.jpg",
+        "imageAlt": "Lost Steam game cover"
+      },
+      {
+        "appid": 1153430,
+        "name": "Love wish",
+        "image": "/images/steam/1153430.jpg",
+        "imageAlt": "Love wish Steam game cover"
+      },
+      {
+        "appid": 644570,
+        "name": "Material Girl",
+        "image": "/images/steam/644570.jpg",
+        "imageAlt": "Material Girl Steam game cover"
+      },
+      {
+        "appid": 644560,
+        "name": "Mirror",
+        "image": "/images/steam/644560.jpg",
+        "imageAlt": "Mirror Steam game cover"
+      },
+      {
+        "appid": 1101450,
+        "name": "Miss Neko",
+        "image": "/images/steam/1101450.jpg",
+        "imageAlt": "Miss Neko Steam game cover"
+      },
+      {
+        "appid": 3065170,
+        "name": "Monster Hunter Wilds Beta test",
+        "image": "/images/steam/3065170.jpg",
+        "imageAlt": "Monster Hunter Wilds Beta test Steam game cover"
+      },
+      {
+        "appid": 674730,
+        "name": "MRAK",
+        "image": "/images/steam/674730.jpg",
+        "imageAlt": "MRAK Steam game cover"
+      },
+      {
+        "appid": 602520,
+        "name": "NEKOPARA Vol. 3",
+        "image": "/images/steam/602520.jpg",
+        "imageAlt": "NEKOPARA Vol. 3 Steam game cover"
+      },
+      {
+        "appid": 3334690,
+        "name": "OneRoom ―花坂结衣 回忆篇―",
+        "image": "/images/steam/3334690.jpg",
+        "imageAlt": "OneRoom ―花坂结衣 回忆篇― Steam game cover"
+      },
+      {
+        "appid": 414700,
+        "name": "Outlast 2",
+        "image": "/images/steam/414700.jpg",
+        "imageAlt": "Outlast 2 Steam game cover"
+      },
+      {
+        "appid": 728880,
+        "name": "Overcooked! 2",
+        "image": "/images/steam/728880.jpg",
+        "imageAlt": "Overcooked! 2 Steam game cover"
+      },
+      {
+        "appid": 1148510,
+        "name": "Pretty Angel",
+        "image": "/images/steam/1148510.jpg",
+        "imageAlt": "Pretty Angel Steam game cover"
+      },
+      {
+        "appid": 880950,
+        "name": "爱上火车-Pure Station-",
+        "image": "/images/steam/880950.jpg",
+        "imageAlt": "爱上火车-Pure Station- Steam game cover"
+      },
+      {
+        "appid": 1394800,
+        "name": "Rebirth:Mr Wang",
+        "image": "/images/steam/1394800.jpg",
+        "imageAlt": "Rebirth:Mr Wang Steam game cover"
+      },
+      {
+        "appid": 1174180,
+        "name": "Red Dead Redemption 2",
+        "image": "/images/steam/1174180.jpg",
+        "imageAlt": "Red Dead Redemption 2 Steam game cover"
+      },
+      {
+        "appid": 1236300,
+        "name": "Resident Evil Re:Verse",
+        "image": "/images/steam/1236300.jpg",
+        "imageAlt": "Resident Evil Re:Verse Steam game cover"
+      },
+      {
+        "appid": 1149660,
+        "name": "Seek Girl Ⅱ",
+        "image": "/images/steam/1149660.jpg",
+        "imageAlt": "Seek Girl Ⅱ Steam game cover"
+      },
+      {
+        "appid": 1464930,
+        "name": "Seek Girl Ⅶ",
+        "image": "/images/steam/1464930.jpg",
+        "imageAlt": "Seek Girl Ⅶ Steam game cover"
+      },
+      {
+        "appid": 1509090,
+        "name": "Seek Girl Ⅷ",
+        "image": "/images/steam/1509090.jpg",
+        "imageAlt": "Seek Girl Ⅷ Steam game cover"
+      },
+      {
+        "appid": 412830,
+        "name": "STEINS;GATE",
+        "image": "/images/steam/412830.jpg",
+        "imageAlt": "STEINS;GATE Steam game cover"
+      },
+      {
+        "appid": 825630,
+        "name": "STEINS;GATE 0",
+        "image": "/images/steam/825630.jpg",
+        "imageAlt": "STEINS;GATE 0 Steam game cover"
+      },
+      {
+        "appid": 930910,
+        "name": "STEINS;GATE: Linear Bounded Phenogram",
+        "image": "/images/steam/930910.jpg",
+        "imageAlt": "STEINS;GATE: Linear Bounded Phenogram Steam game cover"
+      },
+      {
+        "appid": 464920,
+        "name": "Surviving Mars",
+        "image": "/images/steam/464920.jpg",
+        "imageAlt": "Surviving Mars Steam game cover"
+      },
+      {
+        "appid": 1237970,
+        "name": "Titanfall® 2",
+        "image": "/images/steam/1237970.jpg",
+        "imageAlt": "Titanfall® 2 Steam game cover"
+      },
+      {
+        "appid": 623990,
+        "name": "Tom Clancy's Rainbow Six Siege - Test Server",
+        "image": "/images/steam/623990.jpg",
+        "imageAlt": "Tom Clancy's Rainbow Six Siege - Test Server Steam game cover"
+      },
+      {
+        "appid": 668630,
+        "name": "Tricolour Lovestory",
+        "image": "/images/steam/668630.jpg",
+        "imageAlt": "Tricolour Lovestory Steam game cover"
+      },
+      {
+        "appid": 552500,
+        "name": "Warhammer: Vermintide 2",
+        "image": "/images/steam/552500.jpg",
+        "imageAlt": "Warhammer: Vermintide 2 Steam game cover"
+      },
+      {
+        "appid": 20920,
+        "name": "The Witcher 2: Assassins of Kings Enhanced Edition",
+        "image": "/images/steam/20920.jpg",
+        "imageAlt": "The Witcher 2: Assassins of Kings Enhanced Edition Steam game cover"
+      },
+      {
+        "appid": 254100,
+        "name": "World War II: Panzer Claws",
+        "image": "/images/steam/254100.jpg",
+        "imageAlt": "World War II: Panzer Claws Steam game cover"
+      },
+      {
+        "appid": 254080,
+        "name": "World War III: Black Gold",
+        "image": "/images/steam/254080.jpg",
+        "imageAlt": "World War III: Black Gold Steam game cover"
+      },
+      {
+        "appid": 7510,
+        "name": "X-Blades",
+        "image": "/images/steam/7510.jpg",
+        "imageAlt": "X-Blades Steam game cover"
+      }
+    ]
+  },
+  "anime": {
+    "title": "アニメ",
+    "description": "好きなアニメーション作品を、最初の公開日順に並べた記録。",
+    "coverProvider": "AniList",
+    "deity": {
+      "heading": "唯一真神！",
+      "title": "Fate/kaleid liner プリズマ☆イリヤ",
+      "works": [
+        {
+          "id": "prisma-illya",
+          "title": "Fate/kaleid liner プリズマ☆イリヤ",
+          "firstReleased": "2013-07-12",
+          "tone": "purple",
+          "anilistId": 14829,
+          "image": "/images/anime/prisma-illya.png",
+          "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14829-PZVOr1ZxwOJV.png",
+          "coverCheckedOn": "2026-08-22"
+        },
+        {
+          "id": "prisma-illya-2wei",
+          "title": "Fate/kaleid liner プリズマ☆イリヤ ツヴァイ！",
+          "firstReleased": "2014-07-10",
+          "tone": "pink",
+          "anilistId": 20467,
+          "image": "/images/anime/prisma-illya-2wei.png",
+          "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx20467-GwWFUCzsiUF7.png",
+          "coverCheckedOn": "2026-08-22"
+        },
+        {
+          "id": "prisma-illya-2wei-herz",
+          "title": "Fate/kaleid liner プリズマ☆イリヤ ツヴァイ ヘルツ！",
+          "firstReleased": "2015-07-24",
+          "tone": "blue",
+          "anilistId": 20845,
+          "image": "/images/anime/prisma-illya-2wei-herz.png",
+          "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20845-4iTgYkjPsUYh.png",
+          "coverCheckedOn": "2026-08-22"
+        },
+        {
+          "id": "prisma-illya-3rei",
+          "title": "Fate/kaleid liner プリズマ☆イリヤ ドライ!!",
+          "firstReleased": "2016-07-06",
+          "tone": "green",
+          "anilistId": 21379,
+          "image": "/images/anime/prisma-illya-3rei.png",
+          "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21379-RDJgELNOIGDS.png",
+          "coverCheckedOn": "2026-08-22"
+        },
+        {
+          "id": "prisma-illya-oath-under-snow",
+          "title": "劇場版 Fate/kaleid liner プリズマ☆イリヤ 雪下の誓い",
+          "firstReleased": "2017-08-26",
+          "tone": "purple",
+          "anilistId": 97757,
+          "image": "/images/anime/prisma-illya-oath-under-snow.png",
+          "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b97757-BWFRkX81LpGS.png",
+          "coverCheckedOn": "2026-08-22"
+        },
+        {
+          "id": "prisma-illya-prisma-phantasm",
+          "title": "Fate/kaleid liner プリズマ☆イリヤ Prisma☆Phantasm",
+          "firstReleased": "2019-06-14",
+          "tone": "pink",
+          "anilistId": 100269,
+          "image": "/images/anime/prisma-illya-prisma-phantasm.jpg",
+          "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx100269-V8Z7e1OXrDBZ.jpg",
+          "coverCheckedOn": "2026-08-22"
+        },
+        {
+          "id": "prisma-illya-licht",
+          "title": "劇場版 Fate/kaleid liner プリズマ☆イリヤ Licht 名前の無い少女",
+          "firstReleased": "2021-08-27",
+          "tone": "blue",
+          "anilistId": 118743,
+          "image": "/images/anime/prisma-illya-licht.jpg",
+          "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx118743-T2Zm7kA33pnj.jpg",
+          "coverCheckedOn": "2026-08-22"
+        }
+      ]
+    },
+    "favoritesHeading": "お気に入り",
+    "favorites": [
+      {
+        "id": "dc-da-capo",
+        "title": "D.C.〜ダ・カーポ〜シリーズ",
+        "firstReleased": "2003-07-05",
+        "tone": "pink",
+        "anilistId": 62,
+        "image": "/images/anime/dc-da-capo.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx62-llr25zE9LOm1.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fullmetal-alchemist",
+        "title": "鋼の錬金術師シリーズ",
+        "firstReleased": "2003-10-04",
+        "tone": "blue",
+        "anilistId": 121,
+        "image": "/images/anime/fullmetal-alchemist.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx121-zjmixZ428Mwv.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "magical-girl-lyrical-nanoha",
+        "title": "魔法少女リリカルなのはシリーズ",
+        "firstReleased": "2004-10-03",
+        "tone": "purple",
+        "anilistId": 76,
+        "image": "/images/anime/magical-girl-lyrical-nanoha.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx76-wRwZobrx9MPj.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "shakugan-no-shana",
+        "title": "灼眼のシャナシリーズ",
+        "firstReleased": "2005-10-05",
+        "tone": "pink",
+        "anilistId": 355,
+        "image": "/images/anime/shakugan-no-shana.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx355-tB52QB38leMs.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-stay-night-2006",
+        "title": "Fate/stay night",
+        "firstReleased": "2006-01-06",
+        "tone": "blue",
+        "anilistId": 356,
+        "image": "/images/anime/fate-stay-night-2006.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx356-mTpMvtillumS.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "the-melancholy-of-haruhi-suzumiya",
+        "title": "涼宮ハルヒの憂鬱シリーズ",
+        "firstReleased": "2006-04-02",
+        "tone": "purple",
+        "anilistId": 849,
+        "image": "/images/anime/the-melancholy-of-haruhi-suzumiya.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx849-wQM3GqLvl62P.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "higurashi-when-they-cry",
+        "title": "ひぐらしのなく頃にシリーズ",
+        "firstReleased": "2006-04-04",
+        "tone": "green",
+        "anilistId": 934,
+        "image": "/images/anime/higurashi-when-they-cry.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx934-wjMlVEl4CWwg.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "kara-no-kyoukai",
+        "title": "劇場版 空の境界",
+        "firstReleased": "2007-12-01",
+        "tone": "blue",
+        "anilistId": 2593,
+        "image": "/images/anime/kara-no-kyoukai.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2593-FsRHa8PIl2OJ.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "a-certain-magical-index",
+        "title": "とある魔術の禁書目録シリーズ",
+        "firstReleased": "2008-10-04",
+        "tone": "pink",
+        "anilistId": 4654,
+        "image": "/images/anime/a-certain-magical-index.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4654-ba44icsxDQZd.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "white-album",
+        "title": "WHITE ALBUM",
+        "firstReleased": "2009-01-03",
+        "tone": "purple",
+        "anilistId": 4720,
+        "image": "/images/anime/white-album.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4720-5wuPkrYXAyMV.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "k-on",
+        "title": "けいおん！シリーズ",
+        "firstReleased": "2009-04-02",
+        "tone": "green",
+        "anilistId": 5680,
+        "image": "/images/anime/k-on.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5680-r3AI3Cwfv0Aq.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "monogatari",
+        "title": "〈物語〉シリーズ",
+        "firstReleased": "2009-07-03",
+        "tone": "blue",
+        "anilistId": 5081,
+        "image": "/images/anime/monogatari.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5081-9GocceQ5Z865.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "a-certain-scientific-railgun",
+        "title": "とある科学の超電磁砲シリーズ",
+        "firstReleased": "2009-10-02",
+        "tone": "pink",
+        "anilistId": 6213,
+        "image": "/images/anime/a-certain-scientific-railgun.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6213-QtrlDQnexApL.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "heavens-lost-property",
+        "title": "そらのおとしものシリーズ",
+        "firstReleased": "2009-10-04",
+        "tone": "purple",
+        "anilistId": 5958,
+        "image": "/images/anime/heavens-lost-property.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5958-qaAKEr4Q0JWn.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fairy-tail",
+        "title": "FAIRY TAILシリーズ",
+        "firstReleased": "2009-10-12",
+        "tone": "green",
+        "anilistId": 6702,
+        "image": "/images/anime/fairy-tail.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b6702-KI4qgSMyI8Pm.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "baka-and-test",
+        "title": "バカとテストと召喚獣シリーズ",
+        "firstReleased": "2010-01-06",
+        "tone": "blue",
+        "anilistId": 6347,
+        "image": "/images/anime/baka-and-test.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6347-DCSHLkCY7UT3.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-stay-night-ubw-film",
+        "title": "劇場版 Fate/stay night UNLIMITED BLADE WORKS",
+        "firstReleased": "2010-01-23",
+        "tone": "pink",
+        "anilistId": 6922,
+        "image": "/images/anime/fate-stay-night-ubw-film.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6922-g3hsIYOWGXL8.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "oreimo",
+        "title": "俺の妹がこんなに可愛いわけがないシリーズ",
+        "firstReleased": "2010-10-03",
+        "tone": "purple",
+        "anilistId": 8769,
+        "image": "/images/anime/oreimo.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx8769-Lat76qlOwdBN.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "yosuga-no-sora",
+        "title": "ヨスガノソラ",
+        "firstReleased": "2010-10-04",
+        "tone": "green",
+        "anilistId": 8861,
+        "image": "/images/anime/yosuga-no-sora.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx8861-DZKseZpdtBwp.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "madoka-magica",
+        "title": "魔法少女まどか☆マギカシリーズ",
+        "firstReleased": "2011-01-06",
+        "tone": "blue",
+        "anilistId": 9756,
+        "image": "/images/anime/madoka-magica.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9756-QnUGwlwwnsuN.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "steins-gate",
+        "title": "STEINS;GATEシリーズ",
+        "firstReleased": "2011-04-06",
+        "tone": "pink",
+        "anilistId": 9253,
+        "image": "/images/anime/steins-gate.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9253-tIUXF2gfU8Sg.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "anohana",
+        "title": "あの日見た花の名前を僕達はまだ知らない。",
+        "firstReleased": "2011-04-14",
+        "tone": "purple",
+        "anilistId": 9989,
+        "image": "/images/anime/anohana.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9989-hImMg6kCMm6I.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "hidan-no-aria",
+        "title": "緋弾のアリアシリーズ",
+        "firstReleased": "2011-04-14",
+        "tone": "green",
+        "anilistId": 8630,
+        "image": "/images/anime/hidan-no-aria.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx8630-n8Ipf0NlVXjy.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "carnival-phantasm",
+        "title": "カーニバル・ファンタズム",
+        "firstReleased": "2011-08-14",
+        "tone": "blue",
+        "anilistId": 10012,
+        "image": "/images/anime/carnival-phantasm.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10012-MNLVctKXaIAf.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-zero",
+        "title": "Fate/Zero",
+        "firstReleased": "2011-10-01",
+        "tone": "pink",
+        "anilistId": 10087,
+        "image": "/images/anime/fate-zero.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10087-M4Hd9qrHGrXk.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-prototype",
+        "title": "Fate/Prototype",
+        "firstReleased": "2011-12-31",
+        "tone": "purple",
+        "anilistId": 12565,
+        "image": "/images/anime/fate-prototype.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12565-paVJhzp4BrF0.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "another",
+        "title": "Another",
+        "firstReleased": "2012-01-09",
+        "tone": "green",
+        "anilistId": 11111,
+        "image": "/images/anime/another.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11111-gvvE5bBYsyFo.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "daily-lives-of-high-school-boys",
+        "title": "男子高校生の日常",
+        "firstReleased": "2012-01-09",
+        "tone": "blue",
+        "anilistId": 11843,
+        "image": "/images/anime/daily-lives-of-high-school-boys.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11843-ui2jBcuQUqnl.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "accel-world",
+        "title": "アクセル・ワールド",
+        "firstReleased": "2012-04-06",
+        "tone": "pink",
+        "anilistId": 11759,
+        "image": "/images/anime/accel-world.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11759-o3ZRpFYnP5Lc.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "nyaruko",
+        "title": "這いよれ！ニャル子さんシリーズ",
+        "firstReleased": "2012-04-09",
+        "tone": "purple",
+        "anilistId": 11785,
+        "image": "/images/anime/nyaruko.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11785-cBfqpOetdIeF.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "sword-art-online",
+        "title": "ソードアート・オンラインシリーズ",
+        "firstReleased": "2012-07-07",
+        "tone": "green",
+        "anilistId": 11757,
+        "image": "/images/anime/sword-art-online.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11757-SxYDUzdr9rh2.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "love-chunibyo-and-other-delusions",
+        "title": "中二病でも恋がしたい！シリーズ",
+        "firstReleased": "2012-10-03",
+        "tone": "blue",
+        "anilistId": 14741,
+        "image": "/images/anime/love-chunibyo-and-other-delusions.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14741-CGXEIeUe2roA.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "beyond-the-boundary",
+        "title": "境界の彼方",
+        "firstReleased": "2013-10-02",
+        "tone": "pink",
+        "anilistId": 18153,
+        "image": "/images/anime/beyond-the-boundary.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx18153-oDqA9zQzQPOq.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "nisekoi",
+        "title": "ニセコイシリーズ",
+        "firstReleased": "2014-01-11",
+        "tone": "purple",
+        "anilistId": 18897,
+        "image": "/images/anime/nisekoi.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx18897-G2Fx2ZACsXBU.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "no-game-no-life",
+        "title": "ノーゲーム・ノーライフ",
+        "firstReleased": "2014-04-09",
+        "tone": "green",
+        "anilistId": 19815,
+        "image": "/images/anime/no-game-no-life.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b19815-sEOQ9yQaPKlk.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "is-the-order-a-rabbit",
+        "title": "ご注文はうさぎですか？シリーズ",
+        "firstReleased": "2014-04-10",
+        "tone": "blue",
+        "anilistId": 20517,
+        "image": "/images/anime/is-the-order-a-rabbit.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20517-SNNUtav2knou.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "tokyo-ghoul",
+        "title": "東京喰種トーキョーグールシリーズ",
+        "firstReleased": "2014-07-03",
+        "tone": "pink",
+        "anilistId": 20605,
+        "image": "/images/anime/tokyo-ghoul.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20605-k665mVkSug8D.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "akame-ga-kill",
+        "title": "アカメが斬る！",
+        "firstReleased": "2014-07-06",
+        "tone": "purple",
+        "anilistId": 20613,
+        "image": "/images/anime/akame-ga-kill.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20613-HXHpec4bemk5.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-stay-night-ubw-tv",
+        "title": "Fate/stay night [Unlimited Blade Works]",
+        "firstReleased": "2014-10-04",
+        "tone": "green",
+        "anilistId": 19603,
+        "image": "/images/anime/fate-stay-night-ubw-tv.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx19603-ycT0pyEgDVQu.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "parasyte-the-maxim",
+        "title": "寄生獣 セイの格率",
+        "firstReleased": "2014-10-08",
+        "tone": "blue",
+        "anilistId": 20623,
+        "image": "/images/anime/parasyte-the-maxim.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20623-dUARfggnNDOe.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "ranpo-kitan",
+        "title": "乱歩奇譚 Game of Laplace",
+        "firstReleased": "2015-07-02",
+        "tone": "pink",
+        "anilistId": 21189,
+        "image": "/images/anime/ranpo-kitan.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21189-ENdHxDI7278o.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "charlotte",
+        "title": "Charlotte",
+        "firstReleased": "2015-07-04",
+        "tone": "purple",
+        "anilistId": 20997,
+        "image": "/images/anime/charlotte.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20997-axVYrsIfjtYJ.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "overlord",
+        "title": "オーバーロードシリーズ",
+        "firstReleased": "2015-07-07",
+        "tone": "green",
+        "anilistId": 20832,
+        "image": "/images/anime/overlord.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20832-vUNm5zrYWifc.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "school-live",
+        "title": "がっこうぐらし！",
+        "firstReleased": "2015-07-09",
+        "tone": "blue",
+        "anilistId": 20754,
+        "image": "/images/anime/school-live.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20754-e5JXeLpHoN7w.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "aokana",
+        "title": "蒼の彼方のフォーリズム",
+        "firstReleased": "2016-01-11",
+        "tone": "pink",
+        "anilistId": 21319,
+        "image": "/images/anime/aokana.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21319-U2RmvTzscBT3.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "konosuba",
+        "title": "この素晴らしい世界に祝福を！シリーズ",
+        "firstReleased": "2016-01-13",
+        "tone": "purple",
+        "anilistId": 21202,
+        "image": "/images/anime/konosuba.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21202-mPOr80AEjUcZ.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "bungo-stray-dogs",
+        "title": "文豪ストレイドッグスシリーズ",
+        "firstReleased": "2016-04-06",
+        "tone": "green",
+        "anilistId": 21311,
+        "image": "/images/anime/bungo-stray-dogs.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21311-hAXyT8Yoh6G9.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "saiki-k",
+        "title": "斉木楠雄のΨ難シリーズ",
+        "firstReleased": "2016-07-04",
+        "tone": "blue",
+        "anilistId": 21804,
+        "image": "/images/anime/saiki-k.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21804-As6tDLAvEvNY.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-grand-order-first-order",
+        "title": "Fate/Grand Order -First Order-",
+        "firstReleased": "2016-12-31",
+        "tone": "pink",
+        "anilistId": 97815,
+        "image": "/images/anime/fate-grand-order-first-order.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97815-NnWheNnaKCmS.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-gudaguda-order-2016",
+        "title": "年忘れぐだぐだオーダー2016",
+        "firstReleased": "2016-12-31",
+        "tone": "purple",
+        "anilistId": 132424,
+        "image": "/images/anime/fate-gudaguda-order-2016.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx132424-d826lwrGRvwF.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "gabriel-dropout",
+        "title": "ガヴリールドロップアウト",
+        "firstReleased": "2017-01-09",
+        "tone": "green",
+        "anilistId": 21878,
+        "image": "/images/anime/gabriel-dropout.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21878-rfzDjP2gjxGR.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "kakegurui",
+        "title": "賭ケグルイシリーズ",
+        "firstReleased": "2017-07-01",
+        "tone": "blue",
+        "anilistId": 98314,
+        "image": "/images/anime/kakegurui.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b98314-TSJykxVwCCQN.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-apocrypha",
+        "title": "Fate/Apocrypha",
+        "firstReleased": "2017-07-02",
+        "tone": "pink",
+        "anilistId": 98035,
+        "image": "/images/anime/fate-apocrypha.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98035-rdkjeqUUsG2j.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "netsuzou-trap",
+        "title": "捏造トラップ-NTR-",
+        "firstReleased": "2017-07-05",
+        "tone": "purple",
+        "anilistId": 97833,
+        "image": "/images/anime/netsuzou-trap.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97833-R2FRkUNvngIf.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "made-in-abyss",
+        "title": "メイドインアビスシリーズ",
+        "firstReleased": "2017-07-07",
+        "tone": "green",
+        "anilistId": 97986,
+        "image": "/images/anime/made-in-abyss.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97986-TQ7dCgbS3y5s.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "tenshi-no-3p",
+        "title": "天使の3P！",
+        "firstReleased": "2017-07-10",
+        "tone": "blue",
+        "anilistId": 97683,
+        "image": "/images/anime/tenshi-no-3p.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx97683-UOTfBliOP0mK.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "classroom-of-the-elite",
+        "title": "ようこそ実力至上主義の教室へシリーズ",
+        "firstReleased": "2017-07-12",
+        "tone": "pink",
+        "anilistId": 98659,
+        "image": "/images/anime/classroom-of-the-elite.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98659-WNyPLIZDpGGY.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-stay-night-heavens-feel",
+        "title": "劇場版 Fate/stay night [Heaven's Feel]",
+        "firstReleased": "2017-10-14",
+        "tone": "purple",
+        "anilistId": 20791,
+        "image": "/images/anime/fate-stay-night-heavens-feel.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20791-yPCX5GJuMH2k.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "emiya-san-chi-no-kyou-no-gohan",
+        "title": "衛宮さんちの今日のごはん",
+        "firstReleased": "2017-12-31",
+        "tone": "green",
+        "anilistId": 100855,
+        "image": "/images/anime/emiya-san-chi-no-kyou-no-gohan.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx100855-r8cXwdCschnX.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fgo-himuro-no-tenchi",
+        "title": "Fate/Grand Order × 氷室の天地 〜7人の最強偉人篇〜",
+        "firstReleased": "2017-12-31",
+        "tone": "blue",
+        "anilistId": 100729,
+        "image": "/images/anime/fgo-himuro-no-tenchi.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx100729-1TmNAHJ9468j.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fgo-moonlight-lostroom",
+        "title": "Fate/Grand Order -MOONLIGHT/LOSTROOM-",
+        "firstReleased": "2017-12-31",
+        "tone": "pink",
+        "anilistId": 100728,
+        "image": "/images/anime/fgo-moonlight-lostroom.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx100728-rChlxr9tE5qx.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "hakata-tonkotsu-ramens",
+        "title": "博多豚骨ラーメンズ",
+        "firstReleased": "2018-01-12",
+        "tone": "purple",
+        "anilistId": 99483,
+        "image": "/images/anime/hakata-tonkotsu-ramens.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx99483-eTKat4nPCOQW.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-extra-last-encore",
+        "title": "Fate/EXTRA Last Encore",
+        "firstReleased": "2018-01-27",
+        "tone": "green",
+        "anilistId": 21717,
+        "image": "/images/anime/fate-extra-last-encore.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx21717-2gU0L4IvrUVC.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "island",
+        "title": "ISLAND",
+        "firstReleased": "2018-07-01",
+        "tone": "blue",
+        "anilistId": 21712,
+        "image": "/images/anime/island.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx21712-To9Y3VNCf5a6.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "back-street-girls",
+        "title": "Back Street Girls -ゴクドルズ-",
+        "firstReleased": "2018-07-03",
+        "tone": "pink",
+        "anilistId": 100665,
+        "image": "/images/anime/back-street-girls.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx100665-rbfp9LH6Swe6.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "angels-of-death",
+        "title": "殺戮の天使",
+        "firstReleased": "2018-07-06",
+        "tone": "purple",
+        "anilistId": 99629,
+        "image": "/images/anime/angels-of-death.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99629-BXyAJ6PDq4sr.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "grand-blue",
+        "title": "ぐらんぶる",
+        "firstReleased": "2018-07-13",
+        "tone": "green",
+        "anilistId": 100922,
+        "image": "/images/anime/grand-blue.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx100922-uxEhaCsqMMp3.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "lord-elmelloi-ii-case-files",
+        "title": "ロード・エルメロイII世の事件簿 -魔眼蒐集列車 Grace note-",
+        "firstReleased": "2018-12-31",
+        "tone": "blue",
+        "anilistId": 106918,
+        "image": "/images/anime/lord-elmelloi-ii-case-files.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx106918-4T0AdnCg8d64.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "manga-de-wakaru-fgo",
+        "title": "マンガで分かる！Fate/Grand Order",
+        "firstReleased": "2018-12-31",
+        "tone": "pink",
+        "anilistId": 106915,
+        "image": "/images/anime/manga-de-wakaru-fgo.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx106915-x92FidDbnpOK.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "the-rising-of-the-shield-hero",
+        "title": "盾の勇者の成り上がりシリーズ",
+        "firstReleased": "2019-01-09",
+        "tone": "purple",
+        "anilistId": 99263,
+        "image": "/images/anime/the-rising-of-the-shield-hero.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99263-LcazQwdlWzMy.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "a-certain-scientific-accelerator",
+        "title": "とある科学の一方通行",
+        "firstReleased": "2019-07-12",
+        "tone": "green",
+        "anilistId": 104463,
+        "image": "/images/anime/a-certain-scientific-accelerator.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx104463-nlo4ndS9Mt0P.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "hello-world",
+        "title": "HELLO WORLD",
+        "firstReleased": "2019-09-20",
+        "tone": "blue",
+        "anilistId": 106240,
+        "image": "/images/anime/hello-world.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx106240-XeWQ4YhKzv7h.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fgo-babylonia",
+        "title": "Fate/Grand Order -絶対魔獣戦線バビロニア-",
+        "firstReleased": "2019-10-05",
+        "tone": "pink",
+        "anilistId": 103275,
+        "image": "/images/anime/fgo-babylonia.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103275-SN0wwshS3tWA.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "in-spectre",
+        "title": "虚構推理シリーズ",
+        "firstReleased": "2020-01-11",
+        "tone": "purple",
+        "anilistId": 107201,
+        "image": "/images/anime/in-spectre.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107201-zQYOPotwmSXO.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fgo-camelot",
+        "title": "劇場版 Fate/Grand Order -神聖円卓領域キャメロット-",
+        "firstReleased": "2020-12-05",
+        "tone": "green",
+        "anilistId": 103276,
+        "image": "/images/anime/fgo-camelot.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103276-7QhBwJs0O6Gi.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-grand-carnival",
+        "title": "Fate/Grand Carnival",
+        "firstReleased": "2020-12-31",
+        "tone": "blue",
+        "anilistId": 127149,
+        "image": "/images/anime/fate-grand-carnival.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127149-7dzvudxMb9ep.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "mushoku-tensei",
+        "title": "無職転生 〜異世界行ったら本気だす〜シリーズ",
+        "firstReleased": "2021-01-10",
+        "tone": "pink",
+        "anilistId": 108465,
+        "image": "/images/anime/mushoku-tensei.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108465-1ANspF1EWyFx.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "tokyo-revengers",
+        "title": "東京リベンジャーズシリーズ",
+        "firstReleased": "2021-04-10",
+        "tone": "purple",
+        "anilistId": 120120,
+        "image": "/images/anime/tokyo-revengers.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120120-cWDmnmeEntSe.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fgo-solomon",
+        "title": "Fate/Grand Order -終局特異点 冠位時間神殿ソロモン-",
+        "firstReleased": "2021-07-30",
+        "tone": "green",
+        "anilistId": 116756,
+        "image": "/images/anime/fgo-solomon.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx116756-jIU2HrnEsDjR.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "summer-time-rendering",
+        "title": "サマータイムレンダ",
+        "firstReleased": "2022-04-14",
+        "tone": "blue",
+        "anilistId": 129201,
+        "image": "/images/anime/summer-time-rendering.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx129201-HJBauga2be8I.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "bocchi-the-rock",
+        "title": "ぼっち・ざ・ろっく！",
+        "firstReleased": "2022-10-08",
+        "tone": "pink",
+        "anilistId": 130003,
+        "image": "/images/anime/bocchi-the-rock.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-HTDmeL4RGeJ4.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "chainsaw-man",
+        "title": "チェンソーマン",
+        "firstReleased": "2022-10-11",
+        "tone": "purple",
+        "anilistId": 127230,
+        "image": "/images/anime/chainsaw-man.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-DdP4vAdssLoz.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fgo-fujimaru-ritsuka-wa-wakaranai",
+        "title": "Fate/Grand Order 藤丸立香はわからない",
+        "firstReleased": "2022-12-31",
+        "tone": "green",
+        "anilistId": 159569,
+        "image": "/images/anime/fgo-fujimaru-ritsuka-wa-wakaranai.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx159569-7UanLTkqLJOy.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fate-strange-fake",
+        "title": "Fate/strange Fake",
+        "firstReleased": "2023-07-02",
+        "tone": "blue",
+        "anilistId": 166617,
+        "image": "/images/anime/fate-strange-fake.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx166617-34fpC9y47tTx.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "solo-leveling",
+        "title": "俺だけレベルアップな件",
+        "firstReleased": "2024-01-06",
+        "tone": "pink",
+        "anilistId": 151807,
+        "image": "/images/anime/solo-leveling.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151807-it355ZgzquUd.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "makeine",
+        "title": "負けヒロインが多すぎる！",
+        "firstReleased": "2024-07-13",
+        "tone": "purple",
+        "anilistId": 171457,
+        "image": "/images/anime/makeine.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171457-nmMIk0gNiWsm.jpg",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "summer-pockets",
+        "title": "Summer Pockets",
+        "firstReleased": "2025-04-07",
+        "tone": "green",
+        "anilistId": 143200,
+        "image": "/images/anime/summer-pockets.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx143200-42OaDCS6VEy3.png",
+        "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "yanineko",
+        "title": "ヤニねこ",
+        "firstReleased": "2026-07-02",
+        "tone": "blue",
+        "anilistId": 207141,
+        "image": "/images/anime/yanineko.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207141-h5q5KJPd6vaX.jpg",
+        "coverCheckedOn": "2026-08-22"
+      }
+    ]
+  }
+}

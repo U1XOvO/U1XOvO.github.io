@@ -1,0 +1,16 @@
+.DS_Store
+dist/
+node_modules/
+.next/
+.vinext/
+.wrangler/
+*.log
+
+# Local environment files and credentials
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+AGENTS.md

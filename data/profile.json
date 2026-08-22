@@ -1,0 +1,28 @@
+{
+  "name": "U1X",
+  "handle": "@U1XOvO",
+  "github": "https://github.com/U1XOvO",
+  "avatar": "/images/github-avatar.jpg",
+  "details": [
+    {
+      "label": "Name",
+      "value": "Jing-Feng Zhao"
+    },
+    {
+      "label": "Affiliation",
+      "value": "East China University of Science and Technology"
+    },
+    {
+      "label": "Location",
+      "value": "China/Shanghai"
+    },
+    {
+      "label": "Research Interests",
+      "value": "AI for biology"
+    },
+    {
+      "label": "Email",
+      "value": "u1x0402@gmail.com"
+    }
+  ]
+}

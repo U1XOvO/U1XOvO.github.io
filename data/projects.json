@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "id": "visualize-prtebd",
+      "title": "Visualize_prtebd",
+      "status": "Public repository",
+      "description": "Generate traceable protein embeddings with Hugging Face protein language models and visualize them with t-SNE and UMAP.",
+      "tags": [
+        "Python",
+        "Protein language models",
+        "Hugging Face",
+        "t-SNE / UMAP"
+      ],
+      "highlights": [
+        "Supports ESMC, ESM-2, ProtT5, and custom Hugging Face checkpoints.",
+        "Exports embeddings, source-linked records, and model metadata.",
+        "Produces reproducible PNG/SVG plots and dimensionality-reduction coordinates."
+      ],
+      "url": "https://github.com/U1XOvO/Visualize_prtebd"
+    },
+    {
+      "id": "pekp",
+      "title": "PEKP",
+      "status": "Public repository",
+      "description": "Collect models for predicting enzyme kinetic parameters in one compact, parameter-organized reference.",
+      "tags": [
+        "Enzyme kinetics",
+        "kcat",
+        "Km",
+        "Model collection"
+      ],
+      "highlights": [
+        "Groups model links into kcat, Km, and kcat/Km sections.",
+        "Records the publication year alongside each model.",
+        "Includes links to public implementations and papers when available."
+      ],
+      "url": "https://github.com/U1XOvO/PEKP"
+    }
+  ]
+}

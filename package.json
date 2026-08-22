@@ -1,0 +1,19 @@
+{
+  "name": "u1xovo-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "sync:literature": "node scripts/sync-literature.mjs",
+    "sync:switch": "node scripts/sync-switch.mjs",
+    "sync:steam-covers": "node scripts/sync-steam-covers.mjs",
+    "sync:anime-covers": "node scripts/sync-anime-covers.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "npm run build && npm run check"
+  }
+}

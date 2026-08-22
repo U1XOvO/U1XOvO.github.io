@@ -1,0 +1,3273 @@
+{
+  "source": {
+    "provider": "Zotero",
+    "collection": "AI+Protein",
+    "collectionKey": "DEMEZICD",
+    "snapshotDate": "2026-08-21",
+    "collectionVersion": "9392",
+    "totalItems": 112,
+    "includedItems": 106,
+    "excludedReviewCount": 6,
+    "exclusionRule": "Exclude records carrying the Zotero tag “Review”.",
+    "excludedReviewKeys": [
+      "5BGK5IR4",
+      "BGP8JG5X",
+      "E3GRTM7I",
+      "JLQTTJJK",
+      "VEHTSE5K",
+      "YNLEBN66"
+    ]
+  },
+  "topics": [
+    {
+      "id": "all",
+      "sourceTag": null,
+      "label": "AI + Protein",
+      "tone": "purple",
+      "x": 50,
+      "y": 50,
+      "mobileX": 50,
+      "mobileY": 10,
+      "count": 106
+    },
+    {
+      "id": "kinetic-prediction",
+      "sourceTag": "Predict Kinetic",
+      "label": "Enzyme kinetic prediction",
+      "tone": "pink",
+      "x": 18,
+      "y": 24,
+      "mobileX": 27,
+      "mobileY": 32,
+      "count": 45
+    },
+    {
+      "id": "protein-language-models",
+      "sourceTag": "LLM",
+      "label": "Protein language models",
+      "tone": "blue",
+      "x": 82,
+      "y": 24,
+      "mobileX": 73,
+      "mobileY": 32,
+      "count": 22
+    },
+    {
+      "id": "directed-evolution",
+      "sourceTag": "DE",
+      "label": "Directed evolution",
+      "tone": "green",
+      "x": 15,
+      "y": 76,
+      "mobileX": 27,
+      "mobileY": 59,
+      "count": 13
+    },
+    {
+      "id": "de-novo-design",
+      "sourceTag": "Denovo",
+      "label": "De novo design",
+      "tone": "purple",
+      "x": 50,
+      "y": 86,
+      "mobileX": 73,
+      "mobileY": 59,
+      "count": 13
+    },
+    {
+      "id": "enzyme-discovery",
+      "sourceTag": "Discovery",
+      "label": "Enzyme discovery",
+      "tone": "blue",
+      "x": 85,
+      "y": 76,
+      "mobileX": 50,
+      "mobileY": 84,
+      "count": 13
+    }
+  ],
+  "edges": [
+    {
+      "source": "all",
+      "target": "kinetic-prediction",
+      "relation": "collection topic",
+      "count": 45
+    },
+    {
+      "source": "all",
+      "target": "protein-language-models",
+      "relation": "collection topic",
+      "count": 22
+    },
+    {
+      "source": "all",
+      "target": "directed-evolution",
+      "relation": "collection topic",
+      "count": 13
+    },
+    {
+      "source": "all",
+      "target": "de-novo-design",
+      "relation": "collection topic",
+      "count": 13
+    },
+    {
+      "source": "all",
+      "target": "enzyme-discovery",
+      "relation": "collection topic",
+      "count": 13
+    }
+  ],
+  "records": [
+    {
+      "id": "zotero-fqlrc6xn",
+      "zoteroKey": "FQLRC6XN",
+      "itemType": "journalArticle",
+      "title": "A deep learning multi-attention Bi-GRU framework for kcat prediction with segmentation-based insights",
+      "date": "2026-09-01",
+      "year": "2026",
+      "authors": [
+        "Priyanka",
+        "Ramesh Chandra",
+        "Md Shah Fahad",
+        "Raushan Oraon",
+        "Ashish Ranjan"
+      ],
+      "venue": "Enzyme and Microbial Technology",
+      "doi": "10.1016/j.enzmictec.2026.110915",
+      "url": "https://doi.org/10.1016/j.enzmictec.2026.110915",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Deep learning",
+        "Predict Kinetic",
+        "Protein engineering",
+        "Enzyme catalysis",
+        "Enzyme-substrate interactions",
+        "Metabolic pathways",
+        "prediction",
+        "Sequence-based features"
+      ]
+    },
+    {
+      "id": "zotero-swc4wd9s",
+      "zoteroKey": "SWC4WD9S",
+      "itemType": "journalArticle",
+      "title": "A geometric foundation model for enzyme retrieval with evolutionary insights",
+      "date": "2026-02",
+      "year": "2026",
+      "authors": [
+        "Yong Liu",
+        "Chenqing Hua",
+        "Menglong Xu",
+        "Tao Zeng",
+        "Jiahua Rao",
+        "Zhongyue Zhang",
+        "Ruibo Wu",
+        "Jing-Ke Weng",
+        "Connor W. Coley",
+        "Shuangjia Zheng"
+      ],
+      "venue": "Nature Catalysis",
+      "doi": "10.1038/s41929-026-01478-y",
+      "url": "https://doi.org/10.1038/s41929-026-01478-y",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Enzymes",
+        "Machine learning",
+        "Bioinformatics",
+        "Protein function predictions",
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-uuhkj997",
+      "zoteroKey": "UUHKJ997",
+      "itemType": "journalArticle",
+      "title": "A Multimodal Ensemble Framework for Optimal Mutant Prediction and Computational Enzyme Engineering",
+      "date": "2026",
+      "year": "2026",
+      "authors": [
+        "Ding Luo",
+        "Huining Ji",
+        "Baodong Hu",
+        "Jinxing Cai",
+        "Kaiqi Wen",
+        "Xiaoyang Qu",
+        "Mingfeng Cao",
+        "Xinrui Zhao",
+        "Binju Wang"
+      ],
+      "venue": "Angewandte Chemie International Edition",
+      "doi": "10.1002/anie.202521396",
+      "url": "https://doi.org/10.1002/anie.202521396",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "Biocatalysis",
+        "Computational design",
+        "Directed evolution",
+        "Enzyme engineering",
+        "Mutation prediction",
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-qdepdgdv",
+      "zoteroKey": "QDEPDGDV",
+      "itemType": "journalArticle",
+      "title": "A trimodal protein language model enables advanced protein searches",
+      "date": "2026-08",
+      "year": "2026",
+      "authors": [
+        "Jin Su",
+        "Yan He",
+        "Shiyang You",
+        "Shiyu Jiang",
+        "Xibin Zhou",
+        "Xuting Zhang",
+        "Yuxuan Wang",
+        "Xining Su",
+        "Igor Tolstoy",
+        "Xing Chang",
+        "Hongyuan Lu",
+        "Fajie Yuan"
+      ],
+      "venue": "Nature Biotechnology",
+      "doi": "10.1038/s41587-025-02836-0",
+      "url": "https://doi.org/10.1038/s41587-025-02836-0",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "Bioinformatics",
+        "LLM",
+        "Protein databases",
+        "Genetic engineering",
+        "Molecular evolution",
+        "Sequence annotation"
+      ]
+    },
+    {
+      "id": "zotero-246in4kl",
+      "zoteroKey": "246IN4KL",
+      "itemType": "journalArticle",
+      "title": "Accurate enzyme specificity constant prediction with iESC",
+      "date": "2026-04-01",
+      "year": "2026",
+      "authors": [
+        "Yu Zhang",
+        "Li-Hua Liu",
+        "Shuqi Wang",
+        "Ao Jiang"
+      ],
+      "venue": "Bioresource Technology",
+      "doi": "10.1016/j.biortech.2026.134067",
+      "url": "https://doi.org/10.1016/j.biortech.2026.134067",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Deep learning",
+        "Deep mutational scanning",
+        "Enzyme specificity constants",
+        "Feature extraction",
+        "High-throughput screening",
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-ig7vxe42",
+      "zoteroKey": "IG7VXE42",
+      "itemType": "journalArticle",
+      "title": "AI-redesigned starting points and outcomes enhance protein evolution",
+      "date": "2026-07-22",
+      "year": "2026",
+      "authors": [
+        "Nicholas A. Krasnow",
+        "Joy A. Xu",
+        "Emily Zhang",
+        "Gandhar K. Mahadeshwar",
+        "Y. Allen Tao",
+        "Julia McCreary",
+        "Colin F. Hemez",
+        "Logan E. Brown",
+        "Wei Jiang",
+        "David R. Liu"
+      ],
+      "venue": "Nature",
+      "doi": "10.1038/s41586-026-10820-0",
+      "url": "https://doi.org/10.1038/s41586-026-10820-0",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "Protein design",
+        "DE",
+        "Molecular engineering"
+      ]
+    },
+    {
+      "id": "zotero-2mgn95qp",
+      "zoteroKey": "2MGN95QP",
+      "itemType": "journalArticle",
+      "title": "An enzyme-specific protein language model for catalytic property prediction",
+      "date": "2026-07-17",
+      "year": "2026",
+      "authors": [
+        "Chong Wang",
+        "Mengyao Li",
+        "Shaolei Geng",
+        "Weidong Li",
+        "Xuezhi Zhou",
+        "Yu Guang Wang",
+        "Yi Yu",
+        "Tianyun Wang",
+        "Yiqing Shen"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-026-75283-3",
+      "url": "https://doi.org/10.1038/s41467-026-75283-3",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "Machine learning",
+        "Computational models",
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-pzua4sh2",
+      "zoteroKey": "PZUA4SH2",
+      "itemType": "journalArticle",
+      "title": "Artificial Intelligence Platform EnzySFC for Enzyme Screening and Functional Conversion: Completely Redirecting Nitrilase to Nitrile Hydratase Function",
+      "date": "2026-02-18",
+      "year": "2026",
+      "authors": [
+        "Shuiqin Jiang",
+        "Zhelin Zheng",
+        "Hua Dong",
+        "Siwei Zhang",
+        "Qi Tong",
+        "Dong Yi"
+      ],
+      "venue": "Journal of Agricultural and Food Chemistry",
+      "doi": "10.1021/acs.jafc.5c14148",
+      "url": "https://doi.org/10.1021/acs.jafc.5c14148",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-meug4ecq",
+      "zoteroKey": "MEUG4ECQ",
+      "itemType": "journalArticle",
+      "title": "Atom-level enzyme active site scaffolding using RFdiffusion2",
+      "date": "2026-01",
+      "year": "2026",
+      "authors": [
+        "Woody Ahern",
+        "Jason Yim",
+        "Doug Tischer",
+        "Saman Salike",
+        "Seth M. Woodbury",
+        "Donghyo Kim",
+        "Indrek Kalvet",
+        "Yakov Kipnis",
+        "Brian Coventry",
+        "Han Raut Altae-Tran",
+        "Magnus S. Bauer",
+        "Regina Barzilay",
+        "Tommi S. Jaakkola",
+        "Rohith Krishna",
+        "David Baker"
+      ],
+      "venue": "Nature Methods",
+      "doi": "10.1038/s41592-025-02975-x",
+      "url": "https://doi.org/10.1038/s41592-025-02975-x",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Enzymes",
+        "Protein design",
+        "Denovo"
+      ]
+    },
+    {
+      "id": "zotero-ntkupbt7",
+      "zoteroKey": "NTKUPBT7",
+      "itemType": "journalArticle",
+      "title": "CACLENS: A Multitask Deep Learning System for Enzyme Discovery",
+      "date": "2026",
+      "year": "2026",
+      "authors": [
+        "Xilong Yi",
+        "Yingzhu Tan",
+        "Huikang Lin",
+        "Guoqing Zhang",
+        "Ye Tian",
+        "Aibo Wu"
+      ],
+      "venue": "Advanced Science",
+      "doi": "10.1002/advs.202518063",
+      "url": "https://doi.org/10.1002/advs.202518063",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-2yq4kkey",
+      "zoteroKey": "2YQ4KKEY",
+      "itemType": "preprint",
+      "title": "CatESO: Differentiable Enzyme Sequence Optimization Guided by Substrate-Aware kcat Prediction",
+      "date": "2026-07-06",
+      "year": "2026",
+      "authors": [
+        "Zhenjia Gan",
+        "Yuzhi Xu",
+        "Junde Xu",
+        "Zhihao Wu",
+        "Juping Huang",
+        "Jiabin Yin",
+        "Guangyong Chen",
+        "John Z. H. Zhang"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.07.04.736506",
+      "url": "https://doi.org/10.64898/2026.07.04.736506",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-zymyl7cg",
+      "zoteroKey": "ZYMYL7CG",
+      "itemType": "journalArticle",
+      "title": "Compressing the collective knowledge of ESM into a single protein language model",
+      "date": "2026-04",
+      "year": "2026",
+      "authors": [
+        "Tuan Dinh",
+        "Seon-Kyeong Jang",
+        "Noah Zaitlen",
+        "Vasilis Ntranos"
+      ],
+      "venue": "Nature Methods",
+      "doi": "10.1038/s41592-026-03050-9",
+      "url": "https://doi.org/10.1038/s41592-026-03050-9",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "Machine learning",
+        "Computational models",
+        "Protein function predictions",
+        "LLM",
+        "Genetics"
+      ]
+    },
+    {
+      "id": "zotero-g4zyjful",
+      "zoteroKey": "G4ZYJFUL",
+      "itemType": "journalArticle",
+      "title": "Computational design of metallohydrolases",
+      "date": "2026-01",
+      "year": "2026",
+      "authors": [
+        "Donghyo Kim",
+        "Seth M. Woodbury",
+        "Woody Ahern",
+        "Doug Tischer",
+        "Alex Kang",
+        "Emily Joyce",
+        "Asim K. Bera",
+        "Nikita Hanikel",
+        "Saman Salike",
+        "Rohith Krishna",
+        "Jason Yim",
+        "Samuel J. Pellock",
+        "Anna Lauko",
+        "Indrek Kalvet",
+        "Donald Hilvert",
+        "David Baker"
+      ],
+      "venue": "Nature",
+      "doi": "10.1038/s41586-025-09746-w",
+      "url": "https://doi.org/10.1038/s41586-025-09746-w",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Protein design",
+        "Hydrolases",
+        "Denovo"
+      ]
+    },
+    {
+      "id": "zotero-2hgmpm7m",
+      "zoteroKey": "2HGMPM7M",
+      "itemType": "journalArticle",
+      "title": "Computational enzyme design by catalytic motif scaffolding",
+      "date": "2026-01",
+      "year": "2026",
+      "authors": [
+        "Markus Braun",
+        "Adrian Tripp",
+        "Morakot Chakatok",
+        "Sigrid Kaltenbrunner",
+        "Celina Fischer",
+        "David Stoll",
+        "Aleksandar Bijelic",
+        "Wael Elaily",
+        "Massimo G. Totaro",
+        "Melanie Moser",
+        "Shlomo Y. Hoch",
+        "Horst Lechner",
+        "Federico Rossi",
+        "Matteo Aleotti",
+        "Mélanie Hall",
+        "Gustav Oberdorfer"
+      ],
+      "venue": "Nature",
+      "doi": "10.1038/s41586-025-09747-9",
+      "url": "https://doi.org/10.1038/s41586-025-09747-9",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Enzymes",
+        "Biocatalysis",
+        "Protein design",
+        "Denovo"
+      ]
+    },
+    {
+      "id": "zotero-iyubndi2",
+      "zoteroKey": "IYUBNDI2",
+      "itemType": "journalArticle",
+      "title": "Customizing the structure of minimal TIM barrels to craft efficient de novo enzymes",
+      "date": "2026-06-15",
+      "year": "2026",
+      "authors": [
+        "Julian Beck",
+        "Benjamin J. Smith",
+        "Mark Kriegel",
+        "Niayesh Zarifi",
+        "Emily Freund",
+        "Ahana G. Harsha",
+        "Jan Hartmann",
+        "Roberto A. Chica",
+        "Birte Höcker"
+      ],
+      "venue": "Nature Chemical Biology",
+      "doi": "10.1038/s41589-026-02250-w",
+      "url": "https://doi.org/10.1038/s41589-026-02250-w",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Enzymes",
+        "Protein design",
+        "Denovo"
+      ]
+    },
+    {
+      "id": "zotero-vituslb5",
+      "zoteroKey": "VITUSLB5",
+      "itemType": "journalArticle",
+      "title": "Deep Learning-Driven Discovery and Engineering of an Efficient PETase for Depolymerization and Detoxification of PET Microplastics Under Physiological Conditions",
+      "date": "2026",
+      "year": "2026",
+      "authors": [
+        "Yuxuan Wang",
+        "Shijie He",
+        "Yuheng Chang",
+        "Sheng Mao",
+        "Jianan Canal Li",
+        "Binbin Chen",
+        "Hongxun Gao",
+        "Mingchun Xu",
+        "Chenxu Liu",
+        "Yajie Wang"
+      ],
+      "venue": "Advanced Science",
+      "doi": "10.1002/advs.77163",
+      "url": "https://doi.org/10.1002/advs.77163",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery",
+        "enzyme engineering",
+        "human health",
+        "machine learning",
+        "nanoplastics",
+        "PETase",
+        "synthetic biology"
+      ]
+    },
+    {
+      "id": "zotero-x3ntbcab",
+      "zoteroKey": "X3NTBCAB",
+      "itemType": "preprint",
+      "title": "Differences between protein fitness models can be used to design variants of altered specificity",
+      "date": "2026-06-14",
+      "year": "2026",
+      "authors": [
+        "Samuel P. Berry",
+        "Rachelle Gaudet",
+        "Debora S. Marks"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.06.10.731299",
+      "url": "https://doi.org/10.64898/2026.06.10.731299",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-fc5cssaa",
+      "zoteroKey": "FC5CSSAA",
+      "itemType": "journalArticle",
+      "title": "Enhancing kcat prediction through residue-aware attention mechanism and pre-trained representations",
+      "date": "2026-01-22",
+      "year": "2026",
+      "authors": [
+        "Yunxiang Cai",
+        "Fengya Ge",
+        "Chuanlei Zhang",
+        "Hao Chen",
+        "Xuan Qi",
+        "Xiaoping Liao",
+        "Lin Wang"
+      ],
+      "venue": "Communications Biology",
+      "doi": "10.1038/s42003-026-09551-9",
+      "url": "https://doi.org/10.1038/s42003-026-09551-9",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-ulz86z2w",
+      "zoteroKey": "ULZ86Z2W",
+      "itemType": "preprint",
+      "title": "EnzCast: Prediction of Patient-Specific Enzymatic Kinetics thrugh Multi-Modal Deep Learning and Isoform-Resolved Bayesian Inference based on Single-Cell Transcriptomics",
+      "date": "2026-04-30",
+      "year": "2026",
+      "authors": [
+        "Xuechen Mu",
+        "Yan Yang",
+        "Qingyu Wang",
+        "Zimin Chen",
+        "Bizhe Luo",
+        "Zhenyu Huang",
+        "Xinyi Lin",
+        "Long Xu",
+        "Xuan Li",
+        "Yinwei Qu",
+        "Jun Xiao",
+        "Zhihang Wang",
+        "Bocheng Shi",
+        "Qi Ou",
+        "Bowen Yao",
+        "Jing Yan",
+        "Yangmu Zhuang",
+        "Ye Zhang",
+        "Rui Shi",
+        "Ying Xu"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.04.28.721430",
+      "url": "https://doi.org/10.64898/2026.04.28.721430",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-f3ke7dqs",
+      "zoteroKey": "F3KE7DQS",
+      "itemType": "journalArticle",
+      "title": "ENZYME-UNIFIED: LEARNING HOLISTIC REPRESENTATIONS OF ENZYME FUNCTION WITH A HYBRID INTERACTION MODEL",
+      "date": "2026",
+      "year": "2026",
+      "authors": [],
+      "venue": "",
+      "doi": "",
+      "url": "",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-kudnzpvx",
+      "zoteroKey": "KUDNZPVX",
+      "itemType": "journalArticle",
+      "title": "EnzymeHunter: Achieving fine-grained enzyme function prediction with a hierarchically aware contrastive learning framework",
+      "date": "2026-05-28",
+      "year": "2026",
+      "authors": [
+        "Guoxin Cao",
+        "Jian Ouyang",
+        "Xiangyi Xiong",
+        "Changle Liu",
+        "Yi Zhang",
+        "Siqi Yang",
+        "Tieliu Shi",
+        "Jun Wu"
+      ],
+      "venue": "Patterns",
+      "doi": "10.1016/j.patter.2026.101567",
+      "url": "https://doi.org/10.1016/j.patter.2026.101567",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "deep learning",
+        "protein language model",
+        "Discovery",
+        "contrastive learning",
+        "enzyme function prediction",
+        "hierarchical classification"
+      ]
+    },
+    {
+      "id": "zotero-ssjtvkze",
+      "zoteroKey": "SSJTVKZE",
+      "itemType": "preprint",
+      "title": "Evolution-inspired multi-objective Bayesian optimization for protein engineering",
+      "date": "2026-08-06",
+      "year": "2026",
+      "authors": [
+        "Kai Wen",
+        "Sirui Wang",
+        "Yixin Sun",
+        "Shiwen Li",
+        "Mengsong Wang",
+        "Haoyang Liu",
+        "Quanshun Li",
+        "Jingxuan Zhu"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.08.05.743005",
+      "url": "https://doi.org/10.64898/2026.08.05.743005",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-tsh3ipna",
+      "zoteroKey": "TSH3IPNA",
+      "itemType": "journalArticle",
+      "title": "Evolutionary profiles for protein fitness prediction",
+      "date": "2026-08-01",
+      "year": "2026",
+      "authors": [
+        "Xiaoran Jiao",
+        "Shengdong Lin",
+        "Jigang Fan",
+        "Zhanming Liang",
+        "Weian Mao",
+        "Hao Chen",
+        "Chunhua Shen"
+      ],
+      "venue": "Bioinformatics",
+      "doi": "10.1093/bioinformatics/btag525",
+      "url": "https://doi.org/10.1093/bioinformatics/btag525",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-t6yqy656",
+      "zoteroKey": "T6YQY656",
+      "itemType": "preprint",
+      "title": "FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications",
+      "date": "2026-02-24",
+      "year": "2026",
+      "authors": [
+        "Kieran Didi",
+        "Sarah Alamdari",
+        "Alex X. Lu",
+        "Bruce Wittmann",
+        "Kadina E. Johnston",
+        "Ava A. Amini",
+        "Ali Madani",
+        "Maya Czeneszew",
+        "Christian Dallago",
+        "Kevin K. Yang"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.02.23.707496",
+      "url": "https://doi.org/10.64898/2026.02.23.707496",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-436xxfn3",
+      "zoteroKey": "436XXFN3",
+      "itemType": "preprint",
+      "title": "Function-guided design of active enzymes",
+      "date": "2026-06-29",
+      "year": "2026",
+      "authors": [
+        "Mingyang Hu",
+        "Lunjie Wu",
+        "Yi Yang",
+        "Feiran Li",
+        "Linchao Zhu"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.06.27.735025",
+      "url": "https://doi.org/10.64898/2026.06.27.735025",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Denovo"
+      ]
+    },
+    {
+      "id": "zotero-jxkdmc2n",
+      "zoteroKey": "JXKDMC2N",
+      "itemType": "preprint",
+      "title": "Functional Locality–Aligned Learning Reveals Structure–Function Causality in Enzyme Kinetics",
+      "date": "2026-03-05",
+      "year": "2026",
+      "authors": [
+        "Hao Zhang",
+        "He Zhang",
+        "Miao Kang",
+        "Kaipeng Zhang",
+        "Tao Yang",
+        "Nanning Zheng"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.03.04.709726",
+      "url": "https://doi.org/10.64898/2026.03.04.709726",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-j9h6et8w",
+      "zoteroKey": "J9H6ET8W",
+      "itemType": "journalArticle",
+      "title": "Generative Artificial Intelligence-Empowered Virtual Evolution of Enzyme with the VERnet Model",
+      "date": "2026-03-30",
+      "year": "2026",
+      "authors": [
+        "Chang Li",
+        "Wenfeng Xu",
+        "Hang Yang",
+        "Yifei Li",
+        "Lili Zhang",
+        "Ziwei Chen",
+        "Shuanghu Wang",
+        "Yibo Xie",
+        "Hexin Li",
+        "Ye Liu",
+        "Yayu Li",
+        "Zebei Lu",
+        "Chunqing Zhang",
+        "Xue Yu",
+        "Dapeng Dai",
+        "Pengfei Jin",
+        "Fei Xiao"
+      ],
+      "venue": "ACS Catalysis",
+      "doi": "10.1021/acscatal.6c00759",
+      "url": "https://doi.org/10.1021/acscatal.6c00759",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-zjk9et7w",
+      "zoteroKey": "ZJK9ET7W",
+      "itemType": "journalArticle",
+      "title": "GotEnzymes2: expanding coverage of enzyme kinetics and thermal properties",
+      "date": "2026-01-06",
+      "year": "2026",
+      "authors": [
+        "Bingxue Lyu",
+        "Ke Wu",
+        "Yuanyuan Huang",
+        "Mihail Anton",
+        "Xiongwen Li",
+        "Sandra Viknander",
+        "Danish Anwer",
+        "Yunfeng Yang",
+        "Diannan Lu",
+        "Eduard Kerkhoven",
+        "Aleksej Zelezniak",
+        "Dan Gao",
+        "Yu Chen",
+        "Feiran Li"
+      ],
+      "venue": "Nucleic Acids Research",
+      "doi": "10.1093/nar/gkaf1053",
+      "url": "https://doi.org/10.1093/nar/gkaf1053",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-w3qky5v2",
+      "zoteroKey": "W3QKY5V2",
+      "itemType": "journalArticle",
+      "title": "KinForm: kinetics-informed feature optimised representation models for enzyme kcat and KM prediction",
+      "date": "2026-03-28",
+      "year": "2026",
+      "authors": [
+        "Saleh Alwer",
+        "Ronan M. T. Fleming"
+      ],
+      "venue": "npj Systems Biology and Applications",
+      "doi": "10.1038/s41540-026-00692-5",
+      "url": "https://doi.org/10.1038/s41540-026-00692-5",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic",
+        "Computational biology and bioinformatics",
+        "Mathematics and computing"
+      ]
+    },
+    {
+      "id": "zotero-7iff8jy6",
+      "zoteroKey": "7IFF8JY6",
+      "itemType": "journalArticle",
+      "title": "KmPred: prediction of Michaelis constants (Km) using an integrative machine learning framework",
+      "date": "2026-01-30",
+      "year": "2026",
+      "authors": [
+        "Meshari Alazmi"
+      ],
+      "venue": "Frontiers in Artificial Intelligence",
+      "doi": "10.3389/frai.2026.1711471",
+      "url": "https://doi.org/10.3389/frai.2026.1711471",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic",
+        "bioinformatics",
+        "drug discovery",
+        "KmPred",
+        "metabolic engineering",
+        "Michaelis–Menten constant (Km)",
+        "molecular descriptors",
+        "protein embeddings",
+        "systems biology"
+      ]
+    },
+    {
+      "id": "zotero-22n5lim5",
+      "zoteroKey": "22N5LIM5",
+      "itemType": "journalArticle",
+      "title": "Language Modeling Materializes a World Model of Protein Biology",
+      "date": "2026",
+      "year": "2026",
+      "authors": [
+        "Salvatore Candido",
+        "Thomas Hayes",
+        "Alexander Derry",
+        "Roshan Rao",
+        "Zeming Lin",
+        "Robert Verkuil",
+        "Bryan Wu",
+        "Jin Sub Lee",
+        "Elise S Bruguera",
+        "Jehan A Keval",
+        "Mykhailo Kopylov",
+        "John E Pak",
+        "Wesley Wu",
+        "Neil Thomas",
+        "Samson Mataraso",
+        "Alvin Hsu",
+        "Ashton C Trotman-Grant",
+        "Kilian Fatras"
+      ],
+      "venue": "",
+      "doi": "",
+      "url": "",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-p4z2blsd",
+      "zoteroKey": "P4Z2BLSD",
+      "itemType": "journalArticle",
+      "title": "Miniaturizing and modifying natural proteins with Raygun",
+      "date": "2026-07-29",
+      "year": "2026",
+      "authors": [
+        "Kapil Devkota",
+        "Daichi Shonai",
+        "Joey Mao",
+        "Young Su Ko",
+        "Wei Wang",
+        "Scott Soderling",
+        "Rohit Singh"
+      ],
+      "venue": "Nature",
+      "doi": "10.1038/s41586-026-10842-8",
+      "url": "https://doi.org/10.1038/s41586-026-10842-8",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Machine learning",
+        "Protein design",
+        "Denovo"
+      ]
+    },
+    {
+      "id": "zotero-m8hqk3ye",
+      "zoteroKey": "M8HQK3YE",
+      "itemType": "preprint",
+      "title": "Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation",
+      "date": "2026-04-23",
+      "year": "2026",
+      "authors": [
+        "Fei Wang",
+        "Xinye Zheng",
+        "Kun Li",
+        "Yanyan Wei",
+        "Yuxin Liu",
+        "Ganpeng Hu",
+        "Tong Bao",
+        "Jingwen Yang"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2603.12845",
+      "url": "https://doi.org/10.48550/arXiv.2603.12845",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic",
+        "Computer Science - Computer Vision and Pattern Recognition"
+      ]
+    },
+    {
+      "id": "zotero-9j4e8bgh",
+      "zoteroKey": "9J4E8BGH",
+      "itemType": "journalArticle",
+      "title": "Property guidance for protein sequence generative models with ProteinGuide",
+      "date": "2026-07-29",
+      "year": "2026",
+      "authors": [
+        "Junhao Xiong",
+        "Ishan Gaur",
+        "Maria Lukarska",
+        "Hunter Nisonoff",
+        "Luke M. Oltrogge",
+        "David F. Savage",
+        "Jennifer Listgarten"
+      ],
+      "venue": "Nature Biotechnology",
+      "doi": "10.1038/s41587-026-03207-z",
+      "url": "https://doi.org/10.1038/s41587-026-03207-z",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Machine learning",
+        "Protein design",
+        "Denovo"
+      ]
+    },
+    {
+      "id": "zotero-whtna4ss",
+      "zoteroKey": "WHTNA4SS",
+      "itemType": "preprint",
+      "title": "ProtGPT3: an Open-source family of Promptable and Aligned Protein Language Models",
+      "date": "2026-06-08",
+      "year": "2026",
+      "authors": [
+        "Michele Garibbo",
+        "Gerard Boxo Corominas",
+        "Filippo Stocco",
+        "Ramiro Illanes Vicioso",
+        "Lasse Middendorf",
+        "Noelia Ferruz"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.06.04.730041",
+      "url": "https://doi.org/10.64898/2026.06.04.730041",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-xvll6qcb",
+      "zoteroKey": "XVLL6QCB",
+      "itemType": "journalArticle",
+      "title": "Pseudodata-Guided Invariant Representation Learning Boosts the Out-of-Distribution Generalization in Enzymatic Kinetic Parameter Prediction",
+      "date": "2026-05-11",
+      "year": "2026",
+      "authors": [
+        "Haomin Wu",
+        "Zhiwei Nie",
+        "Hongyu Zhang",
+        "Zhixiang Ren"
+      ],
+      "venue": "Journal of Chemical Information and Modeling",
+      "doi": "10.1021/acs.jcim.5c03204",
+      "url": "https://doi.org/10.1021/acs.jcim.5c03204",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-zru4v3a8",
+      "zoteroKey": "ZRU4V3A8",
+      "itemType": "journalArticle",
+      "title": "Rank-guided learning accelerates automated enzyme engineering",
+      "date": "2026-08-03",
+      "year": "2026",
+      "authors": [
+        "Jingyi Xu",
+        "Yan Zheng",
+        "Rajamanikandan Sundarraj",
+        "Kenneth Woycechowsky",
+        "Zhiguang Yuchi",
+        "Yingjin Yuan"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-026-76264-2",
+      "url": "https://doi.org/10.1038/s41467-026-76264-2",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "Synthetic biology",
+        "Protein function predictions",
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-kmtmb22g",
+      "zoteroKey": "KMTMB22G",
+      "itemType": "journalArticle",
+      "title": "Rapid directed evolution guided by protein language models and epistatic interactions",
+      "date": "2026-02-19",
+      "year": "2026",
+      "authors": [
+        "Vincent Q. Tran",
+        "Matthew Nemeth",
+        "Liam J. Bartie",
+        "Sita S. Chandrasekaran",
+        "Alison Fanton",
+        "Hyungseok C. Moon",
+        "Brian L. Hie",
+        "Silvana Konermann",
+        "Patrick D. Hsu"
+      ],
+      "venue": "Science",
+      "doi": "10.1126/science.aea1820",
+      "url": "https://doi.org/10.1126/science.aea1820",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-3sm9wdna",
+      "zoteroKey": "3SM9WDNA",
+      "itemType": "preprint",
+      "title": "Reaction-Conditioned Enzyme Discovery with Multimodal Deep Learning",
+      "date": "2026-03-10",
+      "year": "2026",
+      "authors": [
+        "Ziyi Zhou",
+        "Yutong Hu",
+        "Yuanzhen Zhang",
+        "Xinnan Fu",
+        "Runye Huang",
+        "Bozitao Zhong",
+        "Xiaoran Cheng",
+        "Jin Huang",
+        "Qin Xu",
+        "Shuangjun Lin",
+        "Linquan Bai",
+        "Liang Hong",
+        "Pan Tan"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.03.09.710689",
+      "url": "https://doi.org/10.64898/2026.03.09.710689",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-vjh95vki",
+      "zoteroKey": "VJH95VKI",
+      "itemType": "journalArticle",
+      "title": "Robust enzyme kinetics prediction through pairwise relative learning",
+      "date": "2026/05/20",
+      "year": "2026",
+      "authors": [
+        "Xiongwen Li",
+        "Zhengkai Li",
+        "Jiawei Zou",
+        "Wenjie Chen",
+        "Shujia Liu",
+        "Ke Wu",
+        "Jiahao Luo",
+        "Yu Chen",
+        "Feiran Li"
+      ],
+      "venue": "",
+      "doi": "10.65215/LTSpreprints.2026.05.19.000247",
+      "url": "https://doi.org/10.65215/LTSpreprints.2026.05.19.000247",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-bs8d5bdg",
+      "zoteroKey": "BS8D5BDG",
+      "itemType": "journalArticle",
+      "title": "Understanding language model scaling for protein fitness prediction",
+      "date": "2026-07-13",
+      "year": "2026",
+      "authors": [
+        "Chao Hou",
+        "Di Liu",
+        "Aziz Zafar",
+        "Yufeng Shen"
+      ],
+      "venue": "Nature Computational Science",
+      "doi": "10.1038/s43588-026-01010-z",
+      "url": "https://doi.org/10.1038/s43588-026-01010-z",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM",
+        "Computational biology and bioinformatics",
+        "Mutation"
+      ]
+    },
+    {
+      "id": "zotero-sajihgqb",
+      "zoteroKey": "SAJIHGQB",
+      "itemType": "journalArticle",
+      "title": "UniKineG: Unified-Coordinate Geometric Graphs Enable Robust Enzyme Kinetic Prediction",
+      "date": "2026/1",
+      "year": "2026",
+      "authors": [
+        "Xueyu Wang",
+        "Peiqin Shi",
+        "Jian Mao",
+        "Kai Liu",
+        "Shuangping Liu"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "doi": "10.3390/ijms27041731",
+      "url": "https://doi.org/10.3390/ijms27041731",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "deep learning",
+        "Predict Kinetic",
+        "graph convolutional networks",
+        "heterogeneous graph",
+        "molecular docking"
+      ]
+    },
+    {
+      "id": "zotero-65liwew6",
+      "zoteroKey": "65LIWEW6",
+      "itemType": "journalArticle",
+      "title": "A Deep Learning-Based Approach for Predicting Michaelis Constants from Enzymatic Reactions",
+      "date": "2025/1",
+      "year": "2025",
+      "authors": [
+        "Yulong Li",
+        "Kai Wang"
+      ],
+      "venue": "Applied Sciences",
+      "doi": "10.3390/app15074017",
+      "url": "https://doi.org/10.3390/app15074017",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "deep learning",
+        "Predict Kinetic",
+        "bioinformatics",
+        "enzymatic reaction",
+        "Michaelis constant",
+        "pre-trained language model"
+      ]
+    },
+    {
+      "id": "zotero-i4welyeb",
+      "zoteroKey": "I4WELYEB",
+      "itemType": "journalArticle",
+      "title": "A generalized platform for artificial intelligence-powered autonomous enzyme engineering",
+      "date": "2025-07-01",
+      "year": "2025",
+      "authors": [
+        "Nilmani Singh",
+        "Stephan Lane",
+        "Tianhao Yu",
+        "Jingxia Lu",
+        "Adrianna Ramos",
+        "Haiyang Cui",
+        "Huimin Zhao"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-025-61209-y",
+      "url": "https://doi.org/10.1038/s41467-025-61209-y",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "Machine learning",
+        "Biocatalysis",
+        "Protein design",
+        "Synthetic biology",
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-777bn65d",
+      "zoteroKey": "777BN65D",
+      "itemType": "journalArticle",
+      "title": "A multimodal deep learning framework for enzyme turnover prediction with missing modality",
+      "date": "2025-07-01",
+      "year": "2025",
+      "authors": [
+        "Xin Sun",
+        "Yu Guang Wang",
+        "Yiqing Shen"
+      ],
+      "venue": "Computers in Biology and Medicine",
+      "doi": "10.1016/j.compbiomed.2025.110348",
+      "url": "https://doi.org/10.1016/j.compbiomed.2025.110348",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic",
+        "Multimodal learning",
+        "Protein engineering",
+        "Turnover number"
+      ]
+    },
+    {
+      "id": "zotero-m3e3ijgl",
+      "zoteroKey": "M3E3IJGL",
+      "itemType": "journalArticle",
+      "title": "A novel interpretability framework for enzyme turnover number prediction boosted by pre-trained enzyme embeddings and adaptive gate network",
+      "date": "2025-05-01",
+      "year": "2025",
+      "authors": [
+        "Bing-Xue Du",
+        "Haoyang Yu",
+        "Bei Zhu",
+        "Yahui Long",
+        "Min Wu",
+        "Jian-Yu Shi"
+      ],
+      "venue": "Methods",
+      "doi": "10.1016/j.ymeth.2025.02.010",
+      "url": "https://doi.org/10.1016/j.ymeth.2025.02.010",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic",
+        "Enzyme turnover number",
+        "Adaptive gate network",
+        "Enzyme embeddings",
+        "Graph Transformer",
+        "Interpretability"
+      ]
+    },
+    {
+      "id": "zotero-65rejt4u",
+      "zoteroKey": "65REJT4U",
+      "itemType": "journalArticle",
+      "title": "Atomic context-conditioned protein sequence design using LigandMPNN",
+      "date": "2025-04",
+      "year": "2025",
+      "authors": [
+        "Justas Dauparas",
+        "Gyu Rie Lee",
+        "Robert Pecoraro",
+        "Linna An",
+        "Ivan Anishchenko",
+        "Cameron Glasscock",
+        "David Baker"
+      ],
+      "venue": "Nature Methods",
+      "doi": "10.1038/s41592-025-02626-1",
+      "url": "https://doi.org/10.1038/s41592-025-02626-1",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Protein design",
+        "Denovo",
+        "Biophysical chemistry",
+        "Computational platforms and environments",
+        "Proteins"
+      ]
+    },
+    {
+      "id": "zotero-4rdhu888",
+      "zoteroKey": "4RDHU888",
+      "itemType": "preprint",
+      "title": "Catalytic pocket-informed augmentation of enzyme kinetic parameters prediction via hierarchical graph learning",
+      "date": "2025-05-23",
+      "year": "2025",
+      "authors": [
+        "Ding Luo",
+        "Xiaoyang Qu",
+        "Binju Wang"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2025.05.18.654694",
+      "url": "https://doi.org/10.1101/2025.05.18.654694",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-pb44je5d",
+      "zoteroKey": "PB44JE5D",
+      "itemType": "journalArticle",
+      "title": "CatPred: a comprehensive framework for deep learning in vitro enzyme kinetic parameters",
+      "date": "2025-02-28",
+      "year": "2025",
+      "authors": [
+        "Veda Sheersh Boorla",
+        "Costas D. Maranas"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-025-57215-9",
+      "url": "https://doi.org/10.1038/s41467-025-57215-9",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-z95gqtbb",
+      "zoteroKey": "Z95GQTBB",
+      "itemType": "journalArticle",
+      "title": "Complete computational design of high-efficiency Kemp elimination enzymes",
+      "date": "2025-07",
+      "year": "2025",
+      "authors": [
+        "Dina Listov",
+        "Eva Vos",
+        "Gyula Hoffka",
+        "Shlomo Yakir Hoch",
+        "Andrej Berg",
+        "Shelly Hamer-Rogotner",
+        "Orly Dym",
+        "Shina Caroline Lynn Kamerlin",
+        "Sarel J. Fleishman"
+      ],
+      "venue": "Nature",
+      "doi": "10.1038/s41586-025-09136-2",
+      "url": "https://doi.org/10.1038/s41586-025-09136-2",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Biocatalysis",
+        "Protein design",
+        "Denovo",
+        "Structural biology",
+        "Enzyme mechanisms"
+      ]
+    },
+    {
+      "id": "zotero-ags62bn7",
+      "zoteroKey": "AGS62BN7",
+      "itemType": "journalArticle",
+      "title": "Computational design of serine hydrolases",
+      "date": "2025-02-13",
+      "year": "2025",
+      "authors": [
+        "Anna Lauko",
+        "Samuel J. Pellock",
+        "Kiera H. Sumida",
+        "Ivan Anishchenko",
+        "David Juergens",
+        "Woody Ahern",
+        "Jihun Jeung",
+        "Alexander F. Shida",
+        "Andrew Hunt",
+        "Indrek Kalvet",
+        "Christoffer Norn",
+        "Ian R. Humphreys",
+        "Cooper Jamieson",
+        "Rohith Krishna",
+        "Yakov Kipnis",
+        "Alex Kang",
+        "Evans Brackenbrough",
+        "Asim K. Bera",
+        "Banumathi Sankaran",
+        "K. N. Houk",
+        "David Baker"
+      ],
+      "venue": "Science",
+      "doi": "10.1126/science.adu2454",
+      "url": "https://doi.org/10.1126/science.adu2454",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Denovo"
+      ]
+    },
+    {
+      "id": "zotero-687ikqfj",
+      "zoteroKey": "687IKQFJ",
+      "itemType": "preprint",
+      "title": "CPI-Pred: A deep learning framework for predicting functional parameters of compound-protein interactions",
+      "date": "2025-01-21",
+      "year": "2025",
+      "authors": [
+        "Zhiqing Xu",
+        "Rana Ahmed Barghout",
+        "Jinghao Wu",
+        "Dhruv Garg",
+        "Yun S. Song",
+        "Radhakrishnan Mahadevan"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2025.01.16.633372",
+      "url": "https://doi.org/10.1101/2025.01.16.633372",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-ydutvg5t",
+      "zoteroKey": "YDUTVG5T",
+      "itemType": "journalArticle",
+      "title": "DEKP: a deep learning model for enzyme kinetic parameter prediction based on pretrained models and graph neural networks",
+      "date": "2025-03-01",
+      "year": "2025",
+      "authors": [
+        "Yizhen Wang",
+        "Li Cheng",
+        "Yanyun Zhang",
+        "Yujia Cao",
+        "Daniyal Alghazzawi"
+      ],
+      "venue": "Briefings in Bioinformatics",
+      "doi": "10.1093/bib/bbaf187",
+      "url": "https://doi.org/10.1093/bib/bbaf187",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-at75qtzj",
+      "zoteroKey": "AT75QTZJ",
+      "itemType": "preprint",
+      "title": "EnzyCLIP: A Cross-Attention Dual Encoder Framework with Contrastive Learning for Predicting Enzyme Kinetic Constants",
+      "date": "2025-11-29",
+      "year": "2025",
+      "authors": [
+        "Anas Aziz Khan",
+        "Md Shah Fahad",
+        "Priyanka",
+        "Ramesh Chandra",
+        "Guransh Singh"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2512.00379",
+      "url": "https://doi.org/10.48550/arXiv.2512.00379",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Computer Science - Machine Learning",
+        "Quantitative Biology - Biomolecules",
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-7wjhbs9v",
+      "zoteroKey": "7WJHBS9V",
+      "itemType": "journalArticle",
+      "title": "Enzyme specificity prediction using cross-attention graph neural networks",
+      "date": "2025-11",
+      "year": "2025",
+      "authors": [
+        "Haiyang Cui",
+        "Yufeng Su",
+        "Tanner J. Dean",
+        "Tianhao Yu",
+        "Zhengyi Zhang",
+        "Jian Peng",
+        "Diwakar Shukla",
+        "Huimin Zhao"
+      ],
+      "venue": "Nature",
+      "doi": "10.1038/s41586-025-09697-2",
+      "url": "https://doi.org/10.1038/s41586-025-09697-2",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-ydbscjxz",
+      "zoteroKey": "YDBSCJXZ",
+      "itemType": "journalArticle",
+      "title": "ESM-Ezy: a deep learning strategy for the mining of novel multicopper oxidases with superior properties",
+      "date": "2025-04-06",
+      "year": "2025",
+      "authors": [
+        "Hui Qian",
+        "Yuxuan Wang",
+        "Xibin Zhou",
+        "Tao Gu",
+        "Hui Wang",
+        "Hao Lyu",
+        "Zhikai Li",
+        "Xiuxu Li",
+        "Huan Zhou",
+        "Chengchen Guo",
+        "Fajie Yuan",
+        "Yajie Wang"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-025-58521-y",
+      "url": "https://doi.org/10.1038/s41467-025-58521-y",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Machine learning",
+        "Biocatalysis",
+        "Computational models",
+        "Environmental biotechnology",
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-6jy9dwss",
+      "zoteroKey": "6JY9DWSS",
+      "itemType": "journalArticle",
+      "title": "From high-throughput evaluation to wet-lab studies: advancing mutation effect prediction with a retrieval-enhanced model",
+      "date": "2025-07-01",
+      "year": "2025",
+      "authors": [
+        "Yang Tan",
+        "Ruilin Wang",
+        "Banghao Wu",
+        "Liang Hong",
+        "Bingxin Zhou"
+      ],
+      "venue": "Bioinformatics",
+      "doi": "10.1093/bioinformatics/btaf189",
+      "url": "https://doi.org/10.1093/bioinformatics/btaf189",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-9xp8sizk",
+      "zoteroKey": "9XP8SIZK",
+      "itemType": "journalArticle",
+      "title": "Glycolysis-compatible urethanases for polyurethane recycling",
+      "date": "2025-10-30",
+      "year": "2025",
+      "authors": [
+        "Yanchun Chen",
+        "Jinyuan Sun",
+        "Kelun Shi",
+        "Tong Zhu",
+        "Ruifeng Li",
+        "Ruiqiao Li",
+        "Xiaomeng Liu",
+        "Xinying Xie",
+        "Chao Ding",
+        "Wen-Chao Geng",
+        "Jinwei Ren",
+        "Wenyu Shi",
+        "Yinglu Cui",
+        "Bian Wu"
+      ],
+      "venue": "Science",
+      "doi": "10.1126/science.adw4487",
+      "url": "https://doi.org/10.1126/science.adw4487",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-7d7lhda6",
+      "zoteroKey": "7D7LHDA6",
+      "itemType": "journalArticle",
+      "title": "Harnessing protein language model for structure-based discovery of highly efficient and robust PET hydrolases",
+      "date": "2025-07-05",
+      "year": "2025",
+      "authors": [
+        "Banghao Wu",
+        "Bozitao Zhong",
+        "Lirong Zheng",
+        "Runye Huang",
+        "Shifeng Jiang",
+        "Mingchen Li",
+        "Liang Hong",
+        "Pan Tan"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-025-61599-z",
+      "url": "https://doi.org/10.1038/s41467-025-61599-z",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Bioinformatics",
+        "Biotechnology",
+        "Hydrolases",
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-8a7bwqsv",
+      "zoteroKey": "8A7BWQSV",
+      "itemType": "journalArticle",
+      "title": "IECata: interpretable bilinear attention network and evidential deep learning improve the catalytic efficiency prediction of enzymes",
+      "date": "2025-05-01",
+      "year": "2025",
+      "authors": [
+        "Jingjing Wang",
+        "Yanpeng Zhao",
+        "Zhijiang Yang",
+        "Ge Yao",
+        "Penggang Han",
+        "Jiajia Liu",
+        "Chang Chen",
+        "Peng Zan",
+        "Xiukun Wan",
+        "Xiaochen Bo",
+        "Hui Jiang"
+      ],
+      "venue": "Briefings in Bioinformatics",
+      "doi": "10.1093/bib/bbaf283",
+      "url": "https://doi.org/10.1093/bib/bbaf283",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-ajvytp6i",
+      "zoteroKey": "AJVYTP6I",
+      "itemType": "preprint",
+      "title": "KcatNet: A Geometric Deep Learning Framework for Genome-Wide Prediction of Enzyme Catalytic Efficiency",
+      "date": "2025-03-17",
+      "year": "2025",
+      "authors": [
+        "Tong Pan",
+        "Xin Cui",
+        "Huan Yee Koh",
+        "Yue Bi",
+        "Xiaoyu Wang",
+        "Yumeng Zhang",
+        "Shantong Hu",
+        "Geoffrey I. Webb",
+        "Lukasz Kurgan",
+        "Guimin Zhang",
+        "Jiangning Song"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2025.03.09.642294",
+      "url": "https://doi.org/10.1101/2025.03.09.642294",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-4navj9br",
+      "zoteroKey": "4NAVJ9BR",
+      "itemType": "preprint",
+      "title": "Multimodal Regression for Enzyme Turnover Rates Prediction",
+      "date": "2025-09-15",
+      "year": "2025",
+      "authors": [
+        "Bozhen Hu",
+        "Cheng Tan",
+        "Siyuan Li",
+        "Jiangbin Zheng",
+        "Sizhe Qiu",
+        "Jun Xia",
+        "Stan Z. Li"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2509.11782",
+      "url": "https://doi.org/10.48550/arXiv.2509.11782",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Computer Science - Machine Learning",
+        "Quantitative Biology - Biomolecules",
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-y3iza8hw",
+      "zoteroKey": "Y3IZA8HW",
+      "itemType": "journalArticle",
+      "title": "NNKcat: deep neural network to predict catalytic constants (Kcat) by integrating protein sequence and substrate structure with enhanced data imbalance handling",
+      "date": "2025-05-01",
+      "year": "2025",
+      "authors": [
+        "Jingchen Zhai",
+        "Xiguang Qi",
+        "Lianjin Cai",
+        "Yue Liu",
+        "Haocheng Tang",
+        "Lei Xie",
+        "Junmei Wang"
+      ],
+      "venue": "Briefings in Bioinformatics",
+      "doi": "10.1093/bib/bbaf212",
+      "url": "https://doi.org/10.1093/bib/bbaf212",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-lvaidaan",
+      "zoteroKey": "LVAIDAAN",
+      "itemType": "preprint",
+      "title": "OmniESI: A unified framework for enzyme-substrate interaction prediction with progressive conditional deep learning",
+      "date": "2025-06-22",
+      "year": "2025",
+      "authors": [
+        "Zhiwei Nie",
+        "Hongyu Zhang",
+        "Hao Jiang",
+        "Yutian Liu",
+        "Xiansong Huang",
+        "Fan Xu",
+        "Jie Fu",
+        "Zhixiang Ren",
+        "Yonghong Tian",
+        "Wen-Bin Zhang",
+        "Jie Chen"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2506.17963",
+      "url": "https://doi.org/10.48550/arXiv.2506.17963",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Quantitative Biology - Biomolecules",
+        "Predict Kinetic",
+        "Computer Science - Artificial Intelligence"
+      ]
+    },
+    {
+      "id": "zotero-akgv9nbk",
+      "zoteroKey": "AKGV9NBK",
+      "itemType": "journalArticle",
+      "title": "PreTKcat: A pre-trained representation learning and machine learning framework for predicting enzyme turnover number",
+      "date": "2025-04-01",
+      "year": "2025",
+      "authors": [
+        "Yunxiang Cai",
+        "Wenjuan Zhang",
+        "Zhuangzhuang Dou",
+        "Chao Wang",
+        "Wenping Yu",
+        "Lin Wang"
+      ],
+      "venue": "Computational Biology and Chemistry",
+      "doi": "10.1016/j.compbiolchem.2024.108327",
+      "url": "https://doi.org/10.1016/j.compbiolchem.2024.108327",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic",
+        "Enzyme turnover number",
+        "Molecular graph",
+        "Representation learning"
+      ]
+    },
+    {
+      "id": "zotero-d9ffcxxk",
+      "zoteroKey": "D9FFCXXK",
+      "itemType": "journalArticle",
+      "title": "Robust enzyme discovery and engineering with deep learning using CataPro",
+      "date": "2025-03-20",
+      "year": "2025",
+      "authors": [
+        "Zechen Wang",
+        "Dongqi Xie",
+        "Dong Wu",
+        "Xiaozhou Luo",
+        "Sheng Wang",
+        "Yangyang Li",
+        "Yanmei Yang",
+        "Weifeng Li",
+        "Liangzhen Zheng"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-025-58038-4",
+      "url": "https://doi.org/10.1038/s41467-025-58038-4",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-x3r87krq",
+      "zoteroKey": "X3R87KRQ",
+      "itemType": "preprint",
+      "title": "Robust Prediction of Enzyme Variant Kinetics with RealKcat",
+      "date": "2025-02-15",
+      "year": "2025",
+      "authors": [
+        "Karuna Anna Sajeevan",
+        "Abraham Osinuga",
+        "Arunraj B",
+        "Sakib Ferdous",
+        "Nabia Shahreen",
+        "Mohammed Sakib Noor",
+        "Shashank Koneru",
+        "Laura Mariana Santos-Correa",
+        "Rahil Salehi",
+        "Niaz Bahar Chowdhury",
+        "Brisa Calderon-Lopez",
+        "Ankur Mali",
+        "Rajib Saha",
+        "Ratul Chowdhury"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2025.02.10.637555",
+      "url": "https://doi.org/10.1101/2025.02.10.637555",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-qwt72h3v",
+      "zoteroKey": "QWT72H3V",
+      "itemType": "preprint",
+      "title": "SAKPE: A Site Attention Kinetic Parameters Prediction Method for Enzyme Engineering",
+      "date": "2025-05-06",
+      "year": "2025",
+      "authors": [
+        "Jia-He Qiu",
+        "Zongying Lin",
+        "Ke-Wei Chen",
+        "Tian-Yu Sun",
+        "Xian Zhang",
+        "Li Yuan",
+        "Yonghong Tian",
+        "Yun-Dong Wu"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2025.04.30.651216",
+      "url": "https://doi.org/10.1101/2025.04.30.651216",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-tzjwd2m7",
+      "zoteroKey": "TZJWD2M7",
+      "itemType": "preprint",
+      "title": "Scaling Unlocks Broader Generation and Deeper Functional Understanding of Proteins",
+      "date": "2025-10-01",
+      "year": "2025",
+      "authors": [
+        "Aadyot Bhatnagar",
+        "Sarthak Jain",
+        "Joel Beazer",
+        "Samuel C. Curran",
+        "Alexander M. Hoffnagle",
+        "Kyle S. Ching",
+        "Michael Martyn",
+        "Stephen Nayfach",
+        "Jeffrey A. Ruffolo",
+        "Ali Madani"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2025.04.15.649055",
+      "url": "https://doi.org/10.1101/2025.04.15.649055",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-4xrcvye9",
+      "zoteroKey": "4XRCVYE9",
+      "itemType": "journalArticle",
+      "title": "Semantical and geometrical protein encoding toward enhanced bioactivity and thermostability",
+      "date": "2025-05-02",
+      "year": "2025",
+      "authors": [
+        "Yang Tan",
+        "Bingxin Zhou",
+        "Lirong Zheng",
+        "Guisheng Fan",
+        "Liang Hong"
+      ],
+      "venue": "eLife",
+      "doi": "10.7554/eLife.98033",
+      "url": "https://doi.org/10.7554/eLife.98033",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "deep learning",
+        "mutation effect prediction",
+        "protein language model",
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-bqszf7tu",
+      "zoteroKey": "BQSZF7TU",
+      "itemType": "journalArticle",
+      "title": "Simulating 500 million years of evolution with a language model",
+      "date": "2025",
+      "year": "2025",
+      "authors": [],
+      "venue": "Science",
+      "doi": "",
+      "url": "https://www.science.org/doi/10.1126/science.ads0018",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-kyxdwmxg",
+      "zoteroKey": "KYXDWMXG",
+      "itemType": "journalArticle",
+      "title": "TCNeKP: A Novel Deep Learning Architecture for Enzyme Catalytic Activity Prediction",
+      "date": "2025-10-27",
+      "year": "2025",
+      "authors": [
+        "Yuanyuan Lei",
+        "Rui Liu",
+        "Hanxi Yu",
+        "Wentao Xu",
+        "Ting Long",
+        "Hu Mei"
+      ],
+      "venue": "Journal of Chemical Information and Modeling",
+      "doi": "10.1021/acs.jcim.5c01830",
+      "url": "https://doi.org/10.1021/acs.jcim.5c01830",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-3ndaajkp",
+      "zoteroKey": "3NDAAJKP",
+      "itemType": "journalArticle",
+      "title": "A multimodal Transformer Network for protein-small molecule interactions enhances predictions of kinase inhibition and enzyme-substrate relationships",
+      "date": "2024年5月20日",
+      "year": "2024",
+      "authors": [
+        "Alexander Kroll",
+        "Sahasra Ranjan",
+        "Martin J. Lercher"
+      ],
+      "venue": "PLOS Computational Biology",
+      "doi": "10.1371/journal.pcbi.1012100",
+      "url": "https://doi.org/10.1371/journal.pcbi.1012100",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Drug interactions",
+        "Enzymes",
+        "Forecasting",
+        "Machine learning",
+        "Protein interaction networks",
+        "Protein interactions",
+        "Protein sequencing",
+        "Small molecules",
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-udpubf4b",
+      "zoteroKey": "UDPUBF4B",
+      "itemType": "journalArticle",
+      "title": "CLIPZyme: Reaction-Conditioned Virtual Screening of Enzymes",
+      "date": "2024-2",
+      "year": "2024",
+      "authors": [
+        "Peter G Mikhael",
+        "Itamar Chinn",
+        "Regina Barzilay"
+      ],
+      "venue": "",
+      "doi": "",
+      "url": "",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-caxmwv6j",
+      "zoteroKey": "CAXMWV6J",
+      "itemType": "preprint",
+      "title": "Conditional language models enable the efficient design of proficient enzymes",
+      "date": "2024-05-05",
+      "year": "2024",
+      "authors": [
+        "Geraldene Munsamy",
+        "Ramiro Illanes-Vicioso",
+        "Silvia Funcillo",
+        "Ioanna T. Nakou",
+        "Sebastian Lindner",
+        "Gavin Ayres",
+        "Lesley S. Sheehan",
+        "Steven Moss",
+        "Ulrich Eckhard",
+        "Philipp Lorenz",
+        "Noelia Ferruz"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2024.05.03.592223",
+      "url": "https://doi.org/10.1101/2024.05.03.592223",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-hbpsyq5j",
+      "zoteroKey": "HBPSYQ5J",
+      "itemType": "journalArticle",
+      "title": "DeepEnzyme: a robust deep learning model for improved enzyme turnover number prediction by utilizing features of protein 3D-structures",
+      "date": "2024-07-25",
+      "year": "2024",
+      "authors": [
+        "Tong Wang",
+        "Guangming Xiang",
+        "Siwei He",
+        "Liyun Su",
+        "Yuguang Wang",
+        "Xuefeng Yan",
+        "Hongzhong Lu"
+      ],
+      "venue": "Briefings in Bioinformatics",
+      "doi": "10.1093/bib/bbae409",
+      "url": "https://doi.org/10.1093/bib/bbae409",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-9ikb7edn",
+      "zoteroKey": "9IKB7EDN",
+      "itemType": "journalArticle",
+      "title": "DLTKcat: deep learning-based prediction of temperature-dependent enzyme turnover rates",
+      "date": "2024-01-01",
+      "year": "2024",
+      "authors": [
+        "Sizhe Qiu",
+        "Simiao Zhao",
+        "Aidong Yang"
+      ],
+      "venue": "Briefings in Bioinformatics",
+      "doi": "10.1093/bib/bbad506",
+      "url": "https://doi.org/10.1093/bib/bbad506",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-seh3vhgy",
+      "zoteroKey": "SEH3VHGY",
+      "itemType": "journalArticle",
+      "title": "EITLEM-Kinetics: A deep-learning framework for kinetic parameter prediction of mutant enzymes",
+      "date": "09/2024",
+      "year": "2024",
+      "authors": [
+        "Xiaowei Shen",
+        "Ziheng Cui",
+        "Jianyu Long",
+        "Shiding Zhang",
+        "Biqiang Chen",
+        "Tianwei Tan"
+      ],
+      "venue": "Chem Catalysis",
+      "doi": "10.1016/j.checat.2024.101094",
+      "url": "https://doi.org/10.1016/j.checat.2024.101094",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-2efz48xe",
+      "zoteroKey": "2EFZ48XE",
+      "itemType": "journalArticle",
+      "title": "Enhancing efficiency of protein language models with minimal wet-lab data through few-shot learning",
+      "date": "2024-07-02",
+      "year": "2024",
+      "authors": [
+        "Ziyi Zhou",
+        "Liang Zhang",
+        "Yuanxi Yu",
+        "Banghao Wu",
+        "Mingchen Li",
+        "Liang Hong",
+        "Pan Tan"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-024-49798-6",
+      "url": "https://doi.org/10.1038/s41467-024-49798-6",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "Machine learning",
+        "Computational models",
+        "Protein function predictions",
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-u67zbkw5",
+      "zoteroKey": "U67ZBKW5",
+      "itemType": "journalArticle",
+      "title": "ENKIE: a package for predicting enzyme kinetic parameter values and their uncertainties",
+      "date": "2024-11-01",
+      "year": "2024",
+      "authors": [
+        "Mattia G Gollub",
+        "Thierry Backes",
+        "Hans-Michael Kaltenbach",
+        "Jörg Stelling"
+      ],
+      "venue": "Bioinformatics",
+      "doi": "10.1093/bioinformatics/btae652",
+      "url": "https://doi.org/10.1093/bioinformatics/btae652",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-7289t7ax",
+      "zoteroKey": "7289T7AX",
+      "itemType": "journalArticle",
+      "title": "GraphKM: machine and deep learning for KM prediction of wildtype and mutant enzymes",
+      "date": "2024-03-28",
+      "year": "2024",
+      "authors": [
+        "Xiao He",
+        "Ming Yan"
+      ],
+      "venue": "BMC Bioinformatics",
+      "doi": "10.1186/s12859-024-05746-1",
+      "url": "https://doi.org/10.1186/s12859-024-05746-1",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Neural networks",
+        "Deep learning",
+        "Predict Kinetic",
+        "Michaelis constant",
+        "Graph neural network",
+        "Tree boosting"
+      ]
+    },
+    {
+      "id": "zotero-jplhwksd",
+      "zoteroKey": "JPLHWKSD",
+      "itemType": "journalArticle",
+      "title": "Improving the prediction of protein stability changes upon mutations by geometric learning and a pre-training strategy",
+      "date": "2024-11",
+      "year": "2024",
+      "authors": [
+        "Yunxin Xu",
+        "Di Liu",
+        "Haipeng Gong"
+      ],
+      "venue": "Nature Computational Science",
+      "doi": "10.1038/s43588-024-00716-2",
+      "url": "https://doi.org/10.1038/s43588-024-00716-2",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "Protein design",
+        "Protein function predictions",
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-uchb8yiz",
+      "zoteroKey": "UCHB8YIZ",
+      "itemType": "journalArticle",
+      "title": "MPEK: a multitask deep learning framework based on pretrained language models for enzymatic reaction kinetic parameters prediction",
+      "date": "2024-09-01",
+      "year": "2024",
+      "authors": [
+        "Jingjing Wang",
+        "Zhijiang Yang",
+        "Chang Chen",
+        "Ge Yao",
+        "Xiukun Wan",
+        "Shaoheng Bao",
+        "Junjie Ding",
+        "Liangliang Wang",
+        "Hui Jiang"
+      ],
+      "venue": "Briefings in Bioinformatics",
+      "doi": "10.1093/bib/bbae387",
+      "url": "https://doi.org/10.1093/bib/bbae387",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-dt4xn2br",
+      "zoteroKey": "DT4XN2BR",
+      "itemType": "preprint",
+      "title": "Multi-Scale Representation Learning for Protein Fitness Prediction",
+      "date": "2024-12-02",
+      "year": "2024",
+      "authors": [
+        "Zuobai Zhang",
+        "Pascal Notin",
+        "Yining Huang",
+        "Aurélie Lozano",
+        "Vijil Chenthamarakshan",
+        "Debora Marks",
+        "Payel Das",
+        "Jian Tang"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2412.01108",
+      "url": "https://doi.org/10.48550/arXiv.2412.01108",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "Computer Science - Machine Learning",
+        "Quantitative Biology - Biomolecules",
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-8u3etjyk",
+      "zoteroKey": "8U3ETJYK",
+      "itemType": "preprint",
+      "title": "ProSST: Protein Language Modeling with Quantized Structure and Disentangled Attention",
+      "date": "2024-05-17",
+      "year": "2024",
+      "authors": [
+        "Mingchen Li",
+        "Pan Tan",
+        "Xinzhu Ma",
+        "Bozitao Zhong",
+        "Huiqun Yu",
+        "Ziyi Zhou",
+        "Wanli Ouyang",
+        "Bingxin Zhou",
+        "Liang Hong",
+        "Yang Tan"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2024.04.15.589672",
+      "url": "https://doi.org/10.1101/2024.04.15.589672",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-3burh7ex",
+      "zoteroKey": "3BURH7EX",
+      "itemType": "journalArticle",
+      "title": "Rapid in silico directed evolution by a protein language model with EVOLVEpro",
+      "date": "2024-11-21",
+      "year": "2024",
+      "authors": [
+        "Kaiyi Jiang",
+        "Zhaoqing Yan",
+        "Matteo Di Bernardo",
+        "Samantha R. Sgrizzi",
+        "Lukas Villiger",
+        "Alisan Kayabolen",
+        "B. J. Kim",
+        "Josephine K. Carscadden",
+        "Masahiro Hiraizumi",
+        "Hiroshi Nishimasu",
+        "Jonathan S. Gootenberg",
+        "Omar O. Abudayyeh"
+      ],
+      "venue": "Science",
+      "doi": "10.1126/science.adr6006",
+      "url": "https://doi.org/10.1126/science.adr6006",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-n2y55jgn",
+      "zoteroKey": "N2Y55JGN",
+      "itemType": "journalArticle",
+      "title": "A general model to predict small molecule substrates of enzymes based on machine and deep learning",
+      "date": "2023-05-15",
+      "year": "2023",
+      "authors": [
+        "Alexander Kroll",
+        "Sahasra Ranjan",
+        "Martin K. M. Engqvist",
+        "Martin J. Lercher"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-023-38347-2",
+      "url": "https://doi.org/10.1038/s41467-023-38347-2",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Enzymes",
+        "Machine learning",
+        "Protein function predictions",
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-f6a7e6uw",
+      "zoteroKey": "F6A7E6UW",
+      "itemType": "journalArticle",
+      "title": "De novo design of luciferases using deep learning",
+      "date": "2023-02",
+      "year": "2023",
+      "authors": [
+        "Andy Hsien-Wei Yeh",
+        "Christoffer Norn",
+        "Yakov Kipnis",
+        "Doug Tischer",
+        "Samuel J. Pellock",
+        "Declan Evans",
+        "Pengchen Ma",
+        "Gyu Rie Lee",
+        "Jason Z. Zhang",
+        "Ivan Anishchenko",
+        "Brian Coventry",
+        "Longxing Cao",
+        "Justas Dauparas",
+        "Samer Halabiya",
+        "Michelle DeWitt",
+        "Lauren Carter",
+        "K. N. Houk",
+        "David Baker"
+      ],
+      "venue": "Nature",
+      "doi": "10.1038/s41586-023-05696-3",
+      "url": "https://doi.org/10.1038/s41586-023-05696-3",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Enzymes",
+        "Protein design",
+        "Denovo",
+        "Sensors and probes"
+      ]
+    },
+    {
+      "id": "zotero-bihcpe9s",
+      "zoteroKey": "BIHCPE9S",
+      "itemType": "journalArticle",
+      "title": "De novo design of protein structure and function with RFdiffusion",
+      "date": "2023-08",
+      "year": "2023",
+      "authors": [
+        "Joseph L. Watson",
+        "David Juergens",
+        "Nathaniel R. Bennett",
+        "Brian L. Trippe",
+        "Jason Yim",
+        "Helen E. Eisenach",
+        "Woody Ahern",
+        "Andrew J. Borst",
+        "Robert J. Ragotte",
+        "Lukas F. Milles",
+        "Basile I. M. Wicky",
+        "Nikita Hanikel",
+        "Samuel J. Pellock",
+        "Alexis Courbet",
+        "William Sheffler",
+        "Jue Wang",
+        "Preetham Venkatesh",
+        "Isaac Sappington",
+        "Susana Vázquez Torres",
+        "Anna Lauko",
+        "Valentin De Bortoli",
+        "Emile Mathieu",
+        "Sergey Ovchinnikov",
+        "Regina Barzilay",
+        "Tommi S. Jaakkola",
+        "Frank DiMaio",
+        "Minkyung Baek",
+        "David Baker"
+      ],
+      "venue": "Nature",
+      "doi": "10.1038/s41586-023-06415-8",
+      "url": "https://doi.org/10.1038/s41586-023-06415-8",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Machine learning",
+        "Protein design",
+        "Denovo",
+        "Proteins"
+      ]
+    },
+    {
+      "id": "zotero-6bjxdb42",
+      "zoteroKey": "6BJXDB42",
+      "itemType": "journalArticle",
+      "title": "Enzyme function prediction using contrastive learning",
+      "date": "2023-03-31",
+      "year": "2023",
+      "authors": [
+        "Tianhao Yu",
+        "Haiyang Cui",
+        "Jianan Canal Li",
+        "Yunan Luo",
+        "Guangde Jiang",
+        "Huimin Zhao"
+      ],
+      "venue": "Science",
+      "doi": "10.1126/science.adf2465",
+      "url": "https://doi.org/10.1126/science.adf2465",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-hgrqknqh",
+      "zoteroKey": "HGRQKNQH",
+      "itemType": "journalArticle",
+      "title": "Large language models generate functional protein sequences across diverse families",
+      "date": "2023-08",
+      "year": "2023",
+      "authors": [
+        "Ali Madani",
+        "Ben Krause",
+        "Eric R. Greene",
+        "Subu Subramanian",
+        "Benjamin P. Mohr",
+        "James M. Holton",
+        "Jose Luis Olmos",
+        "Caiming Xiong",
+        "Zachary Z. Sun",
+        "Richard Socher",
+        "James S. Fraser",
+        "Nikhil Naik"
+      ],
+      "venue": "Nature Biotechnology",
+      "doi": "10.1038/s41587-022-01618-2",
+      "url": "https://doi.org/10.1038/s41587-022-01618-2",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "Enzymes",
+        "Machine learning",
+        "Proteomics",
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-wyzgl5ds",
+      "zoteroKey": "WYZGL5DS",
+      "itemType": "journalArticle",
+      "title": "ProGen2: Exploring the boundaries of protein language models",
+      "date": "2023-11-15",
+      "year": "2023",
+      "authors": [
+        "Erik Nijkamp",
+        "Jeffrey A. Ruffolo",
+        "Eli N. Weinstein",
+        "Nikhil Naik",
+        "Ali Madani"
+      ],
+      "venue": "Cell Systems",
+      "doi": "10.1016/j.cels.2023.10.002",
+      "url": "https://doi.org/10.1016/j.cels.2023.10.002",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM",
+        "fitness prediction",
+        "language modeling",
+        "protein design"
+      ]
+    },
+    {
+      "id": "zotero-ifedbvkq",
+      "zoteroKey": "IFEDBVKQ",
+      "itemType": "preprint",
+      "title": "ProteinNPT: Improving Protein Property Prediction and Design with Non-Parametric Transformers",
+      "date": "2023-12-07",
+      "year": "2023",
+      "authors": [
+        "Pascal Notin",
+        "Ruben Weitzman",
+        "Debora S. Marks",
+        "Yarin Gal"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2023.12.06.570473",
+      "url": "https://doi.org/10.1101/2023.12.06.570473",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "DE"
+      ]
+    },
+    {
+      "id": "zotero-nxh44xsl",
+      "zoteroKey": "NXH44XSL",
+      "itemType": "conferencePaper",
+      "title": "SaProt: Protein Language Modeling with Structure-aware Vocabulary",
+      "date": "2023/10/13",
+      "year": "2023",
+      "authors": [
+        "Jin Su",
+        "Chenchen Han",
+        "Yuyang Zhou",
+        "Junjie Shan",
+        "Xibin Zhou",
+        "Fajie Yuan"
+      ],
+      "venue": "The Twelfth International Conference on Learning Representations",
+      "doi": "",
+      "url": "https://openreview.net/forum?id=6MRm3G4NiU",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-zbx2uccu",
+      "zoteroKey": "ZBX2UCCU",
+      "itemType": "journalArticle",
+      "title": "Turnover number predictions for kinetically uncharacterized enzymes using machine and deep learning",
+      "date": "2023-07-12",
+      "year": "2023",
+      "authors": [
+        "Alexander Kroll",
+        "Yvan Rousset",
+        "Xiao-Pan Hu",
+        "Nina A. Liebrand",
+        "Martin J. Lercher"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-023-39840-4",
+      "url": "https://doi.org/10.1038/s41467-023-39840-4",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Enzymes",
+        "Machine learning",
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-dvlxlv8h",
+      "zoteroKey": "DVLXLV8H",
+      "itemType": "journalArticle",
+      "title": "UniKP: a unified framework for the prediction of enzyme kinetic parameters",
+      "date": "2023-12-11",
+      "year": "2023",
+      "authors": [
+        "Han Yu",
+        "Huaxiang Deng",
+        "Jiahui He",
+        "Jay D. Keasling",
+        "Xiaozhou Luo"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-023-44113-1",
+      "url": "https://doi.org/10.1038/s41467-023-44113-1",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-7vfuyw2g",
+      "zoteroKey": "7VFUYW2G",
+      "itemType": "journalArticle",
+      "title": "Deep learning-based kcat prediction enables improved enzyme-constrained model reconstruction",
+      "date": "2022-06-16",
+      "year": "2022",
+      "authors": [
+        "Feiran Li",
+        "Le Yuan",
+        "Hongzhong Lu",
+        "Gang Li",
+        "Yu Chen",
+        "Martin K. M. Engqvist",
+        "Eduard J. Kerkhoven",
+        "Jens Nielsen"
+      ],
+      "venue": "Nature Catalysis",
+      "doi": "10.1038/s41929-022-00798-z",
+      "url": "https://doi.org/10.1038/s41929-022-00798-z",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-2fxpsurw",
+      "zoteroKey": "2FXPSURW",
+      "itemType": "preprint",
+      "title": "Evolutionary-scale prediction of atomic level protein structure with a language model",
+      "date": "2022-12-21",
+      "year": "2022",
+      "authors": [
+        "Zeming Lin",
+        "Halil Akin",
+        "Roshan Rao",
+        "Brian Hie",
+        "Zhongkai Zhu",
+        "Wenting Lu",
+        "Nikita Smetanin",
+        "Robert Verkuil",
+        "Ori Kabeli",
+        "Yaniv Shmueli",
+        "Allan dos Santos Costa",
+        "Maryam Fazel-Zarandi",
+        "Tom Sercu",
+        "Salvatore Candido",
+        "Alexander Rives"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2022.07.20.500902",
+      "url": "https://doi.org/10.1101/2022.07.20.500902",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-rpkbla32",
+      "zoteroKey": "RPKBLA32",
+      "itemType": "journalArticle",
+      "title": "MLAGO: machine learning-aided global optimization for Michaelis constant estimation of kinetic modeling",
+      "date": "2022-11-01",
+      "year": "2022",
+      "authors": [
+        "Kazuhiro Maeda",
+        "Aoi Hatae",
+        "Yukie Sakai",
+        "Fred C. Boogerd",
+        "Hiroyuki Kurata"
+      ],
+      "venue": "BMC Bioinformatics",
+      "doi": "10.1186/s12859-022-05009-x",
+      "url": "https://doi.org/10.1186/s12859-022-05009-x",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Machine learning",
+        "Predict Kinetic",
+        "Michaelis constant",
+        "Global optimization",
+        "Kinetic modeling",
+        "Parameter estimation",
+        "Simulation",
+        "Systems biology"
+      ]
+    },
+    {
+      "id": "zotero-nchjzc5f",
+      "zoteroKey": "NCHJZC5F",
+      "itemType": "journalArticle",
+      "title": "ProtGPT2 is a deep unsupervised language model for protein design",
+      "date": "2022-07-27",
+      "year": "2022",
+      "authors": [
+        "Noelia Ferruz",
+        "Steffen Schmidt",
+        "Birte Höcker"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-022-32007-7",
+      "url": "https://doi.org/10.1038/s41467-022-32007-7",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "Machine learning",
+        "Computational science",
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-cprkt83d",
+      "zoteroKey": "CPRKT83D",
+      "itemType": "journalArticle",
+      "title": "Robust deep learning–based protein sequence design using ProteinMPNN",
+      "date": "2022-10-07",
+      "year": "2022",
+      "authors": [
+        "J. Dauparas",
+        "I. Anishchenko",
+        "N. Bennett",
+        "H. Bai",
+        "R. J. Ragotte",
+        "L. F. Milles",
+        "B. I. M. Wicky",
+        "A. Courbet",
+        "R. J. de Haas",
+        "N. Bethel",
+        "P. J. Y. Leung",
+        "T. F. Huddy",
+        "S. Pellock",
+        "D. Tischer",
+        "F. Chan",
+        "B. Koepnick",
+        "H. Nguyen",
+        "A. Kang",
+        "B. Sankaran",
+        "A. K. Bera",
+        "N. P. King",
+        "D. Baker"
+      ],
+      "venue": "Science",
+      "doi": "10.1126/science.add2187",
+      "url": "https://doi.org/10.1126/science.add2187",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Denovo"
+      ]
+    },
+    {
+      "id": "zotero-tcu5euv8",
+      "zoteroKey": "TCU5EUV8",
+      "itemType": "conferencePaper",
+      "title": "TranceptEVE: Combining Family-specific and Family-agnostic Models of Protein Sequences for Improved Fitness Prediction",
+      "date": "2022/11/28",
+      "year": "2022",
+      "authors": [
+        "Pascal Notin",
+        "Lood Van Niekerk",
+        "Aaron W. Kollasch",
+        "Daniel Ritter",
+        "Yarin Gal",
+        "Debora Susan Marks"
+      ],
+      "venue": "NeurIPS 2022 Workshop on Learning Meaningful Representations of Life",
+      "doi": "",
+      "url": "https://openreview.net/forum?id=l7Oo9DcLmR1",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-vdvtceqm",
+      "zoteroKey": "VDVTCEQM",
+      "itemType": "journalArticle",
+      "title": "Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences",
+      "date": "2021-04-13",
+      "year": "2021",
+      "authors": [
+        "Alexander Rives",
+        "Joshua Meier",
+        "Tom Sercu",
+        "Siddharth Goyal",
+        "Zeming Lin",
+        "Jason Liu",
+        "Demi Guo",
+        "Myle Ott",
+        "C. Lawrence Zitnick",
+        "Jerry Ma",
+        "Rob Fergus"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "doi": "10.1073/pnas.2016239118",
+      "url": "https://doi.org/10.1073/pnas.2016239118",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-qcnttshh",
+      "zoteroKey": "QCNTTSHH",
+      "itemType": "journalArticle",
+      "title": "Deep learning allows genome-scale prediction of Michaelis constants from structural features",
+      "date": "2021年10月19日",
+      "year": "2021",
+      "authors": [
+        "Alexander Kroll",
+        "Martin K. M. Engqvist",
+        "David Heckmann",
+        "Martin J. Lercher"
+      ],
+      "venue": "PLOS Biology",
+      "doi": "10.1371/journal.pbio.3001402",
+      "url": "https://doi.org/10.1371/journal.pbio.3001402",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Enzymes",
+        "Forecasting",
+        "Protein sequencing",
+        "Enzyme metabolism",
+        "Genetic fingerprinting",
+        "Genomics",
+        "Molecular structure",
+        "Neural networks",
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-cjklx3jl",
+      "zoteroKey": "CJKLX3JL",
+      "itemType": "preprint",
+      "title": "ProtTrans: Towards Cracking the Language of Life’s Code Through Self-Supervised Learning",
+      "date": "2021-05-04",
+      "year": "2021",
+      "authors": [
+        "Ahmed Elnaggar",
+        "Michael Heinzinger",
+        "Christian Dallago",
+        "Ghalia Rehawi",
+        "Yu Wang",
+        "Llion Jones",
+        "Tom Gibbs",
+        "Tamas Feher",
+        "Christoph Angerer",
+        "Martin Steinegger",
+        "Debsindhu Bhowmik",
+        "Burkhard Rost"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2020.07.12.199554",
+      "url": "https://doi.org/10.1101/2020.07.12.199554",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
+      "id": "zotero-k7ddpmt2",
+      "zoteroKey": "K7DDPMT2",
+      "itemType": "journalArticle",
+      "title": "Machine learning applied to enzyme turnover numbers reveals protein structural correlates and improves metabolic models",
+      "date": "2018-12-07",
+      "year": "2018",
+      "authors": [
+        "David Heckmann",
+        "Colton J. Lloyd",
+        "Nathan Mih",
+        "Yuanchi Ha",
+        "Daniel C. Zielinski",
+        "Zachary B. Haiman",
+        "Abdelmoneim Amer Desouki",
+        "Martin J. Lercher",
+        "Bernhard O. Palsson"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-018-07652-6",
+      "url": "https://doi.org/10.1038/s41467-018-07652-6",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    }
+  ]
+}

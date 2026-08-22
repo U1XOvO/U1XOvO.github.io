@@ -1,0 +1,18 @@
+{
+  "id": "cns-major-family",
+  "label": "CNS / major family journal",
+  "definition": "Curated exact venue names used to mark CNS flagships and major family journals in the current Zotero literature corpus.",
+  "venues": [
+    "Cell",
+    "Nature",
+    "Science",
+    "Nature Biotechnology",
+    "Nature Catalysis",
+    "Nature Chemical Biology",
+    "Nature Communications",
+    "Nature Computational Science",
+    "Nature Methods",
+    "Cell Systems",
+    "Chem Catalysis"
+  ]
+}

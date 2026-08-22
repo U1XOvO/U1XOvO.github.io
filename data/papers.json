@@ -1,0 +1,39 @@
+{
+  "description": "Peer-reviewed research publications by Jing-Feng Zhao.",
+  "journalMetrics": {
+    "ACS Sensors": {
+      "asOf": "2025",
+      "impactFactor": "10.9",
+      "fiveYearImpactFactor": "9.9",
+      "source": "ACS Publications",
+      "sourceUrl": "https://pubs.acs.org/page/ascefj/about.html",
+      "checkedOn": "2026-08-21"
+    }
+  },
+  "papers": [
+    {
+      "id": "magnetic-hydrogel-biosensor",
+      "title": "Magnetic Hydrogel: Enhanced Bacterial Biosensor for Speedy Gut Disease Detection",
+      "authors": [
+        "Chu-Ying Xu",
+        "Jing Mi",
+        "Jing-Feng Zhao",
+        "Yan-Lin Zhu",
+        "Yu-Hou Wu",
+        "Chen-Rui Zhang",
+        "Zhen-Ping Zou",
+        "Bang-Ce Ye",
+        "Ying Zhou"
+      ],
+      "highlightAuthor": "Jing-Feng Zhao",
+      "year": "2025",
+      "venue": "ACS Sensors",
+      "citation": "ACS Sens. 2025, 10 (11), 8424-8434.",
+      "doi": "10.1021/acssensors.5c01813",
+      "url": "https://doi.org/10.1021/acssensors.5c01813",
+      "image": "/images/magnetic-hydrogel-biosensor.png",
+      "imageAlt": "Visual abstract comparing the MagGel-BS rapid magnetic recovery workflow with traditional bacterial biosensor methods.",
+      "imageCredit": "Visual abstract from ACS Sensors, 2025"
+    }
+  ]
+}
