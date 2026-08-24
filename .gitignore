@@ -5,6 +5,7 @@ node_modules/
 .vinext/
 .wrangler/
 *.log
+.idea/
 
 # Local environment files and credentials
 .env

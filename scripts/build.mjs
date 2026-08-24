@@ -18,6 +18,21 @@ const escapeHtml = (value = "") =>
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 
+const thumbnailVariant = (image, extension) => {
+  const prefix = "/images/";
+  const extensionIndex = image.lastIndexOf(".");
+  if (!image.startsWith(prefix) || extensionIndex <= prefix.length) {
+    throw new Error(`Thumbnail source must be a local image path: ${image}`);
+  }
+  return `/images/thumbnails/${image.slice(prefix.length, extensionIndex)}.${extension}`;
+};
+
+const thumbnailPicture = ({ image, alt }) => `<picture>
+  <source type="image/avif" srcset="${escapeHtml(thumbnailVariant(image, "avif"))}">
+  <source type="image/webp" srcset="${escapeHtml(thumbnailVariant(image, "webp"))}">
+  <img src="${escapeHtml(image)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async">
+</picture>`;
+
 const site = await readJson("data/site.json");
 const profile = await readJson("data/profile.json");
 const projectsData = await readJson("data/projects.json");
@@ -152,7 +167,7 @@ const orderAnimeWorks = (works) => [...works].sort((left, right) =>
 
 const animeCard = (work, variant = "") => `<article class="anime-card${variant ? ` ${variant}` : ""} tone-${escapeHtml(work.tone)}" data-anime-id="${escapeHtml(work.id)}">
   <div class="anime-cover">
-    <img src="${escapeHtml(work.image)}" alt="${escapeHtml(`『${work.title}』のキービジュアル`)}" loading="lazy" decoding="async">
+    ${thumbnailPicture({ image: work.image, alt: `『${work.title}』のキービジュアル` })}
   </div>
   <div class="anime-card-content">
     <time class="anime-release" datetime="${escapeHtml(work.firstReleased)}">${escapeHtml(formatAnimeDate(work.firstReleased))}</time>
@@ -413,7 +428,7 @@ const shelfCards = acgn.shelves.length ? acgn.shelves.map((shelf) => {
 const gameCards = (games, platform) => games.length
   ? games.map((game) => `<figure class="game-card ${platform}-game-card">
       <div class="game-cover ${platform}-game-cover">
-        <img src="${escapeHtml(game.image)}" alt="${escapeHtml(game.imageAlt)}" width="600" height="900" loading="lazy" decoding="async">
+        ${thumbnailPicture({ image: game.image, alt: game.imageAlt })}
       </div>
       <figcaption title="${escapeHtml(game.name)}">${escapeHtml(game.name)}</figcaption>
     </figure>`).join("")

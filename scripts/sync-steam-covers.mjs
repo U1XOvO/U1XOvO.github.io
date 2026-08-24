@@ -2,6 +2,7 @@ import { mkdir, readFile, rename, stat, unlink, writeFile } from "node:fs/promis
 import { spawn } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { isSteamLandscapeHeader } from "./image-utils.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataPath = path.join(root, "data", "acgn.json");
@@ -17,13 +18,14 @@ await mkdir(outputDirectory, { recursive: true });
 
 const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 const candidatesFor = (game) => [
-  game.coverSource,
-  `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${game.appid}/header.jpg`
+  `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${game.appid}/header.jpg`,
+  game.coverSource
 ].filter(Boolean);
 
 async function hasExistingCover(filePath) {
   try {
-    return (await stat(filePath)).size > 1024;
+    if ((await stat(filePath)).size <= 1024) return false;
+    return isSteamLandscapeHeader(await readFile(filePath));
   } catch {
     return false;
   }
@@ -63,6 +65,7 @@ async function fetchImage(url) {
     try {
       const bytes = await requestImage(url);
       if (bytes.byteLength <= 1024) throw new Error("image response is unexpectedly small");
+      if (!isSteamLandscapeHeader(bytes)) throw new Error("image is not an official landscape Steam header");
       return bytes;
     } catch (error) {
       lastError = error;

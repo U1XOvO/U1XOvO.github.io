@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { access, readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { jpegDimensions, isSteamLandscapeHeader } from "./image-utils.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
@@ -21,6 +22,13 @@ const escapeHtml = (value = "") => String(value)
   .replaceAll(">", "&gt;")
   .replaceAll("\"", "&quot;")
   .replaceAll("'", "&#039;");
+const thumbnailVariant = (image, extension) => {
+  const prefix = "/images/";
+  const extensionIndex = image.lastIndexOf(".");
+  assert.ok(image.startsWith(prefix) && extensionIndex > prefix.length, `invalid thumbnail source: ${image}`);
+  return `/images/thumbnails/${image.slice(prefix.length, extensionIndex)}.${extension}`;
+};
+const thumbnailFile = (image, extension) => path.join(root, "public", thumbnailVariant(image, extension).slice(1));
 
 assert.ok(Array.isArray(projects.projects), "projects.json must contain a projects array");
 for (const project of projects.projects) {
@@ -163,7 +171,13 @@ for (const game of acgn.steam.games) {
   assert.ok(!steamGameIds.has(game.appid), `duplicate Steam app ID: ${game.appid}`);
   steamGameIds.add(game.appid);
   assert.equal(game.image, `/images/steam/${game.appid}.jpg`, `${game.name} must use its local Steam cover`);
-  await access(path.join(root, "public", game.image.slice(1)));
+  const steamImagePath = path.join(root, "public", game.image.slice(1));
+  await access(steamImagePath);
+  const steamImageBytes = await readFile(steamImagePath);
+  const steamImageDimensions = jpegDimensions(steamImageBytes);
+  assert.ok(isSteamLandscapeHeader(steamImageBytes), `${game.name} must use an official landscape Steam header, received ${steamImageDimensions.width}x${steamImageDimensions.height}`);
+  await access(thumbnailFile(game.image, "avif"));
+  await access(thumbnailFile(game.image, "webp"));
 }
 assert.ok(acgn.nintendoSwitch && typeof acgn.nintendoSwitch === "object", "acgn.json must contain Nintendo Switch library metadata");
 for (const field of ["source", "sourceUrl", "checkedOn"]) {
@@ -182,6 +196,8 @@ for (const game of acgn.nintendoSwitch.games) {
   switchGameIds.add(game.id);
   assert.equal(game.image, `/images/nintendo-switch/${game.id}.webp`, `${game.name} must use its local Nintendo Switch cover`);
   await access(path.join(root, "public", game.image.slice(1)));
+  await access(thumbnailFile(game.image, "avif"));
+  await access(thumbnailFile(game.image, "webp"));
 }
 assert.ok(profile.avatar === "/images/github-avatar.jpg", "profile avatar must use the local GitHub image");
 assert.ok(Array.isArray(profile.details) && profile.details.length > 0, "profile.json must contain detail placeholders");
@@ -221,6 +237,8 @@ for (const work of animeWorks) {
   assert.match(work.coverSource, /^https:\/\//, `${work.title} needs a cover source URL`);
   assert.match(work.coverCheckedOn, /^\d{4}-\d{2}-\d{2}$/, `${work.title} coverCheckedOn must use YYYY-MM-DD`);
   await access(path.join(root, "public", work.image.slice(1)));
+  await access(thumbnailFile(work.image, "avif"));
+  await access(thumbnailFile(work.image, "webp"));
 }
 assert.ok(animeIds.has("fate-stay-night-2006"), "anime favorites must include Fate/stay night");
 assert.ok(animeIds.has("fate-zero"), "anime favorites must include Fate/Zero separately");
@@ -242,7 +260,10 @@ for (const paper of papers.papers) {
 }
 
 const files = await readdir(dist, { recursive: true });
-const htmlFiles = files.filter((file) => file.endsWith(".html")).sort();
+const htmlFiles = files
+  .filter((file) => file.endsWith(".html"))
+  .map((file) => file.split(path.sep).join("/"))
+  .sort();
 assert.deepEqual(htmlFiles, ["404.html", "acgn/index.html", "anime/index.html", "index.html", "library/index.html", "paper/index.html", "projects/index.html"], "expected six routes plus 404.html");
 
 const linkPattern = /(?:href|src)="([^"]+)"/g;
@@ -292,6 +313,11 @@ assert.match(acgnHtml, /<h2 class="game-platform-title steam-platform-title"[^>]
 assert.match(acgnHtml, /Steam Games[\s\S]*Nintendo Switch/, "Steam games must render above Nintendo Switch games");
 assert.equal((acgnHtml.match(/class="game-card steam-game-card"/g) || []).length, acgn.steam.games.length, "rendered Steam card count must match its data");
 assert.equal((acgnHtml.match(/class="game-card switch-game-card"/g) || []).length, acgn.nintendoSwitch.games.length, "rendered Nintendo Switch card count must match its data");
+for (const game of [...acgn.steam.games, ...acgn.nintendoSwitch.games]) {
+  assert.ok(acgnHtml.includes(`<source type="image/avif" srcset="${thumbnailVariant(game.image, "avif")}">`), `${game.name} must render its AVIF thumbnail`);
+  assert.ok(acgnHtml.includes(`<source type="image/webp" srcset="${thumbnailVariant(game.image, "webp")}">`), `${game.name} must render its WebP thumbnail`);
+  assert.ok(acgnHtml.includes(`<img src="${game.image}" alt="${escapeHtml(game.imageAlt)}" loading="lazy" decoding="async">`), `${game.name} must retain its original-image fallback`);
+}
 assert.match(homeHtml, /<a href="\/acgn\/">Gamer<\/a><a href="\/anime\/">にじげん<\/a>/, "primary navigation must end with Gamer and にじげん");
 assert.match(animeHtml, /<html lang="ja">/, "Anime page must declare Japanese document language");
 assert.match(animeHtml, /<nav class="site-nav" id="site-nav" lang="en" aria-label="Primary navigation"><a href="\/">Home<\/a><a href="\/projects\/">Projects<\/a><a href="\/library\/">Literature<\/a><a href="\/paper\/">Paper<\/a><a href="\/acgn\/">Gamer<\/a><a href="\/anime\/" aria-current="page">にじげん<\/a><\/nav>/, "Anime page navigation must keep English shared labels and the にじげん route label");
@@ -315,6 +341,8 @@ for (const work of animeWorks) {
   const source = escapeRegExp(work.image);
   const alt = escapeRegExp(escapeHtml(`『${work.title}』のキービジュアル`));
   assert.match(animeHtml, new RegExp(`<img src="${source}" alt="${alt}" loading="lazy" decoding="async">`), `${work.title} must render its local Japanese-alt cover`);
+  assert.ok(animeHtml.includes(`<source type="image/avif" srcset="${thumbnailVariant(work.image, "avif")}">`), `${work.title} must render its AVIF thumbnail`);
+  assert.ok(animeHtml.includes(`<source type="image/webp" srcset="${thumbnailVariant(work.image, "webp")}">`), `${work.title} must render its WebP thumbnail`);
 }
 const styles = await readFile(path.join(root, "public", "styles.css"), "utf8");
 assert.match(styles, /\.anime-grid\s*\{[^}]*grid-template-columns:\s*repeat\(6,\s*minmax\(0,\s*1fr\)\)/s, "favorite Anime grid must use six desktop columns");
