@@ -365,15 +365,58 @@ assert.equal((libraryHtml.match(/<button class="graph-node/g) || []).length, lit
 assert.equal((libraryHtml.match(/<button class="graph-paper-node/g) || []).length, literature.records.length, "rendered paper node count must match literature records");
 assert.equal((libraryHtml.match(/class="graph-edge graph-paper-edge/g) || []).length, literature.records.length, "rendered paper edge count must match literature records");
 assert.equal((libraryHtml.match(/class="reading-list-item"/g) || []).length, literature.records.length, "rendered reading list count must match literature records");
+assert.doesNotMatch(libraryHtml, /reading-year-stamp/, "literature cards must not render per-card year timestamps");
 for (const record of literature.records) {
   assert.ok(libraryHtml.includes(`data-paper-record="${record.id}"`), `${record.id} must have a graph paper node`);
   assert.ok(libraryHtml.includes(`id="reading-${record.id}" tabindex="-1"`), `${record.id} must have a focusable reading target`);
+  assert.ok(libraryHtml.includes(`data-reading-year="${record.year}"`), `${record.id} must expose its year for filtering`);
+  assert.ok(libraryHtml.includes(`data-reading-featured="${literatureFeaturedVenues.venues.includes(record.venue)}"`), `${record.id} must expose its featured-journal state for filtering`);
 }
 const featuredRecordCount = literature.records.filter((record) => literatureFeaturedVenues.venues.includes(record.venue)).length;
 assert.equal((libraryHtml.match(/graph-paper-node[^\"]* is-featured/g) || []).length, featuredRecordCount, "featured graph star count must match the venue policy");
 assert.equal((libraryHtml.match(/class="reading-featured"/g) || []).length, featuredRecordCount, "featured reading-card star count must match the venue policy");
+assert.equal((libraryHtml.match(/class="reading-item-meta"/g) || []).length, literature.records.length, "every reading card must group its item type metadata");
+assert.equal((libraryHtml.match(/<span class="reading-item-meta"><span>[^<]+<\/span><span class="reading-featured"/g) || []).length, featuredRecordCount, "every reading-card star must follow its item type inside the shared metadata group");
+assert.equal((libraryHtml.match(/data-reading-featured="true"/g) || []).length, featuredRecordCount, "featured filter data must match the venue policy");
+assert.match(libraryHtml, new RegExp(`data-reading-featured-filter data-reading-featured-label="${literatureFeaturedVenues.label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}" aria-pressed="false"`), "Literature page must render the featured-journal toggle in its default off state");
+assert.match(libraryHtml, new RegExp(`<span class="reading-featured-filter-count" aria-hidden="true">${featuredRecordCount}<\\/span>`), "featured-journal toggle must show its paper count");
 assert.match(libraryHtml, /data-reading-search-input/, "Literature page must render reading search");
-assert.match(libraryHtml, /data-reading-sort/, "Literature page must render reading sort controls");
+const literatureYears = [...new Set(literature.records.map(({ year }) => year))].sort((a, b) => Number(b) - Number(a));
+const renderedYearGroups = [...libraryHtml.matchAll(/data-reading-year-group="((?:19|20)\d{2})"/g)].map((match) => match[1]);
+assert.deepEqual(renderedYearGroups, literatureYears, "literature year groups must render once each from newest to oldest");
+assert.equal((libraryHtml.match(/data-reading-year-list/g) || []).length, literatureYears.length, "every literature year group must contain one paper list");
+assert.match(libraryHtml, /<nav class="reading-year-nav" data-reading-year-nav aria-label="Literature years">/, "Literature page must render the interactive year navigation");
+const yearNavMarkup = libraryHtml.match(/<nav class="reading-year-nav"[\s\S]*?<\/nav>/)?.[0] || "";
+const renderedNavYears = [...yearNavMarkup.matchAll(/data-reading-year-link="((?:19|20)\d{2})"/g)].map((match) => match[1]);
+assert.deepEqual(renderedNavYears, literatureYears, "year navigation must follow the newest-to-oldest group order");
+assert.equal((yearNavMarkup.match(/aria-current="location"/g) || []).length, 1, "year navigation must expose one initial current year");
+for (const year of literatureYears) {
+  assert.ok(yearNavMarkup.includes(`href="#reading-year-${year}"`), `${year} navigation link must target its year heading`);
+  assert.match(libraryHtml, new RegExp(`<h3 id="reading-year-${year}"><time datetime="${year}">${year}<\\/time><\\/h3>`), `${year} group must render a semantic year heading`);
+  const groupMarkup = libraryHtml.match(new RegExp(`<div class="reading-year-group" data-reading-year-group="${year}"[\\s\\S]*?<ol class="reading-grid" data-reading-year-list>([\\s\\S]*?)<\\/ol>\\s*<\\/div>`))?.[1] || "";
+  const expectedYearCount = literature.records.filter((record) => record.year === year).length;
+  assert.ok(groupMarkup, `${year} group must contain its paper list`);
+  assert.equal((groupMarkup.match(/class="reading-list-item"/g) || []).length, expectedYearCount, `${year} group must contain every paper from that year`);
+  assert.ok([...groupMarkup.matchAll(/data-reading-year="((?:19|20)\d{2})"/g)].every((match) => match[1] === year), `${year} group must not contain papers from another year`);
+}
+assert.match(libraryHtml, /data-reading-year-picker/, "Literature page must render the custom year picker");
+assert.match(libraryHtml, /data-reading-year-trigger[^>]*aria-haspopup="listbox"[^>]*aria-expanded="false"/, "custom year picker trigger must expose its popup state");
+const yearMenuMarkup = libraryHtml.match(/<div class="reading-year-menu"[\s\S]*?<\/div>/)?.[0] || "";
+assert.equal((yearMenuMarkup.match(/data-reading-year-option=/g) || []).length, literatureYears.length + 1, "custom year picker must render All years and every literature year");
+assert.equal((yearMenuMarkup.match(/aria-selected="true"/g) || []).length, 1, "custom year picker must expose one selected option");
+const yearFilterMarkup = libraryHtml.match(/<select data-reading-year-filter[^>]*>([\s\S]*?)<\/select>/)?.[1] || "";
+assert.ok(yearFilterMarkup, "Literature page must render the year filter");
+assert.match(libraryHtml, /<select data-reading-year-filter hidden aria-hidden="true" tabindex="-1">/, "native year select must remain hidden behind the custom picker");
+assert.equal((yearFilterMarkup.match(/<option\b/g) || []).length, literatureYears.length + 1, "year filter must contain All years and every unique literature year");
+assert.match(yearFilterMarkup, /^<option value="">All years<\/option>/, "year filter must default to all years");
+for (const year of literatureYears) {
+  const count = literature.records.filter((record) => record.year === year).length;
+  assert.ok(yearFilterMarkup.includes(`<option value="${year}">${year} (${count})</option>`), `year filter must include ${year} with its paper count`);
+}
+assert.doesNotMatch(libraryHtml, /data-reading-sort/, "Literature page must keep year groups in fixed newest-to-oldest order");
+assert.match(styles, /\.reading-year-nav\s*\{[^}]*position:\s*sticky/s, "literature year navigation must remain visible while scrolling year groups");
+assert.match(styles, /\.reading-item-meta\s*\{[^}]*display:\s*inline-flex;[^}]*white-space:\s*nowrap/s, "reading item type and featured star must stay together on one line");
+assert.match(styles, /\.reading-featured-filter-button\[aria-pressed="true"\]\s*\{[^}]*background:\s*linear-gradient/s, "featured-journal toggle must expose a distinct pressed state");
 assert.match(libraryHtml, /aria-live="polite" data-reading-status/, "Literature page must expose reading results to assistive technology");
 assert.doesNotMatch(libraryHtml, /Knowledge graph|A topic map derived from the five mutually exclusive tags used in the Zotero collection|Reading list|Every non-review record in the Zotero|reviews excluded/i, "Literature page must omit removed headings and descriptions");
 assert.doesNotMatch(libraryHtml, /How artificial intelligence is reengineering protein engineering|Generative AI for controllable protein sequence design: A survey|AI-driven protein design|Machine learning for functional protein design|Advances in Machine Learning Models for Predicting Enzyme Kinetic Parameters|Harnessing Machine Learning for Enzyme Enantioselectivity/, "Literature page must not render excluded reviews");

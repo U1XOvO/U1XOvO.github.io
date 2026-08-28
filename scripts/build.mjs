@@ -204,6 +204,23 @@ const projects = layout({
 const topicById = new Map(literature.topics.map((topic) => [topic.id, topic]));
 const featuredVenueNames = new Set(literatureFeaturedVenues.venues);
 const featuredVenueLabel = literatureFeaturedVenues.label;
+const featuredLiteratureCount = literature.records.filter(({ venue }) => featuredVenueNames.has(venue)).length;
+const literatureYearCounts = literature.records.reduce((counts, { year }) => {
+  counts.set(year, (counts.get(year) || 0) + 1);
+  return counts;
+}, new Map());
+const literatureYears = [...literatureYearCounts.keys()].sort((a, b) => Number(b) - Number(a));
+const readingYearOptions = [
+  '<option value="">All years</option>',
+  ...literatureYears.map((year) => `<option value="${escapeHtml(year)}">${escapeHtml(year)} (${literatureYearCounts.get(year)})</option>`)
+].join("");
+const readingYearMenuOptions = [
+  { value: "", label: "All years", count: literature.records.length },
+  ...literatureYears.map((year) => ({ value: year, label: year, count: literatureYearCounts.get(year) }))
+].map(({ value, label, count }, index) => `<button class="reading-year-option" type="button" role="option" id="reading-year-option-${value || "all"}" data-reading-year-option="${escapeHtml(value)}" aria-selected="${index === 0}" tabindex="-1">
+  <span class="reading-year-option-label">${escapeHtml(label)}</span>
+  <span class="reading-year-option-count">${count}</span>
+</button>`).join("");
 const clampGraphCoordinate = (value) => Math.max(2.5, Math.min(97.5, value));
 const goldenAngle = Math.PI * (3 - Math.sqrt(5));
 const topicOrder = new Map(literature.topics.filter(({ id }) => id !== "all").map(({ id }, index) => [id, index]));
@@ -269,7 +286,9 @@ const itemTypeLabels = {
   conferencePaper: "Conference paper"
 };
 
-const readingRecords = literature.records.map((record) => {
+const readingRecordMarkupByYear = new Map(literatureYears.map((year) => [year, []]));
+
+literature.records.forEach((record) => {
   const topic = topicById.get(record.theme);
   if (!topic) throw new Error(`Unknown literature record topic: ${record.theme}`);
   const fullAuthors = record.authors.join(", ");
@@ -293,13 +312,11 @@ const readingRecords = literature.records.map((record) => {
     ? `<span class="reading-featured" title="${escapeHtml(featuredVenueLabel)}" aria-label="${escapeHtml(featuredVenueLabel)}"><span aria-hidden="true">★</span></span>`
     : "";
 
-  return `<li class="reading-list-item" id="reading-${escapeHtml(record.id)}" tabindex="-1" data-record-id="${escapeHtml(record.id)}" data-reading-topics="${escapeHtml(record.topics.join(" "))}" data-reading-search="${escapeHtml(searchText)}" data-reading-year="${escapeHtml(record.year)}" data-reading-title="${escapeHtml(record.title)}">
+  const markup = `<li class="reading-list-item" id="reading-${escapeHtml(record.id)}" tabindex="-1" data-record-id="${escapeHtml(record.id)}" data-reading-topics="${escapeHtml(record.topics.join(" "))}" data-reading-search="${escapeHtml(searchText)}" data-reading-year="${escapeHtml(record.year)}" data-reading-featured="${isFeaturedVenue}">
     <article class="reading-card" data-zotero-key="${escapeHtml(record.zoteroKey)}">
       <div class="reading-meta">
         <span class="reading-topic tone-${escapeHtml(topic.tone)}">${escapeHtml(topic.label)}</span>
-        ${featuredStar}
-        <span>${escapeHtml(itemTypeLabels[record.itemType] || record.itemType)}</span>
-        <time datetime="${escapeHtml(record.year)}">${escapeHtml(record.year)}</time>
+        <span class="reading-item-meta"><span>${escapeHtml(itemTypeLabels[record.itemType] || record.itemType)}</span>${featuredStar}</span>
       </div>
       <h3>${escapeHtml(record.title)}</h3>
       ${authorDisplay}
@@ -307,7 +324,31 @@ const readingRecords = literature.records.map((record) => {
       <div class="reading-footer">${doi}${publicationLink}</div>
     </article>
   </li>`;
+  const yearRecords = readingRecordMarkupByYear.get(record.year);
+  if (!yearRecords) throw new Error(`Unknown literature record year: ${record.year}`);
+  yearRecords.push(markup);
+});
+
+const readingYearGroups = literatureYears.map((year) => {
+  const records = readingRecordMarkupByYear.get(year);
+  const paperLabel = records.length === 1 ? "paper" : "papers";
+  return `<div class="reading-year-group" data-reading-year-group="${escapeHtml(year)}" role="group" aria-labelledby="reading-year-${escapeHtml(year)}">
+    <div class="reading-year-heading">
+      <h3 id="reading-year-${escapeHtml(year)}"><time datetime="${escapeHtml(year)}">${escapeHtml(year)}</time></h3>
+      <span data-reading-year-count>${records.length} ${paperLabel}</span>
+    </div>
+    <ol class="reading-grid" data-reading-year-list>${records.join("")}</ol>
+  </div>`;
 }).join("");
+
+const readingYearNavigation = `<nav class="reading-year-nav" data-reading-year-nav aria-label="Literature years">
+  <span class="reading-year-nav-label">Years</span>
+  <ol>${literatureYears.map((year, index) => {
+    const count = literatureYearCounts.get(year);
+    const paperLabel = count === 1 ? "paper" : "papers";
+    return `<li><a class="reading-year-nav-link${index === 0 ? " is-active" : ""}" href="#reading-year-${escapeHtml(year)}" data-reading-year-link="${escapeHtml(year)}"${index === 0 ? ' aria-current="location"' : ""} aria-label="${escapeHtml(year)}, ${count} ${paperLabel}">${escapeHtml(year)}</a></li>`;
+  }).join("")}</ol>
+</nav>`;
 
 const literatureSections = literature.topics.length || literature.records.length
   ? `${literature.topics.length ? `<section class="graph-section" aria-labelledby="graph-title">
@@ -337,21 +378,33 @@ const literatureSections = literature.topics.length || literature.records.length
           <span>Search the collection</span>
           <input type="search" data-reading-search-input placeholder="Title, author, venue, DOI, or Zotero tag" autocomplete="off">
         </label>
-        <label class="reading-control reading-sort">
-          <span>Sort by</span>
-          <select data-reading-sort>
-            <option value="newest">Newest first</option>
-            <option value="oldest">Oldest first</option>
-            <option value="title">Title A–Z</option>
-          </select>
-        </label>
+        <div class="reading-control reading-year-filter" data-reading-year-picker>
+          <span id="reading-year-filter-label">Year</span>
+          <button class="reading-year-trigger" type="button" data-reading-year-trigger aria-haspopup="listbox" aria-expanded="false" aria-controls="reading-year-menu" aria-labelledby="reading-year-filter-label reading-year-filter-value">
+            <span id="reading-year-filter-value" data-reading-year-value>All years</span>
+            <span class="reading-year-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="reading-year-menu" id="reading-year-menu" data-reading-year-menu role="listbox" aria-labelledby="reading-year-filter-label" hidden>${readingYearMenuOptions}</div>
+          <select data-reading-year-filter hidden aria-hidden="true" tabindex="-1">${readingYearOptions}</select>
+        </div>
+        <div class="reading-control reading-featured-filter">
+          <span>Journal mark</span>
+          <button class="reading-featured-filter-button" type="button" data-reading-featured-filter data-reading-featured-label="${escapeHtml(featuredVenueLabel)}" aria-pressed="false" aria-label="Show only ${escapeHtml(featuredVenueLabel)} papers">
+            <span class="reading-featured-filter-star" aria-hidden="true">★</span>
+            <span class="reading-featured-filter-copy"><strong>Starred papers</strong><small>CNS / major family</small></span>
+            <span class="reading-featured-filter-count" aria-hidden="true">${featuredLiteratureCount}</span>
+          </button>
+        </div>
       </div>
       <div class="reading-results-row">
         <p class="reading-results" role="status" aria-live="polite" data-reading-status>Showing all ${literature.source.includedItems} papers</p>
         <span>Source: Zotero · ${escapeHtml(literature.source.collection)}</span>
       </div>
-      <ol class="reading-grid" id="reading-list" data-reading-grid>${readingRecords}</ol>
-      <p class="reading-empty" data-reading-empty hidden>No papers match the current topic and search.</p>
+      <div class="reading-browse-layout">
+        ${readingYearNavigation}
+        <div class="reading-year-groups" id="reading-list">${readingYearGroups}</div>
+      </div>
+      <p class="reading-empty" data-reading-empty hidden>No papers match the current filters.</p>
     </section>` : ""}`
   : emptyState();
 
