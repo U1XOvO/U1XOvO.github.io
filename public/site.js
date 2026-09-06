@@ -1,19 +1,53 @@
 const toggle = document.querySelector(".nav-toggle");
 const navigation = document.querySelector(".site-nav");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const normalizeText = (value) => String(value || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase().trim();
 
 if (toggle && navigation) {
-  toggle.addEventListener("click", () => {
-    const expanded = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!expanded));
-    navigation.classList.toggle("is-open", !expanded);
-  });
-
+  const menuLabel = toggle.querySelector(".sr-only");
+  const japanese = document.documentElement.lang === "ja";
+  const setMenuOpen = (open, returnFocus = false) => {
+    toggle.setAttribute("aria-expanded", String(open));
+    navigation.classList.toggle("is-open", open);
+    if (menuLabel) menuLabel.textContent = japanese ? (open ? "メニューを閉じる" : "メニューを開く") : (open ? "Close navigation" : "Open navigation");
+    if (returnFocus) toggle.focus();
+  };
+  toggle.addEventListener("click", () => setMenuOpen(toggle.getAttribute("aria-expanded") !== "true"));
   navigation.addEventListener("click", (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
-      toggle.setAttribute("aria-expanded", "false");
-      navigation.classList.remove("is-open");
+    if (event.target.closest("a")) setMenuOpen(false);
+  });
+  document.addEventListener("pointerdown", (event) => {
+    if (!navigation.contains(event.target) && !toggle.contains(event.target)) setMenuOpen(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+      event.preventDefault();
+      setMenuOpen(false, true);
     }
   });
+  navigation.addEventListener("focusout", (event) => {
+    if (event.relatedTarget && !navigation.contains(event.relatedTarget) && !toggle.contains(event.relatedTarget)) setMenuOpen(false);
+  });
+  window.matchMedia("(min-width: 901px)").addEventListener("change", () => setMenuOpen(false));
+}
+
+const gameSearch = document.querySelector("[data-game-search]");
+if (gameSearch) {
+  const cards = [...document.querySelectorAll("[data-game-name]")].map((node) => ({node, name: normalizeText(node.dataset.gameName)}));
+  const platforms = [...document.querySelectorAll(".game-platform")];
+  const status = document.querySelector("[data-game-status]");
+  const reset = document.querySelector("[data-game-reset]");
+  const update = () => {
+    const query = normalizeText(gameSearch.value);
+    let visible = 0;
+    cards.forEach(({node, name}) => { node.hidden = Boolean(query) && !name.includes(query); if (!node.hidden) visible += 1; });
+    platforms.forEach((platform) => { platform.querySelector("[data-game-empty]").hidden = Boolean(platform.querySelector(".game-card:not([hidden])")); });
+    status.textContent = query ? `Showing ${visible} of ${cards.length} games matching “${gameSearch.value.trim()}”` : "Browse by name or jump to a platform.";
+    reset.disabled = !gameSearch.value;
+  };
+  gameSearch.addEventListener("input", update);
+  gameSearch.addEventListener("search", update);
+  reset.addEventListener("click", () => { gameSearch.value = ""; update(); gameSearch.focus(); });
 }
 
 const knowledgeMap = document.querySelector("[data-knowledge-map]");
@@ -43,6 +77,11 @@ if (knowledgeMap) {
     draggableNodes.map((node) => [node.dataset.graphNodeId, node]),
   );
   const nodePositions = new Map();
+  const topicFilters = [...document.querySelectorAll("[data-topic-filter]")];
+  const disclosure = document.querySelector("[data-graph-disclosure]");
+  const resetFilters = [...document.querySelectorAll("[data-reading-reset]")];
+  const recordIndex = records.map((node) => ({ node, search: normalizeText(node.dataset.readingSearch), topics: node.dataset.readingTopics.split(" ") }));
+  let urlTimer = null;
   const suppressedClicks = new WeakSet();
   let activeTopic = null;
   let selectedPaper = null;
@@ -50,10 +89,6 @@ if (knowledgeMap) {
   let mobileLayout = null;
   let yearNavFrame = null;
 
-  const normalizeText = (value) => String(value || "")
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLocaleLowerCase();
 
   const setActiveYear = (year) => {
     yearNavLinks.forEach((link) => {
@@ -114,75 +149,146 @@ if (knowledgeMap) {
     y: Number(mobile ? node.dataset.graphMobileY : node.dataset.graphY) / 100,
   });
 
-  const clampGraphPosition = (position) => ({
-    x: Math.min(Math.max(position.x, 0.025), 0.975),
-    y: Math.min(Math.max(position.y, 0.025), 0.975),
+  let mapSize = { width: 0, height: 0 };
+  const nodeSizes = new Map();
+  const motion = new Map();
+  const movingNodes = new Set();
+  const edgesByNode = new Map(draggableNodes.map((node) => [node, new Set()]));
+  const edgeEndpoints = new Map();
+  edges.forEach((edge) => {
+    const source = graphNodeById.get(edge.dataset.source), target = graphNodeById.get(edge.dataset.target);
+    if (!source || !target) return;
+    edgeEndpoints.set(edge, { source, target });
+    edgesByNode.get(source).add(edge);
+    edgesByNode.get(target).add(edge);
   });
-
-  const currentPosition = (node) => nodePositions.get(node)
-    || initialPosition(node, mobileLayout ?? window.matchMedia("(max-width: 680px)").matches);
-
+  let motionFrame = null, lastFrameTime = null, releaseTime = 0, layoutFrame = null;
+  const boundsFor = (node) => {
+    const size = nodeSizes.get(node) || { width: 24, height: 24 };
+    return { x: Math.min(0.49, (size.width * 0.55 + 8) / mapSize.width), y: Math.min(0.49, (size.height * 0.55 + 8) / mapSize.height) };
+  };
+  const clampGraphPosition = (node, position) => {
+    const margin = boundsFor(node);
+    return { x: Math.min(Math.max(position.x, margin.x), 1 - margin.x), y: Math.min(Math.max(position.y, margin.y), 1 - margin.y) };
+  };
+  const currentPosition = (node) => nodePositions.get(node) || initialPosition(node, mobileLayout);
   const dragFollowersFor = (node) => {
     const topic = node.dataset.topic;
-    if (!topic || topic === "all") return [];
-    return paperNodes.filter((paperNode) => paperNode.dataset.paperTopic === topic);
+    return !topic || topic === "all" ? [] : paperNodes.filter((paperNode) => paperNode.dataset.paperTopic === topic);
   };
-
   const constrainGroupDelta = (startPositions, delta) => {
-    let minDeltaX = -Infinity;
-    let maxDeltaX = Infinity;
-    let minDeltaY = -Infinity;
-    let maxDeltaY = Infinity;
-
-    startPositions.forEach((position) => {
-      minDeltaX = Math.max(minDeltaX, 0.025 - position.x);
-      maxDeltaX = Math.min(maxDeltaX, 0.975 - position.x);
-      minDeltaY = Math.max(minDeltaY, 0.025 - position.y);
-      maxDeltaY = Math.min(maxDeltaY, 0.975 - position.y);
+    let minX = -Infinity, maxX = Infinity, minY = -Infinity, maxY = Infinity;
+    startPositions.forEach((position, node) => {
+      const margin = boundsFor(node);
+      minX = Math.max(minX, margin.x - position.x); maxX = Math.min(maxX, 1 - margin.x - position.x);
+      minY = Math.max(minY, margin.y - position.y); maxY = Math.min(maxY, 1 - margin.y - position.y);
     });
-
-    return {
-      x: Math.min(Math.max(delta.x, minDeltaX), maxDeltaX),
-      y: Math.min(Math.max(delta.y, minDeltaY), maxDeltaY),
-    };
+    return { x: Math.min(Math.max(delta.x, minX), maxX), y: Math.min(Math.max(delta.y, minY), maxY) };
   };
-
-  const placeNode = (node, position, mapBounds = knowledgeMap.getBoundingClientRect()) => {
-    node.style.left = `${position.x * mapBounds.width}px`;
-    node.style.top = `${position.y * mapBounds.height}px`;
+  const placeNode = (node) => {
+    const position = currentPosition(node);
+    node.style.setProperty("--graph-x", (position.x * mapSize.width).toFixed(2) + "px");
+    node.style.setProperty("--graph-y", (position.y * mapSize.height).toFixed(2) + "px");
   };
-
-  const positionEdges = () => {
-    const mapBounds = knowledgeMap.getBoundingClientRect();
-    edges.forEach((edge) => {
-      const source = graphNodeById.get(edge.dataset.source);
-      const target = graphNodeById.get(edge.dataset.target);
-      if (!source || !target) return;
-      const sourceBounds = source.getBoundingClientRect();
-      const targetBounds = target.getBoundingClientRect();
-      const sourceX = sourceBounds.left + sourceBounds.width / 2 - mapBounds.left;
-      const sourceY = sourceBounds.top + sourceBounds.height / 2 - mapBounds.top;
-      const targetX = targetBounds.left + targetBounds.width / 2 - mapBounds.left;
-      const targetY = targetBounds.top + targetBounds.height / 2 - mapBounds.top;
-      const deltaX = targetX - sourceX;
-      const deltaY = targetY - sourceY;
-      edge.style.setProperty("--edge-left", `${sourceX}px`);
-      edge.style.setProperty("--edge-top", `${sourceY}px`);
-      edge.style.setProperty("--edge-length", `${Math.hypot(deltaX, deltaY)}px`);
-      edge.style.setProperty("--edge-angle", `${Math.atan2(deltaY, deltaX) * 180 / Math.PI}deg`);
+  const positionEdges = (changedNodes) => {
+    const changedEdges = changedNodes ? new Set([...changedNodes].flatMap((node) => [...edgesByNode.get(node)])) : edges;
+    changedEdges.forEach((edge) => {
+      const pair = edgeEndpoints.get(edge);
+      if (!pair) return;
+      const source = currentPosition(pair.source), target = currentPosition(pair.target);
+      const dx = (target.x - source.x) * mapSize.width, dy = (target.y - source.y) * mapSize.height;
+      edge.style.setProperty("--edge-left", (source.x * mapSize.width).toFixed(2) + "px");
+      edge.style.setProperty("--edge-top", (source.y * mapSize.height).toFixed(2) + "px");
+      edge.style.setProperty("--edge-length", Math.hypot(dx, dy).toFixed(2));
+      edge.style.setProperty("--edge-angle", Math.atan2(dy, dx) + "rad");
     });
   };
-
+  const stopMotion = () => {
+    if (motionFrame !== null) cancelAnimationFrame(motionFrame);
+    motionFrame = null; lastFrameTime = null;
+    const previousDrag = dragState;
+    dragState = null;
+    if (previousDrag?.node.hasPointerCapture?.(previousDrag.pointerId)) previousDrag.node.releasePointerCapture(previousDrag.pointerId);
+    previousDrag?.node.classList.remove("is-dragging");
+    const changed = new Set(movingNodes);
+    movingNodes.forEach((node) => {
+      const state = motion.get(node);
+      if (state) nodePositions.set(node, { x: state.x, y: state.y });
+      node.classList.remove("is-dragging", "is-topic-dragging");
+      placeNode(node);
+    });
+    positionEdges(changed);
+    movingNodes.clear();
+    knowledgeMap.classList.remove("is-drag-active");
+  };
   const layoutGraph = () => {
-    const mapBounds = knowledgeMap.getBoundingClientRect();
+    layoutFrame = null;
+    if (disclosure && !disclosure.open) return;
+    const rect = knowledgeMap.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    stopMotion();
+    // Cache geometry on open/resize only. Drag frames below never read layout.
+    mapSize = { width: rect.width, height: rect.height };
+    draggableNodes.forEach((node) => nodeSizes.set(node, { width: node.offsetWidth, height: node.offsetHeight }));
     const isMobile = window.matchMedia("(max-width: 680px)").matches;
-    if (mobileLayout === null || mobileLayout !== isMobile) {
-      mobileLayout = isMobile;
-      draggableNodes.forEach((node) => nodePositions.set(node, initialPosition(node, isMobile)));
-    }
-    draggableNodes.forEach((node) => placeNode(node, nodePositions.get(node), mapBounds));
+    const reset = mobileLayout === null || mobileLayout !== isMobile;
+    mobileLayout = isMobile;
+    draggableNodes.forEach((node) => nodePositions.set(node, clampGraphPosition(node, reset ? initialPosition(node, isMobile) : currentPosition(node))));
+    draggableNodes.forEach(placeNode);
     positionEdges();
+    knowledgeMap.classList.add("is-layout-ready");
   };
+  const requestGraphLayout = () => { if (layoutFrame === null) layoutFrame = requestAnimationFrame(layoutGraph); };
+  const updateDragTargets = () => {
+    if (!dragState) return;
+    const delta = constrainGroupDelta(dragState.startPositions, { x: (dragState.latestX - dragState.startX) / mapSize.width, y: (dragState.latestY - dragState.startY) / mapSize.height });
+    dragState.nodes.forEach((node) => {
+      const start = dragState.startPositions.get(node), state = motion.get(node);
+      state.x = start.x + delta.x; state.y = start.y + delta.y;
+      movingNodes.add(node);
+    });
+  };
+  const animateGraph = (now) => {
+    motionFrame = null;
+    const dt = Math.min(0.032, Math.max(0.008, lastFrameTime === null ? 1 / 60 : (now - lastFrameTime) / 1000));
+    lastFrameTime = now;
+    updateDragTargets();
+    const changed = new Set();
+    movingNodes.forEach((node) => {
+      const state = motion.get(node), previous = currentPosition(node);
+      const held = dragState?.node === node;
+      let x = previous.x, y = previous.y;
+      if (held || reduceMotion.matches) {
+        x = state.x; y = state.y;
+        if (held && (x !== previous.x || y !== previous.y)) {
+          state.vx = Math.max(-0.3, Math.min(0.3, (x - previous.x) / dt));
+          state.vy = Math.max(-0.3, Math.min(0.3, (y - previous.y) / dt));
+          state.lastMoved = now;
+        }
+      } else {
+        // A bounded spring adds trailing motion without an all-pairs simulation.
+        state.vx += ((state.x - x) * state.stiffness - state.vx * 19) * dt;
+        state.vy += ((state.y - y) * state.stiffness - state.vy * 19) * dt;
+        x += state.vx * dt; y += state.vy * dt;
+      }
+      const clipped = clampGraphPosition(node, { x, y });
+      if (clipped.x !== x) state.vx = 0;
+      if (clipped.y !== y) state.vy = 0;
+      x = clipped.x; y = clipped.y;
+      const atRest = Math.hypot((x - state.x) * mapSize.width, (y - state.y) * mapSize.height) < 0.15 && Math.hypot(state.vx * mapSize.width, state.vy * mapSize.height) < 2;
+      if (atRest || (!dragState && now - releaseTime > 1400) || reduceMotion.matches || held) {
+        if (!held || reduceMotion.matches) { x = state.x; y = state.y; state.vx = 0; state.vy = 0; }
+        movingNodes.delete(node);
+        if (!held) node.classList.remove("is-topic-dragging");
+      }
+      if (x !== previous.x || y !== previous.y) { nodePositions.set(node, { x, y }); changed.add(node); }
+    });
+    changed.forEach(placeNode);
+    if (changed.size) positionEdges(changed);
+    if (movingNodes.size) motionFrame = requestAnimationFrame(animateGraph);
+    else { lastFrameTime = null; if (!dragState) knowledgeMap.classList.remove("is-drag-active"); }
+  };
+  const requestMotionFrame = () => { if (motionFrame === null) motionFrame = requestAnimationFrame(animateGraph); };
 
   const positionTooltip = (paperNode) => {
     if (!paperTooltip || paperTooltip.hidden) return;
@@ -259,17 +365,31 @@ if (knowledgeMap) {
     targetRecord.focus({ preventScroll: true });
   };
 
-  const updateReadingList = () => {
+  const filterUrl = () => {
+    const url = new URL(window.location.href);
+    for (const [key, value] of Object.entries({ q: searchInput?.value.trim(), year: yearSelect?.value, topic: activeTopic, starred: featuredFilter?.getAttribute("aria-pressed") === "true" ? "1" : "" })) {
+      if (value) url.searchParams.set(key, value);
+      else url.searchParams.delete(key);
+    }
+    return url;
+  };
+  const persistFilters = (mode = "push") => {
+    window.clearTimeout(urlTimer);
+    const url = filterUrl();
+    if (url.href !== window.location.href) window.history[mode === "replace" ? "replaceState" : "pushState"](null, "", url);
+  };
+
+  const updateReadingList = (historyMode = "push") => {
     const query = normalizeText(searchInput?.value);
     const selectedYear = yearSelect?.value || "";
     const featuredOnly = featuredFilter?.getAttribute("aria-pressed") === "true";
     let visibleCount = 0;
 
-    records.forEach((record) => {
-      const topicMatch = !activeTopic || record.dataset.readingTopics.split(" ").includes(activeTopic);
+    recordIndex.forEach(({ node: record, topics, search }) => {
+      const topicMatch = !activeTopic || topics.includes(activeTopic);
       const yearMatch = !selectedYear || record.dataset.readingYear === selectedYear;
       const featuredMatch = !featuredOnly || record.dataset.readingFeatured === "true";
-      const searchMatch = !query || normalizeText(record.dataset.readingSearch).includes(query);
+      const searchMatch = !query || search.includes(query);
       record.hidden = !(topicMatch && yearMatch && featuredMatch && searchMatch);
       if (!record.hidden) visibleCount += 1;
     });
@@ -302,10 +422,11 @@ if (knowledgeMap) {
       const queryText = query ? ` matching “${searchInput.value.trim()}”` : "";
       readingStatus.textContent = `Showing ${visibleCount} of ${records.length} papers${topicText}${yearText}${featuredText}${queryText}`;
     }
+    resetFilters.forEach((button) => { button.disabled = !(searchInput?.value || selectedYear || activeTopic || featuredOnly); });
+    if (historyMode) persistFilters(historyMode);
   };
 
-  const applyTopic = (topic) => {
-    activeTopic = !topic || topic === "all" || topic === activeTopic ? null : topic;
+  const renderTopicState = () => {
     topicNodes.forEach((node) => {
       const isAll = node.dataset.topic === "all";
       const isSelected = activeTopic ? node.dataset.topic === activeTopic : isAll;
@@ -338,8 +459,44 @@ if (knowledgeMap) {
       const count = selectedNode?.querySelector(".graph-node-count")?.textContent || records.length;
       graphStatus.textContent = activeTopic ? `${label} · ${count} papers` : `All five topics · ${count} papers`;
     }
+    topicFilters.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.topicFilter === (activeTopic || "all"))));
+  };
+  const applyTopic = (topic) => {
+    activeTopic = !topic || topic === "all" || topic === activeTopic ? null : topic;
+    renderTopicState();
     updateReadingList();
   };
+  const restoreFilters = () => {
+    window.clearTimeout(urlTimer);
+    const params = new URL(window.location.href).searchParams;
+    searchInput.value = params.get("q") || "";
+    const year = params.get("year") || "";
+    yearSelect.value = yearOptions.some((option) => option.dataset.readingYearOption === year) ? year : "";
+    const topic = params.get("topic");
+    activeTopic = topic !== "all" && nodeByTopic.has(topic) ? topic : null;
+    featuredFilter.setAttribute("aria-pressed", String(params.get("starred") === "1"));
+    clearPaperSelection();
+    syncYearPicker();
+    renderTopicState();
+    updateReadingList(null);
+  };
+  topicFilters.forEach((button) => button.addEventListener("click", () => applyTopic(button.dataset.topicFilter)));
+  resetFilters.forEach((button) => button.addEventListener("click", () => {
+    searchInput.value = "";
+    yearSelect.value = "";
+    featuredFilter.setAttribute("aria-pressed", "false");
+    clearPaperSelection();
+    syncYearPicker();
+    applyTopic(null);
+    searchInput.focus({ preventScroll: false });
+  }));
+  document.querySelector("[data-reading-share]")?.addEventListener("click", async () => {
+    persistFilters();
+    const status = document.querySelector("[data-share-status]");
+    try { await navigator.clipboard.writeText(filterUrl().href); status.textContent = "Link copied"; }
+    catch { status.textContent = "Copy this URL: " + filterUrl().href; }
+  });
+  window.addEventListener("popstate", restoreFilters);
 
   const consumeSuppressedClick = (node, event) => {
     if (!suppressedClicks.has(node)) return false;
@@ -358,7 +515,7 @@ if (knowledgeMap) {
 
   paperNodes.forEach((node) => {
     node.setAttribute("aria-pressed", "false");
-    node.addEventListener("pointerenter", () => showPaperTooltip(node));
+    node.addEventListener("pointerenter", () => { if (!dragState) showPaperTooltip(node); });
     node.addEventListener("pointerleave", hidePaperTooltip);
     node.addEventListener("focus", () => showPaperTooltip(node));
     node.addEventListener("blur", hidePaperTooltip);
@@ -370,71 +527,64 @@ if (knowledgeMap) {
 
   draggableNodes.forEach((node) => {
     node.addEventListener("pointerdown", (event) => {
-      if (event.button !== 0 || dragState) return;
-      const followers = dragFollowersFor(node);
-      const nodes = [node, ...followers];
-      dragState = {
-        node,
-        followers,
-        nodes,
-        startPositions: new Map(nodes.map((dragNode) => [dragNode, currentPosition(dragNode)])),
-        pointerId: event.pointerId,
-        startX: event.clientX,
-        startY: event.clientY,
-        moved: false,
-      };
+      if (event.button !== 0 || dragState || (event.pointerType === "touch" && node.matches("[data-paper-node]"))) return;
+      stopMotion();
+      if (!mapSize.width) layoutGraph();
+      if (!mapSize.width) return;
+      suppressedClicks.delete(node);
+      const followers = dragFollowersFor(node), nodes = [node, ...followers];
+      nodes.forEach((entry, index) => motion.set(entry, { ...currentPosition(entry), vx: 0, vy: 0, stiffness: 170 + (index % 5) * 10, lastMoved: 0 }));
+      dragState = { node, followers, nodes, startPositions: new Map(nodes.map((entry) => [entry, { ...currentPosition(entry) }])), pointerId: event.pointerId, startX: event.clientX, startY: event.clientY, latestX: event.clientX, latestY: event.clientY, moved: false };
       node.setPointerCapture?.(event.pointerId);
-      node.classList.add("is-dragging");
-      if (node.matches("[data-paper-node]")) showPaperTooltip(node);
+      hidePaperTooltip();
     });
   });
-
   document.addEventListener("pointermove", (event) => {
     if (!dragState || dragState.pointerId !== event.pointerId) return;
-    const distance = Math.hypot(event.clientX - dragState.startX, event.clientY - dragState.startY);
-    if (!dragState.moved && distance < 4) return;
+    if (!dragState.moved && Math.hypot(event.clientX - dragState.startX, event.clientY - dragState.startY) < 4) return;
     if (!dragState.moved) {
+      dragState.node.classList.add("is-dragging");
       dragState.followers.forEach((node) => node.classList.add("is-topic-dragging"));
+      knowledgeMap.classList.add("is-drag-active");
     }
     dragState.moved = true;
+    dragState.latestX = event.clientX; dragState.latestY = event.clientY;
     event.preventDefault();
-    const mapBounds = knowledgeMap.getBoundingClientRect();
-    const delta = constrainGroupDelta(dragState.startPositions, {
-      x: (event.clientX - dragState.startX) / mapBounds.width,
-      y: (event.clientY - dragState.startY) / mapBounds.height,
-    });
-    dragState.nodes.forEach((node) => {
-      const startPosition = dragState.startPositions.get(node);
-      const position = clampGraphPosition({
-        x: startPosition.x + delta.x,
-        y: startPosition.y + delta.y,
-      });
-      nodePositions.set(node, position);
-      placeNode(node, position, mapBounds);
-    });
-    positionEdges();
-    if (dragState.node.matches("[data-paper-node]")) positionTooltip(dragState.node);
+    requestMotionFrame();
   });
-
   const finishDrag = (event) => {
     if (!dragState || dragState.pointerId !== event.pointerId) return;
-    const { node, moved } = dragState;
+    const { node, moved, pointerId } = dragState;
     if (moved) {
+      if (event.type === "pointerup") { dragState.latestX = event.clientX; dragState.latestY = event.clientY; }
+      updateDragTargets();
       suppressedClicks.add(node);
-      window.setTimeout(() => suppressedClicks.delete(node), 0);
+      releaseTime = performance.now();
+      const leader = motion.get(node);
+      if (releaseTime - leader.lastMoved > 90) { leader.vx = 0; leader.vy = 0; }
     }
-    if (node.hasPointerCapture?.(event.pointerId)) node.releasePointerCapture(event.pointerId);
-    node.classList.remove("is-dragging");
-    dragState.followers.forEach((follower) => follower.classList.remove("is-topic-dragging"));
     dragState = null;
+    if (node.hasPointerCapture?.(pointerId)) node.releasePointerCapture(pointerId);
+    node.classList.remove("is-dragging");
+    if (moved) requestMotionFrame();
   };
-
   document.addEventListener("pointerup", finishDrag);
   document.addEventListener("pointercancel", finishDrag);
+  draggableNodes.forEach((node) => node.addEventListener("lostpointercapture", (event) => { if (dragState?.node === node) finishDrag(event); }));
+  document.querySelector("[data-graph-layout-reset]")?.addEventListener("click", () => { stopMotion(); mobileLayout = null; requestGraphLayout(); });
+  disclosure?.addEventListener("toggle", () => { if (disclosure.open) requestGraphLayout(); else { stopMotion(); hidePaperTooltip(); } });
+  document.addEventListener("visibilitychange", () => { if (document.hidden) stopMotion(); });
+  reduceMotion.addEventListener("change", stopMotion);
+  if ("IntersectionObserver" in window) new IntersectionObserver(([entry]) => { if (!entry.isIntersecting) stopMotion(); }).observe(knowledgeMap);
 
   graphReset?.addEventListener("click", () => applyTopic(null));
-  searchInput?.addEventListener("input", updateReadingList);
-  searchInput?.addEventListener("search", updateReadingList);
+  const searchChanged = () => {
+    updateReadingList(null);
+    window.clearTimeout(urlTimer);
+    urlTimer = window.setTimeout(() => persistFilters(), 300);
+  };
+  searchInput?.addEventListener("input", searchChanged);
+  searchInput?.addEventListener("search", searchChanged);
   featuredFilter?.addEventListener("click", () => {
     const isPressed = featuredFilter.getAttribute("aria-pressed") === "true";
     featuredFilter.setAttribute("aria-pressed", String(!isPressed));
@@ -510,20 +660,20 @@ if (knowledgeMap) {
   window.addEventListener("scroll", requestYearNavigationUpdate, { passive: true });
   window.addEventListener("resize", requestYearNavigationUpdate);
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && (activeTopic || selectedPaper)) {
+    if (!event.defaultPrevented && event.key === "Escape" && knowledgeMap.contains(event.target) && (activeTopic || selectedPaper)) {
       clearPaperSelection();
       applyTopic(null);
-      nodeByTopic.get("all")?.focus();
+      (disclosure?.open ? nodeByTopic.get("all") : topicFilters[0])?.focus();
     }
   });
 
   if ("ResizeObserver" in window) {
-    new ResizeObserver(layoutGraph).observe(knowledgeMap);
+    new ResizeObserver(requestGraphLayout).observe(knowledgeMap);
   } else {
-    window.addEventListener("resize", layoutGraph);
+    window.addEventListener("resize", requestGraphLayout);
   }
-  document.fonts?.ready.then(layoutGraph);
-  requestAnimationFrame(layoutGraph);
-  syncYearPicker();
-  updateReadingList();
+  document.fonts?.ready.then(requestGraphLayout);
+  if (disclosure && window.matchMedia("(min-width: 901px)").matches) disclosure.open = true;
+  requestGraphLayout();
+  restoreFilters();
 }

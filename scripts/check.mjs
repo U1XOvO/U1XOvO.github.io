@@ -32,11 +32,30 @@ const thumbnailFile = (image, extension) => path.join(root, "public", thumbnailV
 
 assert.ok(Array.isArray(projects.projects), "projects.json must contain a projects array");
 for (const project of projects.projects) {
-  for (const field of ["id", "title", "status", "description", "url"]) assert.ok(project[field], `project missing ${field}`);
+  for (const field of ["id", "title", "status", "description", "url", "useCase"]) assert.ok(project[field], `project missing ${field}`);
   assert.ok(Array.isArray(project.tags), `${project.id} tags must be an array`);
   assert.ok(Array.isArray(project.highlights), `${project.id} highlights must be an array`);
   assert.match(project.url, /^https:\/\/github\.com\/[^/]+\/[^/]+$/, `${project.id} must link to a GitHub repository`);
+  assert.ok(Array.isArray(project.workflow) && project.workflow.length > 0, `${project.id} needs a usage workflow`);
+  for (const step of project.workflow) {
+    assert.ok(step.label?.trim() && step.value?.trim(), `${project.id} workflow steps need a label and value`);
+  }
+  assert.ok(project.example?.label?.trim() && project.example.caption?.trim(), `${project.id} needs a described example`);
+  if (project.example.image) {
+    const example = project.example;
+    assert.match(example.image, /^\/images\/projects\/[a-z0-9-]+\.png$/, `${project.id} example image must use a local PNG path`);
+    assert.ok(example.imageAlt?.trim() && example.source?.trim(), `${project.id} example image needs alternative text and provenance`);
+    assert.match(example.createdOn, /^\d{4}-\d{2}-\d{2}$/, `${project.id} example needs a source date`);
+    const image = await readFile(path.join(root, "public", example.image.slice(1)));
+    assert.equal(image.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", `${project.id} example must be a valid PNG`);
+    assert.deepEqual([example.width, example.height], [image.readUInt32BE(16), image.readUInt32BE(20)], `${project.id} example dimensions must preserve its native aspect ratio`);
+  }
 }
+assert.ok(profile.intro?.trim(), "homepage needs an introduction grounded in the listed work");
+assert.ok(Array.isArray(profile.featuredProjectIds), "homepage featured projects must be data-driven");
+assert.equal(new Set(profile.featuredProjectIds).size, profile.featuredProjectIds.length, "homepage featured projects must be unique");
+for (const id of profile.featuredProjectIds) assert.ok(projects.projects.some((project) => project.id === id), `unknown homepage project: ${id}`);
+assert.ok(papers.papers.some((paper) => paper.id === profile.featuredPaperId), "homepage publication must reference a real paper");
 
 assert.ok(Array.isArray(literature.topics), "literature.json topics must be an array");
 assert.ok(Array.isArray(literature.edges), "literature.json edges must be an array");

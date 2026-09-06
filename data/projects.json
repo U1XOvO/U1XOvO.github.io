@@ -2,6 +2,22 @@
   "projects": [
     {
       "id": "visualize-prtebd",
+      "useCase": "Explore protein sequence representations with reproducible, family-colored projections.",
+      "workflow": [
+        {"label": "Input", "value": "Sequence and family columns in a CSV file"},
+        {"label": "Process", "value": "Protein language model embeddings → t-SNE / UMAP"},
+        {"label": "Output", "value": "Embeddings, linked records, model metadata, and PNG/SVG plots"}
+      ],
+      "example": {
+        "label": "Explore a real UMAP output",
+        "image": "/images/projects/visualize-prtebd-umap.png",
+        "imageAlt": "UMAP projection of 7,757 protein embeddings from Biohub/ESMC-600M, colored by the first EC digit.",
+        "width": 3246,
+        "height": 2446,
+        "caption": "Example output · 7,757 sequences · Biohub/ESMC-600M · mean pooling · colors indicate the first EC digit.",
+        "source": "Visualize_prtebd example_outputs/split10/visualizations/umap.png and metadata.json",
+        "createdOn": "2026-08-01"
+      },
       "title": "Visualize_prtebd",
       "status": "Public repository",
       "description": "Generate traceable protein embeddings with Hugging Face protein language models and visualize them with t-SNE and UMAP.",
@@ -20,6 +36,16 @@
     },
     {
       "id": "pekp",
+      "useCase": "Find a starting point for choosing an enzyme kinetic parameter prediction model.",
+      "workflow": [
+        {"label": "Choose", "value": "A target parameter: kcat, Km, or kcat/Km"},
+        {"label": "Browse", "value": "Models grouped by parameter, with publication years"},
+        {"label": "Follow up", "value": "Read the linked paper and public implementation when available"}
+      ],
+      "example": {
+        "label": "Example lookup",
+        "caption": "Looking for a Km predictor? Start in the Km section, compare publication years, then follow the paper and implementation links to check the method against your data."
+      },
       "title": "PEKP",
       "status": "Public repository",
       "description": "Collect models for predicting enzyme kinetic parameters in one compact, parameter-organized reference.",

@@ -124,9 +124,18 @@ function layout({ title, description, pathname, content, pageClass = "", languag
 const profileDetails = profile.details
   .map(({ label, value }) => `<div class="profile-detail${label === "Email" ? " profile-detail-email" : ""}">
     <dt>${escapeHtml(label)}</dt>
-    <dd>${value ? escapeHtml(value) : '<span class="profile-placeholder">To be added</span>'}</dd>
+    <dd>${value ? label === "Email" ? `<a href="mailto:${escapeHtml(value)}">${escapeHtml(value)}</a>` : escapeHtml(value) : '<span class="profile-placeholder">To be added</span>'}</dd>
   </div>`)
   .join("");
+
+const contactEmail = profile.details.find(({ label }) => label === "Email")?.value;
+const homeProjectCards = profile.featuredProjectIds.map((id) => {
+  const project = projectsData.projects.find((entry) => entry.id === id);
+  if (!project) throw new Error(`Unknown featured project: ${id}`);
+  return `<article class="home-work-card"><p class="card-label">Open-source project</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.description)}</p><a class="text-link" href="/projects/#${escapeHtml(project.id)}">Explore project <span aria-hidden="true">→</span></a></article>`;
+}).join("");
+const homePaper = papersData.papers.find(({ id }) => id === profile.featuredPaperId);
+if (!homePaper) throw new Error(`Unknown featured publication: ${profile.featuredPaperId}`);
 
 const home = layout({
   title: "",
@@ -140,8 +149,18 @@ const home = layout({
       <div class="profile-information reveal reveal-delay">
         <p class="eyebrow">Personal profile</p>
         <h1 id="profile-title">${escapeHtml(profile.name)}</h1>
+        <p class="profile-intro">${escapeHtml(profile.intro)}</p>
+        <div class="hero-actions profile-actions">
+          <a class="button button-primary" href="/projects/">Explore projects <span aria-hidden="true">→</span></a>
+          <a class="button button-quiet" href="/paper/">Publications</a>
+          ${contactEmail ? `<a class="profile-contact" href="mailto:${escapeHtml(contactEmail)}">Get in touch <span aria-hidden="true">↗</span></a>` : ""}
+        </div>
         <dl class="profile-details">${profileDetails}</dl>
       </div>
+    </section>
+    <section class="home-work shell" aria-labelledby="home-work-title">
+      <div class="section-heading"><h2 id="home-work-title">${escapeHtml(profile.workHeading)}</h2><p>${escapeHtml(profile.workIntro)}</p></div>
+      <div class="home-work-grid">${homeProjectCards}<article class="home-work-card"><p class="card-label">${escapeHtml(homePaper.year)} · ${escapeHtml(homePaper.venue)}</p><h3>${escapeHtml(homePaper.title)}</h3><a class="text-link" href="/paper/">Explore publication <span aria-hidden="true">→</span></a></article></div>
     </section>`
 });
 
@@ -181,13 +200,19 @@ const projectCards = projectsData.projects.length ? projectsData.projects.map((p
   const link = project.url
     ? `<a class="text-link" href="${escapeHtml(project.url)}"${project.url.startsWith("http") ? ' rel="noreferrer"' : ""}>View repository <span aria-hidden="true">↗</span></a>`
     : "";
-  return `<article class="project-card tone-${["pink", "blue", "green"][index % 3]}">
+  const workflow = `<dl class="project-workflow">${project.workflow.map(({ label, value }) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}</dl>`;
+  const example = project.example;
+  const exampleMarkup = example.image
+    ? `<details class="project-example"><summary>${escapeHtml(example.label)}</summary><figure><img src="${escapeHtml(example.image)}" alt="${escapeHtml(example.imageAlt)}" width="${example.width}" height="${example.height}" loading="lazy" decoding="async"><figcaption>${escapeHtml(example.caption)}</figcaption></figure></details>`
+    : `<div class="project-example-copy"><strong>${escapeHtml(example.label)}</strong><p>${escapeHtml(example.caption)}</p></div>`;
+  return `<article class="project-card tone-${["pink", "blue", "green"][index % 3]}" id="${escapeHtml(project.id)}">
     <div class="project-meta"><span>0${index + 1}</span><span>${escapeHtml(project.status)}</span></div>
     <h2>${escapeHtml(project.title)}</h2>
     <p>${escapeHtml(project.description)}</p>
-    <div class="tag-list">${tagList}</div>
-    <ul>${highlights}</ul>
     ${link}
+    ${workflow}
+    ${exampleMarkup}
+    <details class="project-details"><summary>Features &amp; use case</summary><p>${escapeHtml(project.useCase)}</p><div class="tag-list">${tagList}</div><ul>${highlights}</ul></details>
   </article>`;
 }).join("") : emptyState();
 
@@ -350,30 +375,7 @@ const readingYearNavigation = `<nav class="reading-year-nav" data-reading-year-n
   }).join("")}</ol>
 </nav>`;
 
-const literatureSections = literature.topics.length || literature.records.length
-  ? `${literature.topics.length ? `<section class="graph-section" aria-labelledby="graph-title">
-      <div class="section-heading compact-heading"><h2 id="graph-title">AI + Protein landscape</h2></div>
-      <div class="corpus-meta" aria-label="Literature source summary">
-        <span><strong>${literature.source.includedItems}</strong> research papers</span>
-        <span>Zotero snapshot ${escapeHtml(literature.source.snapshotDate)}</span>
-      </div>
-      <div class="knowledge-map" data-knowledge-map role="group" aria-labelledby="graph-title" aria-describedby="graph-help">
-        <div class="graph-edges" aria-hidden="true">${graphEdges}${graphPaperEdges}</div>
-        ${graphPaperNodes}
-        ${graphNodes}
-        <div class="graph-paper-tooltip" id="graph-paper-tooltip" role="tooltip" data-graph-paper-tooltip hidden></div>
-      </div>
-      <div class="graph-toolbar">
-        <p class="graph-help" id="graph-help">★ marks ${escapeHtml(featuredVenueLabel)} papers.</p>
-        <div class="graph-feedback">
-          <p class="graph-status" role="status" aria-live="polite" data-graph-status>All five topics · ${literature.source.includedItems} papers</p>
-          <button class="graph-reset" type="button" data-graph-reset disabled>Clear topic filter</button>
-        </div>
-      </div>
-    </section>` : ""}
-    ${literature.records.length ? `<section class="reading-section" aria-labelledby="reading-title">
-      <div class="section-heading compact-heading"><h2 id="reading-title">Research papers</h2></div>
-      <div class="reading-controls" aria-label="Paper controls">
+const readingControls = `      <div class="reading-controls" aria-label="Paper controls">
         <label class="reading-control reading-search">
           <span>Search the collection</span>
           <input type="search" data-reading-search-input placeholder="Title, author, venue, DOI, or Zotero tag" autocomplete="off">
@@ -396,17 +398,55 @@ const literatureSections = literature.topics.length || literature.records.length
           </button>
         </div>
       </div>
+`;
+
+const literatureSections = literature.records.length ? `
+    <section class="graph-section" aria-label="Find research papers">
+      <div class="corpus-meta" aria-label="Literature source summary">
+        <span><strong>${literature.source.includedItems}</strong> research papers</span>
+        <span>Zotero snapshot ${escapeHtml(literature.source.snapshotDate)}</span>
+      </div>
+      ${readingControls}
+      <div class="topic-filters" aria-label="Filter papers by topic">
+        ${literature.topics.map((topic) => `<button class="topic-filter tone-${escapeHtml(topic.tone)}" type="button" data-topic-filter="${escapeHtml(topic.id)}" aria-pressed="${topic.id === "all"}">${escapeHtml(topic.id === "all" ? "All topics" : topic.label)}<span>${topic.count}</span></button>`).join("")}
+      </div>
+      <div class="reading-actions">
+        <a class="reading-jump" href="#reading-list">Browse results <span aria-hidden="true">↓</span></a>
+        <button class="utility-button" type="button" data-reading-reset disabled>Clear all filters</button>
+        <button class="utility-button" type="button" data-reading-share>Copy filtered link</button>
+        <span class="share-status" role="status" data-share-status></span>
+      </div>
+      <details class="graph-disclosure" data-graph-disclosure>
+        <summary><span>Explore the topic map</span><small>Drag, follow connections, discover papers</small></summary>
+        <div class="section-heading compact-heading"><h2 id="graph-title">AI + Protein landscape</h2></div>
+      <div class="knowledge-map" data-knowledge-map role="group" aria-labelledby="graph-title" aria-describedby="graph-help">
+        <div class="graph-edges" aria-hidden="true">${graphEdges}${graphPaperEdges}</div>
+        ${graphPaperNodes}
+        ${graphNodes}
+        <div class="graph-paper-tooltip" id="graph-paper-tooltip" role="tooltip" data-graph-paper-tooltip hidden></div>
+      </div>
+      <div class="graph-toolbar">
+        <p class="graph-help" id="graph-help">Drag a topic to move its papers; select a paper to jump to its entry. ★ marks ${escapeHtml(featuredVenueLabel)} papers.</p>
+        <div class="graph-feedback">
+          <p class="graph-status" role="status" aria-live="polite" data-graph-status>All five topics · ${literature.source.includedItems} papers</p>
+          <button class="graph-reset" type="button" data-graph-reset disabled>Clear topic filter</button><button class="graph-reset" type="button" data-graph-layout-reset>Reset positions</button>
+        </div>
+      </div>
+
+      </details>
+    </section>
+    <section class="reading-section" aria-labelledby="reading-title">
+      <div class="section-heading compact-heading"><h2 id="reading-title">Research papers</h2></div>
       <div class="reading-results-row">
         <p class="reading-results" role="status" aria-live="polite" data-reading-status>Showing all ${literature.source.includedItems} papers</p>
         <span>Source: Zotero · ${escapeHtml(literature.source.collection)}</span>
       </div>
       <div class="reading-browse-layout">
         ${readingYearNavigation}
-        <div class="reading-year-groups" id="reading-list">${readingYearGroups}</div>
+        <div class="reading-year-groups" id="reading-list" tabindex="-1">${readingYearGroups}</div>
       </div>
-      <p class="reading-empty" data-reading-empty hidden>No papers match the current filters.</p>
-    </section>` : ""}`
-  : emptyState();
+      <div class="reading-empty" data-reading-empty hidden><p>No papers match the current filters.</p><button class="utility-button" type="button" data-reading-reset>Clear all filters</button></div>
+    </section>` : emptyState();
 
 const library = layout({
   title: "Literature",
@@ -479,7 +519,7 @@ const shelfCards = acgn.shelves.length ? acgn.shelves.map((shelf) => {
 }).join("") : "";
 
 const gameCards = (games, platform) => games.length
-  ? games.map((game) => `<figure class="game-card ${platform}-game-card">
+  ? games.map((game) => `<figure class="game-card ${platform}-game-card" data-game-name="${escapeHtml(game.name)}">
       <div class="game-cover ${platform}-game-cover">
         ${thumbnailPicture({ image: game.image, alt: game.imageAlt })}
       </div>
@@ -508,14 +548,24 @@ const acgnPage = layout({
   pageClass: "page-acgn",
   content: `<div class="shell page-shell content-page-shell">
     ${pageTitle("Gamer", "page-title-acgn")}
+    <div class="game-browse" id="game-browse">
+      <label class="reading-control game-search"><span>Find a game</span><input type="search" data-game-search placeholder="Search Steam &amp; Nintendo Switch" autocomplete="off"></label>
+      <nav class="game-platform-nav" aria-label="Game platforms"><a class="utility-button" href="#steam-games-title">Steam <span aria-hidden="true">↓</span></a><a class="utility-button" href="#switch-games-title">Nintendo Switch <span aria-hidden="true">↓</span></a></nav>
+      <button class="utility-button" type="button" data-game-reset disabled>Clear search</button>
+      <p class="game-search-status" role="status" aria-live="polite" data-game-status>Browse by name or jump to a platform.</p>
+    </div>
     ${steamProfileCard}
     <section class="game-platform steam-platform" aria-labelledby="steam-games-title">
       <h2 class="game-platform-title steam-platform-title" id="steam-games-title">Steam Games</h2>
       <div class="game-grid" aria-label="Steam game collection">${steamGames}</div>
+      <p data-game-empty hidden>No Steam games match this search.</p>
+      <a class="back-to-top" href="#game-browse">Back to search <span aria-hidden="true">↑</span></a>
     </section>
     <section class="game-platform switch-platform" aria-labelledby="switch-games-title">
       <h2 class="game-platform-title switch-platform-title" id="switch-games-title">Nintendo Switch</h2>
       <div class="game-grid" aria-label="Nintendo Switch game collection">${switchGames}</div>
+      <p data-game-empty hidden>No Nintendo Switch games match this search.</p>
+      <a class="back-to-top" href="#game-browse">Back to top <span aria-hidden="true">↑</span></a>
     </section>
     ${shelfCards ? `<section class="shelf-grid" aria-label="Other ACGN collection categories">${shelfCards}</section>` : ""}
   </div>`

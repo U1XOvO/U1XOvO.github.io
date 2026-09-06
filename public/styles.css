@@ -143,10 +143,10 @@ button { color: inherit; font: inherit; }
 code { padding: 0.16em 0.42em; border: 1px solid var(--line); border-radius: 6px; background: rgba(255,255,255,0.43); font: 0.88em ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
 
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
-.project-card { min-height: 470px; display: flex; flex-direction: column; padding: 34px; border-radius: 32px; }
+.project-card { min-height: 0; scroll-margin-top: 100px; display: flex; flex-direction: column; padding: 34px; border-radius: 32px; }
 .project-card:nth-child(3n) { grid-column: 1 / -1; min-height: 390px; }
 .project-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
-.project-card h2 { max-width: 560px; margin: 62px 0 14px; font-family: var(--serif); font-size: clamp(2rem, 3vw, 3.1rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.04em; }
+.project-card h2 { max-width: 560px; margin: 24px 0 14px; font-family: var(--serif); font-size: clamp(2rem, 3vw, 3.1rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.04em; }
 .project-card > p { max-width: 700px; margin: 0; color: var(--muted); line-height: 1.8; }
 .project-card ul { margin: 24px 0 0; padding-left: 19px; color: var(--muted); line-height: 1.8; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
@@ -154,7 +154,7 @@ code { padding: 0.16em 0.42em; border: 1px solid var(--line); border-radius: 6px
 .text-link { width: fit-content; margin-top: auto; padding-top: 28px; border-bottom: 1px solid currentColor; font-size: 0.82rem; font-weight: 720; }
 
 .graph-section, .reading-section { padding-top: 10px; }
-.reading-section { padding-top: 112px; }
+.reading-section { padding-top: 44px; }
 .compact-heading { margin-bottom: 26px; }
 .compact-heading h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
 .graph-section .section-kicker,
@@ -273,7 +273,7 @@ code { padding: 0.16em 0.42em; border: 1px solid var(--line); border-radius: 6px
 .reading-year-heading h3 { margin: 0; scroll-margin-top: 110px; color: #a85f79; font-family: var(--sans); font-size: clamp(2rem, 4.2vw, 3.4rem); font-weight: 620; line-height: 0.9; letter-spacing: 0.045em; }
 .reading-year-heading time { font-variant-numeric: lining-nums tabular-nums; }
 .reading-year-heading > span { color: var(--muted); font-size: 0.72rem; font-weight: 720; white-space: nowrap; }
-.reading-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.reading-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
 .reading-list-item { min-width: 0; scroll-margin-top: 96px; }
 .reading-list-item[hidden] { display: none; }
 .reading-list-item:focus { outline: none; }
@@ -396,6 +396,10 @@ code { padding: 0.16em 0.42em; border: 1px solid var(--line); border-radius: 6px
 .site-footer a:hover { color: var(--ink); }
 
 /* Shared macOS-inspired liquid glass surface. */
+.home-work-card,
+.utility-button,
+.topic-filter,
+.graph-disclosure > summary,
 .profile-information,
 .project-card,
 .knowledge-map,
@@ -555,12 +559,12 @@ code,
   .section-summary { flex-basis: auto; max-width: 680px; }
   .reading-browse-layout { grid-template-columns: 68px minmax(0, 1fr); gap: 14px; }
   .reading-year-nav { top: 82px; padding: 10px 7px; border-radius: 22px; }
-  .reading-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .reading-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .paper-card { grid-template-columns: 1fr; }
   .game-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .anime-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .anime-deity-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .anime-deity-card:nth-child(5) { grid-column: auto; }
+  .anime-deity-card:nth-child(5) { grid-column: span 2; }
   .anime-deity-card:nth-child(7) { grid-column: 3 / span 2; }
 }
 
@@ -586,7 +590,8 @@ code,
   .paper-citation-row { align-items: flex-start; flex-direction: column; gap: 12px; }
   .paper-metrics { width: 100%; }
   .journal-metric { flex: 1; }
-  .reading-browse-layout { grid-template-columns: 48px minmax(0, 1fr); gap: 10px; }
+  .reading-browse-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .reading-year-nav { display: none; }
   .reading-year-nav { top: 82px; padding: 8px 4px; border-radius: 18px; }
   .reading-year-nav-label { margin-bottom: 6px; font-size: 0.5rem; letter-spacing: 0.06em; }
   .reading-year-nav ol { gap: 4px; }
@@ -610,7 +615,7 @@ code,
   .anime-section-heading h2 { font-size: clamp(2.25rem, 12vw, 3.45rem); }
   .anime-deity-heading { --anime-deity-heading-size: clamp(1.7rem, 8.7vw, 2.5rem); padding: 24px 20px; border-radius: 26px; }
   .anime-deity-heading h2 { margin-top: 22px; }
-  .anime-grid,
+  .anime-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .anime-deity-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
   .anime-deity-card:nth-child(7) { grid-column: 2 / span 2; }
   .anime-card { display: flex; flex-direction: column; gap: 0; padding: 6px; }
@@ -623,7 +628,7 @@ code,
   .anime-deity-card .anime-release { font-size: 0.58rem; }
   .project-grid, .shelf-grid { grid-template-columns: 1fr; }
   .project-card:nth-child(3n) { grid-column: auto; }
-  .reading-section { padding-top: 88px; }
+  .reading-section { padding-top: 34px; }
   .corpus-meta { display: grid; grid-template-columns: 1fr; }
   .knowledge-map { height: 720px; border-radius: 30px; }
   .knowledge-map::before { inset: 22px; }
@@ -645,10 +650,121 @@ code,
   .site-footer { align-items: flex-start; flex-direction: column; justify-content: center; padding: 22px; }
 }
 
+
+/* Focused navigation, wider reading surfaces, and on-demand exploration. */
+[hidden] { display: none !important; }
+.home-profile { min-height: auto; padding: 48px 0 60px; gap: clamp(32px, 5vw, 64px); }
+.avatar-panel { top: 0; width: 100%; max-width: 420px; }
+.profile-intro { margin: 24px 0 0; max-width: 42ch; color: var(--muted); font-size: 1rem; line-height: 1.7; }
+.profile-actions { gap: 10px; margin-top: 24px; align-items: center; }
+.profile-actions .button { min-height: 44px; padding: 0 18px; font-size: 0.82rem; }
+.profile-contact { display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; color: #527c98; font-size: 0.82rem; font-weight: 720; }
+.profile-detail-email a { text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.home-work { padding-bottom: 80px; }
+.home-work .section-heading > p { color: var(--muted); line-height: 1.7; }
+.home-work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.home-work-card { display: flex; flex-direction: column; padding: 26px; border-radius: 26px; }
+.home-work-card h3 { margin: 0; font-size: 1.18rem; line-height: 1.4; overflow-wrap: anywhere; }
+.home-work-card > p:not(.card-label) { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+.home-work-card .text-link { min-height: 44px; padding-top: 18px; }
+.project-grid { align-items: start; }
+.project-card > .text-link { margin-top: 16px; padding-top: 0; min-height: 44px; display: inline-flex; align-items: center; }
+.project-workflow { margin: 24px 0 0; border-top: 1px solid var(--line); }
+.project-workflow > div { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.project-workflow dt { color: #527c98; font-size: 0.76rem; font-weight: 760; }
+.project-workflow dd { margin: 0; font-size: 0.84rem; line-height: 1.6; overflow-wrap: anywhere; }
+.project-example, .project-details { margin-top: 16px; }
+.project-example summary, .project-details summary { min-height: 44px; padding: 12px 0; cursor: pointer; font-size: 0.82rem; font-weight: 720; }
+.project-example figure { margin: 10px 0 0; }
+.project-example img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.project-example figcaption, .project-example-copy p, .project-details p { font-size: 0.8rem; line-height: 1.65; color: var(--muted); }
+.project-example figcaption { margin-top: 12px; }
+.project-example-copy { margin-top: 22px; }
+.project-example-copy strong { font-size: 0.8rem; }
+.project-details ul { font-size: 0.84rem; }
+.utility-button, .topic-filter { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 15px; border-radius: 16px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+.utility-button:disabled { opacity: 0.45; cursor: default; }
+.topic-filters { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+.topic-filter { justify-content: space-between; font-size: 0.76rem; }
+.topic-filter > span { color: #527c98; font-variant-numeric: tabular-nums; }
+.topic-filter[aria-pressed="true"] { border-color: rgba(120,168,199,0.7); background: linear-gradient(135deg, rgba(220,238,250,0.58), rgba(232,225,248,0.46)); box-shadow: inset 0 0 0 1px rgba(120,168,199,0.35); }
+.reading-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 18px 0 24px; }
+.reading-jump { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding-right: 8px; font-size: 0.86rem; font-weight: 740; color: #527c98; }
+.share-status { min-width: 0; overflow-wrap: anywhere; font-size: 0.78rem; color: var(--muted); }
+.graph-disclosure > summary { display: flex; align-items: center; gap: 16px; min-height: 58px; padding: 15px 20px; border-radius: 20px; cursor: pointer; list-style: none; }
+.graph-disclosure > summary::-webkit-details-marker { display: none; }
+.graph-disclosure > summary > span { font-weight: 740; }
+.graph-disclosure > summary > small { color: var(--muted); }
+.graph-disclosure > summary::after { content: "+"; margin-left: auto; font-size: 1.4rem; }
+.graph-disclosure[open] > summary::after { content: "−"; }
+.graph-disclosure > .section-heading { margin-top: 26px; }
+.graph-feedback { flex-wrap: wrap; justify-content: flex-end; }
+.graph-toolbar { gap: 18px; }
+.graph-status { width: 100%; text-align: right; }
+.reading-card { padding: 22px; }
+.reading-card h3 { font-size: 1.06rem; line-height: 1.45; }
+.reading-authors { font-size: 0.8rem; }
+.reading-venue { font-size: 0.8rem; }
+.reading-footer .text-link { min-height: 44px; display: inline-flex; align-items: center; padding-top: 0; }
+.reading-empty { margin-top: 20px; }
+#reading-list { scroll-margin-top: 100px; }
+.game-browse { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px; align-items: end; margin-bottom: 28px; scroll-margin-top: 100px; }
+.game-search input { width: 100%; min-height: 50px; padding: 12px 15px; border: 1px solid var(--glass-border); border-bottom-color: var(--glass-edge); border-radius: 16px; background: var(--glass-fill-strong); font: inherit; }
+.game-platform-nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.game-search-status { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 0.82rem; }
+.game-platform-title { scroll-margin-top: 100px; }
+.back-to-top { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 20px; color: #527c98; font-size: 0.86rem; font-weight: 720; }
+/* Node and edge positions are compositor transforms; drag frames never read layout. */
+.knowledge-map.is-layout-ready [data-drag-node] { left: 0; top: 0; translate: var(--graph-x) var(--graph-y); }
+.knowledge-map.is-layout-ready .graph-edge { left: 0; top: 0; width: 1px; transform: translate(var(--edge-left), var(--edge-top)) rotate(var(--edge-angle)) scaleX(var(--edge-length)); transform-origin: 0 50%; }
+.knowledge-map.is-drag-active .graph-node { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.graph-paper-node { touch-action: pan-y; }
+.graph-node { touch-action: none; }
+@media (max-width: 900px) {
+  .home-work-grid { grid-template-columns: 1fr; }
+  .home-work-card { padding: 24px; }
+  .game-browse { grid-template-columns: minmax(0, 1fr) auto; }
+  .game-search { grid-column: 1 / -1; }
+  .graph-toolbar { flex-direction: column; }
+  .graph-feedback { width: 100%; justify-content: flex-start; }
+  .graph-status { text-align: left; }
+}
+@media (max-width: 680px) {
+  .home-profile { padding: 28px 0 38px; gap: 22px; }
+  .avatar-panel { top: 0; width: 160px; border-width: 6px; }
+  .profile-information { padding: 24px 20px; }
+  .profile-information > .eyebrow { font-size: 0.8rem; margin-bottom: 18px; }
+  .profile-information h1 { font-size: 3.6rem; }
+  .profile-intro { font-size: 0.92rem; margin-top: 18px; }
+  .profile-actions { margin-top: 18px; }
+  .profile-actions .button { width: auto; flex: 1 1 110px; }
+  .profile-contact { width: 100%; }
+  .profile-details { margin-top: 20px; }
+  .profile-detail { padding: 12px 0; }
+  .project-card { padding: 24px 20px; border-radius: 26px; }
+  .project-card h2 { font-size: 2rem; overflow-wrap: anywhere; }
+  .project-card > p { font-size: 0.92rem; line-height: 1.65; }
+  .project-workflow > div { grid-template-columns: 65px minmax(0, 1fr); gap: 8px; }
+  .topic-filters { gap: 8px; }
+  .topic-filter { flex: 1 1 125px; padding: 10px; font-size: 0.7rem; text-align: left; }
+  .reading-actions { gap: 8px; }
+  .graph-disclosure > summary { flex-wrap: wrap; gap: 4px 10px; padding: 14px; }
+  .graph-disclosure > summary > small { order: 3; flex-basis: 100%; font-size: 0.72rem; }
+  .reading-browse-layout .reading-card { padding: 20px; }
+  .game-browse { grid-template-columns: 1fr; }
+  .game-browse > .utility-button { justify-self: start; }
+  .game-platform-nav .utility-button { flex: 1; font-size: 0.74rem; }
+  .anime-release, .anime-deity-card .anime-release { font-size: 0.65rem; }
+}
+
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
   .site-header,
   .site-nav,
   .site-footer,
+  .home-work-card,
+  .utility-button,
+  .topic-filter,
+  .graph-disclosure > summary,
   .profile-information,
   .project-card,
   .knowledge-map,
@@ -671,6 +787,7 @@ code,
   .graph-paper-tooltip,
   .graph-reset,
   .reading-control input,
+  .game-search input,
   .reading-year-trigger,
   .reading-featured-filter-button,
   .reading-year-menu,
