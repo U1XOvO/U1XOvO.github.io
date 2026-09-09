@@ -10,6 +10,7 @@ const dist = path.join(root, "dist");
 const readJson = async (relativePath) => JSON.parse(await readFile(path.join(root, relativePath), "utf8"));
 const projects = await readJson("data/projects.json");
 const literature = await readJson("data/literature.json");
+const literatureImages = await readJson("data/literature-images.json");
 const literatureFeaturedVenues = await readJson("data/literature-featured-venues.json");
 const papers = await readJson("data/papers.json");
 const acgn = await readJson("data/acgn.json");
@@ -51,7 +52,6 @@ for (const project of projects.projects) {
     assert.deepEqual([example.width, example.height], [image.readUInt32BE(16), image.readUInt32BE(20)], `${project.id} example dimensions must preserve its native aspect ratio`);
   }
 }
-assert.ok(profile.intro?.trim(), "homepage needs an introduction grounded in the listed work");
 assert.ok(Array.isArray(profile.featuredProjectIds), "homepage featured projects must be data-driven");
 assert.equal(new Set(profile.featuredProjectIds).size, profile.featuredProjectIds.length, "homepage featured projects must be unique");
 for (const id of profile.featuredProjectIds) assert.ok(projects.projects.some((project) => project.id === id), `unknown homepage project: ${id}`);
@@ -80,7 +80,7 @@ assert.match(literature.source.exclusionRule, /Review/, "literature exclusion ru
 
 const topicIds = new Set(literature.topics.map((topic) => topic.id));
 assert.equal(topicIds.size, literature.topics.length, "literature topic ids must be unique");
-const topicTones = new Set(["pink", "blue", "green", "purple"]);
+const topicTones = new Set(["pink", "blue", "green", "purple", "teal", "yellow", "neutral"]);
 for (const topic of literature.topics) {
   for (const field of ["id", "label", "tone", "x", "y", "mobileX", "mobileY", "count"]) {
     assert.ok(Object.hasOwn(topic, field), `literature topic missing ${field}`);
@@ -113,7 +113,26 @@ const normalizedTitles = new Set();
 const dois = new Set();
 const excludedReviewKeys = new Set(literature.source.excludedReviewKeys);
 const itemTypes = new Set(["journalArticle", "preprint", "conferencePaper"]);
+assert.deepEqual(literatureImages.selectionPriority, ["graphical-abstract", "figure-1"], "literature images must prefer graphical abstracts over Figure 1");
+assert.deepEqual(Object.keys(literatureImages.images).sort(), literature.records.map(({ zoteroKey }) => zoteroKey).sort(), "every literature record must have exactly one image mapping");
 for (const record of literature.records) {
+  const image = literatureImages.images[record.zoteroKey];
+  assert.equal(image.image, `/images/literature/${record.zoteroKey.toLowerCase()}.webp`, `${record.zoteroKey} must use a stable local image path`);
+  assert.ok(image.imageAlt?.includes(record.title), `${record.zoteroKey} image must identify its paper`);
+  assert.ok(["graphical-abstract", "figure-1"].includes(image.kind), `${record.zoteroKey} needs an allowed source figure`);
+  assert.equal(image.figureLabel, image.kind === "graphical-abstract" ? "Graphical abstract" : "Figure 1", `${record.zoteroKey} figure label must match its selection`);
+  assert.match(image.attachmentKey, /^[A-Z0-9]{8}$/, `${record.zoteroKey} needs its source attachment key`);
+  assert.match(image.sourceSha256, /^[a-f0-9]{64}$/, `${record.zoteroKey} needs its source PDF hash`);
+  assert.equal(image.sourceUrl, record.url, `${record.zoteroKey} image source must match the paper`);
+  assert.ok(Number.isInteger(image.page) && image.page > 0, `${record.zoteroKey} needs a 1-based source page`);
+  assert.ok(image.reviewedOn && image.graphicalAbstractCheck, `${record.zoteroKey} needs a recorded source review`);
+  assert.ok(image.width > 0 && image.height > 0, `${record.zoteroKey} needs image dimensions`);
+  const [left, top, right, bottom] = image.crop;
+  const [pageWidth, pageHeight] = image.pageSize;
+  assert.ok(left >= 0 && top >= 0 && right > left && bottom > top && right <= pageWidth && bottom <= pageHeight, `${record.zoteroKey} crop must stay within the PDF page`);
+  const bytes = await readFile(path.join(root, "public", image.image.slice(1)));
+  assert.equal(bytes.toString("ascii", 0, 4), "RIFF", `${record.zoteroKey} image must be WebP`);
+  assert.equal(bytes.toString("ascii", 8, 12), "WEBP", `${record.zoteroKey} image must be WebP`);
   for (const field of ["id", "zoteroKey", "itemType", "title", "date", "year", "authors", "venue", "doi", "url", "theme", "topics", "tags"]) {
     assert.ok(Object.hasOwn(record, field), `literature record missing ${field}`);
   }
@@ -136,6 +155,7 @@ for (const record of literature.records) {
   assert.ok(!record.tags.includes("Review"), `${record.zoteroKey} must not carry the excluded Review tag`);
   const sourceTag = literature.topics.find(({ id }) => id === record.theme)?.sourceTag;
   assert.ok(record.tags.includes(sourceTag), `${record.zoteroKey} must retain its Zotero primary topic tag`);
+  assert.equal(literature.topics.filter((topic) => topic.sourceTag && record.tags.includes(topic.sourceTag)).length, 1, `${record.zoteroKey} must carry exactly one current primary topic tag`);
   if (record.doi) {
     const normalizedDoi = record.doi.toLowerCase();
     assert.ok(!dois.has(normalizedDoi), `duplicate DOI: ${record.doi}`);
@@ -150,6 +170,7 @@ for (const record of literature.records) {
 }
 
 const nonHubTopics = literature.topics.filter(({ id }) => id !== "all");
+assert.equal(new Set(nonHubTopics.map(({ tone }) => tone)).size, nonHubTopics.length, "each literature topic must have a distinct color");
 assert.equal(nonHubTopics.reduce((sum, topic) => sum + topic.count, 0), literature.records.length, "topic counts must partition all literature records");
 for (const topic of nonHubTopics) {
   assert.equal(literature.records.filter(({ theme }) => theme === topic.id).length, topic.count, `${topic.id} count must match its records`);
@@ -392,10 +413,28 @@ for (const record of literature.records) {
   assert.ok(libraryHtml.includes(`data-reading-featured="${literatureFeaturedVenues.venues.includes(record.venue)}"`), `${record.id} must expose its featured-journal state for filtering`);
 }
 const featuredRecordCount = literature.records.filter((record) => literatureFeaturedVenues.venues.includes(record.venue)).length;
+const readingCards = [...libraryHtml.matchAll(/<article class="reading-card" data-zotero-key="([A-Z0-9]{8})">([\s\S]*?)<\/article>/g)];
+assert.equal(readingCards.length, literature.records.length, "every literature record must render a card with its Zotero key");
+for (const [, key, card] of readingCards) {
+  const source = literatureImages.images[key];
+  assert.equal((card.match(/<img\b/g) || []).length, 1, `${key} must render exactly one source thumbnail`);
+  assert.ok(card.includes(`src="${source.image}"`), `${key} must render its own reviewed image`);
+  assert.ok(card.includes(`alt="${escapeHtml(source.imageAlt)}"`), `${key} must preserve image alternative text`);
+  assert.ok(card.includes(`width="${source.width}" height="${source.height}" loading="lazy"`), `${key} must reserve image dimensions and lazy load`);
+  assert.ok(card.includes(`data-figure-label="${source.figureLabel}" data-source-page="${source.page}"`), `${key} must retain figure provenance for the viewer`);
+  assert.doesNotMatch(card, /<figcaption|reading-item-meta|>Journal article<|>Preprint<|>Conference paper</, `${key} must omit figure and item-type badges`);
+  assert.ok(card.includes('class="reading-card-content"'), `${key} must group text beside the figure`);
+  const record = literature.records.find(({ zoteroKey }) => zoteroKey === key);
+  assert.equal((card.match(/<a\b/g) || []).length, record.url ? 1 : 0, `${key} must preserve the existing publication-link availability`);
+  assert.equal((card.match(/data-reading-image\b/g) || []).length, 1, `${key} must have one image viewer trigger`);
+  assert.ok(card.includes('aria-haspopup="dialog" aria-controls="literature-viewer"'), `${key} must identify its accessible image dialog`);
+}
+assert.equal((libraryHtml.match(/<dialog\b/g) || []).length, 1, "Literature must share one image viewer across all cards");
+assert.doesNotMatch(libraryHtml, /corpus-meta|Zotero snapshot|Browse results|Copy filtered link|data-reading-share|Source: Zotero/, "Literature must omit removed summary and utility copy");
+assert.match(libraryHtml, /<dialog[^>]+aria-labelledby="viewer-title"/, "image viewer must have an accessible title");
 assert.equal((libraryHtml.match(/graph-paper-node[^\"]* is-featured/g) || []).length, featuredRecordCount, "featured graph star count must match the venue policy");
 assert.equal((libraryHtml.match(/class="reading-featured"/g) || []).length, featuredRecordCount, "featured reading-card star count must match the venue policy");
-assert.equal((libraryHtml.match(/class="reading-item-meta"/g) || []).length, literature.records.length, "every reading card must group its item type metadata");
-assert.equal((libraryHtml.match(/<span class="reading-item-meta"><span>[^<]+<\/span><span class="reading-featured"/g) || []).length, featuredRecordCount, "every reading-card star must follow its item type inside the shared metadata group");
+assert.equal((libraryHtml.match(/<span class="reading-topic[^>]+>[^<]+<\/span>\s*<span class="reading-featured"/g) || []).length, featuredRecordCount, "featured stars must follow the topic badge");
 assert.equal((libraryHtml.match(/data-reading-featured="true"/g) || []).length, featuredRecordCount, "featured filter data must match the venue policy");
 assert.match(libraryHtml, new RegExp(`data-reading-featured-filter data-reading-featured-label="${literatureFeaturedVenues.label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}" aria-pressed="false"`), "Literature page must render the featured-journal toggle in its default off state");
 assert.match(libraryHtml, new RegExp(`<span class="reading-featured-filter-count" aria-hidden="true">${featuredRecordCount}<\\/span>`), "featured-journal toggle must show its paper count");
@@ -434,7 +473,6 @@ for (const year of literatureYears) {
 }
 assert.doesNotMatch(libraryHtml, /data-reading-sort/, "Literature page must keep year groups in fixed newest-to-oldest order");
 assert.match(styles, /\.reading-year-nav\s*\{[^}]*position:\s*sticky/s, "literature year navigation must remain visible while scrolling year groups");
-assert.match(styles, /\.reading-item-meta\s*\{[^}]*display:\s*inline-flex;[^}]*white-space:\s*nowrap/s, "reading item type and featured star must stay together on one line");
 assert.match(styles, /\.reading-featured-filter-button\[aria-pressed="true"\]\s*\{[^}]*background:\s*linear-gradient/s, "featured-journal toggle must expose a distinct pressed state");
 assert.match(libraryHtml, /aria-live="polite" data-reading-status/, "Literature page must expose reading results to assistive technology");
 assert.doesNotMatch(libraryHtml, /Knowledge graph|A topic map derived from the five mutually exclusive tags used in the Zotero collection|Reading list|Every non-review record in the Zotero|reviews excluded/i, "Literature page must omit removed headings and descriptions");

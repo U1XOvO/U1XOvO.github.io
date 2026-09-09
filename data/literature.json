@@ -3,10 +3,10 @@
     "provider": "Zotero",
     "collection": "AI+Protein",
     "collectionKey": "DEMEZICD",
-    "snapshotDate": "2026-08-21",
-    "collectionVersion": "9392",
-    "totalItems": 112,
-    "includedItems": 106,
+    "snapshotDate": "2026-09-09",
+    "collectionVersion": "9695",
+    "totalItems": 124,
+    "includedItems": 118,
     "excludedReviewCount": 6,
     "exclusionRule": "Exclude records carrying the Zotero tag “Review”.",
     "excludedReviewKeys": [
@@ -23,12 +23,12 @@
       "id": "all",
       "sourceTag": null,
       "label": "AI + Protein",
-      "tone": "purple",
+      "tone": "neutral",
       "x": 50,
       "y": 50,
       "mobileX": 50,
       "mobileY": 10,
-      "count": 106
+      "count": 118
     },
     {
       "id": "kinetic-prediction",
@@ -50,7 +50,7 @@
       "y": 24,
       "mobileX": 73,
       "mobileY": 32,
-      "count": 22
+      "count": 25
     },
     {
       "id": "directed-evolution",
@@ -61,7 +61,7 @@
       "y": 76,
       "mobileX": 27,
       "mobileY": 59,
-      "count": 13
+      "count": 15
     },
     {
       "id": "de-novo-design",
@@ -78,12 +78,23 @@
       "id": "enzyme-discovery",
       "sourceTag": "Discovery",
       "label": "Enzyme discovery",
-      "tone": "blue",
+      "tone": "teal",
       "x": 85,
       "y": 76,
-      "mobileX": 50,
+      "mobileX": 27,
       "mobileY": 84,
-      "count": 13
+      "count": 17
+    },
+    {
+      "id": "agent",
+      "sourceTag": "AGENT",
+      "label": "AGENT",
+      "tone": "yellow",
+      "x": 50,
+      "y": 14,
+      "mobileX": 73,
+      "mobileY": 84,
+      "count": 3
     }
   ],
   "edges": [
@@ -97,13 +108,13 @@
       "source": "all",
       "target": "protein-language-models",
       "relation": "collection topic",
-      "count": 22
+      "count": 25
     },
     {
       "source": "all",
       "target": "directed-evolution",
       "relation": "collection topic",
-      "count": 13
+      "count": 15
     },
     {
       "source": "all",
@@ -115,7 +126,13 @@
       "source": "all",
       "target": "enzyme-discovery",
       "relation": "collection topic",
-      "count": 13
+      "count": 17
+    },
+    {
+      "source": "all",
+      "target": "agent",
+      "relation": "collection topic",
+      "count": 3
     }
   ],
   "records": [
@@ -141,13 +158,13 @@
         "kinetic-prediction"
       ],
       "tags": [
-        "Deep learning",
         "Predict Kinetic",
-        "Protein engineering",
+        "Deep learning",
         "Enzyme catalysis",
         "Enzyme-substrate interactions",
         "Metabolic pathways",
         "prediction",
+        "Protein engineering",
         "Sequence-based features"
       ]
     },
@@ -178,11 +195,11 @@
         "enzyme-discovery"
       ],
       "tags": [
-        "Enzymes",
         "Machine learning",
-        "Bioinformatics",
         "Protein function predictions",
-        "Discovery"
+        "Bioinformatics",
+        "Discovery",
+        "Enzymes"
       ]
     },
     {
@@ -211,12 +228,35 @@
         "directed-evolution"
       ],
       "tags": [
+        "DE",
         "Biocatalysis",
         "Computational design",
         "Directed evolution",
         "Enzyme engineering",
-        "Mutation prediction",
-        "DE"
+        "Mutation prediction"
+      ]
+    },
+    {
+      "id": "zotero-jic3grft",
+      "zoteroKey": "JIC3GRFT",
+      "itemType": "preprint",
+      "title": "A novel benchmark dataset for enzyme function prediction reveals the limitations of state-of-the-art models",
+      "date": "2026-08-22",
+      "year": "2026",
+      "authors": [
+        "Joao Sartori",
+        "Ana Carolina Ramos Guimaraes",
+        "Lucas de Almeida Machado"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.08.21.746242",
+      "url": "https://doi.org/10.64898/2026.08.21.746242",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
       ]
     },
     {
@@ -248,12 +288,46 @@
         "protein-language-models"
       ],
       "tags": [
-        "Bioinformatics",
         "LLM",
-        "Protein databases",
+        "Bioinformatics",
         "Genetic engineering",
         "Molecular evolution",
+        "Protein databases",
         "Sequence annotation"
+      ]
+    },
+    {
+      "id": "zotero-4cxefbye",
+      "zoteroKey": "4CXEFBYE",
+      "itemType": "journalArticle",
+      "title": "Access to all stereoisomers of chiral alcohols with multiple stereocentres enabled by machine learning-empowered protein engineering",
+      "date": "2026-08-21",
+      "year": "2026",
+      "authors": [
+        "Zhenyu Lu",
+        "Jiahui Zhou",
+        "Tao Han",
+        "Zhaoyuan Zhang",
+        "Weihua Xu",
+        "Yixin Cen",
+        "Cheng Jiang",
+        "Jingxin Zhang",
+        "Yue Guo",
+        "Chunyang Cao",
+        "Meilan Huang",
+        "Qi Wu"
+      ],
+      "venue": "Nature Synthesis",
+      "doi": "10.1038/s44160-026-01144-y",
+      "url": "https://doi.org/10.1038/s44160-026-01144-y",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "DE",
+        "Biocatalysis",
+        "Biosynthesis"
       ]
     },
     {
@@ -277,12 +351,12 @@
         "kinetic-prediction"
       ],
       "tags": [
+        "Predict Kinetic",
         "Deep learning",
         "Deep mutational scanning",
         "Enzyme specificity constants",
         "Feature extraction",
-        "High-throughput screening",
-        "Predict Kinetic"
+        "High-throughput screening"
       ]
     },
     {
@@ -318,6 +392,37 @@
       ]
     },
     {
+      "id": "zotero-llsvcxkm",
+      "zoteroKey": "LLSVCXKM",
+      "itemType": "journalArticle",
+      "title": "Aligning protein-generative models to experimental fitness with ProteinDPO",
+      "date": "2026-08-14",
+      "year": "2026",
+      "authors": [
+        "Talal Widatalla",
+        "Ashir A. Borah",
+        "Samuel H. King",
+        "Claudia L. Driscoll",
+        "Rafael Rafailov",
+        "Brian L. Hie"
+      ],
+      "venue": "Nature Methods",
+      "doi": "10.1038/s41592-026-03137-3",
+      "url": "https://doi.org/10.1038/s41592-026-03137-3",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM",
+        "Computational models",
+        "Protein design",
+        "Computational biophysics",
+        "Drug discovery",
+        "Membrane proteins"
+      ]
+    },
+    {
       "id": "zotero-2mgn95qp",
       "zoteroKey": "2MGN95QP",
       "itemType": "journalArticle",
@@ -343,9 +448,9 @@
         "protein-language-models"
       ],
       "tags": [
-        "Machine learning",
+        "LLM",
         "Computational models",
-        "LLM"
+        "Machine learning"
       ]
     },
     {
@@ -406,9 +511,9 @@
         "de-novo-design"
       ],
       "tags": [
-        "Enzymes",
+        "Denovo",
         "Protein design",
-        "Denovo"
+        "Enzymes"
       ]
     },
     {
@@ -486,11 +591,11 @@
         "protein-language-models"
       ],
       "tags": [
-        "Machine learning",
-        "Computational models",
-        "Protein function predictions",
         "LLM",
-        "Genetics"
+        "Computational models",
+        "Genetics",
+        "Machine learning",
+        "Protein function predictions"
       ]
     },
     {
@@ -526,9 +631,9 @@
         "de-novo-design"
       ],
       "tags": [
+        "Denovo",
         "Protein design",
-        "Hydrolases",
-        "Denovo"
+        "Hydrolases"
       ]
     },
     {
@@ -564,10 +669,10 @@
         "de-novo-design"
       ],
       "tags": [
-        "Enzymes",
-        "Biocatalysis",
+        "Denovo",
         "Protein design",
-        "Denovo"
+        "Enzymes",
+        "Biocatalysis"
       ]
     },
     {
@@ -596,9 +701,55 @@
         "de-novo-design"
       ],
       "tags": [
-        "Enzymes",
+        "Denovo",
         "Protein design",
-        "Denovo"
+        "Enzymes"
+      ]
+    },
+    {
+      "id": "zotero-cx7nvc9x",
+      "zoteroKey": "CX7NVC9X",
+      "itemType": "journalArticle",
+      "title": "Data-driven construction of an imine reductase library capable of broad-scope reductive amination at equimolar substrate concentrations",
+      "date": "2026-08-22",
+      "year": "2026",
+      "authors": [
+        "Sarah A. Berger",
+        "Christopher Grimm",
+        "Marco Cespugli",
+        "Andreas Krassnigg",
+        "Tobias Schopper",
+        "Irene Marzuoli",
+        "Isabel Oroz-Guinea",
+        "Stephan Vrabl",
+        "Lukas Roemer",
+        "Melanie A. Weber",
+        "Fabian M. Kulier",
+        "Yuliya Orel",
+        "Bettina M. Nestl",
+        "Christian C. Gruber",
+        "Georg Steinkellner",
+        "Serena Bisagni",
+        "Francis Gosselin",
+        "Hans Iding",
+        "Kurt Puentener",
+        "Dennis Wetzl",
+        "Wolfgang Kroutil",
+        "Joerg H. Schrittwieser"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-026-76869-7",
+      "url": "https://doi.org/10.1038/s41467-026-76869-7",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Computational biology and bioinformatics",
+        "Discovery",
+        "Biocatalysis",
+        "Biotechnology",
+        "Synthetic chemistry methodology"
       ]
     },
     {
@@ -658,6 +809,34 @@
       ],
       "tags": [
         "LLM"
+      ]
+    },
+    {
+      "id": "zotero-x3akdwwk",
+      "zoteroKey": "X3AKDWWK",
+      "itemType": "journalArticle",
+      "title": "Dual-encoder contrastive learning accelerates enzyme discovery",
+      "date": "2026-03-24",
+      "year": "2026",
+      "authors": [
+        "Jason W. Rocks",
+        "Dat P. Truong",
+        "Dmitrij Rappoport",
+        "Samuel Maddrell-Mander",
+        "Daniel A. Martin-Alarcon",
+        "Toni M. Lee",
+        "Steven Crossan",
+        "Joshua E. Goldford"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "doi": "10.1073/pnas.2520070123",
+      "url": "https://doi.org/10.1073/pnas.2520070123",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
       ]
     },
     {
@@ -771,12 +950,12 @@
         "enzyme-discovery"
       ],
       "tags": [
-        "deep learning",
-        "protein language model",
-        "Discovery",
         "contrastive learning",
+        "deep learning",
+        "Discovery",
         "enzyme function prediction",
-        "hierarchical classification"
+        "hierarchical classification",
+        "protein language model"
       ]
     },
     {
@@ -916,6 +1095,40 @@
       ]
     },
     {
+      "id": "zotero-ftbmxkgk",
+      "zoteroKey": "FTBMXKGK",
+      "itemType": "journalArticle",
+      "title": "Functional protein design and enhancement with ontology reinforcement iteration",
+      "date": "2026-03-19",
+      "year": "2026",
+      "authors": [
+        "Bing He",
+        "Chenchen Qin",
+        "Yu Zhao",
+        "Long-Kai Huang",
+        "Zihan Wu",
+        "Fang Wang",
+        "Fandi Wu",
+        "Fan Yang",
+        "Jianhua Yao"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-026-69855-6",
+      "url": "https://doi.org/10.1038/s41467-026-69855-6",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "Machine learning",
+        "Protein design",
+        "Bioinformatics",
+        "Enzymes",
+        "Computational platforms and environments",
+        "AGENT"
+      ]
+    },
+    {
       "id": "zotero-j9h6et8w",
       "zoteroKey": "J9H6ET8W",
       "itemType": "journalArticle",
@@ -1005,8 +1218,8 @@
         "kinetic-prediction"
       ],
       "tags": [
-        "Predict Kinetic",
         "Computational biology and bioinformatics",
+        "Predict Kinetic",
         "Mathematics and computing"
       ]
     },
@@ -1078,6 +1291,30 @@
       ]
     },
     {
+      "id": "zotero-qlpkvvhw",
+      "zoteroKey": "QLPKVVHW",
+      "itemType": "journalArticle",
+      "title": "Leveraging latent space models for enzyme discovery and sampling",
+      "date": "2026-09-08",
+      "year": "2026",
+      "authors": [
+        "Chang-Hwa Chiang",
+        "Daniel Ong",
+        "Alison R. H. Narayan",
+        "Charles L. Brooks"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "doi": "10.1073/pnas.2608891123",
+      "url": "https://doi.org/10.1073/pnas.2608891123",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
+      ]
+    },
+    {
       "id": "zotero-p4z2blsd",
       "zoteroKey": "P4Z2BLSD",
       "itemType": "journalArticle",
@@ -1101,9 +1338,9 @@
         "de-novo-design"
       ],
       "tags": [
+        "Denovo",
         "Machine learning",
-        "Protein design",
-        "Denovo"
+        "Protein design"
       ]
     },
     {
@@ -1136,6 +1373,35 @@
       ]
     },
     {
+      "id": "zotero-xfes3m9z",
+      "zoteroKey": "XFES3M9Z",
+      "itemType": "preprint",
+      "title": "MutexaGPT: An Intuition-to-Design Translator for Physics-based Enzyme Engineering",
+      "date": "2026-06-19",
+      "year": "2026",
+      "authors": [
+        "Qianzhen Shao",
+        "Yinjie Zhong",
+        "Sebastian Stull",
+        "Xinchun Ran",
+        "Ning Ding",
+        "Kieran Nehil-Puleo",
+        "Ruizhe Yao",
+        "Han Xu",
+        "Zhongyue Yang"
+      ],
+      "venue": "Research Square",
+      "doi": "10.21203/rs.3.rs-10072540/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-10072540/v1",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "DE"
+      ]
+    },
+    {
       "id": "zotero-9j4e8bgh",
       "zoteroKey": "9J4E8BGH",
       "itemType": "journalArticle",
@@ -1159,9 +1425,9 @@
         "de-novo-design"
       ],
       "tags": [
+        "Denovo",
         "Machine learning",
-        "Protein design",
-        "Denovo"
+        "Protein design"
       ]
     },
     {
@@ -1237,9 +1503,9 @@
         "directed-evolution"
       ],
       "tags": [
-        "Synthetic biology",
         "Protein function predictions",
-        "DE"
+        "DE",
+        "Synthetic biology"
       ]
     },
     {
@@ -1334,6 +1600,33 @@
       ]
     },
     {
+      "id": "zotero-jg9vmdj7",
+      "zoteroKey": "JG9VMDJ7",
+      "itemType": "preprint",
+      "title": "Task- and dataset-specific information in protein language models",
+      "date": "2026-08-13",
+      "year": "2026",
+      "authors": [
+        "Roman Joeres",
+        "Ilya Senatorov",
+        "Anastasia Kolchina",
+        "Dietrich Klakow",
+        "Olga V. Kalinina"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2608.12090",
+      "url": "https://doi.org/10.48550/arXiv.2608.12090",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM",
+        "Computer Science - Machine Learning",
+        "Quantitative Biology - Biomolecules"
+      ]
+    },
+    {
       "id": "zotero-bs8d5bdg",
       "zoteroKey": "BS8D5BDG",
       "itemType": "journalArticle",
@@ -1381,8 +1674,8 @@
         "kinetic-prediction"
       ],
       "tags": [
-        "deep learning",
         "Predict Kinetic",
+        "deep learning",
         "graph convolutional networks",
         "heterogeneous graph",
         "molecular docking"
@@ -1407,11 +1700,11 @@
         "kinetic-prediction"
       ],
       "tags": [
-        "deep learning",
         "Predict Kinetic",
         "bioinformatics",
-        "enzymatic reaction",
+        "deep learning",
         "Michaelis constant",
+        "enzymatic reaction",
         "pre-trained language model"
       ]
     },
@@ -1434,16 +1727,16 @@
       "venue": "Nature Communications",
       "doi": "10.1038/s41467-025-61209-y",
       "url": "https://doi.org/10.1038/s41467-025-61209-y",
-      "theme": "directed-evolution",
+      "theme": "agent",
       "topics": [
-        "directed-evolution"
+        "agent"
       ],
       "tags": [
         "Machine learning",
-        "Biocatalysis",
         "Protein design",
+        "Biocatalysis",
         "Synthetic biology",
-        "DE"
+        "AGENT"
       ]
     },
     {
@@ -1467,8 +1760,8 @@
       ],
       "tags": [
         "Predict Kinetic",
-        "Multimodal learning",
         "Protein engineering",
+        "Multimodal learning",
         "Turnover number"
       ]
     },
@@ -1496,9 +1789,9 @@
       ],
       "tags": [
         "Predict Kinetic",
-        "Enzyme turnover number",
         "Adaptive gate network",
         "Enzyme embeddings",
+        "Enzyme turnover number",
         "Graph Transformer",
         "Interpretability"
       ]
@@ -1527,8 +1820,8 @@
         "de-novo-design"
       ],
       "tags": [
-        "Protein design",
         "Denovo",
+        "Protein design",
         "Biophysical chemistry",
         "Computational platforms and environments",
         "Proteins"
@@ -1605,10 +1898,10 @@
         "de-novo-design"
       ],
       "tags": [
-        "Biocatalysis",
-        "Protein design",
         "Denovo",
+        "Protein design",
         "Structural biology",
+        "Biocatalysis",
         "Enzyme mechanisms"
       ]
     },
@@ -1726,9 +2019,9 @@
         "kinetic-prediction"
       ],
       "tags": [
+        "Predict Kinetic",
         "Computer Science - Machine Learning",
-        "Quantitative Biology - Biomolecules",
-        "Predict Kinetic"
+        "Quantitative Biology - Biomolecules"
       ]
     },
     {
@@ -1788,11 +2081,11 @@
         "enzyme-discovery"
       ],
       "tags": [
-        "Machine learning",
-        "Biocatalysis",
         "Computational models",
-        "Environmental biotechnology",
-        "Discovery"
+        "Machine learning",
+        "Discovery",
+        "Biocatalysis",
+        "Environmental biotechnology"
       ]
     },
     {
@@ -1880,9 +2173,9 @@
       ],
       "tags": [
         "Bioinformatics",
+        "Discovery",
         "Biotechnology",
-        "Hydrolases",
-        "Discovery"
+        "Hydrolases"
       ]
     },
     {
@@ -1914,6 +2207,47 @@
       ],
       "tags": [
         "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-cdgkc6nh",
+      "zoteroKey": "CDGKC6NH",
+      "itemType": "journalArticle",
+      "title": "Integrating protein language models and automatic biofoundry for enhanced protein evolution",
+      "date": "2025-02-11",
+      "year": "2025",
+      "authors": [
+        "Qiang Zhang",
+        "Wanyi Chen",
+        "Ming Qin",
+        "Yuhao Wang",
+        "Zhongji Pu",
+        "Keyan Ding",
+        "Yuyue Liu",
+        "Qunfeng Zhang",
+        "Dongfang Li",
+        "Xinjia Li",
+        "Yu Zhao",
+        "Jianhua Yao",
+        "Lei Huang",
+        "Jianping Wu",
+        "Lirong Yang",
+        "Huajun Chen",
+        "Haoran Yu"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-025-56751-8",
+      "url": "https://doi.org/10.1038/s41467-025-56751-8",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "Computational models",
+        "Protein design",
+        "Bioinformatics",
+        "DE",
+        "Biocatalysis"
       ]
     },
     {
@@ -1971,9 +2305,9 @@
         "kinetic-prediction"
       ],
       "tags": [
+        "Predict Kinetic",
         "Computer Science - Machine Learning",
-        "Quantitative Biology - Biomolecules",
-        "Predict Kinetic"
+        "Quantitative Biology - Biomolecules"
       ]
     },
     {
@@ -2031,9 +2365,9 @@
         "kinetic-prediction"
       ],
       "tags": [
-        "Quantitative Biology - Biomolecules",
         "Predict Kinetic",
-        "Computer Science - Artificial Intelligence"
+        "Computer Science - Artificial Intelligence",
+        "Quantitative Biology - Biomolecules"
       ]
     },
     {
@@ -2208,10 +2542,10 @@
         "directed-evolution"
       ],
       "tags": [
+        "DE",
         "deep learning",
-        "mutation effect prediction",
         "protein language model",
-        "DE"
+        "mutation effect prediction"
       ]
     },
     {
@@ -2279,15 +2613,15 @@
         "kinetic-prediction"
       ],
       "tags": [
-        "Drug interactions",
-        "Enzymes",
-        "Forecasting",
         "Machine learning",
+        "Predict Kinetic",
+        "Enzymes",
+        "Drug interactions",
+        "Forecasting",
         "Protein interaction networks",
         "Protein interactions",
         "Protein sequencing",
-        "Small molecules",
-        "Predict Kinetic"
+        "Small molecules"
       ]
     },
     {
@@ -2444,8 +2778,8 @@
         "directed-evolution"
       ],
       "tags": [
-        "Machine learning",
         "Computational models",
+        "Machine learning",
         "Protein function predictions",
         "DE"
       ]
@@ -2493,11 +2827,11 @@
         "kinetic-prediction"
       ],
       "tags": [
-        "Neural networks",
-        "Deep learning",
         "Predict Kinetic",
+        "Deep learning",
         "Michaelis constant",
         "Graph neural network",
+        "Neural networks",
         "Tree boosting"
       ]
     },
@@ -2521,8 +2855,8 @@
         "directed-evolution"
       ],
       "tags": [
-        "Protein design",
         "Protein function predictions",
+        "Protein design",
         "DE"
       ]
     },
@@ -2580,9 +2914,9 @@
         "directed-evolution"
       ],
       "tags": [
+        "DE",
         "Computer Science - Machine Learning",
-        "Quantitative Biology - Biomolecules",
-        "DE"
+        "Quantitative Biology - Biomolecules"
       ]
     },
     {
@@ -2648,6 +2982,31 @@
       ]
     },
     {
+      "id": "zotero-prftg2mu",
+      "zoteroKey": "PRFTG2MU",
+      "itemType": "journalArticle",
+      "title": "Self-driving laboratories to autonomously navigate the protein fitness landscape",
+      "date": "2024-01",
+      "year": "2024",
+      "authors": [
+        "Jacob T. Rapp",
+        "Bennett J. Bremer",
+        "Philip A. Romero"
+      ],
+      "venue": "Nature Chemical Engineering",
+      "doi": "10.1038/s44286-023-00002-4",
+      "url": "https://doi.org/10.1038/s44286-023-00002-4",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "Protein design",
+        "Biotechnology",
+        "AGENT"
+      ]
+    },
+    {
       "id": "zotero-n2y55jgn",
       "zoteroKey": "N2Y55JGN",
       "itemType": "journalArticle",
@@ -2668,10 +3027,10 @@
         "enzyme-discovery"
       ],
       "tags": [
-        "Enzymes",
         "Machine learning",
         "Protein function predictions",
-        "Discovery"
+        "Discovery",
+        "Enzymes"
       ]
     },
     {
@@ -2709,9 +3068,9 @@
         "de-novo-design"
       ],
       "tags": [
-        "Enzymes",
-        "Protein design",
         "Denovo",
+        "Protein design",
+        "Enzymes",
         "Sensors and probes"
       ]
     },
@@ -2760,9 +3119,9 @@
         "de-novo-design"
       ],
       "tags": [
+        "Denovo",
         "Machine learning",
         "Protein design",
-        "Denovo",
         "Proteins"
       ]
     },
@@ -2821,10 +3180,10 @@
         "protein-language-models"
       ],
       "tags": [
-        "Enzymes",
+        "LLM",
         "Machine learning",
-        "Proteomics",
-        "LLM"
+        "Enzymes",
+        "Proteomics"
       ]
     },
     {
@@ -2927,9 +3286,9 @@
         "kinetic-prediction"
       ],
       "tags": [
-        "Enzymes",
         "Machine learning",
-        "Predict Kinetic"
+        "Predict Kinetic",
+        "Enzymes"
       ]
     },
     {
@@ -3021,6 +3380,34 @@
       ]
     },
     {
+      "id": "zotero-l9lk3y6j",
+      "zoteroKey": "L9LK3Y6J",
+      "itemType": "preprint",
+      "title": "Learning inverse folding from millions of predicted structures",
+      "date": "2022-09-06",
+      "year": "2022",
+      "authors": [
+        "Chloe Hsu",
+        "Robert Verkuil",
+        "Jason Liu",
+        "Zeming Lin",
+        "Brian Hie",
+        "Tom Sercu",
+        "Adam Lerer",
+        "Alexander Rives"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.1101/2022.04.10.487779",
+      "url": "https://doi.org/10.1101/2022.04.10.487779",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM"
+      ]
+    },
+    {
       "id": "zotero-rpkbla32",
       "zoteroKey": "RPKBLA32",
       "itemType": "journalArticle",
@@ -3044,9 +3431,9 @@
       "tags": [
         "Machine learning",
         "Predict Kinetic",
-        "Michaelis constant",
         "Global optimization",
         "Kinetic modeling",
+        "Michaelis constant",
         "Parameter estimation",
         "Simulation",
         "Systems biology"
@@ -3072,9 +3459,9 @@
         "protein-language-models"
       ],
       "tags": [
+        "LLM",
         "Machine learning",
-        "Computational science",
-        "LLM"
+        "Computational science"
       ]
     },
     {
@@ -3197,15 +3584,15 @@
         "kinetic-prediction"
       ],
       "tags": [
+        "Predict Kinetic",
+        "Neural networks",
         "Enzymes",
         "Forecasting",
         "Protein sequencing",
         "Enzyme metabolism",
         "Genetic fingerprinting",
         "Genomics",
-        "Molecular structure",
-        "Neural networks",
-        "Predict Kinetic"
+        "Molecular structure"
       ]
     },
     {

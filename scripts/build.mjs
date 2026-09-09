@@ -37,6 +37,7 @@ const site = await readJson("data/site.json");
 const profile = await readJson("data/profile.json");
 const projectsData = await readJson("data/projects.json");
 const literature = await readJson("data/literature.json");
+const literatureImages = await readJson("data/literature-images.json");
 const literatureFeaturedVenues = await readJson("data/literature-featured-venues.json");
 const papersData = await readJson("data/papers.json");
 const acgn = await readJson("data/acgn.json");
@@ -149,7 +150,6 @@ const home = layout({
       <div class="profile-information reveal reveal-delay">
         <p class="eyebrow">Personal profile</p>
         <h1 id="profile-title">${escapeHtml(profile.name)}</h1>
-        <p class="profile-intro">${escapeHtml(profile.intro)}</p>
         <div class="hero-actions profile-actions">
           <a class="button button-primary" href="/projects/">Explore projects <span aria-hidden="true">→</span></a>
           <a class="button button-quiet" href="/paper/">Publications</a>
@@ -305,15 +305,17 @@ const graphPaperEntries = literature.records.map((record) => {
 const graphPaperEdges = graphPaperEntries.map(({ edge }) => edge).join("");
 const graphPaperNodes = graphPaperEntries.map(({ node }) => node).join("");
 
-const itemTypeLabels = {
-  journalArticle: "Journal article",
-  preprint: "Preprint",
-  conferencePaper: "Conference paper"
-};
-
 const readingRecordMarkupByYear = new Map(literatureYears.map((year) => [year, []]));
 
 literature.records.forEach((record) => {
+  const image = literatureImages.images[record.zoteroKey];
+  if (!image) throw new Error(`Missing reviewed literature image: ${record.zoteroKey}`);
+  const figure = `<figure class="reading-figure">
+    <button class="reading-image-button" type="button" data-reading-image aria-haspopup="dialog" aria-controls="literature-viewer" aria-label="Enlarge ${escapeHtml(image.figureLabel)}: ${escapeHtml(record.title)}" data-figure-label="${escapeHtml(image.figureLabel)}" data-source-page="${image.page}">
+    <img src="${escapeHtml(image.image)}" alt="${escapeHtml(image.imageAlt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async">
+    <span class="reading-image-hint" aria-hidden="true">⤢ <span>Enlarge</span></span>
+    </button>
+  </figure>`;
   const topic = topicById.get(record.theme);
   if (!topic) throw new Error(`Unknown literature record topic: ${record.theme}`);
   const fullAuthors = record.authors.join(", ");
@@ -339,14 +341,17 @@ literature.records.forEach((record) => {
 
   const markup = `<li class="reading-list-item" id="reading-${escapeHtml(record.id)}" tabindex="-1" data-record-id="${escapeHtml(record.id)}" data-reading-topics="${escapeHtml(record.topics.join(" "))}" data-reading-search="${escapeHtml(searchText)}" data-reading-year="${escapeHtml(record.year)}" data-reading-featured="${isFeaturedVenue}">
     <article class="reading-card" data-zotero-key="${escapeHtml(record.zoteroKey)}">
+      ${figure}
+      <div class="reading-card-content">
       <div class="reading-meta">
         <span class="reading-topic tone-${escapeHtml(topic.tone)}">${escapeHtml(topic.label)}</span>
-        <span class="reading-item-meta"><span>${escapeHtml(itemTypeLabels[record.itemType] || record.itemType)}</span>${featuredStar}</span>
+        ${featuredStar}
       </div>
       <h3>${escapeHtml(record.title)}</h3>
       ${authorDisplay}
       <p class="reading-venue${record.venue ? "" : " metadata-gap"}">${escapeHtml(record.venue || "Venue unavailable in Zotero")}</p>
       <div class="reading-footer">${doi}${publicationLink}</div>
+      </div>
     </article>
   </li>`;
   const yearRecords = readingRecordMarkupByYear.get(record.year);
@@ -402,19 +407,12 @@ const readingControls = `      <div class="reading-controls" aria-label="Paper c
 
 const literatureSections = literature.records.length ? `
     <section class="graph-section" aria-label="Find research papers">
-      <div class="corpus-meta" aria-label="Literature source summary">
-        <span><strong>${literature.source.includedItems}</strong> research papers</span>
-        <span>Zotero snapshot ${escapeHtml(literature.source.snapshotDate)}</span>
-      </div>
       ${readingControls}
       <div class="topic-filters" aria-label="Filter papers by topic">
         ${literature.topics.map((topic) => `<button class="topic-filter tone-${escapeHtml(topic.tone)}" type="button" data-topic-filter="${escapeHtml(topic.id)}" aria-pressed="${topic.id === "all"}">${escapeHtml(topic.id === "all" ? "All topics" : topic.label)}<span>${topic.count}</span></button>`).join("")}
       </div>
       <div class="reading-actions">
-        <a class="reading-jump" href="#reading-list">Browse results <span aria-hidden="true">↓</span></a>
         <button class="utility-button" type="button" data-reading-reset disabled>Clear all filters</button>
-        <button class="utility-button" type="button" data-reading-share>Copy filtered link</button>
-        <span class="share-status" role="status" data-share-status></span>
       </div>
       <details class="graph-disclosure" data-graph-disclosure>
         <summary><span>Explore the topic map</span><small>Drag, follow connections, discover papers</small></summary>
@@ -428,7 +426,7 @@ const literatureSections = literature.records.length ? `
       <div class="graph-toolbar">
         <p class="graph-help" id="graph-help">Drag a topic to move its papers; select a paper to jump to its entry. ★ marks ${escapeHtml(featuredVenueLabel)} papers.</p>
         <div class="graph-feedback">
-          <p class="graph-status" role="status" aria-live="polite" data-graph-status>All five topics · ${literature.source.includedItems} papers</p>
+          <p class="graph-status" role="status" aria-live="polite" data-graph-status>All topics · ${literature.source.includedItems} papers</p>
           <button class="graph-reset" type="button" data-graph-reset disabled>Clear topic filter</button><button class="graph-reset" type="button" data-graph-layout-reset>Reset positions</button>
         </div>
       </div>
@@ -439,7 +437,6 @@ const literatureSections = literature.records.length ? `
       <div class="section-heading compact-heading"><h2 id="reading-title">Research papers</h2></div>
       <div class="reading-results-row">
         <p class="reading-results" role="status" aria-live="polite" data-reading-status>Showing all ${literature.source.includedItems} papers</p>
-        <span>Source: Zotero · ${escapeHtml(literature.source.collection)}</span>
       </div>
       <div class="reading-browse-layout">
         ${readingYearNavigation}
@@ -456,7 +453,31 @@ const library = layout({
   content: `<div class="shell page-shell content-page-shell">
     ${pageTitle("Literature", "page-title-long page-title-literature")}
     ${literatureSections}
-  </div>`
+  </div>
+  <dialog class="literature-viewer" id="literature-viewer" aria-labelledby="viewer-title" aria-describedby="viewer-help">
+    <div class="viewer-shell">
+      <header class="viewer-header">
+        <div class="viewer-heading"><p data-viewer-meta></p><h2 id="viewer-title"></h2></div>
+        <button class="viewer-button viewer-close" type="button" data-viewer-close aria-label="Close image viewer" autofocus>×</button>
+      </header>
+      <div class="viewer-stage" data-viewer-stage>
+        <img data-viewer-image alt="" decoding="async" draggable="false" hidden>
+        <p class="viewer-message" data-viewer-message role="status">Loading image…</p>
+      </div>
+      <footer class="viewer-footer">
+        <div class="viewer-toolbar" role="group" aria-label="Image controls">
+          <button class="viewer-button" type="button" data-viewer-prev aria-label="Previous paper image">←</button>
+          <span class="viewer-counter" data-viewer-counter aria-live="polite"></span>
+          <button class="viewer-button" type="button" data-viewer-next aria-label="Next paper image">→</button>
+          <span class="viewer-divider" aria-hidden="true"></span>
+          <button class="viewer-button" type="button" data-viewer-out aria-label="Zoom out">−</button>
+          <button class="viewer-button viewer-fit" type="button" data-viewer-fit aria-label="Fit image to screen">Fit</button>
+          <button class="viewer-button" type="button" data-viewer-in aria-label="Zoom in">+</button>
+        </div>
+        <p id="viewer-help">Scroll or pinch to zoom · Drag to explore · ← → switch · Esc close</p>
+      </footer>
+    </div>
+  </dialog>`
 });
 
 const paperCards = papersData.papers.length

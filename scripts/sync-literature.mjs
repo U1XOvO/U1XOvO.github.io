@@ -1,4 +1,4 @@
-import { rename, unlink, writeFile } from "node:fs/promises";
+import { readFile, rename, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -55,10 +55,20 @@ const themes = [
     id: "enzyme-discovery",
     sourceTag: "Discovery",
     label: "Enzyme discovery",
-    tone: "blue",
+    tone: "teal",
     x: 85,
     y: 76,
-    mobileX: 50,
+    mobileX: 27,
+    mobileY: 84
+  },
+  {
+    id: "agent",
+    sourceTag: "AGENT",
+    label: "AGENT",
+    tone: "yellow",
+    x: 50,
+    y: 14,
+    mobileX: 73,
     mobileY: 84
   }
 ];
@@ -97,7 +107,7 @@ async function fetchCollectionItems() {
     url.searchParams.set("limit", "100");
     url.searchParams.set("start", String(start));
     url.searchParams.set("include", "data");
-    const response = await fetch(url);
+    const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
     if (!response.ok) throw new Error(`Zotero API returned ${response.status} for ${url.pathname}`);
     collectionVersion = response.headers.get("last-modified-version") || collectionVersion;
     const page = await response.json();
@@ -143,6 +153,10 @@ function normalizeRecord(item, topicByTag) {
   };
 }
 
+const previous = await readFile(output, "utf8").then(JSON.parse).catch((error) => {
+  if (error.code === "ENOENT") return { records: [] };
+  throw error;
+});
 const { collectionVersion, items } = await fetchCollectionItems();
 const excludedReviews = items.filter((item) =>
   (item.data?.tags ?? []).some(({ tag }) => tag === reviewTag)
@@ -150,6 +164,12 @@ const excludedReviews = items.filter((item) =>
 const includedItems = items.filter((item) => !excludedReviews.includes(item));
 const topicByTag = new Map(themes.map((topic) => [topic.sourceTag, topic]));
 const records = includedItems.map((item) => normalizeRecord(item, topicByTag));
+const previousByKey = new Map(previous.records.map((record) => [record.zoteroKey, record]));
+const currentKeys = new Set(records.map((record) => record.zoteroKey));
+if (currentKeys.size !== records.length) throw new Error("Zotero returned duplicate record keys; snapshot not written");
+const added = records.filter((record) => !previousByKey.has(record.zoteroKey));
+const removed = previous.records.filter((record) => !currentKeys.has(record.zoteroKey));
+const moved = records.filter((record) => previousByKey.has(record.zoteroKey) && previousByKey.get(record.zoteroKey).theme !== record.theme);
 
 records.sort((a, b) =>
   Number(b.year || 0) - Number(a.year || 0)
@@ -165,7 +185,7 @@ const topics = [
     id: "all",
     sourceTag: null,
     label: "AI + Protein",
-    tone: "purple",
+    tone: "neutral",
     x: 50,
     y: 50,
     mobileX: 50,
@@ -211,3 +231,7 @@ try {
 process.stdout.write(
   `Synced ${records.length} non-review records from Zotero collection ${collectionName}; excluded ${excludedReviews.length} reviews.\n`
 );
+for (const record of added) process.stdout.write(`Added ${record.zoteroKey}: ${record.title}\n`);
+for (const record of removed) process.stdout.write(`Removed ${record.zoteroKey}: ${record.title}\n`);
+for (const record of moved) process.stdout.write(`Moved ${record.zoteroKey}: ${previousByKey.get(record.zoteroKey).theme} -> ${record.theme}\n`);
+process.stdout.write(`Changes: ${added.length} added, ${removed.length} removed, ${moved.length} topic transfers.\n`);

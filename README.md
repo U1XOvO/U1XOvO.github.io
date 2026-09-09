@@ -28,7 +28,31 @@ To refresh the Literature page from the local Zotero `AI+Protein` collection, op
 npm run sync:literature
 ```
 
-The sync is read-only on Zotero. It stores a static, traceable snapshot in `data/literature.json`, excludes records carrying the Zotero tag `Review`, and requires every included record to have exactly one of the collection's five primary topic tags.
+The sync is read-only on Zotero. It stores a static, traceable snapshot in `data/literature.json`, excludes records carrying the Zotero tag `Review`, and requires every included record to have exactly one primary topic tag: `Predict Kinetic`, `LLM`, `DE`, `Denovo`, `Discovery`, or `AGENT`. Each refresh follows the current Zotero tags and reports added/removed keys and topic transfers, so moving a paper to another topic preserves its stable key and artwork.
+
+Literature uses one spacious horizontal card per row on desktop and tablet, with a large uncropped figure on the left and the topic badge, title, authors, venue and publication action on the right. Cards stack the figure above the text on narrow screens. Each topic has a distinct pastel color; AGENT uses cream yellow with amber text. Item-type and figure-label badges are omitted; figure type and source page remain available in the image viewer. Snapshot/source summaries and browse/copy-link actions are not displayed; the source provenance remains in the data snapshot.
+
+Literature card artwork is maintained separately in `data/literature-images.json`, keyed by the stable Zotero item key. Refreshing literature metadata does not overwrite the reviewed image mapping. Every included paper needs one local WebP under `public/images/literature/`; missing mappings fail the build rather than silently displaying a substitute.
+
+Select the original article's **Graphical abstract first, otherwise Figure 1**. Review the source PDF's first page visually as well as its text: ACS abstract artwork and some Cell Press graphical abstracts do not have searchable labels. Use the main article attachment, not supplementary information. Preserve the complete figure and its aspect ratio; do not substitute a different figure, generate artwork, or use a whole-page screenshot. For figures whose caption appears on a different page, record `captionPage` separately.
+
+Each mapping records the publication URL, attachment key, source PDF SHA-256, 1-based page number, page size, crop in PDF points measured from the top-left, selection kind, alternative text, review date, and exported dimensions. Keep local attachment paths and PDF caches outside the repository. The checked-in WebPs are sufficient for builds and GitHub Pages; Zotero and Python are only needed when preparing new artwork.
+
+Literature thumbnails open a shared accessible image viewer with zoom, drag, touch pinch, keyboard controls, and previous/next navigation through the current filtered results. The viewer reuses the local WebP image and decodes only the selected image on demand. It adds no dependencies or full-size image preloads; zooming does not add detail beyond the source image resolution. Closing restores focus to the original thumbnail. Opening/closing motion respects the reduced-motion preference.
+
+The optional extraction helper uses the existing Python image/PDF environment (Pillow and pypdfium2). It performs bounded read-only Zotero requests, caches inspection results, and atomically renders reviewed mappings:
+
+```bash
+python scripts/sync-literature-thumbnails.py discover --work-dir <private-cache-directory>
+python scripts/sync-literature-thumbnails.py previews --work-dir <private-cache-directory>
+# Review source pages and update data/literature-images.json before rendering.
+python scripts/sync-literature-thumbnails.py render --work-dir <private-cache-directory>
+npm test
+```
+
+Candidate previews are inspection aids, not approved selections. The renderer refuses a changed source PDF hash so page/crop coordinates can be reviewed again. Run the same 320px, 768px and desktop layout checks after adding artwork.
+
+For incremental artwork updates, append `--keys KEY1 KEY2` to each extraction command to inspect and render only the new records while preserving existing reviewed images.
 
 To refresh the Nintendo Switch collection from its public shared page, run:
 

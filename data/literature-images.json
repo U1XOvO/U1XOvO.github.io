@@ -1,0 +1,2846 @@
+{
+  "selectionPriority": [
+    "graphical-abstract",
+    "figure-1"
+  ],
+  "sourceScope": "Original article PDFs attached to the Zotero AI+Protein collection; graphical abstract preferred, otherwise Figure 1.",
+  "coordinateSystem": "PDF points; crop [left, top, right, bottom] measured from the top-left of the source page.",
+  "images": {
+    "FQLRC6XN": {
+      "image": "/images/literature/fqlrc6xn.webp",
+      "imageAlt": "Figure 1 from A deep learning multi-attention Bi-GRU framework for kcat prediction with segmentation-based insights",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1016/j.enzmictec.2026.110915",
+      "attachmentKey": "7ISIR5Y5",
+      "sourceSha256": "2eae3f62dc50c8df3015e9deeaf8d40f55340d6f44c15c8bcf23c4c3b0877050",
+      "page": 4,
+      "pageSize": [
+        595.28,
+        793.7
+      ],
+      "crop": [
+        72.39,
+        46.8,
+        516.94,
+        301.43
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 629
+    },
+    "SWC4WD9S": {
+      "image": "/images/literature/swc4wd9s.webp",
+      "imageAlt": "Figure 1 from A geometric foundation model for enzyme retrieval with evolutionary insights",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41929-026-01478-y",
+      "attachmentKey": "5KFG87RU",
+      "sourceSha256": "99a1bc7de93f67774ccce8556e26e4ac3eb1977913917a38ad28e5dbead1cc03",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        33.69,
+        39.5,
+        576.46,
+        554.53
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1043
+    },
+    "UUHKJ997": {
+      "image": "/images/literature/uuhkj997.webp",
+      "imageAlt": "Figure 1 from A Multimodal Ensemble Framework for Optimal Mutant Prediction and Computational Enzyme Engineering",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1002/anie.202521396",
+      "attachmentKey": "ATH39UHB",
+      "sourceSha256": "e1a139d2007ec2896cd879ea03971b0c2b180b05d09a4be63d9694c35dc504a0",
+      "page": 3,
+      "pageSize": [
+        595.22,
+        790.79
+      ],
+      "crop": [
+        39.64,
+        56.15,
+        564.5,
+        377.03
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 672
+    },
+    "JIC3GRFT": {
+      "image": "/images/literature/jic3grft.webp",
+      "imageAlt": "Figure 1 from A novel benchmark dataset for enzyme function prediction reveals the limitations of state-of-the-art models",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.08.21.746242",
+      "attachmentKey": "47I2HPC3",
+      "sourceSha256": "374853d0a6e148bc22a55827ffbcb7aa9ebe0cd89c7ea85f0c530145f3a3012e",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        62.32,
+        106.88,
+        568.04,
+        366.9
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 565
+    },
+    "QDEPDGDV": {
+      "image": "/images/literature/qdepdgdv.webp",
+      "imageAlt": "Figure 1 from A trimodal protein language model enables advanced protein searches",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41587-025-02836-0",
+      "attachmentKey": "KWJFKA9D",
+      "sourceSha256": "59548f8d8e0ace4b5056ee9aa8d85b876a828319f58b0ed7ccbf326b21b57adb",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        36.67,
+        51.36,
+        564.56,
+        549.33
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1036
+    },
+    "4CXEFBYE": {
+      "image": "/images/literature/4cxefbye.webp",
+      "imageAlt": "Figure 1 from Access to all stereoisomers of chiral alcohols with multiple stereocentres enabled by machine learning-empowered protein engineering",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s44160-026-01144-y",
+      "attachmentKey": "2DWYRS3Q",
+      "sourceSha256": "9265f08ebf799aaaa310c25b052faba7fde935a9dad8ce89d42d1d73ff1d2d41",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        30.72,
+        118.58,
+        573.49,
+        742.67
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "captionPage": 2,
+      "width": 1099,
+      "height": 1264
+    },
+    "246IN4KL": {
+      "image": "/images/literature/246in4kl.webp",
+      "imageAlt": "Graphical abstract from Accurate enzyme specificity constant prediction with iESC",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1016/j.biortech.2026.134067",
+      "attachmentKey": "5FKJH5AM",
+      "sourceSha256": "48b98cb78fd2509b56642453896ecf42825ba59eeca27e7d4aea836145a6d1f7",
+      "page": 1,
+      "pageSize": [
+        595.28,
+        793.7
+      ],
+      "crop": [
+        199.42,
+        303.19,
+        375.02,
+        467.49
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "Graphical abstract identified in the source PDF.",
+      "width": 526,
+      "height": 493
+    },
+    "IG7VXE42": {
+      "image": "/images/literature/ig7vxe42.webp",
+      "imageAlt": "Figure 1 from AI-redesigned starting points and outcomes enhance protein evolution",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-026-10820-0",
+      "attachmentKey": "GAMRX6JF",
+      "sourceSha256": "cb4ec0d0ec4c42623484ae76c2bd0582da9f7fd84e31b3b3bffe7ce1370870a5",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        46.43,
+        45.87,
+        570.51,
+        548.62
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 1054
+    },
+    "LLSVCXKM": {
+      "image": "/images/literature/llsvcxkm.webp",
+      "imageAlt": "Figure 1 from Aligning protein-generative models to experimental fitness with ProteinDPO",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41592-026-03137-3",
+      "attachmentKey": "MNCQ7ZC6",
+      "sourceSha256": "ba5e550d723af5e198a66b38d4c5b90322954f00065f7da40e8696d10a22907f",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        34.88,
+        43.45,
+        570.51,
+        273.66
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 472
+    },
+    "2MGN95QP": {
+      "image": "/images/literature/2mgn95qp.webp",
+      "imageAlt": "Figure 1 from An enzyme-specific protein language model for catalytic property prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-026-75283-3",
+      "attachmentKey": "YMRN3SV6",
+      "sourceSha256": "583d37ff3dde40de04852a9e293e5bf1eb39913de9dd6dfd970ca0e703b44107",
+      "page": 35,
+      "pageSize": [
+        510.24,
+        421.64
+      ],
+      "crop": [
+        0,
+        34.37,
+        510.24,
+        421.64
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "captionPage": 30,
+      "width": 1100,
+      "height": 833
+    },
+    "PZUA4SH2": {
+      "image": "/images/literature/pzua4sh2.webp",
+      "imageAlt": "Figure 1 from Artificial Intelligence Platform EnzySFC for Enzyme Screening and Functional Conversion: Completely Redirecting Nitrilase to Nitrile Hydratase Function",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1021/acs.jafc.5c14148",
+      "attachmentKey": "4FZXIRVP",
+      "sourceSha256": "b3ac8af2e26dd516f0d1ae039d4e13ac815358f67e46f080336ed7276cdca5e7",
+      "page": 4,
+      "pageSize": [
+        607.41,
+        800.9
+      ],
+      "crop": [
+        104.33,
+        52.86,
+        521.3,
+        209.3
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 412
+    },
+    "MEUG4ECQ": {
+      "image": "/images/literature/meug4ecq.webp",
+      "imageAlt": "Figure 1 from Atom-level enzyme active site scaffolding using RFdiffusion2",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41592-025-02975-x",
+      "attachmentKey": "NQZ9ENME",
+      "sourceSha256": "ddff91e534a07baa859dea022c7e8a1b367cc254ac209e74c26bf5dcc3bd0bad",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        30.72,
+        43.45,
+        582.42,
+        550.37
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1010
+    },
+    "NTKUPBT7": {
+      "image": "/images/literature/ntkupbt7.webp",
+      "imageAlt": "Figure 1 from CACLENS: A Multitask Deep Learning System for Enzyme Discovery",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1002/advs.202518063",
+      "attachmentKey": "B2BB6EHC",
+      "sourceSha256": "4b8dbd7e6c26e8d6226b59da20e37be656f391d30a9a823864949d357a5d04b1",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        782.36
+      ],
+      "crop": [
+        39.65,
+        70.32,
+        564.56,
+        427.45
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 748
+    },
+    "2YQ4KKEY": {
+      "image": "/images/literature/2yq4kkey.webp",
+      "imageAlt": "Figure 1 from CatESO: Differentiable Enzyme Sequence Optimization Guided by Substrate-Aware kcat Prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.07.04.736506",
+      "attachmentKey": "F52DNZG8",
+      "sourceSha256": "105b0a15edd1bc51fd61e859fe63580acf27a83ff235b864bae80165ddd891aa",
+      "page": 6,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        80.68,
+        83.12,
+        537.44,
+        479.68
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 954
+    },
+    "ZYMYL7CG": {
+      "image": "/images/literature/zymyl7cg.webp",
+      "imageAlt": "Figure 1 from Compressing the collective knowledge of ESM into a single protein language model",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41592-026-03050-9",
+      "attachmentKey": "R43SPHNZ",
+      "sourceSha256": "18c06d3cc25e2789bd877f4cf004b4210dd4691078f4cb4a1915909bd5bec06c",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        27.74,
+        39.5,
+        576.46,
+        554.24
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 1031
+    },
+    "G4ZYJFUL": {
+      "image": "/images/literature/g4zyjful.webp",
+      "imageAlt": "Figure 1 from Computational design of metallohydrolases",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-025-09746-w",
+      "attachmentKey": "R3NILMF7",
+      "sourceSha256": "b481331a99158baa084607a44cd5bf1ded4dc153a7ef29556b6a07b7e44b792a",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        84.29,
+        45.82,
+        528.84,
+        449.71
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 998
+    },
+    "2HGMPM7M": {
+      "image": "/images/literature/2hgmpm7m.webp",
+      "imageAlt": "Figure 1 from Computational enzyme design by catalytic motif scaffolding",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-025-09747-9",
+      "attachmentKey": "8GWXPF9F",
+      "sourceSha256": "d063841a94781b497da963db1b572a51594a604b2496a10c90bceaa264106231",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        72.39,
+        47.41,
+        516.94,
+        303.49
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 633
+    },
+    "IYUBNDI2": {
+      "image": "/images/literature/iyubndi2.webp",
+      "imageAlt": "Figure 1 from Customizing the structure of minimal TIM barrels to craft efficient de novo enzymes",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41589-026-02250-w",
+      "attachmentKey": "ACAW6GIQ",
+      "sourceSha256": "c5b5ff9108e4beaf7a7a36c9d7fbfa5a5470a9d55718750f7efbacaaaa7420c5",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        32.5,
+        51.36,
+        570.51,
+        264.98
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 435
+    },
+    "CX7NVC9X": {
+      "image": "/images/literature/cx7nvc9x.webp",
+      "imageAlt": "Figure 1 from Data-driven construction of an imine reductase library capable of broad-scope reductive amination at equimolar substrate concentrations",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-026-76869-7",
+      "attachmentKey": "WAWHGFFY",
+      "sourceSha256": "2f9d5cd11580e646c3e99299b5fc4643a1f6e6ff4f09b9343f1c09693ac91fbb",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        40.84,
+        44.24,
+        552.65,
+        556.46
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 1100
+    },
+    "VITUSLB5": {
+      "image": "/images/literature/vituslb5.webp",
+      "imageAlt": "Figure 1 from Deep Learning-Driven Discovery and Engineering of an Efficient PETase for Depolymerization and Detoxification of PET Microplastics Under Physiological Conditions",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1002/advs.77163",
+      "attachmentKey": "JKGC84QZ",
+      "sourceSha256": "aa70abea283a74978543afdf01f49a6d845150c2ea5553406b2e9413543b5642",
+      "page": 3,
+      "pageSize": [
+        612.28,
+        799.37
+      ],
+      "crop": [
+        48.88,
+        40.76,
+        562.18,
+        640.66
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 1285
+    },
+    "X3NTBCAB": {
+      "image": "/images/literature/x3ntbcab.webp",
+      "imageAlt": "Figure 1 from Differences between protein fitness models can be used to design variants of altered specificity",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.06.10.731299",
+      "attachmentKey": "JUGX5JQ4",
+      "sourceSha256": "251f6c8dd352148aa50ad7442b6b98b840466872257b8e451b0c5cf57257c2b6",
+      "page": 32,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        65.38,
+        67.28,
+        549.68,
+        372.34
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 692
+    },
+    "X3AKDWWK": {
+      "image": "/images/literature/x3akdwwk.webp",
+      "imageAlt": "Figure 1 from Dual-encoder contrastive learning accelerates enzyme discovery",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1073/pnas.2520070123",
+      "attachmentKey": "U2YBA9ZE",
+      "sourceSha256": "26109360fc657df3c2b4c15d0b236abd50db868710fb8cce40a2f36fe5bb97c0",
+      "page": 3,
+      "pageSize": [
+        585.0,
+        782.64
+      ],
+      "crop": [
+        114.92,
+        33.57,
+        478.85,
+        346.2
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1091,
+      "height": 937
+    },
+    "FC5CSSAA": {
+      "image": "/images/literature/fc5cssaa.webp",
+      "imageAlt": "Figure 1 from Enhancing kcat prediction through residue-aware attention mechanism and pre-trained representations",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s42003-026-09551-9",
+      "attachmentKey": "D5YSP82L",
+      "sourceSha256": "dd85211b894d3207706504eb74ea36bfe9fec10780f22d941cd21b5ae7067b58",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        48.57,
+        43.45,
+        540.75,
+        477.64
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 969
+    },
+    "ULZ86Z2W": {
+      "image": "/images/literature/ulz86z2w.webp",
+      "imageAlt": "Figure 1 from EnzCast: Prediction of Patient-Specific Enzymatic Kinetics thrugh Multi-Modal Deep Learning and Isoform-Resolved Bayesian Inference based on Single-Cell Transcriptomics",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.04.28.721430",
+      "attachmentKey": "BU88ZSJF",
+      "sourceSha256": "0f4dce303cea3c13ce8b507eb9e8e01556ccbbd1efaad96e62cce8b6b9df8852",
+      "page": 31,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        77.62,
+        93.42,
+        534.38,
+        609.37
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 1243
+    },
+    "F3KE7DQS": {
+      "image": "/images/literature/f3ke7dqs.webp",
+      "imageAlt": "Figure 1 from ENZYME-UNIFIED: LEARNING HOLISTIC REPRESENTATIONS OF ENZYME FUNCTION WITH A HYBRID INTERACTION MODEL",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "",
+      "attachmentKey": "5BQQYX2M",
+      "sourceSha256": "cabf1281c4bec4441018ba8fd659d9da61c7a9b7f81d8217dfeedaa4d672071d",
+      "page": 2,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        92.92,
+        77.58,
+        482.36,
+        259.72
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 514
+    },
+    "KUDNZPVX": {
+      "image": "/images/literature/kudnzpvx.webp",
+      "imageAlt": "Graphical abstract from EnzymeHunter: Achieving fine-grained enzyme function prediction with a hierarchically aware contrastive learning framework",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1016/j.patter.2026.101567",
+      "attachmentKey": "KCVSCJ5F",
+      "sourceSha256": "166fd8d4f3d6fe2170a73489c4e92c491f36cd9ab055ab157af6e4c7d9497e45",
+      "page": 1,
+      "pageSize": [
+        602.99,
+        782.99
+      ],
+      "crop": [
+        48.24,
+        185.57,
+        343.1,
+        484.67
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "Graphical abstract identified in the source PDF.",
+      "width": 884,
+      "height": 897
+    },
+    "SSJTVKZE": {
+      "image": "/images/literature/ssjtvkze.webp",
+      "imageAlt": "Figure 1 from Evolution-inspired multi-objective Bayesian optimization for protein engineering",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.08.05.743005",
+      "attachmentKey": "5AVGV9U2",
+      "sourceSha256": "22fb7cc79ef285df47a3b9948e0f2fad8863f8972b751126204f712e072814c8",
+      "page": 5,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        85.58,
+        308.05,
+        543.56,
+        472.74
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 396
+    },
+    "TSH3IPNA": {
+      "image": "/images/literature/tsh3ipna.webp",
+      "imageAlt": "Figure 1 from Evolutionary profiles for protein fitness prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bioinformatics/btag525",
+      "attachmentKey": "PUXJUC2Z",
+      "sourceSha256": "3a5c3c7a51a17909ed595ad7d63d9b05fc43c0a695fcea534e4298da32097a44",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        782.36
+      ],
+      "crop": [
+        67.62,
+        438.03,
+        522.89,
+        713.53
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 665
+    },
+    "T6YQY656": {
+      "image": "/images/literature/t6yqy656.webp",
+      "imageAlt": "Figure 1 from FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.02.23.707496",
+      "attachmentKey": "F6CAW3TH",
+      "sourceSha256": "46d069ff21ebde31f34e3cf6c96933f5746262c003ea970031bd6d075441df32",
+      "page": 2,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        58.65,
+        43.56,
+        531.32,
+        363.7
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 745
+    },
+    "436XXFN3": {
+      "image": "/images/literature/436xxfn3.webp",
+      "imageAlt": "Figure 1 from Function-guided design of active enzymes",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.06.27.735025",
+      "attachmentKey": "ZHTVL8ST",
+      "sourceSha256": "1de05815fbebd1087ea6b1889071a3a04e566b70affd4094ab19f9891c86fe23",
+      "page": 12,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        114.06,
+        73.45,
+        490.75,
+        324.2
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 732
+    },
+    "JXKDMC2N": {
+      "image": "/images/literature/jxkdmc2n.webp",
+      "imageAlt": "Figure 1 from Functional Locality–Aligned Learning Reveals Structure–Function Causality in Enzyme Kinetics",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.03.04.709726",
+      "attachmentKey": "NP8TC4UJ",
+      "sourceSha256": "006deb18d8dc53b34ab6ae754a418d35ec6e67e56eff61a220631812f6ab580c",
+      "page": 4,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        114.65,
+        75.98,
+        505.99,
+        446.03
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 1040
+    },
+    "J9H6ET8W": {
+      "image": "/images/literature/j9h6et8w.webp",
+      "imageAlt": "Graphical abstract from Generative Artificial Intelligence-Empowered Virtual Evolution of Enzyme with the VERnet Model",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1021/acscatal.6c00759",
+      "attachmentKey": "5LNLJFAV",
+      "sourceSha256": "eaaa55c8e7375f17336e84dda583f7f3394c922dcd3ed7b061c1439c91567a20",
+      "page": 1,
+      "pageSize": [
+        607.41,
+        800.9
+      ],
+      "crop": [
+        358.31,
+        265.54,
+        556.02,
+        401.88
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "Publisher abstract artwork identified by visual review of the first page of the source article PDF.",
+      "width": 593,
+      "height": 408
+    },
+    "ZJK9ET7W": {
+      "image": "/images/literature/zjk9et7w.webp",
+      "imageAlt": "Graphical abstract from GotEnzymes2: expanding coverage of enzyme kinetics and thermal properties",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1093/nar/gkaf1053",
+      "attachmentKey": "X3DMGTQC",
+      "sourceSha256": "eb27a8ae5c2d3d8e6772fa93acbd3769621f86ffccbb4e10a1b940197652e520",
+      "page": 1,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        44.68,
+        524.3,
+        544.68,
+        712.8
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "Graphical abstract identified in the source PDF.",
+      "width": 1099,
+      "height": 414
+    },
+    "W3QKY5V2": {
+      "image": "/images/literature/w3qky5v2.webp",
+      "imageAlt": "Figure 1 from KinForm: kinetics-informed feature optimised representation models for enzyme kcat and KM prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41540-026-00692-5",
+      "attachmentKey": "UT9YRWWR",
+      "sourceSha256": "ac0e9c85c4e23e20587607150fd10d747712f1511c24429ccac39290678e7c59",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        33.69,
+        31.59,
+        570.51,
+        384.09
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 722
+    },
+    "7IFF8JY6": {
+      "image": "/images/literature/7iff8jy6.webp",
+      "imageAlt": "Figure 1 from KmPred: prediction of Michaelis constants (Km) using an integrative machine learning framework",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.3389/frai.2026.1711471",
+      "attachmentKey": "SDHEQB8F",
+      "sourceSha256": "f32b44044d1cf63ab077d363d6bd3b345a89157b6064c128875cc0a851ffda96",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        49.77,
+        560.91,
+        540.75,
+        731.49
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 382
+    },
+    "22N5LIM5": {
+      "image": "/images/literature/22n5lim5.webp",
+      "imageAlt": "Figure 1 from Language Modeling Materializes a World Model of Protein Biology",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "",
+      "attachmentKey": "44DMWCWY",
+      "sourceSha256": "eff2b10fb1647dfada577b2776a623a6d85a03f045021fdb6f2222b5ff703ed6",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        48.24,
+        66.25,
+        564.98,
+        330.49
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 561
+    },
+    "P4Z2BLSD": {
+      "image": "/images/literature/p4z2blsd.webp",
+      "imageAlt": "Figure 1 from Miniaturizing and modifying natural proteins with Raygun",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-026-10842-8",
+      "attachmentKey": "TY5VB6CF",
+      "sourceSha256": "0fc3b6e4821ac1c0156d70ea11eb235067f743ea80a59e295570cf4b5de105d3",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        36.67,
+        40.29,
+        588.37,
+        456.83
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 829
+    },
+    "M8HQK3YE": {
+      "image": "/images/literature/m8hqk3ye.webp",
+      "imageAlt": "Figure 1 from Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2603.12845",
+      "attachmentKey": "HKLQ3TI6",
+      "sourceSha256": "17b9001d1fa52328c3b0f065f3739af075e4fdea061b1ee4beaf8707ee9a4c88",
+      "page": 1,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        56.2,
+        269.24,
+        561.92,
+        433.88
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 358
+    },
+    "9J4E8BGH": {
+      "image": "/images/literature/9j4e8bgh.webp",
+      "imageAlt": "Figure 1 from Property guidance for protein sequence generative models with ProteinGuide",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41587-026-03207-z",
+      "attachmentKey": "45D9TWPA",
+      "sourceSha256": "519c2b41cc5e475ced0a700ed08f43be070682ede29a070add6f8b7e87569d0c",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        33.1,
+        41.87,
+        570.51,
+        495.69
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 928
+    },
+    "WHTNA4SS": {
+      "image": "/images/literature/whtna4ss.webp",
+      "imageAlt": "Figure 1 from ProtGPT3: an Open-source family of Promptable and Aligned Protein Language Models",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.06.04.730041",
+      "attachmentKey": "33CYRFKG",
+      "sourceSha256": "3e51b428cd37b05ecb8d91d4901ac23d886986f677033323e96e2463dc2c125a",
+      "page": 2,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        99.04,
+        63.32,
+        512.96,
+        314.65
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 667
+    },
+    "XVLL6QCB": {
+      "image": "/images/literature/xvll6qcb.webp",
+      "imageAlt": "Graphical abstract from Pseudodata-Guided Invariant Representation Learning Boosts the Out-of-Distribution Generalization in Enzymatic Kinetic Parameter Prediction",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1021/acs.jcim.5c03204",
+      "attachmentKey": "HCAKM87U",
+      "sourceSha256": "d0efbed17ab554515f33d88ed7b1235e84c4fc5a793ff1c29a02485794340ec6",
+      "page": 1,
+      "pageSize": [
+        607.41,
+        800.9
+      ],
+      "crop": [
+        331.18,
+        254.83,
+        556.02,
+        391.17
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "Publisher abstract artwork identified by visual review of the first page of the source article PDF.",
+      "width": 674,
+      "height": 408
+    },
+    "ZRU4V3A8": {
+      "image": "/images/literature/zru4v3a8.webp",
+      "imageAlt": "Figure 1 from Rank-guided learning accelerates automated enzyme engineering",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-026-76264-2",
+      "attachmentKey": "MSP6A7NX",
+      "sourceSha256": "83b311aa636347338a3238748e33cb786f6007fff4fff0858ff8d3c903a1fe4b",
+      "page": 45,
+      "pageSize": [
+        595.28,
+        881.89
+      ],
+      "crop": [
+        36.67,
+        95.65,
+        560.99,
+        523.43
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "captionPage": 39,
+      "width": 1100,
+      "height": 897
+    },
+    "KMTMB22G": {
+      "image": "/images/literature/kmtmb22g.webp",
+      "imageAlt": "Figure 1 from Rapid directed evolution guided by protein language models and epistatic interactions",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1126/science.aea1820",
+      "attachmentKey": "4IT27DP9",
+      "sourceSha256": "8894d36ee798c8d81ae62d7bfa3d8c82e409cada273ee783bea2a8cc3f5d83f3",
+      "page": 11,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        31.72,
+        59.36,
+        580.28,
+        329.71
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 541
+    },
+    "3SM9WDNA": {
+      "image": "/images/literature/3sm9wdna.webp",
+      "imageAlt": "Figure 1 from Reaction-Conditioned Enzyme Discovery with Multimodal Deep Learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.03.09.710689",
+      "attachmentKey": "VMGZ8WKD",
+      "sourceSha256": "1482b4d38cb30fca3df6f3a8880861f102ac289922e7ffe32957bf04517e08db",
+      "page": 5,
+      "pageSize": [
+        595.32,
+        841.92
+      ],
+      "crop": [
+        42.63,
+        70.09,
+        555.67,
+        538.49
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1004
+    },
+    "VJH95VKI": {
+      "image": "/images/literature/vjh95vki.webp",
+      "imageAlt": "Figure 1 from Robust enzyme kinetics prediction through pairwise relative learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.65215/LTSpreprints.2026.05.19.000247",
+      "attachmentKey": "LAZ3ZMQU",
+      "sourceSha256": "ec5937587c40ad0e4c8e2b712a83422d124d3b71c7ff7a3470b26255b434ab99",
+      "page": 13,
+      "pageSize": [
+        595.32,
+        841.92
+      ],
+      "crop": [
+        82.51,
+        71.77,
+        535.79,
+        307.39
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 571
+    },
+    "BS8D5BDG": {
+      "image": "/images/literature/bs8d5bdg.webp",
+      "imageAlt": "Figure 1 from Understanding language model scaling for protein fitness prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s43588-026-01010-z",
+      "attachmentKey": "GSFSHHP9",
+      "sourceSha256": "daaf4970d665dba202d0c577f990d658887ebf2fc614fcaecce111bceed3c4c6",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        36.67,
+        40.29,
+        546.7,
+        374.75
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 721
+    },
+    "SAJIHGQB": {
+      "image": "/images/literature/sajihgqb.webp",
+      "imageAlt": "Figure 1 from UniKineG: Unified-Coordinate Geometric Graphs Enable Robust Enzyme Kinetic Prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.3390/ijms27041731",
+      "attachmentKey": "YIKXTZBU",
+      "sourceSha256": "095160219f124db76462d7b08beb4aa713a050292a5238fb604f2eac430cc230",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        102.15,
+        357.8,
+        493.13,
+        530.08
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 484
+    },
+    "65LIWEW6": {
+      "image": "/images/literature/65liwew6.webp",
+      "imageAlt": "Figure 1 from A Deep Learning-Based Approach for Predicting Michaelis Constants from Enzymatic Reactions",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.3390/app15074017",
+      "attachmentKey": "43MZWHP6",
+      "sourceSha256": "ceddbbd6d26fa6438725b30df4fac1b05d7cb62f99e3f07d1db32537aa37264a",
+      "page": 4,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        149.77,
+        299.08,
+        564.56,
+        691.49
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1040
+    },
+    "I4WELYEB": {
+      "image": "/images/literature/i4welyeb.webp",
+      "imageAlt": "Figure 1 from A generalized platform for artificial intelligence-powered autonomous enzyme engineering",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-025-61209-y",
+      "attachmentKey": "2PBIBGMN",
+      "sourceSha256": "5dd3a003650325b8ea937647c634c3e21d0eaf490ea5a7d0443fd7ef8aae46d5",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        84.29,
+        386.69,
+        519.32,
+        677.5
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 735
+    },
+    "777BN65D": {
+      "image": "/images/literature/777bn65d.webp",
+      "imageAlt": "Figure 1 from A multimodal deep learning framework for enzyme turnover prediction with missing modality",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1016/j.compbiomed.2025.110348",
+      "attachmentKey": "R98W8ZUW",
+      "sourceSha256": "fd9f71e202691082ce9de58f23b9cbca346b46a32b5e00fc8ffc713ddb0f7694",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        793.7
+      ],
+      "crop": [
+        90.24,
+        50.77,
+        517.89,
+        192.0
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 363
+    },
+    "M3E3IJGL": {
+      "image": "/images/literature/m3e3ijgl.webp",
+      "imageAlt": "Figure 1 from A novel interpretability framework for enzyme turnover number prediction boosted by pre-trained enzyme embeddings and adaptive gate network",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1016/j.ymeth.2025.02.010",
+      "attachmentKey": "6TGMD4XF",
+      "sourceSha256": "f34f2c2ecf1a60edb1d40b415f2c9762ac2dd1a46e197f762c80eacaa2de83ab",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        793.7
+      ],
+      "crop": [
+        28.93,
+        47.62,
+        564.56,
+        320.48
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 560
+    },
+    "65REJT4U": {
+      "image": "/images/literature/65rejt4u.webp",
+      "imageAlt": "Figure 1 from Atomic context-conditioned protein sequence design using LigandMPNN",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41592-025-02626-1",
+      "attachmentKey": "82QJVWJK",
+      "sourceSha256": "ca23bdac1af95101f4535188eb5ff489c707cac66e330ea9d21d64f654833052",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        120.01,
+        43.45,
+        505.99,
+        233.72
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 542
+    },
+    "4RDHU888": {
+      "image": "/images/literature/4rdhu888.webp",
+      "imageAlt": "Figure 1 from Catalytic pocket-informed augmentation of enzyme kinetic parameters prediction via hierarchical graph learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2025.05.18.654694",
+      "attachmentKey": "FKFUGSD8",
+      "sourceSha256": "4eee890a8a5c4b7a6db380d99a85d777c3b5e39475331077e9e02371350860b8",
+      "page": 4,
+      "pageSize": [
+        595.32,
+        841.92
+      ],
+      "crop": [
+        77.39,
+        458.85,
+        535.79,
+        616.77
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 378
+    },
+    "PB44JE5D": {
+      "image": "/images/literature/pb44je5d.webp",
+      "imageAlt": "Figure 1 from CatPred: a comprehensive framework for deep learning in vitro enzyme kinetic parameters",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-025-57215-9",
+      "attachmentKey": "RG3RJ8QS",
+      "sourceSha256": "e8bca2627a9291a7727eb4578bc3e8c95e90f8944535482257d5e4825f915d85",
+      "page": 4,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        102.15,
+        43.45,
+        493.13,
+        283.99
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 676
+    },
+    "Z95GQTBB": {
+      "image": "/images/literature/z95gqtbb.webp",
+      "imageAlt": "Figure 1 from Complete computational design of high-efficiency Kemp elimination enzymes",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-025-09136-2",
+      "attachmentKey": "XEHHJ2HV",
+      "sourceSha256": "2e67aca9f7af537f62b64a7a15a1eae3ec437e50635791a4640c0d06e85d1020",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        105.13,
+        47.41,
+        500.86,
+        449.42
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1117
+    },
+    "AGS62BN7": {
+      "image": "/images/literature/ags62bn7.webp",
+      "imageAlt": "Figure 1 from Computational design of serine hydrolases",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1126/science.adu2454",
+      "attachmentKey": "RW9V93AJ",
+      "sourceSha256": "b49c05f8dedf183b8d85ace68c736eae9c88ceb522beea59909306fee2176abf",
+      "page": 3,
+      "pageSize": [
+        593.97,
+        756.0
+      ],
+      "crop": [
+        31.23,
+        127.54,
+        557.39,
+        663.59
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1120
+    },
+    "687IKQFJ": {
+      "image": "/images/literature/687ikqfj.webp",
+      "imageAlt": "Figure 1 from CPI-Pred: A deep learning framework for predicting functional parameters of compound-protein interactions",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2025.01.16.633372",
+      "attachmentKey": "PAYB4XBV",
+      "sourceSha256": "ebe2b661c3f24f2696168d561b1c2896f5c5c257f7756c7a1df47a0966334c26",
+      "page": 8,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        61.2,
+        67.28,
+        549.07,
+        369.72
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 681
+    },
+    "YDUTVG5T": {
+      "image": "/images/literature/ydutvg5t.webp",
+      "imageAlt": "Figure 1 from DEKP: a deep learning model for enzyme kinetic parameter prediction based on pretrained models and graph neural networks",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bib/bbaf187",
+      "attachmentKey": "26VBNQ3I",
+      "sourceSha256": "13122c99ea941011fa7b2e196c37bb3b390004067000f049933e1964a760fc8d",
+      "page": 3,
+      "pageSize": [
+        595.26,
+        782.34
+      ],
+      "crop": [
+        43.22,
+        39.03,
+        559.54,
+        274.27
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 500
+    },
+    "AT75QTZJ": {
+      "image": "/images/literature/at75qtzj.webp",
+      "imageAlt": "Figure 1 from EnzyCLIP: A Cross-Attention Dual Encoder Framework with Contrastive Learning for Predicting Enzyme Kinetic Constants",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2512.00379",
+      "attachmentKey": "NUFXSTCA",
+      "sourceSha256": "43c956a2db5d2f9a01fc041e0a5e05acc946e1ae9e0fec2703cd8ed4e62be6d6",
+      "page": 13,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        114.06,
+        88.61,
+        448.48,
+        278.58
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1002,
+      "height": 570
+    },
+    "7WJHBS9V": {
+      "image": "/images/literature/7wjhbs9v.webp",
+      "imageAlt": "Figure 1 from Enzyme specificity prediction using cross-attention graph neural networks",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-025-09697-2",
+      "attachmentKey": "JN69KIS8",
+      "sourceSha256": "804029de3d7eb1d8279ad8dbb1579cca4cf1921b35dd7a527dfc7c276294d4b7",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        45.6,
+        40.29,
+        570.51,
+        279.3
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 500
+    },
+    "YDBSCJXZ": {
+      "image": "/images/literature/ydbscjxz.webp",
+      "imageAlt": "Figure 1 from ESM-Ezy: a deep learning strategy for the mining of novel multicopper oxidases with superior properties",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-025-58521-y",
+      "attachmentKey": "5RWTRSRE",
+      "sourceSha256": "d2881429615ee09c2b8473656a9b9fc2d9a6f9646cbd26f8f984c0d3ddf24a4f",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        48.57,
+        45.82,
+        564.56,
+        371.86
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 694
+    },
+    "6JY9DWSS": {
+      "image": "/images/literature/6jy9dwss.webp",
+      "imageAlt": "Figure 1 from From high-throughput evaluation to wet-lab studies: advancing mutation effect prediction with a retrieval-enhanced model",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bioinformatics/btaf189",
+      "attachmentKey": "9EJVSXYW",
+      "sourceSha256": "af6ae175db9fc210b7bb5a412c6fe6a6077cf6d4083dc7a01051d32908ab3f3a",
+      "page": 2,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        56.2,
+        439.52,
+        555.8,
+        714.21
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 604
+    },
+    "9XP8SIZK": {
+      "image": "/images/literature/9xp8sizk.webp",
+      "imageAlt": "Figure 1 from Glycolysis-compatible urethanases for polyurethane recycling",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1126/science.adw4487",
+      "attachmentKey": "Z7HUKLTT",
+      "sourceSha256": "4df44e0475cc7fa4d38f022dd347d3251cec4676411da6e3806def97fe44e8c0",
+      "page": 2,
+      "pageSize": [
+        594.0,
+        756.0
+      ],
+      "crop": [
+        33.61,
+        33.8,
+        400.95,
+        380.88
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1038
+    },
+    "7D7LHDA6": {
+      "image": "/images/literature/7d7lhda6.webp",
+      "imageAlt": "Figure 1 from Harnessing protein language model for structure-based discovery of highly efficient and robust PET hydrolases",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-025-61599-z",
+      "attachmentKey": "M2MPEH3D",
+      "sourceSha256": "b833ef806004801db1894180ada6bd13ded1770e787a2e5f8da3797873e40de7",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        45.0,
+        54.52,
+        552.65,
+        466.2
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 891
+    },
+    "8A7BWQSV": {
+      "image": "/images/literature/8a7bwqsv.webp",
+      "imageAlt": "Figure 1 from IECata: interpretable bilinear attention network and evidential deep learning improve the catalytic efficiency prediction of enzymes",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bib/bbaf283",
+      "attachmentKey": "XL2RDA43",
+      "sourceSha256": "46ee3749b4d5251a77bd6f26cd735d0835dadc92183f46c2e7bf4a1859f9fc84",
+      "page": 3,
+      "pageSize": [
+        595.26,
+        782.34
+      ],
+      "crop": [
+        48.57,
+        41.38,
+        555.62,
+        578.27
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 1165
+    },
+    "AJVYTP6I": {
+      "image": "/images/literature/ajvytp6i.webp",
+      "imageAlt": "Figure 1 from KcatNet: A Geometric Deep Learning Framework for Genome-Wide Prediction of Enzyme Catalytic Efficiency",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2025.03.09.642294",
+      "attachmentKey": "4KJYTL8S",
+      "sourceSha256": "fad643a22512b7bcbbbc2822f4fdd5d04ef2396c87d768777d3d7c1e3abc6a53",
+      "page": 15,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        59.26,
+        75.2,
+        528.26,
+        410.06
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 785
+    },
+    "4NAVJ9BR": {
+      "image": "/images/literature/4navj9br.webp",
+      "imageAlt": "Figure 1 from Multimodal Regression for Enzyme Turnover Rates Prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2509.11782",
+      "attachmentKey": "5RWQ8WFZ",
+      "sourceSha256": "f17f75fcf77d99982e6cd99f0f82a8536a808884a813030df9d3696e1b60f9a5",
+      "page": 2,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        65.38,
+        45.1,
+        288.97,
+        127.22
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 669,
+      "height": 245
+    },
+    "Y3IZA8HW": {
+      "image": "/images/literature/y3iza8hw.webp",
+      "imageAlt": "Figure 1 from NNKcat: deep neural network to predict catalytic constants (Kcat) by integrating protein sequence and substrate structure with enhanced data imbalance handling",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bib/bbaf212",
+      "attachmentKey": "ALZNIP46",
+      "sourceSha256": "f421d30cffa8aa640b8eac9620016c02a1df98ff4e6723d51971a5bf3ec71da5",
+      "page": 3,
+      "pageSize": [
+        595.26,
+        782.34
+      ],
+      "crop": [
+        114.05,
+        45.29,
+        481.21,
+        311.27
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 796
+    },
+    "LVAIDAAN": {
+      "image": "/images/literature/lvaidaan.webp",
+      "imageAlt": "Figure 1 from OmniESI: A unified framework for enzyme-substrate interaction prediction with progressive conditional deep learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2506.17963",
+      "attachmentKey": "5MTTKQWS",
+      "sourceSha256": "92df218189ccd3eca82a5d4fd2dccf4bfe24b4f2b50bf4a2261576eb8dd9aaf0",
+      "page": 5,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        88.46,
+        71.77,
+        505.99,
+        500.4
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1128
+    },
+    "AKGV9NBK": {
+      "image": "/images/literature/akgv9nbk.webp",
+      "imageAlt": "Figure 1 from PreTKcat: A pre-trained representation learning and machine learning framework for predicting enzyme turnover number",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1016/j.compbiolchem.2024.108327",
+      "attachmentKey": "4TRAGAYZ",
+      "sourceSha256": "1a37a9b79840bab21f752d0223fbcf0605b108c51e80d4632b49f752430798b8",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        793.7
+      ],
+      "crop": [
+        96.2,
+        531.75,
+        500.86,
+        683.19
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 411
+    },
+    "D9FFCXXK": {
+      "image": "/images/literature/d9ffcxxk.webp",
+      "imageAlt": "Figure 1 from Robust enzyme discovery and engineering with deep learning using CataPro",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-025-58038-4",
+      "attachmentKey": "Z29LPKJR",
+      "sourceSha256": "18d8ceb1b89e8f806576423bdfebdb2a30ff5fa39ceb16f4f64dc1939b33990a",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        40.84,
+        415.16,
+        553.25,
+        705.79
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 623
+    },
+    "X3R87KRQ": {
+      "image": "/images/literature/x3r87krq.webp",
+      "imageAlt": "Figure 1 from Robust Prediction of Enzyme Variant Kinetics with RealKcat",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2025.02.10.637555",
+      "attachmentKey": "WJXW5A6Y",
+      "sourceSha256": "131c782f501a12695108b4455b4847b6ed7f7f8b4390f2d0954233b235f56a6f",
+      "page": 27,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        60.48,
+        368.24,
+        542.95,
+        653.58
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 650
+    },
+    "QWT72H3V": {
+      "image": "/images/literature/qwt72h3v.webp",
+      "imageAlt": "Figure 1 from SAKPE: A Site Attention Kinetic Parameters Prediction Method for Enzyme Engineering",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2025.04.30.651216",
+      "attachmentKey": "5WQCVN6Y",
+      "sourceSha256": "6a94ab9c4bbb2555fb2fd6b0227021d6dadd31509137a66a2bc5fb599e73acb0",
+      "page": 7,
+      "pageSize": [
+        595.3,
+        841.9
+      ],
+      "crop": [
+        90.25,
+        165.22,
+        511.96,
+        404.55
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 625
+    },
+    "TZJWD2M7": {
+      "image": "/images/literature/tzjwd2m7.webp",
+      "imageAlt": "Figure 1 from Scaling Unlocks Broader Generation and Deeper Functional Understanding of Proteins",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2025.04.15.649055",
+      "attachmentKey": "GR3A3V29",
+      "sourceSha256": "916717ec4197ff542fd410f15df828ce976dde95ba5f0a73a87639b469bee9ea",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        105.16,
+        64.11,
+        520.2,
+        304.09
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 636
+    },
+    "4XRCVYE9": {
+      "image": "/images/literature/4xrcvye9.webp",
+      "imageAlt": "Figure 1 from Semantical and geometrical protein encoding toward enhanced bioactivity and thermostability",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.7554/eLife.98033",
+      "attachmentKey": "P7GE7B44",
+      "sourceSha256": "146b44b45fd576dbe2641d904770baf1f708f1251f76a5f00746345e061786b3",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        31.72,
+        46.69,
+        584.56,
+        223.17
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 351
+    },
+    "BQSZF7TU": {
+      "image": "/images/literature/bqszf7tu.webp",
+      "imageAlt": "Figure 1 from Simulating 500 million years of evolution with a language model",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://www.science.org/doi/10.1126/science.ads0018",
+      "attachmentKey": "ITI7IDLC",
+      "sourceSha256": "d74549689732e87224666ffa29286fa3f1284b9e3a938c48e31a05246098a5e5",
+      "page": 2,
+      "pageSize": [
+        593.97,
+        756.0
+      ],
+      "crop": [
+        33.61,
+        45.14,
+        561.3,
+        409.55
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 758
+    },
+    "KYXDWMXG": {
+      "image": "/images/literature/kyxdwmxg.webp",
+      "imageAlt": "Graphical abstract from TCNeKP: A Novel Deep Learning Architecture for Enzyme Catalytic Activity Prediction",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1021/acs.jcim.5c01830",
+      "attachmentKey": "PX9WWYM6",
+      "sourceSha256": "a1b924c78123dce115866894657ffde54492b318b8fe2f0e58bc1e96d36d8217",
+      "page": 1,
+      "pageSize": [
+        607.41,
+        800.9
+      ],
+      "crop": [
+        472.51,
+        237.7,
+        556.02,
+        371.18
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "Publisher abstract artwork identified by visual review of the first page of the source article PDF.",
+      "width": 250,
+      "height": 399
+    },
+    "3NDAAJKP": {
+      "image": "/images/literature/3ndaajkp.webp",
+      "imageAlt": "Figure 1 from A multimodal Transformer Network for protein-small molecule interactions enhances predictions of kinase inhibition and enzyme-substrate relationships",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1371/journal.pcbi.1012100",
+      "attachmentKey": "HUDLMLVA",
+      "sourceSha256": "6814d3faac673eab8c6c1e7dc2c874e692ca069c636cc2aed4e96959e3cd20f0",
+      "page": 4,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        86.8,
+        163.11,
+        587.62,
+        648.25
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 1065
+    },
+    "UDPUBF4B": {
+      "image": "/images/literature/udpubf4b.webp",
+      "imageAlt": "Figure 1 from CLIPZyme: Reaction-Conditioned Virtual Screening of Enzymes",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "",
+      "attachmentKey": "VB7CDH5E",
+      "sourceSha256": "3de8af5eba6a61022d193a84ead10acee24f68c8cfe3575fe928833e61956d37",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        52.02,
+        64.11,
+        571.1,
+        272.19
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 441
+    },
+    "CAXMWV6J": {
+      "image": "/images/literature/caxmwv6j.webp",
+      "imageAlt": "Figure 1 from Conditional language models enable the efficient design of proficient enzymes",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2024.05.03.592223",
+      "attachmentKey": "QYDVDHHG",
+      "sourceSha256": "4178671e8730ca025dee6cff248be1c85034b181e9cf1253bd17983e5067fcac",
+      "page": 4,
+      "pageSize": [
+        595.44,
+        841.68
+      ],
+      "crop": [
+        61.69,
+        148.98,
+        534.35,
+        362.71
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 497
+    },
+    "HBPSYQ5J": {
+      "image": "/images/literature/hbpsyq5j.webp",
+      "imageAlt": "Figure 1 from DeepEnzyme: a robust deep learning model for improved enzyme turnover number prediction by utilizing features of protein 3D-structures",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bib/bbae409",
+      "attachmentKey": "PCDX9E7K",
+      "sourceSha256": "4b9e27de3f10dd29bf77f43a585330413a72eb0a9a902e569d50f64f2e8b622a",
+      "page": 3,
+      "pageSize": [
+        595.26,
+        782.34
+      ],
+      "crop": [
+        50.36,
+        42.94,
+        549.66,
+        255.27
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 467
+    },
+    "9IKB7EDN": {
+      "image": "/images/literature/9ikb7edn.webp",
+      "imageAlt": "Figure 1 from DLTKcat: deep learning-based prediction of temperature-dependent enzyme turnover rates",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bib/bbad506",
+      "attachmentKey": "27L58VSJ",
+      "sourceSha256": "d301721d3a1468dc8067a5437a17f7564728c8510dec5583666397a16ba4ebb2",
+      "page": 3,
+      "pageSize": [
+        595.26,
+        782.34
+      ],
+      "crop": [
+        45.6,
+        43.03,
+        546.69,
+        227.26
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 404
+    },
+    "SEH3VHGY": {
+      "image": "/images/literature/seh3vhgy.webp",
+      "imageAlt": "Graphical abstract from EITLEM-Kinetics: A deep-learning framework for kinetic parameter prediction of mutant enzymes",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1016/j.checat.2024.101094",
+      "attachmentKey": "YC8B4DYZ",
+      "sourceSha256": "179c5b4e200a27b77bd1f1978071a88c863011431675fabf35ebc14a8857f6d0",
+      "page": 1,
+      "pageSize": [
+        602.99,
+        782.99
+      ],
+      "crop": [
+        57.09,
+        228.4,
+        376.78,
+        548.16
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "Publisher abstract artwork identified by visual review of the first page of the source article PDF.",
+      "width": 958,
+      "height": 958
+    },
+    "2EFZ48XE": {
+      "image": "/images/literature/2efz48xe.webp",
+      "imageAlt": "Figure 1 from Enhancing efficiency of protein language models with minimal wet-lab data through few-shot learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-024-49798-6",
+      "attachmentKey": "VIMDYSNL",
+      "sourceSha256": "e7e674100bc7a70813f6dfd3eb71cea02bbd1429baef947f3d8e8728d4c569e2",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        48.57,
+        42.66,
+        546.7,
+        614.17
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1261
+    },
+    "U67ZBKW5": {
+      "image": "/images/literature/u67zbkw5.webp",
+      "imageAlt": "Figure 1 from ENKIE: a package for predicting enzyme kinetic parameter values and their uncertainties",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bioinformatics/btae652",
+      "attachmentKey": "U5HQ7H3F",
+      "sourceSha256": "17bcbd380eb3ed8394abbc7a6849a0fdc7b93aa6200ce3757a8fe2b3ee9a330b",
+      "page": 2,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        39.78,
+        460.11,
+        561.92,
+        678.33
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 459
+    },
+    "7289T7AX": {
+      "image": "/images/literature/7289t7ax.webp",
+      "imageAlt": "Figure 1 from GraphKM: machine and deep learning for KM prediction of wildtype and mutant enzymes",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1186/s12859-024-05746-1",
+      "attachmentKey": "BVF7AVAT",
+      "sourceSha256": "809df8d83417dc2261383ebeb60d1a31714b485030db7d0c97b693243a7a331c",
+      "page": 4,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        114.06,
+        510.11,
+        487.17,
+        710.13
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 589
+    },
+    "JPLHWKSD": {
+      "image": "/images/literature/jplhwksd.webp",
+      "imageAlt": "Figure 1 from Improving the prediction of protein stability changes upon mutations by geometric learning and a pre-training strategy",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s43588-024-00716-2",
+      "attachmentKey": "F776Q48J",
+      "sourceSha256": "47d00065467072c535e8846360a589b332d02803a8940a8aff2128f81d80d05b",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        135.76,
+        495.0,
+        482.36,
+        652.45
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1039,
+      "height": 472
+    },
+    "UCHB8YIZ": {
+      "image": "/images/literature/uchb8yiz.webp",
+      "imageAlt": "Figure 1 from MPEK: a multitask deep learning framework based on pretrained language models for enzymatic reaction kinetic parameters prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bib/bbae387",
+      "attachmentKey": "R36LN3KR",
+      "sourceSha256": "402849cdfedf90ada084ae5743abda8e67834e87f7a9aed77ec717a74770da79",
+      "page": 3,
+      "pageSize": [
+        595.26,
+        782.34
+      ],
+      "crop": [
+        81.31,
+        46.85,
+        512.16,
+        411.22
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 930
+    },
+    "DT4XN2BR": {
+      "image": "/images/literature/dt4xn2br.webp",
+      "imageAlt": "Figure 1 from Multi-Scale Representation Learning for Protein Fitness Prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2412.01108",
+      "attachmentKey": "FMHGNF5G",
+      "sourceSha256": "4c0ded4f445d8a324cea2fc1bb2fe186aaee1c32c969cf9b59dc120c601ef076",
+      "page": 4,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        102.71,
+        69.66,
+        517.24,
+        234.06
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 436
+    },
+    "8U3ETJYK": {
+      "image": "/images/literature/8u3etjyk.webp",
+      "imageAlt": "Figure 1 from ProSST: Protein Language Modeling with Quantized Structure and Disentangled Attention",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2024.04.15.589672",
+      "attachmentKey": "JGRM4UI9",
+      "sourceSha256": "a125dc369f2bd9a24c7f990c666ec7be03c68637e1926fec293f5a501c2b4291",
+      "page": 4,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        105.16,
+        75.2,
+        520.2,
+        313.94
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 632
+    },
+    "3BURH7EX": {
+      "image": "/images/literature/3burh7ex.webp",
+      "imageAlt": "Figure 1 from Rapid in silico directed evolution by a protein language model with EVOLVEpro",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1126/science.adr6006",
+      "attachmentKey": "JNI7KHCT",
+      "sourceSha256": "35f71637fe18709d667b00ca20787924e726f6d7c99be964d6a1980d843bc48d",
+      "page": 3,
+      "pageSize": [
+        593.97,
+        756.0
+      ],
+      "crop": [
+        32.42,
+        39.09,
+        551.45,
+        553.72
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1091
+    },
+    "N2Y55JGN": {
+      "image": "/images/literature/n2y55jgn.webp",
+      "imageAlt": "Figure 1 from A general model to predict small molecule substrates of enzymes based on machine and deep learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-023-38347-2",
+      "attachmentKey": "G6N496TK",
+      "sourceSha256": "1b21a87baaa05addd475e8e921f5be16908b1f4d3b195ff39062ea225ce3dd77",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        114.06,
+        43.45,
+        491.94,
+        437.17
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1146
+    },
+    "F6A7E6UW": {
+      "image": "/images/literature/f6a7e6uw.webp",
+      "imageAlt": "Figure 1 from De novo design of luciferases using deep learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-023-05696-3",
+      "attachmentKey": "73GSZNLF",
+      "sourceSha256": "ee1cd8ed979f482c1e37347df7bdb3da061d614c11769ce645807468b20607a8",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        108.1,
+        43.45,
+        472.29,
+        440.5
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1092,
+      "height": 1190
+    },
+    "BIHCPE9S": {
+      "image": "/images/literature/bihcpe9s.webp",
+      "imageAlt": "Figure 1 from De novo design of protein structure and function with RFdiffusion",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-023-06415-8",
+      "attachmentKey": "LYX22NDY",
+      "sourceSha256": "c881805616f7034577682a0b38b043f379a9973aaf02aec2393ab91c79fddc58",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        27.14,
+        43.45,
+        560.99,
+        538.04
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 1019
+    },
+    "6BJXDB42": {
+      "image": "/images/literature/6bjxdb42.webp",
+      "imageAlt": "Figure 1 from Enzyme function prediction using contrastive learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1126/science.adf2465",
+      "attachmentKey": "N4MUFY7K",
+      "sourceSha256": "ab656a1403c2fb423a9cd34a1ca48f2bb1686e5689ebde6b9cadeb02b5c5d769",
+      "page": 2,
+      "pageSize": [
+        593.97,
+        756.0
+      ],
+      "crop": [
+        33.01,
+        40.6,
+        562.15,
+        432.12
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 813
+    },
+    "HGRQKNQH": {
+      "image": "/images/literature/hgrqknqh.webp",
+      "imageAlt": "Figure 1 from Large language models generate functional protein sequences across diverse families",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41587-022-01618-2",
+      "attachmentKey": "GVW79Z5G",
+      "sourceSha256": "ed429155049ca85521e6d2f2fd10d8387c8371e1eb6638eb4e71573c6019574b",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        37.26,
+        43.45,
+        569.32,
+        332.38
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 598
+    },
+    "WYZGL5DS": {
+      "image": "/images/literature/wyzgl5ds.webp",
+      "imageAlt": "Figure 1 from ProGen2: Exploring the boundaries of protein language models",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1016/j.cels.2023.10.002",
+      "attachmentKey": "I3XBH9NM",
+      "sourceSha256": "f8f083e19e347f8d98d9029429242e62dbc689768ba285aaaebd05e574b17b84",
+      "page": 4,
+      "pageSize": [
+        602.99,
+        782.99
+      ],
+      "crop": [
+        78.82,
+        89.96,
+        535.63,
+        289.25
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 480
+    },
+    "IFEDBVKQ": {
+      "image": "/images/literature/ifedbvkq.webp",
+      "imageAlt": "Figure 1 from ProteinNPT: Improving Protein Property Prediction and Design with Non-Parametric Transformers",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2023.12.06.570473",
+      "attachmentKey": "HF3NB6MT",
+      "sourceSha256": "eb3ca8227c6404a392a5b97874f0b27afb96469dbbb94dd6e4bb8732caf19e88",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        102.1,
+        64.11,
+        503.17,
+        372.99
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 847
+    },
+    "NXH44XSL": {
+      "image": "/images/literature/nxh44xsl.webp",
+      "imageAlt": "Figure 1 from SaProt: Protein Language Modeling with Structure-aware Vocabulary",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://openreview.net/forum?id=6MRm3G4NiU",
+      "attachmentKey": "IQKDHMDY",
+      "sourceSha256": "69a5f9384d9c7051bd31edf8d11d522c829269d9c141cf7159cb585ca3118589",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        102.2,
+        75.2,
+        522.75,
+        240.69
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 432
+    },
+    "ZBX2UCCU": {
+      "image": "/images/literature/zbx2uccu.webp",
+      "imageAlt": "Figure 1 from Turnover number predictions for kinetically uncharacterized enzymes using machine and deep learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-023-39840-4",
+      "attachmentKey": "DKFT2ZPU",
+      "sourceSha256": "5c9b5f95a203726ff30487c37436c53fcca846f3daa0f5f114d9937fac2ee66f",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        39.65,
+        249.08,
+        566.35,
+        699.72
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 940
+    },
+    "DVLXLV8H": {
+      "image": "/images/literature/dvlxlv8h.webp",
+      "imageAlt": "Figure 1 from UniKP: a unified framework for the prediction of enzyme kinetic parameters",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-023-44113-1",
+      "attachmentKey": "W4TXUMT4",
+      "sourceSha256": "84a6479d407fe9b84824ec5a161da4ba15394eb14df58c3758a1ac3095bd8ca3",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        48.57,
+        43.45,
+        549.08,
+        254.62
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 464
+    },
+    "7VFUYW2G": {
+      "image": "/images/literature/7vfuyw2g.webp",
+      "imageAlt": "Figure 1 from Deep learning-based kcat prediction enables improved enzyme-constrained model reconstruction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41929-022-00798-z",
+      "attachmentKey": "Y2T6H5LF",
+      "sourceSha256": "2d0c0171a0e7317cf2b0968d357c62e0ae3e3e1e9b7198da8017ac821a4ff310",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        39.05,
+        53.73,
+        298.47,
+        411.14
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 777,
+      "height": 1071
+    },
+    "2FXPSURW": {
+      "image": "/images/literature/2fxpsurw.webp",
+      "imageAlt": "Figure 1 from Evolutionary-scale prediction of atomic level protein structure with a language model",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2022.07.20.500902",
+      "attachmentKey": "KNYYW2C8",
+      "sourceSha256": "9d96c51ad37e9fb419fa8a8fa33a9afde0dac4af8e4dc458d83de737f3bc6f47",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        49.47,
+        79.2,
+        555.8,
+        544.61
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 1010
+    },
+    "L9LK3Y6J": {
+      "image": "/images/literature/l9lk3y6j.webp",
+      "imageAlt": "Figure 1 from Learning inverse folding from millions of predicted structures",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2022.04.10.487779",
+      "attachmentKey": "T8G9LBLM",
+      "sourceSha256": "670662c38d38718ab976fb2e7afabfe819c33ad1b92ec622d3348bf619ea3227",
+      "page": 1,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        53.14,
+        494.96,
+        568.04,
+        660.35
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 352
+    },
+    "RPKBLA32": {
+      "image": "/images/literature/rpkbla32.webp",
+      "imageAlt": "Figure 1 from MLAGO: machine learning-aided global optimization for Michaelis constant estimation of kinetic modeling",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1186/s12859-022-05009-x",
+      "attachmentKey": "MRKF8KDR",
+      "sourceSha256": "576fae58d57a53558e3a7ce5c3f4a3a446143b0acee58566bcbec0942757856c",
+      "page": 5,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        211.09,
+        83.0,
+        385.38,
+        376.25
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 522,
+      "height": 880
+    },
+    "NCHJZC5F": {
+      "image": "/images/literature/nchjzc5f.webp",
+      "imageAlt": "Figure 1 from ProtGPT2 is a deep unsupervised language model for protein design",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-022-32007-7",
+      "attachmentKey": "QFRYYVU8",
+      "sourceSha256": "d93d3b2f863fa4e0dcfd15b5b840b4c527868ad7f335312b71b16b75b86e1df9",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        39.65,
+        43.45,
+        570.51,
+        306.44
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 544
+    },
+    "CPRKT83D": {
+      "image": "/images/literature/cprkt83d.webp",
+      "imageAlt": "Figure 1 from Robust deep learning–based protein sequence design using ProteinMPNN",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1126/science.add2187",
+      "attachmentKey": "WRXWRIT9",
+      "sourceSha256": "7fe314315638047ca569dcc805b381809999987faaae2022a4ad5cd7b1440937",
+      "page": 12,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        107.0,
+        56.19,
+        561.92,
+        331.68
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1099,
+      "height": 666
+    },
+    "TCU5EUV8": {
+      "image": "/images/literature/tcu5euv8.webp",
+      "imageAlt": "Figure 1 from TranceptEVE: Combining Family-specific and Family-agnostic Models of Protein Sequences for Improved Fitness Prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://openreview.net/forum?id=l7Oo9DcLmR1",
+      "attachmentKey": "WDZXYNLT",
+      "sourceSha256": "a3d1198c84a6aa068283fd71e87a1220c46da4b029f1af3c2ad8c480220fd030",
+      "page": 2,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        107.1,
+        66.25,
+        325.38,
+        241.58
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 654,
+      "height": 525
+    },
+    "VDVTCEQM": {
+      "image": "/images/literature/vdvtceqm.webp",
+      "imageAlt": "Figure 1 from Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1073/pnas.2016239118",
+      "attachmentKey": "ANV39G6R",
+      "sourceSha256": "5d9ea6c33b441ca1e8262f5e8518e6153c9e822c1cebb67e605340cc5e4712c1",
+      "page": 3,
+      "pageSize": [
+        584.96,
+        782.99
+      ],
+      "crop": [
+        284.55,
+        539.48,
+        552.79,
+        682.71
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 804,
+      "height": 429
+    },
+    "QCNTTSHH": {
+      "image": "/images/literature/qcnttshh.webp",
+      "imageAlt": "Figure 1 from Deep learning allows genome-scale prediction of Michaelis constants from structural features",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1371/journal.pbio.3001402",
+      "attachmentKey": "RPWMPYL5",
+      "sourceSha256": "6a136f8aed521cfaa3092c33cbbd64f42e1fc870663f424a36bace19dffe69b6",
+      "page": 4,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        190.84,
+        301.71,
+        574.16,
+        640.93
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 973
+    },
+    "CJKLX3JL": {
+      "image": "/images/literature/cjklx3jl.webp",
+      "imageAlt": "Figure 1 from ProtTrans: Towards Cracking the Language of Life’s Code Through Self-Supervised Learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1101/2020.07.12.199554",
+      "attachmentKey": "7MH6MT4Q",
+      "sourceSha256": "c7cdab01d61343eed950a6128fced46336cfce485d6444e0fa75b9d24217d638",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        34.17,
+        156.78,
+        311.0,
+        341.89
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 830,
+      "height": 554
+    },
+    "K7DDPMT2": {
+      "image": "/images/literature/k7ddpmt2.webp",
+      "imageAlt": "Figure 1 from Machine learning applied to enzyme turnover numbers reveals protein structural correlates and improves metabolic models",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-018-07652-6",
+      "attachmentKey": "2SUIZBXH",
+      "sourceSha256": "48a8d7169846675db2ddb9203aaf874e6a8e69d6cb3f6810bf9ea806cd7a356c",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        782.36
+      ],
+      "crop": [
+        37.86,
+        512.36,
+        562.54,
+        707.82
+      ],
+      "reviewedOn": "2026-09-06",
+      "graphicalAbstractCheck": "No graphical abstract identified in the source article PDF after text scan and page review; Figure 1 selected.",
+      "width": 1100,
+      "height": 409
+    },
+    "FTBMXKGK": {
+      "image": "/images/literature/ftbmxkgk.webp",
+      "imageAlt": "Figure 1 from Functional protein design and enhancement with ontology reinforcement iteration",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-026-69855-6",
+      "attachmentKey": "V8U76C8C",
+      "sourceSha256": "3e8b322290dc3cba0891c56381e9e88aec97b38ea31d4e79a93741414a3e60b6",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        73,
+        47,
+        526,
+        655
+      ],
+      "reviewedOn": "2026-09-09",
+      "graphicalAbstractCheck": "No graphical abstract identified by full attached-PDF text scan and visual inspection of the first/abstract page and Figure 1 page; publisher website not checked.",
+      "width": 1042,
+      "height": 1400
+    },
+    "QLPKVVHW": {
+      "image": "/images/literature/qlpkvvhw.webp",
+      "imageAlt": "Figure 1 from Leveraging latent space models for enzyme discovery and sampling",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1073/pnas.2608891123",
+      "attachmentKey": "MFB5L4GF",
+      "sourceSha256": "257d7bd395bf2525d5507bf4d9d784fd1317cfdb2672e04405c10d1d9c77be7f",
+      "page": 2,
+      "pageSize": [
+        584.78,
+        783.0
+      ],
+      "crop": [
+        73,
+        29,
+        502,
+        320
+      ],
+      "reviewedOn": "2026-09-09",
+      "graphicalAbstractCheck": "No graphical abstract identified by full attached-PDF text scan and visual inspection of the first/abstract page and Figure 1 page; publisher website not checked.",
+      "width": 1099,
+      "height": 745
+    },
+    "XFES3M9Z": {
+      "image": "/images/literature/xfes3m9z.webp",
+      "imageAlt": "Figure 1 from MutexaGPT: An Intuition-to-Design Translator for Physics-based Enzyme Engineering",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.21203/rs.3.rs-10072540/v1",
+      "attachmentKey": "ZWT3NBUL",
+      "sourceSha256": "c7b45f6de8051b0a3d9beeb3ea3db14cba3416d4d0463b0bb25abba216297ddf",
+      "page": 6,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        71,
+        69,
+        294,
+        277
+      ],
+      "reviewedOn": "2026-09-09",
+      "graphicalAbstractCheck": "No graphical abstract identified by full attached-PDF text scan and visual inspection of the first/abstract page and Figure 1 page; publisher website not checked.",
+      "width": 669,
+      "height": 624
+    },
+    "JG9VMDJ7": {
+      "image": "/images/literature/jg9vmdj7.webp",
+      "imageAlt": "Figure 1 from Task- and dataset-specific information in protein language models",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2608.12090",
+      "attachmentKey": "P4QEAKIY",
+      "sourceSha256": "60f31631164b842a718a6a2455f8f8e601556735a20410da72859d10557d55e3",
+      "page": 4,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        72,
+        68,
+        543,
+        357
+      ],
+      "reviewedOn": "2026-09-09",
+      "graphicalAbstractCheck": "No graphical abstract identified by full attached-PDF text scan and visual inspection of the first/abstract page and Figure 1 page; publisher website not checked.",
+      "width": 1099,
+      "height": 675
+    },
+    "PRFTG2MU": {
+      "image": "/images/literature/prftg2mu.webp",
+      "imageAlt": "Figure 1 from Self-driving laboratories to autonomously navigate the protein fitness landscape",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s44286-023-00002-4",
+      "attachmentKey": "87F4TA7C",
+      "sourceSha256": "b92d71dcea6ac40249842a4ec135a4e616f0fc518b48a6093b35e0ef1a7ebe3d",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        44,
+        89,
+        558,
+        745
+      ],
+      "reviewedOn": "2026-09-09",
+      "graphicalAbstractCheck": "No graphical abstract identified by full attached-PDF text scan and visual inspection of the first/abstract page and Figure 1 page; publisher website not checked.",
+      "width": 1097,
+      "height": 1400,
+      "captionPage": 2
+    },
+    "CDGKC6NH": {
+      "image": "/images/literature/cdgkc6nh.webp",
+      "imageAlt": "Figure 1 from Integrating protein language models and automatic biofoundry for enhanced protein evolution",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-025-56751-8",
+      "attachmentKey": "42FNHPR9",
+      "sourceSha256": "578c8d13c06a0b083e47e97a840c1f78e05dff1ce0d13c501df2dc46b4cabfc5",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        55,
+        44,
+        545,
+        257
+      ],
+      "reviewedOn": "2026-09-09",
+      "graphicalAbstractCheck": "No graphical abstract identified by full attached-PDF text scan and visual inspection of the first page and Figure 1 page; publisher website not fully checked.",
+      "width": 1100,
+      "height": 478
+    }
+  }
+}
