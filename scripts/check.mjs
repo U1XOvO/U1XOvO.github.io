@@ -338,6 +338,7 @@ const homeHtml = await readFile(path.join(dist, "index.html"), "utf8");
 const libraryHtml = await readFile(path.join(dist, "library", "index.html"), "utf8");
 assert.doesNotMatch(homeHtml, /class="profile-github"/, "homepage profile header must not render the GitHub handle row");
 assert.match(homeHtml, /<footer class="site-footer shell">[\s\S]*?<a href="https:\/\/github\.com\/U1XOvO"/, "footer must retain the GitHub link");
+assert.doesNotMatch(libraryHtml, /Explore the topic map|data-graph-disclosure/, "Literature must omit the topic map disclosure bar while retaining the graph");
 assert.match(libraryHtml, /<section class="graph-section"/, "Literature page must render the knowledge graph section");
 assert.match(libraryHtml, /<body class="page-library">/, "Literature page must expose its page class for scoped scrolling performance styles");
 assert.match(acgnHtml, /<h1>Gamer<\/h1>/, "Gamer page must render its page title");

@@ -276,7 +276,6 @@ if (knowledgeMap) {
   );
   const nodePositions = new Map();
   const topicFilters = [...document.querySelectorAll("[data-topic-filter]")];
-  const disclosure = document.querySelector("[data-graph-disclosure]");
   const resetFilters = [...document.querySelectorAll("[data-reading-reset]")];
   const recordIndex = records.map((node) => ({ node, search: normalizeText(node.dataset.readingSearch), topics: node.dataset.readingTopics.split(" ") }));
   let urlTimer = null;
@@ -421,7 +420,6 @@ if (knowledgeMap) {
   };
   const layoutGraph = () => {
     layoutFrame = null;
-    if (disclosure && !disclosure.open) return;
     const rect = knowledgeMap.getBoundingClientRect();
     if (!rect.width || !rect.height) return;
     stopMotion();
@@ -764,7 +762,6 @@ if (knowledgeMap) {
   document.addEventListener("pointercancel", finishDrag);
   draggableNodes.forEach((node) => node.addEventListener("lostpointercapture", (event) => { if (dragState?.node === node) finishDrag(event); }));
   document.querySelector("[data-graph-layout-reset]")?.addEventListener("click", () => { stopMotion(); mobileLayout = null; requestGraphLayout(); });
-  disclosure?.addEventListener("toggle", () => { if (disclosure.open) requestGraphLayout(); else { stopMotion(); hidePaperTooltip(); } });
   document.addEventListener("visibilitychange", () => { if (document.hidden) stopMotion(); });
   reduceMotion.addEventListener("change", stopMotion);
   if ("IntersectionObserver" in window) new IntersectionObserver(([entry]) => { if (!entry.isIntersecting) stopMotion(); }).observe(knowledgeMap);
@@ -855,7 +852,7 @@ if (knowledgeMap) {
     if (!event.defaultPrevented && event.key === "Escape" && knowledgeMap.contains(event.target) && (activeTopic || selectedPaper)) {
       clearPaperSelection();
       applyTopic(null);
-      (disclosure?.open ? nodeByTopic.get("all") : topicFilters[0])?.focus();
+      nodeByTopic.get("all")?.focus();
     }
   });
 
@@ -865,7 +862,6 @@ if (knowledgeMap) {
     window.addEventListener("resize", requestGraphLayout);
   }
   document.fonts?.ready.then(requestGraphLayout);
-  if (disclosure && window.matchMedia("(min-width: 901px)").matches) disclosure.open = true;
   requestGraphLayout();
   restoreFilters();
 }

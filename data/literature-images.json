@@ -2745,30 +2745,6 @@
       "width": 1099,
       "height": 745
     },
-    "XFES3M9Z": {
-      "image": "/images/literature/xfes3m9z.webp",
-      "imageAlt": "Figure 1 from MutexaGPT: An Intuition-to-Design Translator for Physics-based Enzyme Engineering",
-      "kind": "figure-1",
-      "figureLabel": "Figure 1",
-      "sourceUrl": "https://doi.org/10.21203/rs.3.rs-10072540/v1",
-      "attachmentKey": "ZWT3NBUL",
-      "sourceSha256": "c7b45f6de8051b0a3d9beeb3ea3db14cba3416d4d0463b0bb25abba216297ddf",
-      "page": 6,
-      "pageSize": [
-        612.0,
-        792.0
-      ],
-      "crop": [
-        71,
-        69,
-        294,
-        277
-      ],
-      "reviewedOn": "2026-09-09",
-      "graphicalAbstractCheck": "No graphical abstract identified by full attached-PDF text scan and visual inspection of the first/abstract page and Figure 1 page; publisher website not checked.",
-      "width": 669,
-      "height": 624
-    },
     "JG9VMDJ7": {
       "image": "/images/literature/jg9vmdj7.webp",
       "imageAlt": "Figure 1 from Task- and dataset-specific information in protein language models",
@@ -2841,6 +2817,486 @@
       "graphicalAbstractCheck": "No graphical abstract identified by full attached-PDF text scan and visual inspection of the first page and Figure 1 page; publisher website not fully checked.",
       "width": 1100,
       "height": 478
+    },
+    "X59TU2QK": {
+      "image": "/images/literature/x59tu2qk.webp",
+      "imageAlt": "Graphical abstract from Customizing Natural Products of Sesquiterpene Synthases by Mechanism-Based Design and DeEnzyme_Score Screening",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1021/acscatal.6c01200",
+      "attachmentKey": "HTRSBAQZ",
+      "sourceSha256": "c17b52125d8b14bbb0d5d1af14b1ad7ef5fefe460d4a9ad9d4fa611d5f63704d",
+      "page": 1,
+      "pageSize": [
+        607.64,
+        800.73
+      ],
+      "crop": [
+        316,
+        255,
+        557,
+        392
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Graphical abstract visually verified alongside the abstract on page 1 of the attached original article PDF; selected ahead of Figure 1.",
+      "width": 723,
+      "height": 411
+    },
+    "L8T9QN2L": {
+      "image": "/images/literature/l8t9qn2l.webp",
+      "imageAlt": "Figure 1 from Deep learning for enzyme kcat prediction: what works, what doesn't, and why?",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.21203/rs.3.rs-9154046/v1",
+      "attachmentKey": "ZGICGJJE",
+      "sourceSha256": "a3d7e14e6f8d8a91b16576cc0a19d141d43a08189bde045489706ff30ab84390",
+      "page": 5,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        124,
+        74,
+        493,
+        285
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 5; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1100,
+      "height": 628
+    },
+    "E3GYR7LM": {
+      "image": "/images/literature/e3gyr7lm.webp",
+      "imageAlt": "Figure 1 from Enhancing Enzyme Activity With Mutation Combinations Guided by Few-Shot Learning and Causal Inference",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1002/anie.7768514",
+      "attachmentKey": "ZBNF827I",
+      "sourceSha256": "6bb2c35d09cebd695a9d9b4d6b333b2a0a9fc6e5f2db9770dae50cb920c0288b",
+      "page": 3,
+      "pageSize": [
+        612.28,
+        799.37
+      ],
+      "crop": [
+        52,
+        32,
+        560,
+        463
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 3; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1099,
+      "height": 932
+    },
+    "A8PEXHAY": {
+      "image": "/images/literature/a8pexhay.webp",
+      "imageAlt": "Graphical abstract from Enzyme Kinetic Parameter Prediction via Catalytic Pocket-Augmented Machine Learning",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1021/acscatal.6c03874",
+      "attachmentKey": "56C65M4T",
+      "sourceSha256": "d0cbbac63022ca555887b9ffaf7778841f4af41d52ffd3f9df25557c518fbcd8",
+      "page": 1,
+      "pageSize": [
+        607.64,
+        800.73
+      ],
+      "crop": [
+        316,
+        255,
+        557,
+        370
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Graphical abstract visually verified alongside the abstract on page 1 of the attached original article PDF; selected ahead of Figure 1.",
+      "width": 723,
+      "height": 345
+    },
+    "A6GAZJV9": {
+      "image": "/images/literature/a6gazjv9.webp",
+      "imageAlt": "Figure 1 from MechFind: a computational framework for de novo prediction of enzyme mechanisms",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-026-71957-0",
+      "attachmentKey": "XH3BX7WY",
+      "sourceSha256": "e2b0318ba0835d3c2a178ce5723f0ac32d6aed883a86a042fc7d314267c74b2c",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        38,
+        47,
+        565,
+        577
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 3; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1099,
+      "height": 1105
+    },
+    "JVJ5BKEA": {
+      "image": "/images/literature/jvj5bkea.webp",
+      "imageAlt": "Figure 1 from MutexaGPT: an intuition-to-design translator for physics-based enzyme engineering",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s43588-026-01049-y",
+      "attachmentKey": "EPX49G4Z",
+      "sourceSha256": "d77d7af1736574faf9924e777914b410c5d5997cb6a15d0661eac782d89e4205",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        40,
+        49,
+        291,
+        225
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 2; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 753,
+      "height": 528
+    },
+    "C9ND2YEQ": {
+      "image": "/images/literature/c9nd2yeq.webp",
+      "imageAlt": "Figure 1 from Accelerated enzyme engineering by machine-learning guided cell-free expression",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-024-55399-0",
+      "attachmentKey": "8CFCC95V",
+      "sourceSha256": "dcb85d00dfe4ceb5a6bc51713e977fc07bab2411ac30a661f2b31105aa6bab50",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        58,
+        46,
+        544,
+        268
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 2; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1099,
+      "height": 502
+    },
+    "QM9EPE53": {
+      "image": "/images/literature/qm9epe53.webp",
+      "imageAlt": "Figure 1 from Accelerating protein engineering with fitness landscape modelling and reinforcement learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s42256-025-01103-w",
+      "attachmentKey": "KK7RINSB",
+      "sourceSha256": "b28dd477c016723be1263376fab2955bdf472cee80fc2f03fc27e37816602978",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        40,
+        49,
+        566,
+        671
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 3; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1099,
+      "height": 1300
+    },
+    "WWHFKHYH": {
+      "image": "/images/literature/wwhfkhyh.webp",
+      "imageAlt": "Figure 1 from Active learning-assisted directed evolution",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-025-55987-8",
+      "attachmentKey": "8XV8CMGN",
+      "sourceSha256": "7b6c23454489c8b5f043559952e6797fb3923d9997def8882eece88af378a24d",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        51,
+        50,
+        557,
+        372
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 2; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1100,
+      "height": 700
+    },
+    "YR4GABGW": {
+      "image": "/images/literature/yr4gabgw.webp",
+      "imageAlt": "Figure 1 from Biophysics-based protein language models for protein engineering",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41592-025-02776-2",
+      "attachmentKey": "4I3V83BV",
+      "sourceSha256": "f75521c187521ea4bb3eed143385bf723a72868bd59f16e8d54f5105238f57f2",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        39,
+        49,
+        565,
+        404
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 3; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1099,
+      "height": 741
+    },
+    "2IYXET93": {
+      "image": "/images/literature/2iyxet93.webp",
+      "imageAlt": "Figure 1 from Computational scoring and experimental evaluation of enzymes generated by neural networks",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41587-024-02214-2",
+      "attachmentKey": "UGURJAI3",
+      "sourceSha256": "7b08c3720d9ff41ca8c6c777fc18eea3dad11f4252a9760feb2cc9490381beaf",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        118,
+        49,
+        494,
+        384
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 3; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1099,
+      "height": 979
+    },
+    "ULS2A3J3": {
+      "image": "/images/literature/uls2a3j3.webp",
+      "imageAlt": "Figure 1 from Machine learning prediction of enzyme optimum pH",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s42256-025-01026-6",
+      "attachmentKey": "7YVJSYL8",
+      "sourceSha256": "137ef3b985c301ac22d213f7a9920834a1cb4454d05df04efde28c891f12d2a8",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        76,
+        49,
+        546,
+        425
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 2; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1100,
+      "height": 879
+    },
+    "NKLM6MMH": {
+      "image": "/images/literature/nklm6mmh.webp",
+      "imageAlt": "Graphical abstract from Machine Learning-Guided Identification of PET Hydrolases from Natural Diversity",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1021/acscatal.5c03460",
+      "attachmentKey": "5LSSP6II",
+      "sourceSha256": "0afebe48c7b8fb6042508ec46df79eb5d112447903fe185810cc5d4232297805",
+      "page": 1,
+      "pageSize": [
+        607.41,
+        800.9
+      ],
+      "crop": [
+        318,
+        266,
+        557,
+        401
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Graphical abstract visually verified alongside the abstract on page 1 of the attached original article PDF; selected ahead of Figure 1.",
+      "width": 717,
+      "height": 405
+    },
+    "R2J5EZ3I": {
+      "image": "/images/literature/r2j5ez3i.webp",
+      "imageAlt": "Figure 1 from Tailoring industrial enzymes for thermostability and activity evolution by the machine learning-based iCASE strategy",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-025-55944-5",
+      "attachmentKey": "24FSGI3W",
+      "sourceSha256": "33792e389b7ebdd82e3a1f2ff12c832607e91a00988592666f068e693582402b",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        59,
+        48,
+        545,
+        372
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 3; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1100,
+      "height": 733
+    },
+    "EX3KMBUD": {
+      "image": "/images/literature/ex3kmbud.webp",
+      "imageAlt": "Figure 1 from The Virtual Lab of AI agents designs new SARS-CoV-2 nanobodies",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-025-09442-9",
+      "attachmentKey": "2HVLAECW",
+      "sourceSha256": "6f86d21e7e39a7c4c16aca0fe1dc21de65b4f07c8530df9e52f724a6b62a67c3",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        32,
+        46,
+        566,
+        375
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 2; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1100,
+      "height": 678
+    },
+    "GCTC9ZII": {
+      "image": "/images/literature/gctc9zii.webp",
+      "imageAlt": "Figure 1 from A general temperature-guided language model to design proteins of enhanced stability and activity",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1126/sciadv.adr2641",
+      "attachmentKey": "5K3EYHYL",
+      "sourceSha256": "cc0484436a77f3ace0aa9bab261d46e84b85d1adb1d7349eef0c517378e29c09",
+      "page": 3,
+      "pageSize": [
+        594.0,
+        756.0
+      ],
+      "crop": [
+        36,
+        58,
+        562,
+        615
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 3; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1100,
+      "height": 1164
+    },
+    "B5A7P2BB": {
+      "image": "/images/literature/b5a7p2bb.webp",
+      "imageAlt": "Figure 1 from Leveraging ancestral sequence reconstruction for protein representation learning",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s42256-024-00935-2",
+      "attachmentKey": "A2XWEBNU",
+      "sourceSha256": "a3935b460a5e318e6ab823102ab63a4a26e2a48fefc9bb0daff6fd6a72ec44aa",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        38,
+        50,
+        565,
+        354
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 3; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1099,
+      "height": 634
+    },
+    "5CJB96GH": {
+      "image": "/images/literature/5cjb96gh.webp",
+      "imageAlt": "Figure 1 from Machine learning-guided co-optimization of fitness and diversity facilitates combinatorial library design in enzyme engineering",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-024-50698-y",
+      "attachmentKey": "WUR3DAXG",
+      "sourceSha256": "9baa1d04b22340032644240062ce6668a3afae6194431509b24561c22871c4f0",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        63,
+        47,
+        541,
+        336
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 3; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1100,
+      "height": 664
+    },
+    "JYBQSDZC": {
+      "image": "/images/literature/jybqsdzc.webp",
+      "imageAlt": "Figure 1 from Multi-modal deep learning enables efficient and accurate annotation of enzymatic active sites",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-024-51511-6",
+      "attachmentKey": "88WTQ9NW",
+      "sourceSha256": "3e2571d5a9f5ae3e0ddec223c888ae61692d72f27fb3cd1c18b36897e4e7b6ad",
+      "page": 4,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        79,
+        47,
+        543,
+        653
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 4; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1072,
+      "height": 1400
+    },
+    "PTMQ8NQS": {
+      "image": "/images/literature/ptmq8nqs.webp",
+      "imageAlt": "Figure 1 from Functional annotation of enzyme-encoding genes using deep learning with transformer layers",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-023-43216-z",
+      "attachmentKey": "2HTB9FSZ",
+      "sourceSha256": "e086d879fb99e37cf83704f9a2cb9f31a0ca57ad98261b80f96b03626e5e29b0",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        40,
+        49,
+        566,
+        556
+      ],
+      "reviewedOn": "2026-09-11",
+      "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 3; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
+      "width": 1099,
+      "height": 1059
     }
   }
 }

@@ -414,8 +414,6 @@ const literatureSections = literature.records.length ? `
       <div class="reading-actions">
         <button class="utility-button" type="button" data-reading-reset disabled>Clear all filters</button>
       </div>
-      <details class="graph-disclosure" data-graph-disclosure>
-        <summary><span>Explore the topic map</span><small>Drag, follow connections, discover papers</small></summary>
         <div class="section-heading compact-heading"><h2 id="graph-title">AI + Protein landscape</h2></div>
       <div class="knowledge-map" data-knowledge-map role="group" aria-labelledby="graph-title" aria-describedby="graph-help">
         <div class="graph-edges" aria-hidden="true">${graphEdges}${graphPaperEdges}</div>
@@ -431,7 +429,6 @@ const literatureSections = literature.records.length ? `
         </div>
       </div>
 
-      </details>
     </section>
     <section class="reading-section" aria-labelledby="reading-title">
       <div class="section-heading compact-heading"><h2 id="reading-title">Research papers</h2></div>
