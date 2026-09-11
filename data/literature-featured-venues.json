@@ -13,6 +13,40 @@
     "Nature Computational Science",
     "Nature Methods",
     "Cell Systems",
-    "Chem Catalysis"
-  ]
+    "Chem Catalysis",
+    "Nature Chemical Engineering",
+    "Nature Machine Intelligence",
+    "Nature Synthesis",
+    "Patterns",
+    "Science Advances"
+  ],
+  "review": {
+    "checkedOn": "2026-09-11",
+    "scope": "Reconciled all 137 included records and 43 non-empty exact venue names in the current literature snapshot; records without a venue remain unmarked.",
+    "sources": [
+      {
+        "venues": [
+          "Nature Chemical Engineering",
+          "Nature Machine Intelligence",
+          "Nature Synthesis"
+        ],
+        "publisher": "Nature Portfolio",
+        "sourceUrl": "https://www.nature.com/nature-portfolio/about-journals/research-journals"
+      },
+      {
+        "venues": [
+          "Patterns"
+        ],
+        "publisher": "Cell Press",
+        "sourceUrl": "https://info.cell.com/patterns-registration"
+      },
+      {
+        "venues": [
+          "Science Advances"
+        ],
+        "publisher": "AAAS",
+        "sourceUrl": "https://advertising.science.org/wp-content/uploads/2026/02/2026_Science_MediaKit_Final.pdf"
+      }
+    ]
+  }
 }
