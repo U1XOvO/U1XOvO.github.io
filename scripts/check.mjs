@@ -338,8 +338,8 @@ const homeHtml = await readFile(path.join(dist, "index.html"), "utf8");
 const libraryHtml = await readFile(path.join(dist, "library", "index.html"), "utf8");
 assert.doesNotMatch(homeHtml, /class="profile-github"/, "homepage profile header must not render the GitHub handle row");
 assert.match(homeHtml, /<footer class="site-footer shell">[\s\S]*?<a href="https:\/\/github\.com\/U1XOvO"/, "footer must retain the GitHub link");
-assert.doesNotMatch(libraryHtml, /Explore the topic map|data-graph-disclosure/, "Literature must omit the topic map disclosure bar while retaining the graph");
-assert.match(libraryHtml, /<section class="graph-section"/, "Literature page must render the knowledge graph section");
+assert.match(libraryHtml, /<section class="reading-filter-section" aria-label="Filter research papers">/, "Literature page must retain its paper filters");
+assert.doesNotMatch(libraryHtml, /Knowledge archipelago|data-knowledge-map|data-map-stage|knowledge-island|map-bridge|graph-paper-node/, "Literature page must omit the knowledge map");
 assert.match(libraryHtml, /<body class="page-library">/, "Literature page must expose its page class for scoped scrolling performance styles");
 assert.match(acgnHtml, /<h1>Gamer<\/h1>/, "Gamer page must render its page title");
 assert.match(acgnHtml, /<body class="page-acgn">/, "Gamer page must expose its page class for scoped performance styles");
@@ -402,13 +402,9 @@ assert.match(animeCoverRule, /height:\s*auto/, "anime covers must preserve their
 assert.doesNotMatch(animeCoverRule, /object-fit/, "anime covers must not crop their native aspect ratio");
 assert.match(libraryHtml, /<section class="reading-section"/, "Literature page must render the reading list section");
 assert.equal((libraryHtml.match(/<section class=/g) || []).length, 2, "Literature page must contain exactly two content sections");
-assert.equal((libraryHtml.match(/<button class="graph-node/g) || []).length, literature.topics.length, "rendered graph node count must match literature topics");
-assert.equal((libraryHtml.match(/<button class="graph-paper-node/g) || []).length, literature.records.length, "rendered paper node count must match literature records");
-assert.equal((libraryHtml.match(/class="graph-edge graph-paper-edge/g) || []).length, literature.records.length, "rendered paper edge count must match literature records");
 assert.equal((libraryHtml.match(/class="reading-list-item"/g) || []).length, literature.records.length, "rendered reading list count must match literature records");
 assert.doesNotMatch(libraryHtml, /reading-year-stamp/, "literature cards must not render per-card year timestamps");
 for (const record of literature.records) {
-  assert.ok(libraryHtml.includes(`data-paper-record="${record.id}"`), `${record.id} must have a graph paper node`);
   assert.ok(libraryHtml.includes(`id="reading-${record.id}" tabindex="-1"`), `${record.id} must have a focusable reading target`);
   assert.ok(libraryHtml.includes(`data-reading-year="${record.year}"`), `${record.id} must expose its year for filtering`);
   assert.ok(libraryHtml.includes(`data-reading-featured="${literatureFeaturedVenues.venues.includes(record.venue)}"`), `${record.id} must expose its featured-journal state for filtering`);
@@ -433,7 +429,6 @@ for (const [, key, card] of readingCards) {
 assert.equal((libraryHtml.match(/<dialog\b/g) || []).length, 1, "Literature must share one image viewer across all cards");
 assert.doesNotMatch(libraryHtml, /corpus-meta|Zotero snapshot|Browse results|Copy filtered link|data-reading-share|Source: Zotero/, "Literature must omit removed summary and utility copy");
 assert.match(libraryHtml, /<dialog[^>]+aria-labelledby="viewer-title"/, "image viewer must have an accessible title");
-assert.equal((libraryHtml.match(/graph-paper-node[^\"]* is-featured/g) || []).length, featuredRecordCount, "featured graph star count must match the venue policy");
 assert.equal((libraryHtml.match(/class="reading-featured"/g) || []).length, featuredRecordCount, "featured reading-card star count must match the venue policy");
 assert.equal((libraryHtml.match(/<span class="reading-topic[^>]+>[^<]+<\/span>\s*<span class="reading-featured"/g) || []).length, featuredRecordCount, "featured stars must follow the topic badge");
 assert.equal((libraryHtml.match(/data-reading-featured="true"/g) || []).length, featuredRecordCount, "featured filter data must match the venue policy");

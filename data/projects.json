@@ -61,6 +61,34 @@
         "Includes links to public implementations and papers when available."
       ],
       "url": "https://github.com/U1XOvO/PEKP"
+    },
+    {
+      "id": "haru",
+      "useCase": "Learn Japanese from the beginning with Chinese explanations and daily practice on a desktop computer.",
+      "workflow": [
+        {"label": "Set up", "value": "Add a Chat Completions-compatible AI service and model in Preferences"},
+        {"label": "Learn", "value": "Generate a daily lesson with kana, vocabulary, examples, listening, and exercises"},
+        {"label": "Review", "value": "Revisit saved lessons and flashcards, then explore grammar and JLPT practice"}
+      ],
+      "example": {
+        "label": "First lesson walkthrough",
+        "caption": "Choose the first Daily Lesson and select AI Create Lesson. Study the generated material, then save flashcards for later offline review."
+      },
+      "title": "Haru",
+      "status": "Public repository",
+      "description": "A desktop Japanese-learning app for Chinese speakers, with AI-generated lessons, flashcards, grammar explanations, and reading practice.",
+      "tags": [
+        "Japanese learning",
+        "LLM",
+        "Desktop app",
+        "macOS / Windows"
+      ],
+      "highlights": [
+        "Creates daily lessons covering kana, vocabulary, example sentences, listening, and exercises.",
+        "Includes flashcards, a grammar decoder, JLPT N5–N1 practice, and Japanese stories.",
+        "Keeps saved lessons and flashcards available for offline review."
+      ],
+      "url": "https://github.com/U1XOvO/Haru"
     }
   ]
 }

@@ -6,6 +6,150 @@
   "sourceScope": "Original article PDFs attached to the Zotero AI+Protein collection; graphical abstract preferred, otherwise Figure 1.",
   "coordinateSystem": "PDF points; crop [left, top, right, bottom] measured from the top-left of the source page.",
   "images": {
+    "DCQT7ZG2": {
+      "image": "/images/literature/dcqt7zg2.webp",
+      "imageAlt": "Figure 1 from De novo Rubisco design with protein language models: RubisGen pipeline from protein sequence generation through discriminator scoring and multistep filtering to candidate Rubiscos.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.09.04.749267",
+      "attachmentKey": "BTA732JQ",
+      "sourceSha256": "27e271b34c2f2c7362be07caaff87011904b56239bebf6e1623460179f62aac5",
+      "page": 3,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        68,
+        109,
+        544,
+        459
+      ],
+      "reviewedOn": "2026-09-24",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 24-page attached article PDF; visually reviewed pages 1-2 and the Figure 1 page. Publisher website not checked.",
+      "width": 1099,
+      "height": 809
+    },
+    "J9J68W8N": {
+      "image": "/images/literature/j9j68w8n.webp",
+      "imageAlt": "Figure 1 from Functional alignment of protein language models via reinforcement learning: Three-panel schematic of reinforcement learning from experimental feedback to align protein language models with measured function.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-026-77557-2",
+      "attachmentKey": "PQZI6HM5",
+      "sourceSha256": "eec1799f3fea8595f25728aeca9ec991a4421c6fbccead55c0f09bc39bed78af",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        56,
+        43,
+        548,
+        492
+      ],
+      "reviewedOn": "2026-09-24",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 16-page attached article PDF; visually reviewed pages 1-2 and the Figure 1 page. Publisher website not checked.",
+      "width": 1099,
+      "height": 1003
+    },
+    "JPX87NRU": {
+      "image": "/images/literature/jpx87nru.webp",
+      "imageAlt": "Figure 1 from Generative AI designs functional thiolation domains for reprogramming non-ribosomal peptide synthetases: Multi-panel diagram of modular non-ribosomal peptide synthetase thiolation-domain exchange and peptide production.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-026-77963-6",
+      "attachmentKey": "V42GJP2T",
+      "sourceSha256": "ca1f0c1fd4c6a139fdaa60e2bfb892365a79e667fc13f4b9fe6f0c23f678130d",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        57,
+        43,
+        539,
+        323
+      ],
+      "reviewedOn": "2026-09-24",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 15-page attached article PDF; visually reviewed pages 1-2 and the Figure 1 page. Publisher website not checked.",
+      "width": 1099,
+      "height": 638
+    },
+    "F8N96EXA": {
+      "image": "/images/literature/f8n96exa.webp",
+      "imageAlt": "Figure 1 from Genolator enables protein function interpretation using a multimodal large language model fusing genomic and structural interpretation with natural language interaction: Genolator user query interface alongside the backend process that analyzes a supplied DNA sequence.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1186/s13059-026-04274-w",
+      "attachmentKey": "PBGBR8K3",
+      "sourceSha256": "0070b4b101383a0e8360d83098a3d1de605fa9bb6b11670e6237539607ccd1c1",
+      "page": 4,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        120,
+        474,
+        478,
+        692
+      ],
+      "reviewedOn": "2026-09-24",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 41-page attached article PDF; visually reviewed pages 1-2 and the Figure 1 page. Publisher website not checked.",
+      "width": 1074,
+      "height": 654
+    },
+    "W4I872FY": {
+      "image": "/images/literature/w4i872fy.webp",
+      "imageAlt": "Figure 1 from Mechanistic Interpretability of Fine-Tuned Protein Language Models for Nanobody Thermostability Prediction: ESM-2 fine-tuning workflow for predicting the melting temperature of nanobodies.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bioinformatics/btag685",
+      "attachmentKey": "7MIWJIPJ",
+      "sourceSha256": "cca12850085c768ee92c8b9b392bbc2931c6e8a06a7e082578defa19ffc262a6",
+      "page": 3,
+      "pageSize": [
+        612,
+        791.3
+      ],
+      "crop": [
+        95,
+        88,
+        298,
+        284
+      ],
+      "reviewedOn": "2026-09-24",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 17-page attached article PDF; visually reviewed pages 1-2 and the Figure 1 page. Publisher website not checked.",
+      "width": 609,
+      "height": 588
+    },
+    "DUHJC5V5": {
+      "image": "/images/literature/duhjc5v5.webp",
+      "imageAlt": "Figure 1 from Reframing enzyme function prediction as conditional generation: Fluxion workflow for generating enzyme products and stepwise reaction mechanisms from substrate, cofactor, and protein inputs.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.09.09.750355",
+      "attachmentKey": "6SZGLNSZ",
+      "sourceSha256": "a21ade630c60da4a7cb03ca93edc927427749f479a26e2434580c6c467f9ffe7",
+      "page": 3,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        98,
+        62,
+        512,
+        530
+      ],
+      "reviewedOn": "2026-09-24",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 43-page attached article PDF; visually reviewed pages 1-2 and the Figure 1 page. Publisher website not checked.",
+      "width": 1100,
+      "height": 1243
+    },
     "FQLRC6XN": {
       "image": "/images/literature/fqlrc6xn.webp",
       "imageAlt": "Figure 1 from A deep learning multi-attention Bi-GRU framework for kcat prediction with segmentation-based insights",

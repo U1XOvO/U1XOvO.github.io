@@ -3,16 +3,17 @@
     "provider": "Zotero",
     "collection": "AI+Protein",
     "collectionKey": "DEMEZICD",
-    "snapshotDate": "2026-09-11",
-    "collectionVersion": "9931",
-    "totalItems": 143,
-    "includedItems": 137,
-    "excludedReviewCount": 6,
+    "snapshotDate": "2026-09-24",
+    "collectionVersion": "10019",
+    "totalItems": 150,
+    "includedItems": 143,
+    "excludedReviewCount": 7,
     "exclusionRule": "Exclude records carrying the Zotero tag “Review”.",
     "excludedReviewKeys": [
       "5BGK5IR4",
       "BGP8JG5X",
       "E3GRTM7I",
+      "IKTRWEF8",
       "JLQTTJJK",
       "VEHTSE5K",
       "YNLEBN66"
@@ -28,7 +29,7 @@
       "y": 50,
       "mobileX": 50,
       "mobileY": 10,
-      "count": 137
+      "count": 143
     },
     {
       "id": "kinetic-prediction",
@@ -50,7 +51,7 @@
       "y": 24,
       "mobileX": 73,
       "mobileY": 32,
-      "count": 29
+      "count": 31
     },
     {
       "id": "directed-evolution",
@@ -61,7 +62,7 @@
       "y": 76,
       "mobileX": 27,
       "mobileY": 59,
-      "count": 23
+      "count": 24
     },
     {
       "id": "de-novo-design",
@@ -72,7 +73,7 @@
       "y": 86,
       "mobileX": 73,
       "mobileY": 59,
-      "count": 13
+      "count": 15
     },
     {
       "id": "enzyme-discovery",
@@ -83,7 +84,7 @@
       "y": 76,
       "mobileX": 27,
       "mobileY": 84,
-      "count": 21
+      "count": 22
     },
     {
       "id": "agent",
@@ -108,25 +109,25 @@
       "source": "all",
       "target": "protein-language-models",
       "relation": "collection topic",
-      "count": 29
+      "count": 31
     },
     {
       "source": "all",
       "target": "directed-evolution",
       "relation": "collection topic",
-      "count": 23
+      "count": 24
     },
     {
       "source": "all",
       "target": "de-novo-design",
       "relation": "collection topic",
-      "count": 13
+      "count": 15
     },
     {
       "source": "all",
       "target": "enzyme-discovery",
       "relation": "collection topic",
-      "count": 21
+      "count": 22
     },
     {
       "source": "all",
@@ -785,6 +786,35 @@
       ]
     },
     {
+      "id": "zotero-dcqt7zg2",
+      "zoteroKey": "DCQT7ZG2",
+      "itemType": "preprint",
+      "title": "De novo Rubisco design with protein language models",
+      "date": "2026-09-09",
+      "year": "2026",
+      "authors": [
+        "Alexander J. Kehl",
+        "Simon K. S. Chu",
+        "Jose Henrique Pereira",
+        "Jennifer Lee",
+        "Renee Z. Wang",
+        "Michael Gigl",
+        "Paul D. Adams",
+        "Patrick M. Shih",
+        "Justin B. Siegel"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.09.04.749267",
+      "url": "https://doi.org/10.64898/2026.09.04.749267",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Denovo"
+      ]
+    },
+    {
       "id": "zotero-l8t9qn2l",
       "zoteroKey": "L8T9QN2L",
       "itemType": "preprint",
@@ -1191,6 +1221,37 @@
       ]
     },
     {
+      "id": "zotero-j9j68w8n",
+      "zoteroKey": "J9J68W8N",
+      "itemType": "journalArticle",
+      "title": "Functional alignment of protein language models via reinforcement learning",
+      "date": "2026-09-12",
+      "year": "2026",
+      "authors": [
+        "Nathaniel Blalock",
+        "Srinath Seshadri",
+        "Kensuke Nakamura",
+        "Agrim Babbar",
+        "Sarah A. Fahlberg",
+        "Ameya Kulkarni",
+        "Philip A. Romero"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-026-77557-2",
+      "url": "https://doi.org/10.1038/s41467-026-77557-2",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM",
+        "Protein design",
+        "Structural biology",
+        "Protein engineering",
+        "Proteins"
+      ]
+    },
+    {
       "id": "zotero-jxkdmc2n",
       "zoteroKey": "JXKDMC2N",
       "itemType": "preprint",
@@ -1251,6 +1312,47 @@
       ]
     },
     {
+      "id": "zotero-jpx87nru",
+      "zoteroKey": "JPX87NRU",
+      "itemType": "journalArticle",
+      "title": "Generative AI designs functional thiolation domains for reprogramming non-ribosomal peptide synthetases",
+      "date": "2026-09-22",
+      "year": "2026",
+      "authors": [
+        "Emre F. Bülbül",
+        "Seounggun Bang",
+        "Kevin George",
+        "Gabriele Bianchi",
+        "Prateek Raj",
+        "Seonyong Chung",
+        "Vincent Pauline",
+        "Ramon Hochstrasser",
+        "Hannah A. Minas",
+        "Walid A. M. Elgaher",
+        "Andreas M. Kany",
+        "Anna K. H. Hirsch",
+        "Steven Schmitt",
+        "Dirk W. Heinz",
+        "Olga V. Kalinina",
+        "Dietrich Klakow",
+        "Kenan A. J. Bozhüyük"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-026-77963-6",
+      "url": "https://doi.org/10.1038/s41467-026-77963-6",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Biocatalysis",
+        "Denovo",
+        "Machine learning",
+        "Protein design",
+        "Synthetic biology"
+      ]
+    },
+    {
       "id": "zotero-j9h6et8w",
       "zoteroKey": "J9H6ET8W",
       "itemType": "journalArticle",
@@ -1285,6 +1387,38 @@
       ],
       "tags": [
         "DE"
+      ]
+    },
+    {
+      "id": "zotero-f8n96exa",
+      "zoteroKey": "F8N96EXA",
+      "itemType": "journalArticle",
+      "title": "Genolator enables protein function interpretation using a multimodal large language model fusing genomic and structural interpretation with natural language interaction",
+      "date": "2026-09-16",
+      "year": "2026",
+      "authors": [
+        "Martin Danner",
+        "Tanhim Islam",
+        "Matthias Begemann",
+        "Florian Kraft",
+        "Miriam Elbracht",
+        "Ingo Kurth",
+        "Jeremias Krause"
+      ],
+      "venue": "Genome Biology",
+      "doi": "10.1186/s13059-026-04274-w",
+      "url": "https://doi.org/10.1186/s13059-026-04274-w",
+      "theme": "protein-language-models",
+      "topics": [
+        "protein-language-models"
+      ],
+      "tags": [
+        "LLM",
+        "Feature fusion",
+        "Genolator",
+        "Genomic language models",
+        "Multimodal language models",
+        "Protein function prediction"
       ]
     },
     {
@@ -1434,6 +1568,29 @@
       ],
       "tags": [
         "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-w4i872fy",
+      "zoteroKey": "W4I872FY",
+      "itemType": "journalArticle",
+      "title": "Mechanistic Interpretability of Fine-Tuned Protein Language Models for Nanobody Thermostability Prediction",
+      "date": "2026-09-19",
+      "year": "2026",
+      "authors": [
+        "Taihei Murakami",
+        "Yuki Hashidate",
+        "Yasuhiro Matsunaga"
+      ],
+      "venue": "Bioinformatics",
+      "doi": "10.1093/bioinformatics/btag685",
+      "url": "https://doi.org/10.1093/bioinformatics/btag685",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "DE"
       ]
     },
     {
@@ -1715,6 +1872,38 @@
       "venue": "bioRxiv",
       "doi": "10.64898/2026.03.09.710689",
       "url": "https://doi.org/10.64898/2026.03.09.710689",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-duhjc5v5",
+      "zoteroKey": "DUHJC5V5",
+      "itemType": "preprint",
+      "title": "Reframing enzyme function prediction as conditional generation",
+      "date": "2026-09-11",
+      "year": "2026",
+      "authors": [
+        "William JF Rieger",
+        "Sebastian Häussermann",
+        "Luca Herrmann",
+        "Zecheng Li",
+        "Béla P. Frohn",
+        "Manuel Maluenda",
+        "Gabriela Lobinska",
+        "Sahil Loomba",
+        "Julia C. Reisenbauer",
+        "Mikael Bodén",
+        "Alexander Tong",
+        "Ariane Mora"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.09.09.750355",
+      "url": "https://doi.org/10.64898/2026.09.09.750355",
       "theme": "enzyme-discovery",
       "topics": [
         "enzyme-discovery"

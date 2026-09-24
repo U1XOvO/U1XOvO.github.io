@@ -218,7 +218,7 @@ const projectCards = projectsData.projects.length ? projectsData.projects.map((p
 
 const projects = layout({
   title: "Projects",
-  description: "Explore U1X's public GitHub projects in protein embeddings and enzyme kinetic parameter prediction.",
+  description: "Explore U1X's public GitHub projects in protein embeddings, enzyme kinetic prediction, and Japanese learning.",
   pathname: "/projects/",
   content: `<div class="shell page-shell content-page-shell">
     ${pageTitle("Projects", "page-title-medium page-title-projects")}
@@ -246,65 +246,6 @@ const readingYearMenuOptions = [
   <span class="reading-year-option-label">${escapeHtml(label)}</span>
   <span class="reading-year-option-count">${count}</span>
 </button>`).join("");
-const clampGraphCoordinate = (value) => Math.max(2.5, Math.min(97.5, value));
-const goldenAngle = Math.PI * (3 - Math.sqrt(5));
-const topicOrder = new Map(literature.topics.filter(({ id }) => id !== "all").map(({ id }, index) => [id, index]));
-const recordIndexByTopic = new Map();
-
-const paperPosition = (topic, index, total, mobile = false) => {
-  const centerX = mobile ? topic.mobileX : topic.x;
-  const centerY = mobile ? topic.mobileY : topic.y;
-  const phase = (topicOrder.get(topic.id) || 0) * 0.73;
-  const progress = Math.sqrt((index + 1) / Math.max(total, 1));
-  const angle = index * goldenAngle + phase;
-  const radiusX = (mobile ? 10 : 8) + progress * (mobile ? 15 : 11);
-  const radiusY = (mobile ? 7 : 7) + progress * (mobile ? 8 : 9);
-  let offsetX = Math.cos(angle) * radiusX;
-  let offsetY = Math.sin(angle) * radiusY;
-  const topicHalfWidth = mobile ? 19 : 9;
-  const topicHalfHeight = mobile ? 5.5 : 6;
-  if (Math.abs(offsetX) < topicHalfWidth && Math.abs(offsetY) < topicHalfHeight) {
-    offsetY = (offsetY < 0 ? -1 : 1) * topicHalfHeight;
-  }
-  return {
-    x: clampGraphCoordinate(centerX + offsetX),
-    y: clampGraphCoordinate(centerY + offsetY)
-  };
-};
-
-const graphEdges = literature.edges.map(({ source: sourceId, target: targetId, count }) => {
-  if (!topicById.has(sourceId) || !topicById.has(targetId)) {
-    throw new Error(`Unknown literature edge: ${sourceId} -> ${targetId}`);
-  }
-  return `<span class="graph-edge graph-topic-edge" data-source="${escapeHtml(sourceId)}" data-target="${escapeHtml(targetId)}" style="--edge-weight:${Math.min(4, 1 + Number(count || 0) / 18)}" aria-hidden="true"></span>`;
-}).join("");
-
-const graphNodes = literature.topics.map((topic) =>
-  `<button class="graph-node${topic.id === "all" ? " graph-node-hub is-active" : ""} tone-${escapeHtml(topic.tone)}" type="button" data-topic="${escapeHtml(topic.id)}" data-graph-node-id="${escapeHtml(topic.id)}" data-drag-node data-graph-x="${topic.x}" data-graph-y="${topic.y}" data-graph-mobile-x="${topic.mobileX}" data-graph-mobile-y="${topic.mobileY}" style="--node-x:${topic.x}%;--node-y:${topic.y}%;--node-x-mobile:${topic.mobileX}%;--node-y-mobile:${topic.mobileY}%" aria-pressed="${topic.id === "all"}" aria-controls="reading-list" aria-label="${escapeHtml(topic.label)}, ${topic.count} papers">
-    <span class="graph-node-label">${escapeHtml(topic.label)}</span>
-    <span class="graph-node-count">${topic.count}</span>
-  </button>`
-).join("");
-
-const graphPaperEntries = literature.records.map((record) => {
-  const topic = topicById.get(record.theme);
-  if (!topic) throw new Error(`Unknown literature record topic: ${record.theme}`);
-  const index = recordIndexByTopic.get(record.theme) || 0;
-  recordIndexByTopic.set(record.theme, index + 1);
-  const desktop = paperPosition(topic, index, topic.count);
-  const mobile = paperPosition(topic, index, topic.count, true);
-  const metadata = [record.year, record.venue].filter(Boolean).join(" · ");
-  const isFeaturedVenue = featuredVenueNames.has(record.venue);
-  const featuredLabel = isFeaturedVenue ? `, ${featuredVenueLabel}` : "";
-  return {
-    edge: `<span class="graph-edge graph-paper-edge tone-${escapeHtml(topic.tone)}" data-source="${escapeHtml(record.theme)}" data-target="${escapeHtml(record.id)}" style="--edge-weight:0.72" aria-hidden="true"></span>`,
-    node: `<button class="graph-paper-node tone-${escapeHtml(topic.tone)}${isFeaturedVenue ? " is-featured" : ""}" type="button" data-paper-node data-paper-topic="${escapeHtml(record.theme)}" data-paper-record="${escapeHtml(record.id)}" data-paper-title="${escapeHtml(record.title)}" data-paper-meta="${escapeHtml(metadata)}" data-paper-featured="${isFeaturedVenue}" data-graph-node-id="${escapeHtml(record.id)}" data-drag-node data-graph-x="${desktop.x.toFixed(3)}" data-graph-y="${desktop.y.toFixed(3)}" data-graph-mobile-x="${mobile.x.toFixed(3)}" data-graph-mobile-y="${mobile.y.toFixed(3)}" style="--node-x:${desktop.x.toFixed(3)}%;--node-y:${desktop.y.toFixed(3)}%;--node-x-mobile:${mobile.x.toFixed(3)}%;--node-y-mobile:${mobile.y.toFixed(3)}%" aria-label="${escapeHtml(record.title)}, ${escapeHtml(metadata || topic.label)}${escapeHtml(featuredLabel)}" aria-controls="reading-${escapeHtml(record.id)}"><span class="graph-paper-star" aria-hidden="true">★</span><span class="sr-only">${escapeHtml(record.title)}</span></button>`
-  };
-});
-
-const graphPaperEdges = graphPaperEntries.map(({ edge }) => edge).join("");
-const graphPaperNodes = graphPaperEntries.map(({ node }) => node).join("");
-
 const readingRecordMarkupByYear = new Map(literatureYears.map((year) => [year, []]));
 
 literature.records.forEach((record) => {
@@ -406,7 +347,7 @@ const readingControls = `      <div class="reading-controls" aria-label="Paper c
 `;
 
 const literatureSections = literature.records.length ? `
-    <section class="graph-section" aria-label="Find research papers">
+    <section class="reading-filter-section" aria-label="Filter research papers">
       ${readingControls}
       <div class="topic-filters" aria-label="Filter papers by topic">
         ${literature.topics.map((topic) => `<button class="topic-filter tone-${escapeHtml(topic.tone)}" type="button" data-topic-filter="${escapeHtml(topic.id)}" aria-pressed="${topic.id === "all"}">${escapeHtml(topic.id === "all" ? "All topics" : topic.label)}<span>${topic.count}</span></button>`).join("")}
@@ -414,21 +355,6 @@ const literatureSections = literature.records.length ? `
       <div class="reading-actions">
         <button class="utility-button" type="button" data-reading-reset disabled>Clear all filters</button>
       </div>
-        <div class="section-heading compact-heading"><h2 id="graph-title">AI + Protein landscape</h2></div>
-      <div class="knowledge-map" data-knowledge-map role="group" aria-labelledby="graph-title" aria-describedby="graph-help">
-        <div class="graph-edges" aria-hidden="true">${graphEdges}${graphPaperEdges}</div>
-        ${graphPaperNodes}
-        ${graphNodes}
-        <div class="graph-paper-tooltip" id="graph-paper-tooltip" role="tooltip" data-graph-paper-tooltip hidden></div>
-      </div>
-      <div class="graph-toolbar">
-        <p class="graph-help" id="graph-help">Drag a topic to move its papers; select a paper to jump to its entry. ★ marks ${escapeHtml(featuredVenueLabel)} papers.</p>
-        <div class="graph-feedback">
-          <p class="graph-status" role="status" aria-live="polite" data-graph-status>All topics · ${literature.source.includedItems} papers</p>
-          <button class="graph-reset" type="button" data-graph-reset disabled>Clear topic filter</button><button class="graph-reset" type="button" data-graph-layout-reset>Reset positions</button>
-        </div>
-      </div>
-
     </section>
     <section class="reading-section" aria-labelledby="reading-title">
       <div class="section-heading compact-heading"><h2 id="reading-title">Research papers</h2></div>
@@ -444,7 +370,7 @@ const literatureSections = literature.records.length ? `
 
 const library = layout({
   title: "Literature",
-  description: `Explore ${literature.source.includedItems} non-review AI and protein papers from U1X's Zotero library through an interactive topic graph and searchable paper collection.`,
+  description: `Explore ${literature.source.includedItems} non-review AI and protein papers from U1X's Zotero library through a searchable paper collection.`,
   pathname: "/library/",
   pageClass: "page-library",
   content: `<div class="shell page-shell content-page-shell">
