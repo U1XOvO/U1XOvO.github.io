@@ -112,7 +112,7 @@ const zoteroKeys = new Set();
 const normalizedTitles = new Set();
 const dois = new Set();
 const excludedReviewKeys = new Set(literature.source.excludedReviewKeys);
-const itemTypes = new Set(["journalArticle", "preprint", "conferencePaper"]);
+const itemTypes = new Set(["journalArticle", "preprint", "conferencePaper", "webpage"]);
 assert.deepEqual(literatureImages.selectionPriority, ["graphical-abstract", "figure-1"], "literature images must prefer graphical abstracts over Figure 1");
 assert.deepEqual(Object.keys(literatureImages.images).sort(), literature.records.map(({ zoteroKey }) => zoteroKey).sort(), "every literature record must have exactly one image mapping");
 for (const record of literature.records) {
@@ -148,14 +148,14 @@ for (const record of literature.records) {
   assert.doesNotMatch(record.title, /<[^>]+>/, `${record.zoteroKey} title must be plain text`);
   assert.match(record.year, /^(?:19|20)\d{2}$/, `${record.zoteroKey} year must use YYYY`);
   assert.ok(Array.isArray(record.authors), `${record.zoteroKey} authors must be an array`);
-  assert.ok(Array.isArray(record.topics) && record.topics.length === 1, `${record.zoteroKey} must belong to exactly one primary topic`);
-  assert.deepEqual(record.topics, [record.theme], `${record.zoteroKey} theme and topics must agree`);
+  assert.ok(Array.isArray(record.topics) && record.topics.length > 0, `${record.zoteroKey} must belong to at least one topic`);
+  assert.equal(new Set(record.topics).size, record.topics.length, `${record.zoteroKey} topic memberships must be unique`);
+  assert.ok(record.topics.includes(record.theme), `${record.zoteroKey} theme must remain one of its current topics`);
   assert.ok(topicIds.has(record.theme) && record.theme !== "all", `${record.zoteroKey} must reference a non-hub topic`);
   assert.ok(Array.isArray(record.tags), `${record.zoteroKey} tags must be an array`);
   assert.ok(!record.tags.includes("Review"), `${record.zoteroKey} must not carry the excluded Review tag`);
-  const sourceTag = literature.topics.find(({ id }) => id === record.theme)?.sourceTag;
-  assert.ok(record.tags.includes(sourceTag), `${record.zoteroKey} must retain its Zotero primary topic tag`);
-  assert.equal(literature.topics.filter((topic) => topic.sourceTag && record.tags.includes(topic.sourceTag)).length, 1, `${record.zoteroKey} must carry exactly one current primary topic tag`);
+  const taggedTopics = literature.topics.filter((topic) => topic.sourceTag && record.tags.includes(topic.sourceTag)).map(({ id }) => id);
+  assert.deepEqual(record.topics, taggedTopics, `${record.zoteroKey} must retain every current Zotero topic membership`);
   if (record.doi) {
     const normalizedDoi = record.doi.toLowerCase();
     assert.ok(!dois.has(normalizedDoi), `duplicate DOI: ${record.doi}`);
@@ -171,9 +171,9 @@ for (const record of literature.records) {
 
 const nonHubTopics = literature.topics.filter(({ id }) => id !== "all");
 assert.equal(new Set(nonHubTopics.map(({ tone }) => tone)).size, nonHubTopics.length, "each literature topic must have a distinct color");
-assert.equal(nonHubTopics.reduce((sum, topic) => sum + topic.count, 0), literature.records.length, "topic counts must partition all literature records");
+assert.equal(nonHubTopics.reduce((sum, topic) => sum + topic.count, 0), literature.records.reduce((sum, record) => sum + record.topics.length, 0), "topic counts must include overlapping memberships without duplicating records");
 for (const topic of nonHubTopics) {
-  assert.equal(literature.records.filter(({ theme }) => theme === topic.id).length, topic.count, `${topic.id} count must match its records`);
+  assert.equal(literature.records.filter(({ topics }) => topics.includes(topic.id)).length, topic.count, `${topic.id} count must match its records`);
 }
 assert.ok(Array.isArray(acgn.shelves), "acgn.json must contain a shelves array");
 for (const shelf of acgn.shelves) {
@@ -406,6 +406,7 @@ assert.equal((libraryHtml.match(/class="reading-list-item"/g) || []).length, lit
 assert.doesNotMatch(libraryHtml, /reading-year-stamp/, "literature cards must not render per-card year timestamps");
 for (const record of literature.records) {
   assert.ok(libraryHtml.includes(`id="reading-${record.id}" tabindex="-1"`), `${record.id} must have a focusable reading target`);
+  assert.ok(libraryHtml.includes(`data-record-id="${record.id}" data-reading-topics="${record.topics.join(" ")}"`), `${record.id} must expose all topics for filtering`);
   assert.ok(libraryHtml.includes(`data-reading-year="${record.year}"`), `${record.id} must expose its year for filtering`);
   assert.ok(libraryHtml.includes(`data-reading-featured="${literatureFeaturedVenues.venues.includes(record.venue)}"`), `${record.id} must expose its featured-journal state for filtering`);
 }
@@ -422,6 +423,11 @@ for (const [, key, card] of readingCards) {
   assert.doesNotMatch(card, /<figcaption|reading-item-meta|>Journal article<|>Preprint<|>Conference paper</, `${key} must omit figure and item-type badges`);
   assert.ok(card.includes('class="reading-card-content"'), `${key} must group text beside the figure`);
   const record = literature.records.find(({ zoteroKey }) => zoteroKey === key);
+  const renderedTopics = [...card.matchAll(/<span class="reading-topic tone-([^"]+)">([^<]+)<\/span>/g)].map(([, tone, label]) => ({ tone, label }));
+  assert.deepEqual(renderedTopics, record.topics.map((id) => {
+    const topic = literature.topics.find((topic) => topic.id === id);
+    return { tone: topic.tone, label: escapeHtml(topic.label) };
+  }), `${key} must display all of its current topic badges`);
   assert.equal((card.match(/<a\b/g) || []).length, record.url ? 1 : 0, `${key} must preserve the existing publication-link availability`);
   assert.equal((card.match(/data-reading-image\b/g) || []).length, 1, `${key} must have one image viewer trigger`);
   assert.ok(card.includes('aria-haspopup="dialog" aria-controls="literature-viewer"'), `${key} must identify its accessible image dialog`);
@@ -430,7 +436,7 @@ assert.equal((libraryHtml.match(/<dialog\b/g) || []).length, 1, "Literature must
 assert.doesNotMatch(libraryHtml, /corpus-meta|Zotero snapshot|Browse results|Copy filtered link|data-reading-share|Source: Zotero/, "Literature must omit removed summary and utility copy");
 assert.match(libraryHtml, /<dialog[^>]+aria-labelledby="viewer-title"/, "image viewer must have an accessible title");
 assert.equal((libraryHtml.match(/class="reading-featured"/g) || []).length, featuredRecordCount, "featured reading-card star count must match the venue policy");
-assert.equal((libraryHtml.match(/<span class="reading-topic[^>]+>[^<]+<\/span>\s*<span class="reading-featured"/g) || []).length, featuredRecordCount, "featured stars must follow the topic badge");
+assert.equal((libraryHtml.match(/<div class="reading-topics"[^>]*>(?:<span class="reading-topic[^>]+>[^<]+<\/span>)+<\/div>\s*<span class="reading-featured"/g) || []).length, featuredRecordCount, "featured stars must follow the complete topic badge group");
 assert.equal((libraryHtml.match(/data-reading-featured="true"/g) || []).length, featuredRecordCount, "featured filter data must match the venue policy");
 assert.match(libraryHtml, new RegExp(`data-reading-featured-filter data-reading-featured-label="${literatureFeaturedVenues.label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}" aria-pressed="false"`), "Literature page must render the featured-journal toggle in its default off state");
 assert.match(libraryHtml, new RegExp(`<span class="reading-featured-filter-count" aria-hidden="true">${featuredRecordCount}<\\/span>`), "featured-journal toggle must show its paper count");

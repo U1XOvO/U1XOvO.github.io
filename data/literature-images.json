@@ -3441,6 +3441,465 @@
       "graphicalAbstractCheck": "Scanned all attached PDF text and visually reviewed the first page, last page and Figure 1 on page 3; no graphical abstract identified in those reviewed pages or text. Publisher website and unreviewed PDF pages were not checked visually; Figure 1 selected.",
       "width": 1099,
       "height": 1059
+    },
+    "XFUXSP4D": {
+      "image": "/images/literature/xfuxsp4d.webp",
+      "imageAlt": "Figure 1 from A General Harness for Protein Foundation Model Fitness Prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2609.34654",
+      "attachmentKey": "V33HWL32",
+      "sourceSha256": "3f5c8fd1d580bc77096ccc616ccc7b00a3cb7047eea10db0947debf19075d17b",
+      "page": 1,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        304,
+        478,
+        508,
+        613
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 63 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 63. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 612,
+      "height": 405
+    },
+    "SFFV49JW": {
+      "image": "/images/literature/sffv49jw.webp",
+      "imageAlt": "Figure 1 from A multi-agent system for automating scientific discovery",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-026-10652-y",
+      "attachmentKey": "DCMXFARB",
+      "sourceSha256": "45266b91379b70d7fff5e6819d4b7253e1f95b4ecb7738a4e0ea99fbd96f92b0",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        85,
+        48,
+        514,
+        442
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 23 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 2, 23. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1100,
+      "height": 1009
+    },
+    "NBQVLBPA": {
+      "image": "/images/literature/nbqvlbpa.webp",
+      "imageAlt": "Figure 1 from Accelerating scientific discovery with Co-Scientist",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-026-10644-y",
+      "attachmentKey": "3UGNJJ6P",
+      "sourceSha256": "351f49d89d2f4f4ed84eed4225c09cc95470c41aa3becd0aa3e06b3bd8ba54c3",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        75,
+        48,
+        520,
+        699
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 28 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 2, 3, 28. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 957,
+      "height": 1400,
+      "captionPage": 3
+    },
+    "C4YHQ5YY": {
+      "image": "/images/literature/c4yhq5yy.webp",
+      "imageAlt": "Figure 1 from Agentic campaign control for high-throughput de novo binder design",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.09.22.753604",
+      "attachmentKey": "Z9R9PS4W",
+      "sourceSha256": "7368762d64d5489dca7b6a8a5bdf0b416015a7a970b75c4632cd8e1bc44845c5",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        60,
+        84,
+        535,
+        399
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 92 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 3, 92. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1100,
+      "height": 729
+    },
+    "8U26UQJT": {
+      "image": "/images/literature/8u26uqjt.webp",
+      "imageAlt": "Graphical abstract (TOC graphical summary) from AI-Guided Multi-Objective Engineering of Glucoamylase Enables Acidification-Free Starch Saccharification",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.64898/2026.09.24.753989",
+      "attachmentKey": "C3A8NV63",
+      "sourceSha256": "05832d1bbf3fa5dae2275706cde2aa71b3d1d3f7861e41b86cb310483c9e1498",
+      "page": 19,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        158,
+        93,
+        455,
+        221
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 19 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 6, 19. Selected the original TOC graphical summary labelled 'Entry for the Table of Contents' on page 19 in preference to Figure 1 on page 6. Publisher website and other PDF pages were not checked visually.",
+      "width": 891,
+      "height": 384,
+      "sourceFigureLabel": "Entry for the Table of Contents"
+    },
+    "DFZXZBUT": {
+      "image": "/images/literature/dfzxzbut.webp",
+      "imageAlt": "Figure 1 from An AI-Native Biofoundry for Autonomous Enzyme Engineering: Integrating Active Learning with Automated Experimentation",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.02.01.703093",
+      "attachmentKey": "AMSI37PF",
+      "sourceSha256": "a2a3ff3b7084083357cdd5058dca46cf04df5835a51506a7157c48c819b445fa",
+      "page": 4,
+      "pageSize": [
+        595.3,
+        841.9
+      ],
+      "crop": [
+        89,
+        76,
+        508,
+        540
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 20 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 2, 4, 20. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1099,
+      "height": 1218
+    },
+    "L6I7CSBD": {
+      "image": "/images/literature/l6i7csbd.webp",
+      "imageAlt": "Figure 1 from Autonomous biomedical research with an artificial intelligence agent",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1126/science.adz4351",
+      "attachmentKey": "Q4UYUTQ3",
+      "sourceSha256": "9ef378f231e068aee1d465fd2e2fa5343cec05a57d7f091e90d85d8a35b17203",
+      "page": 3,
+      "pageSize": [
+        594.0,
+        756.0
+      ],
+      "crop": [
+        34,
+        363,
+        563,
+        621
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 12 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 3, 12. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1100,
+      "height": 537
+    },
+    "ML78HRXJ": {
+      "image": "/images/literature/ml78hrxj.webp",
+      "imageAlt": "Figure 1 from Benchmarking and behavioral characterization of LLM agents for protein design",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.05.06.723381",
+      "attachmentKey": "SW6P7DZV",
+      "sourceSha256": "e6619403ac9676663af071f1a3773ee8f8324c4e6244eb73993e6ea0f321d702",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        50,
+        68,
+        560,
+        418
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 13 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 3, 13. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1099,
+      "height": 754
+    },
+    "XXPLTYGL": {
+      "image": "/images/literature/xxpltygl.webp",
+      "imageAlt": "Figure 1 from CellVoyager: AI CompBio agent generates new insights by autonomously analyzing biological data",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41592-026-03029-6",
+      "attachmentKey": "LCRMCZFN",
+      "sourceSha256": "d99c58fa71f1bb6e820150eba8bd24f5ff299ea21e8b10fc80eaad072df1cca5",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        46,
+        51,
+        555,
+        605
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 16 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 3, 16. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1099,
+      "height": 1197
+    },
+    "7W8PNW2Z": {
+      "image": "/images/literature/7w8pnw2z.webp",
+      "imageAlt": "Figure 1 from Decoding enzyme-substrate interaction topology reveals principles underlying catalytic efficiency and mutational outcomes",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2609.24157",
+      "attachmentKey": "7HNBUTM6",
+      "sourceSha256": "8e6b77c23ad7818e08cb11fb07d11efca5867e2f3431dfdc43992cafa2c91a69",
+      "page": 5,
+      "pageSize": [
+        595.32,
+        841.92
+      ],
+      "crop": [
+        85,
+        165,
+        509,
+        381
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 33 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 5, 33. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1100,
+      "height": 560
+    },
+    "SXML2QRE": {
+      "image": "/images/literature/sxml2qre.webp",
+      "imageAlt": "Figure 1 from Learning protein function through autonomous experimental interaction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.08.14.744985",
+      "attachmentKey": "3DHM47T5",
+      "sourceSha256": "ac3d4ce45399d2c93045ac931677444a93cf30b5177b2ec8c6222c290c90882c",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        74,
+        36,
+        542,
+        425
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 19 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 3, 19. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1100,
+      "height": 914
+    },
+    "4YK7CLGQ": {
+      "image": "/images/literature/4yk7clgq.webp",
+      "imageAlt": "Figure 1 from Predicting Enzyme Turnover Numbers and Enabling Rational Enzyme Evolution",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1002/advs.77789",
+      "attachmentKey": "WLR4ISZZ",
+      "sourceSha256": "cbf9d581f4afe842bd9a53b3781be25f387f652f66c6eb599300bbebaf501eeb",
+      "page": 3,
+      "pageSize": [
+        612.28,
+        799.37
+      ],
+      "crop": [
+        58,
+        39,
+        554,
+        400
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 17 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 3, 17. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1099,
+      "height": 800
+    },
+    "AF3GKK6G": {
+      "image": "/images/literature/af3gkk6g.webp",
+      "imageAlt": "Figure 1 from Rank-and-Reason: Multi-Agent Collaboration Accelerates Zero-Shot Protein Mutation Prediction",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2602.00197",
+      "attachmentKey": "7YKXDMPK",
+      "sourceSha256": "3a63eb4906f1f321e856002caa455da1446df53fbf164571b9f0ae260f19bf56",
+      "page": 3,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        52,
+        65,
+        544,
+        340
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 22 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 3, 22. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1099,
+      "height": 614
+    },
+    "28HJ94TY": {
+      "image": "/images/literature/28hj94ty.webp",
+      "imageAlt": "Figure 1 from Self-evolving AI agents for protein discovery and directed evolution",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2603.27303",
+      "attachmentKey": "QNLWG3BU",
+      "sourceSha256": "7ea979f17497d96577308cd44d18fb0f2f2c6a660e63137fbbfe55123ee1489b",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        122,
+        74,
+        501,
+        385
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 100 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 2, 100. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1099,
+      "height": 902
+    },
+    "RF3YQJLP": {
+      "image": "/images/literature/rf3yqjlp.webp",
+      "imageAlt": "Figure 1 from ToolUniverse: An open platform for democratizing AI scientists",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2509.23426",
+      "attachmentKey": "HGFIP895",
+      "sourceSha256": "4a7b4d1ca03c5f7cf9cbb50cdf2bfaa2e05c289652536fd1b7cb165f95297e32",
+      "page": 5,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        73,
+        73,
+        541,
+        522
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 46 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 5, 6, 46. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1100,
+      "height": 1055,
+      "captionPage": 6
+    },
+    "DBEJV9ZC": {
+      "image": "/images/literature/dbejv9zc.webp",
+      "imageAlt": "Figure 1 from Towards end-to-end automation of AI research",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-026-10265-5",
+      "attachmentKey": "VR2RNMHL",
+      "sourceSha256": "a75e0d93447f400179136bf18d909df29e0c8ccaeba076a1dfb1beeef0e0e10d",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        38,
+        48,
+        564,
+        294
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 9 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 2, 9. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1099,
+      "height": 513
+    },
+    "59HTRPZP": {
+      "image": "/images/literature/59htrpzp.webp",
+      "imageAlt": "Graphical abstract from AI mirrors experimental science to uncover a mechanism of gene transfer crucial to bacterial evolution",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1016/j.cell.2025.08.018",
+      "attachmentKey": "INSS6Y65",
+      "sourceSha256": "bb2ac388edcd6dac5c94dd30f9c880b4874ff86a6ca43030b77299700cd6aeee",
+      "page": 1,
+      "pageSize": [
+        602.99,
+        782.99
+      ],
+      "crop": [
+        51,
+        191,
+        345,
+        484
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 15 attached article PDF pages and visually reviewed pages 1, 15. Selected the explicitly labelled Graphical abstract on the article cover. Publisher website and other PDF pages were not checked visually.",
+      "width": 882,
+      "height": 879
+    },
+    "HSDGAH6A": {
+      "image": "/images/literature/hsdgah6a.webp",
+      "imageAlt": "Figure 1 from Validation of an LLM-based Multi-Agent Framework for Protein Engineering in Dry Lab and Wet Lab",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1109/BIBM62325.2024.10822562",
+      "attachmentKey": "ZEYW4FBL",
+      "sourceSha256": "c5305275d73c6e85601956560ffc04a36dbc192b8e6c7848048112138b4c41c4",
+      "page": 2,
+      "pageSize": [
+        612.0,
+        792.0
+      ],
+      "crop": [
+        60,
+        52,
+        550,
+        399
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 7 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 2, 7. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1099,
+      "height": 778
+    },
+    "SJJICUHX": {
+      "image": "/images/literature/sjjicuhx.webp",
+      "imageAlt": "Figure 1 from Autonomous chemical research with large language models",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41586-023-06792-0",
+      "attachmentKey": "9KJ55RKB",
+      "sourceSha256": "09cfaa1ccf4c951eebc347bab909e1e495d6701be38d3808c38016dff35dbd4e",
+      "page": 2,
+      "pageSize": [
+        595.28,
+        790.87
+      ],
+      "crop": [
+        44,
+        47,
+        559,
+        379
+      ],
+      "reviewedOn": "2026-10-02",
+      "graphicalAbstractCheck": "Scanned all 13 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 2, 13. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "width": 1100,
+      "height": 709
     }
   }
 }

@@ -75,7 +75,7 @@ def inspect_record(record, work):
             lines = text.splitlines()
             for number, line in enumerate(lines):
                 compact = re.sub(r"\s+", " ", line).strip()
-                if re.search(r"\b(?:graphical\s*abstract|graphical\s*summary|TOC\s*graphic|TOC\s*figure)\b", compact, re.I):
+                if re.search(r"\b(?:graphical\s*abstract|graphical\s*summary|TOC\s*graphic|TOC\s*figure|entry\s+for\s+(?:the\s+)?table\s+of\s+contents)\b", compact, re.I):
                     candidates.append({"kind": "graphical-abstract", "page": index + 1, "text": " ".join(lines[number:number + 3])[:600]})
                 elif re.match(r"^(?:\d+\s+)?(?:Fig\.?|Figure)\s*1\b", compact, re.I):
                     candidates.append({"kind": "figure-1", "page": index + 1, "text": " ".join(lines[number:number + 4])[:800]})
