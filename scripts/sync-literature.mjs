@@ -118,12 +118,12 @@ async function fetchCollectionItems() {
   return { collectionVersion, items };
 }
 
-function normalizeRecord(item, topicByTag) {
+function normalizeRecord(item, previousRecord) {
   const data = item.data ?? item;
   const tags = [...new Set((data.tags ?? []).map(({ tag }) => plainText(tag)).filter(Boolean))];
-  const primaryTags = themes.filter(({ sourceTag }) => tags.includes(sourceTag));
-  if (primaryTags.length !== 1) {
-    throw new Error(`${data.key} must have exactly one primary AI+Protein topic tag; found ${primaryTags.length}`);
+  const topics = themes.filter(({ sourceTag }) => tags.includes(sourceTag)).map(({ id }) => id);
+  if (topics.length === 0) {
+    throw new Error(`${data.key} must have at least one recognized AI+Protein topic tag; snapshot not written`);
   }
 
   const doi = plainText(data.DOI).replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, "");
@@ -134,7 +134,7 @@ function normalizeRecord(item, topicByTag) {
   const venue = plainText(
     data.publicationTitle || data.proceedingsTitle || data.conferenceName || data.repository || ""
   );
-  const topic = topicByTag.get(primaryTags[0].sourceTag);
+  const theme = topics.includes(previousRecord?.theme) ? previousRecord.theme : topics[0];
 
   return {
     id: `zotero-${String(data.key).toLowerCase()}`,
@@ -147,8 +147,8 @@ function normalizeRecord(item, topicByTag) {
     venue,
     doi,
     url: doi ? `https://doi.org/${doi}` : plainText(data.url),
-    theme: topic.id,
-    topics: [topic.id],
+    theme,
+    topics,
     tags: tags.filter((tag) => tag !== reviewTag)
   };
 }
@@ -162,14 +162,22 @@ const excludedReviews = items.filter((item) =>
   (item.data?.tags ?? []).some(({ tag }) => tag === reviewTag)
 );
 const includedItems = items.filter((item) => !excludedReviews.includes(item));
-const topicByTag = new Map(themes.map((topic) => [topic.sourceTag, topic]));
-const records = includedItems.map((item) => normalizeRecord(item, topicByTag));
 const previousByKey = new Map(previous.records.map((record) => [record.zoteroKey, record]));
+const records = includedItems.map((item) => normalizeRecord(item, previousByKey.get((item.data ?? item).key)));
 const currentKeys = new Set(records.map((record) => record.zoteroKey));
 if (currentKeys.size !== records.length) throw new Error("Zotero returned duplicate record keys; snapshot not written");
 const added = records.filter((record) => !previousByKey.has(record.zoteroKey));
 const removed = previous.records.filter((record) => !currentKeys.has(record.zoteroKey));
-const moved = records.filter((record) => previousByKey.has(record.zoteroKey) && previousByKey.get(record.zoteroKey).theme !== record.theme);
+const topicChanges = records.flatMap((record) => {
+  const before = previousByKey.get(record.zoteroKey)?.topics;
+  if (!before) return [];
+  const addedTopics = record.topics.filter((topic) => !before.includes(topic));
+  const removedTopics = before.filter((topic) => !record.topics.includes(topic));
+  return addedTopics.length || removedTopics.length ? [{ record, before, addedTopics, removedTopics }] : [];
+});
+const moved = topicChanges.filter(({ addedTopics, removedTopics }) => addedTopics.length && removedTopics.length);
+const membershipChanges = topicChanges.filter((change) => !moved.includes(change));
+const multiTopicRecords = records.filter(({ topics }) => topics.length > 1);
 
 records.sort((a, b) =>
   Number(b.year || 0) - Number(a.year || 0)
@@ -178,7 +186,9 @@ records.sort((a, b) =>
 );
 
 const topicCounts = new Map(themes.map(({ id }) => [id, 0]));
-for (const record of records) topicCounts.set(record.theme, topicCounts.get(record.theme) + 1);
+for (const record of records) {
+  for (const topic of record.topics) topicCounts.set(topic, topicCounts.get(topic) + 1);
+}
 
 const topics = [
   {
@@ -233,5 +243,7 @@ process.stdout.write(
 );
 for (const record of added) process.stdout.write(`Added ${record.zoteroKey}: ${record.title}\n`);
 for (const record of removed) process.stdout.write(`Removed ${record.zoteroKey}: ${record.title}\n`);
-for (const record of moved) process.stdout.write(`Moved ${record.zoteroKey}: ${previousByKey.get(record.zoteroKey).theme} -> ${record.theme}\n`);
+for (const { record, before } of moved) process.stdout.write(`Moved ${record.zoteroKey}: ${before.join(" + ")} -> ${record.topics.join(" + ")}\n`);
+for (const { record, before } of membershipChanges) process.stdout.write(`Topics updated ${record.zoteroKey}: ${before.join(" + ")} -> ${record.topics.join(" + ")}\n`);
 process.stdout.write(`Changes: ${added.length} added, ${removed.length} removed, ${moved.length} topic transfers.\n`);
+process.stdout.write(`Topic memberships: ${membershipChanges.length} updated; ${multiTopicRecords.length} records belong to multiple topics.\n`);

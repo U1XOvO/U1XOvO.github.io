@@ -257,8 +257,11 @@ literature.records.forEach((record) => {
     <span class="reading-image-hint" aria-hidden="true">⤢ <span>Enlarge</span></span>
     </button>
   </figure>`;
-  const topic = topicById.get(record.theme);
-  if (!topic) throw new Error(`Unknown literature record topic: ${record.theme}`);
+  const topicBadges = record.topics.map((id) => {
+    const topic = topicById.get(id);
+    if (!topic || id === "all") throw new Error(`Unknown literature record topic: ${id}`);
+    return `<span class="reading-topic tone-${escapeHtml(topic.tone)}">${escapeHtml(topic.label)}</span>`;
+  }).join("");
   const fullAuthors = record.authors.join(", ");
   const authorDisplay = record.authors.length === 0
     ? '<p class="reading-authors metadata-gap">Authors unavailable in Zotero</p>'
@@ -285,7 +288,7 @@ literature.records.forEach((record) => {
       ${figure}
       <div class="reading-card-content">
       <div class="reading-meta">
-        <span class="reading-topic tone-${escapeHtml(topic.tone)}">${escapeHtml(topic.label)}</span>
+        <div class="reading-topics" aria-label="Paper topics">${topicBadges}</div>
         ${featuredStar}
       </div>
       <h3>${escapeHtml(record.title)}</h3>
