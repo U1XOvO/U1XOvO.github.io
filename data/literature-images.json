@@ -3466,30 +3466,6 @@
       "width": 612,
       "height": 405
     },
-    "SFFV49JW": {
-      "image": "/images/literature/sffv49jw.webp",
-      "imageAlt": "Figure 1 from A multi-agent system for automating scientific discovery",
-      "kind": "figure-1",
-      "figureLabel": "Figure 1",
-      "sourceUrl": "https://doi.org/10.1038/s41586-026-10652-y",
-      "attachmentKey": "DCMXFARB",
-      "sourceSha256": "45266b91379b70d7fff5e6819d4b7253e1f95b4ecb7738a4e0ea99fbd96f92b0",
-      "page": 2,
-      "pageSize": [
-        595.28,
-        790.87
-      ],
-      "crop": [
-        85,
-        48,
-        514,
-        442
-      ],
-      "reviewedOn": "2026-10-02",
-      "graphicalAbstractCheck": "Scanned all 23 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 2, 23. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
-      "width": 1100,
-      "height": 1009
-    },
     "NBQVLBPA": {
       "image": "/images/literature/nbqvlbpa.webp",
       "imageAlt": "Figure 1 from Accelerating scientific discovery with Co-Scientist",
@@ -3636,30 +3612,6 @@
       "width": 1099,
       "height": 754
     },
-    "XXPLTYGL": {
-      "image": "/images/literature/xxpltygl.webp",
-      "imageAlt": "Figure 1 from CellVoyager: AI CompBio agent generates new insights by autonomously analyzing biological data",
-      "kind": "figure-1",
-      "figureLabel": "Figure 1",
-      "sourceUrl": "https://doi.org/10.1038/s41592-026-03029-6",
-      "attachmentKey": "LCRMCZFN",
-      "sourceSha256": "d99c58fa71f1bb6e820150eba8bd24f5ff299ea21e8b10fc80eaad072df1cca5",
-      "page": 3,
-      "pageSize": [
-        595.28,
-        790.87
-      ],
-      "crop": [
-        46,
-        51,
-        555,
-        605
-      ],
-      "reviewedOn": "2026-10-02",
-      "graphicalAbstractCheck": "Scanned all 16 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 3, 16. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
-      "width": 1099,
-      "height": 1197
-    },
     "7W8PNW2Z": {
       "image": "/images/literature/7w8pnw2z.webp",
       "imageAlt": "Figure 1 from Decoding enzyme-substrate interaction topology reveals principles underlying catalytic efficiency and mutational outcomes",
@@ -3780,55 +3732,6 @@
       "width": 1099,
       "height": 902
     },
-    "RF3YQJLP": {
-      "image": "/images/literature/rf3yqjlp.webp",
-      "imageAlt": "Figure 1 from ToolUniverse: An open platform for democratizing AI scientists",
-      "kind": "figure-1",
-      "figureLabel": "Figure 1",
-      "sourceUrl": "https://doi.org/10.48550/arXiv.2509.23426",
-      "attachmentKey": "HGFIP895",
-      "sourceSha256": "4a7b4d1ca03c5f7cf9cbb50cdf2bfaa2e05c289652536fd1b7cb165f95297e32",
-      "page": 5,
-      "pageSize": [
-        612.0,
-        792.0
-      ],
-      "crop": [
-        73,
-        73,
-        541,
-        522
-      ],
-      "reviewedOn": "2026-10-02",
-      "graphicalAbstractCheck": "Scanned all 46 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 5, 6, 46. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
-      "width": 1100,
-      "height": 1055,
-      "captionPage": 6
-    },
-    "DBEJV9ZC": {
-      "image": "/images/literature/dbejv9zc.webp",
-      "imageAlt": "Figure 1 from Towards end-to-end automation of AI research",
-      "kind": "figure-1",
-      "figureLabel": "Figure 1",
-      "sourceUrl": "https://doi.org/10.1038/s41586-026-10265-5",
-      "attachmentKey": "VR2RNMHL",
-      "sourceSha256": "a75e0d93447f400179136bf18d909df29e0c8ccaeba076a1dfb1beeef0e0e10d",
-      "page": 2,
-      "pageSize": [
-        595.28,
-        790.87
-      ],
-      "crop": [
-        38,
-        48,
-        564,
-        294
-      ],
-      "reviewedOn": "2026-10-02",
-      "graphicalAbstractCheck": "Scanned all 9 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 2, 9. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
-      "width": 1099,
-      "height": 513
-    },
     "59HTRPZP": {
       "image": "/images/literature/59htrpzp.webp",
       "imageAlt": "Graphical abstract from AI mirrors experimental science to uncover a mechanism of gene transfer crucial to bacterial evolution",
@@ -3877,29 +3780,581 @@
       "width": 1099,
       "height": 778
     },
-    "SJJICUHX": {
-      "image": "/images/literature/sjjicuhx.webp",
-      "imageAlt": "Figure 1 from Autonomous chemical research with large language models",
+    "ILQ75VQE": {
+      "image": "/images/literature/ilq75vqe.webp",
+      "imageAlt": "Figure 1 from Agentic BAIM-LLM Evaluation (ABLE): Benchmarking LLM Use of Protein Design Tools: Matrix of benchmark tasks and the protein-design capabilities they assess.",
       "kind": "figure-1",
       "figureLabel": "Figure 1",
-      "sourceUrl": "https://doi.org/10.1038/s41586-023-06792-0",
-      "attachmentKey": "9KJ55RKB",
-      "sourceSha256": "09cfaa1ccf4c951eebc347bab909e1e495d6701be38d3808c38016dff35dbd4e",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2609.05818",
+      "attachmentKey": "2HNWEQHX",
+      "sourceSha256": "df55d3343fa9b2c94892a35468aef7c93727bc84fdf255f0e778d70789d92e0e",
       "page": 2,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        303.96,
+        67.32,
+        544.68,
+        228.48
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 17-page attached article PDF; visually reviewed pages 1, 2, 17. Publisher website not checked.",
+      "width": 722,
+      "height": 483
+    },
+    "CPAKPX6C": {
+      "image": "/images/literature/cpakpx6c.webp",
+      "imageAlt": "Figure 1 from AgentPLM: Agentic Protein Language Models with Reasoning-Augmented Decoding for Protein Sequence Design: Architecture diagram with vocabulary and tool-call initialization, trajectory memory, reasoning-augmented decoding, and the training objective.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2606.02386",
+      "attachmentKey": "MLZYNKEB",
+      "sourceSha256": "bc9bfc5c72d2f966e17b0bce72ccde3e60ee4da8c69f66abe520f23e76670049",
+      "page": 3,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        64.26,
+        68.34,
+        531.42,
+        372.3
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 12-page attached article PDF; visually reviewed pages 1, 2, 3, 12. Publisher website not checked.",
+      "width": 1100,
+      "height": 715
+    },
+    "9I4W75BF": {
+      "image": "/images/literature/9i4w75bf.webp",
+      "imageAlt": "Figure 1 from An AI-powered cloud biofoundry for autonomous biological research: Architecture diagram connecting the web interface, reasoning and experiment-design components, workflow translation, and distributed biofoundries.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.09.30.750244",
+      "attachmentKey": "8YHE93L5",
+      "sourceSha256": "1642d42c00f8c33f1f2c470bddd990abe493a44d908d6250368447c111ba8d5a",
+      "page": 12,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        75.48,
+        90.78,
+        536.52,
+        303.96
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 17-page attached article PDF; visually reviewed pages 1, 2, 12, 17. Publisher website not checked.",
+      "width": 1099,
+      "height": 508
+    },
+    "RVJB6FLV": {
+      "image": "/images/literature/rvjb6flv.webp",
+      "imageAlt": "Figure 1 from Assay-Aware BindingDB: Curating Experimental Context for Binding Affinity Prediction: Two-panel overview of literature-based assay metadata extraction and context-aware binding-affinity prediction.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2609.34001",
+      "attachmentKey": "BTIM5FVY",
+      "sourceSha256": "82d57e3d50c6c903ce60c16142dd0f7499880b7c79d785f2937bb21ec98774f9",
+      "page": 2,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        107.1,
+        497.76,
+        503.88,
+        645.66
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 24-page attached article PDF; visually reviewed pages 1, 2, 24. Publisher website not checked.",
+      "width": 1100,
+      "height": 410
+    },
+    "Q2CQIRMF": {
+      "image": "/images/literature/q2cqirmf.webp",
+      "imageAlt": "Figure 1 from AUKAT: Conditional VAE-Driven Augmentation and Neural Modeling of Enzyme Turnover Numbers: Three-set Venn diagram comparing independent BRENDA records by substrate similarity, EC-number difference, and genus difference.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.3390/biom16071049",
+      "attachmentKey": "VZK77KJ2",
+      "sourceSha256": "e70101eaf21a51ae06c394833fffb918a0a84fbcf18d60c6eb99e2f68142658a",
+      "page": 5,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        163.7,
+        414.71,
+        435.54,
+        688.54
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 28-page attached article PDF; visually reviewed pages 1, 2, 5, 28. Publisher website not checked.",
+      "width": 814,
+      "height": 820
+    },
+    "D7FCG7IA": {
+      "image": "/images/literature/d7fcg7ia.webp",
+      "imageAlt": "Figure 1 from AutoBinder Agent: An MCP-Based Agent for End-to-End Protein Binder Design: Layered system diagram with the user interface, agent, communication and orchestration modules, tool services, and automation workflow.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2602.00019",
+      "attachmentKey": "K3M8T6BB",
+      "sourceSha256": "10879b19363a79ec438320bf70b52b27ae2ef8dc88d81d447a75cb8f5c6c63a4",
+      "page": 2,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        45.9,
+        49.98,
+        303.96,
+        319.26
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 4-page attached article PDF; visually reviewed pages 1, 2, 4. Publisher website not checked.",
+      "width": 773,
+      "height": 807
+    },
+    "WB2RR5H3": {
+      "image": "/images/literature/wb2rr5h3.webp",
+      "imageAlt": "Figure 1 from Designing enzymes for new-to-nature chemistry and non-natural substrates with AlphaProtein Novo: Complete eight-panel Figure 1 with the design pipeline, reaction diagrams, structural views, and activity comparisons.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.64898/2026.10.01.756017",
+      "attachmentKey": "UU5RD79Q",
+      "sourceSha256": "8fc6d323b8867bc9f381640653eb2c5bfb98e38b8fe75ef8dbccf503ffa2d7a0",
+      "page": 6,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        72.42,
+        57.12,
+        533.46,
+        380.46
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 27-page attached article PDF; visually reviewed pages 1, 2, 6, 27. Publisher website not checked.",
+      "width": 1100,
+      "height": 771
+    },
+    "NIKQ22YS": {
+      "image": "/images/literature/nikq22ys.webp",
+      "imageAlt": "Graphical abstract from GAPEK: A General Framework for Multiparameter Enzyme Kinetic Prediction with Adaptive Learning: Graphical overview linking data augmentation, embedding extraction, feature processing, and the prediction model.",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1021/acs.jcim.6c02546",
+      "attachmentKey": "88TWJRDW",
+      "sourceSha256": "f0efdd9d14dfc62a62762f2c0e240f4ee316559a084194bc196960e7d9baac83",
+      "page": 1,
+      "pageSize": [
+        607.41,
+        800.9
+      ],
+      "crop": [
+        332.05,
+        250.05,
+        558.82,
+        387.73
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "Graphical abstract visually verified in the abstract region of page 1 of the 15-page attached article PDF. Also visually reviewed pages 2 and 15; publisher website not checked.",
+      "width": 680,
+      "height": 412
+    },
+    "FFUQ7P72": {
+      "image": "/images/literature/ffuq7p72.webp",
+      "imageAlt": "Graphical abstract from GMSF: A Dual-PathMultimodal Framework for EnzymeFunction Prediction via Difference Graph Encoding and Multiscale SemanticFusion: Dual-path diagram combining reaction-graph differences and reaction-sequence features for enzyme function prediction.",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1021/acs.jcim.6c02672",
+      "attachmentKey": "T3R3WI3E",
+      "sourceSha256": "333e89125982210495ddd2720ad191c60dccd2086f352f324718aa27327ef690",
+      "page": 1,
+      "pageSize": [
+        607.41,
+        800.9
+      ],
+      "crop": [
+        314.84,
+        268.27,
+        558.82,
+        403.93
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "Graphical abstract visually verified in the abstract region of page 1 of the 15-page attached article PDF. Also visually reviewed pages 2 and 15; publisher website not checked.",
+      "width": 732,
+      "height": 407
+    },
+    "AIFWVS8T": {
+      "image": "/images/literature/aifwvs8t.webp",
+      "imageAlt": "Figure 1 from Information Leakage in Enzyme Substrate Prediction: Diagram comparing six enzyme-substrate data-splitting schemes and their information-leakage boundaries.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bioinformatics/btag733",
+      "attachmentKey": "Q7BB7NFH",
+      "sourceSha256": "a0877d9e2344da3def955e6a2bf52c8b9b8ce2358dc5de4c7c76d6d33ae5db88",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        782.36
+      ],
+      "crop": [
+        114.09,
+        50.6,
+        485.15,
+        334.35
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 11-page attached article PDF; visually reviewed pages 1, 2, 3, 11. Publisher website not checked.",
+      "width": 1099,
+      "height": 840
+    },
+    "S8UAHND4": {
+      "image": "/images/literature/s8uahnd4.webp",
+      "imageAlt": "Graphical abstract from Integrating Arrhenius Constraints with Lineage-Aware Meta-Learning for Few-Shot Prediction of Temperature-Dependent Enzyme Kinetics: Graphical overview connecting molecular and sequence inputs, physics-informed meta-learning, and a temperature-dependent kinetic prediction.",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1021/acs.jcim.6c00032",
+      "attachmentKey": "GQZK8I5I",
+      "sourceSha256": "4bb8503346e3f969eb8b8b1639b7ff22f6d223e75fa8e3731dceca5e9fe4b392",
+      "page": 1,
+      "pageSize": [
+        607.41,
+        800.9
+      ],
+      "crop": [
+        378.62,
+        254.1,
+        558.82,
+        352.3
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "Graphical abstract visually verified in the abstract region of page 1 of the 11-page attached article PDF. Also visually reviewed pages 2 and 11; publisher website not checked.",
+      "width": 541,
+      "height": 294
+    },
+    "TMSF65BT": {
+      "image": "/images/literature/tmsf65bt.webp",
+      "imageAlt": "Figure 1 from Katalyst: Knowledge-Guided Semantic Alignment via Contrastive Learning for Enzyme Turnover Prediction: Overall model framework showing multimodal input encoding, adapters, contrastive alignment, feature fusion, and prediction.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1093/bioinformatics/btag709",
+      "attachmentKey": "ILJ3Q9CC",
+      "sourceSha256": "0b58799728f8d1bd448a9952bbc2a30bfe0132c2901c86c225e7a8d82a167bca",
+      "page": 3,
+      "pageSize": [
+        708.66,
+        1000.63
+      ],
+      "crop": [
+        111.02,
+        153.54,
+        595.28,
+        510.24
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 13-page attached article PDF; visually reviewed pages 1, 2, 3, 13. Publisher website not checked.",
+      "width": 1099,
+      "height": 810
+    },
+    "P6YFZBQU": {
+      "image": "/images/literature/p6yfzbqu.webp",
+      "imageAlt": "Graphical abstract from KinEAGER: An Evidence-AwareMultitask Model with CalibratedUncertainty for Enzyme Kinetics Prediction: Graphical overview of the evidence-aware model, protein and ligand inputs, kinetic outputs, and validation categories.",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1021/acs.jcim.6c02075",
+      "attachmentKey": "2NMAS24Y",
+      "sourceSha256": "e743f4ec70167c0b8dc2a5adc20da901039549989e86e812124d7d87ef3c08ca",
+      "page": 1,
+      "pageSize": [
+        607.41,
+        800.9
+      ],
+      "crop": [
+        315.85,
+        237.9,
+        558.82,
+        367.48
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "Graphical abstract visually verified in the abstract region of page 1 of the 12-page attached article PDF. Also visually reviewed pages 2 and 12; publisher website not checked.",
+      "width": 729,
+      "height": 388
+    },
+    "9MFBXHEC": {
+      "image": "/images/literature/9mfbxhec.webp",
+      "imageAlt": "Figure 1 from LLM sequential decision making under uncertainty in biochemical domains: Four-panel comparison of Bayesian optimization, LLM configurations, prompt templates, and performance scoring.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2609.33061",
+      "attachmentKey": "ZP7H529R",
+      "sourceSha256": "3e0cbd49b6c0a5116558b2173aa4a78459e957fa095d6e05b96068745dec4327",
+      "page": 3,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        71.4,
+        77.52,
+        542.64,
+        635.46
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 56-page attached article PDF; visually reviewed pages 1, 2, 3, 56. Publisher website not checked.",
+      "width": 1100,
+      "height": 1302
+    },
+    "3HJTH5B9": {
+      "image": "/images/literature/3hjth5b9.webp",
+      "imageAlt": "Figure 1 from Metabolic engineering and deep learning-driven protein engineering for N-Acetylneuraminic acid biosynthesis in Escherichia coli: Complete four-panel Figure 1 with a metabolic pathway schematic, genetic diagrams, and production comparisons.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1038/s41467-026-77406-2",
+      "attachmentKey": "LG7TMN8W",
+      "sourceSha256": "ea1a5d0fc40e89f1fe583b2b56ad6ba38cc043d7d86177bb54fb69c5bf2143dd",
+      "page": 3,
       "pageSize": [
         595.28,
         790.87
       ],
       "crop": [
-        44,
-        47,
-        559,
-        379
+        36.71,
+        84.33,
+        524.84,
+        619.09
       ],
-      "reviewedOn": "2026-10-02",
-      "graphicalAbstractCheck": "Scanned all 13 attached article PDF pages for graphical-abstract labels and visually reviewed pages 1, 2, 13. No graphical abstract identified in that scope; Figure 1 selected. Publisher website and other PDF pages were not checked visually.",
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 15-page attached article PDF; visually reviewed pages 1, 2, 3, 15. Publisher website not checked.",
+      "width": 1100,
+      "height": 1204
+    },
+    "GVF8V72V": {
+      "image": "/images/literature/gvf8v72v.webp",
+      "imageAlt": "Figure 1 from PDAgent: An LLM-Driven Autonomous Agent Framework Towards *In Silico* Protein Design via Directed Mutation: Framework diagram showing request analysis, sequence retrieval, conservation analysis, and a reflective optimization loop.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://proceedings.mlr.press/v306/ouyang26a.html",
+      "attachmentKey": "K6ZRE6AE",
+      "sourceSha256": "9af57c45736ec95a99f90a8691c5927650fa7237528150c06b17f14a404c917d",
+      "page": 3,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        57.12,
+        64.26,
+        541.62,
+        376.38
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 27-page attached article PDF; visually reviewed pages 1, 2, 3, 27. Publisher website not checked.",
       "width": 1100,
       "height": 709
+    },
+    "36CYS44K": {
+      "image": "/images/literature/36cys44k.webp",
+      "imageAlt": "Figure 1 from ProteinMCP: An agentic AI framework for autonomous protein engineering: Two-panel overview of the ProteinMCP module ecosystem and its interface, orchestration, server, and computation layers.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1002/pro.70547",
+      "attachmentKey": "TA8UDY4A",
+      "sourceSha256": "42df05d85a33feb7d8819d7b74dea7671aea7686b7d93ffd8a80d06f9eb88f54",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        782.36
+      ],
+      "crop": [
+        42.66,
+        42.66,
+        552.61,
+        606.19
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 11-page attached article PDF; visually reviewed pages 1, 2, 3, 11. Publisher website not checked.",
+      "width": 1099,
+      "height": 1214
+    },
+    "EZBZN8VI": {
+      "image": "/images/literature/ezbzn8vi.webp",
+      "imageAlt": "Figure 1 from ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design: Complete five-panel Figure 1 with data-scaling curves, amino-acid composition, uncertainty, alignment, and planning-quality comparisons.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.18653/v1/2026.findings-acl.763",
+      "attachmentKey": "E7ZT7EQW",
+      "sourceSha256": "0ebd99d8f129bcf2b5b5107a5759c6ae173207b32037d5463ae98e0ab244004d",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        67.46,
+        63.5,
+        529.8,
+        340.3
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 25-page attached article PDF; visually reviewed pages 1, 2, 3, 25. Publisher website not checked.",
+      "width": 1100,
+      "height": 658
+    },
+    "5TRGRPLD": {
+      "image": "/images/literature/5trgrpld.webp",
+      "imageAlt": "Graphical abstract from Speak to a Protein: An Interactive Multimodal Co-Scientistfor Protein Analysis: Graphical overview linking a user query, an AI co-scientist, analysis resources, and an interactive protein structure.",
+      "kind": "graphical-abstract",
+      "figureLabel": "Graphical abstract",
+      "sourceUrl": "https://doi.org/10.1021/acs.jcim.6c01738",
+      "attachmentKey": "YEURW8QW",
+      "sourceSha256": "bd17a842519938f762fce19f209fe292c4edab5b4b58dec59d0245c807a7e16c",
+      "page": 1,
+      "pageSize": [
+        607.41,
+        800.9
+      ],
+      "crop": [
+        314.84,
+        237.9,
+        558.82,
+        366.47
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "Graphical abstract visually verified in the abstract region of page 1 of the 11-page attached article PDF. Also visually reviewed pages 2 and 11; publisher website not checked.",
+      "width": 732,
+      "height": 385
+    },
+    "B8JU34GH": {
+      "image": "/images/literature/b8ju34gh.webp",
+      "imageAlt": "Figure 1 from Structure-aware Reinforcement Learning for Protein Directed Evolution: Two-panel Figure 1 comparing the active-learning pipeline and the performance-diversity benchmark.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2609.39048",
+      "attachmentKey": "ZMV349YJ",
+      "sourceSha256": "2b4079b4d0f7e9fa5a740cb3b92bb2c3f19b743050e17a76b9901d465df473ac",
+      "page": 2,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        124.44,
+        70.38,
+        486.54,
+        211.14
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 33-page attached article PDF; visually reviewed pages 1, 2, 33. Publisher website not checked.",
+      "width": 1085,
+      "height": 421
+    },
+    "2UVDTPU7": {
+      "image": "/images/literature/2uvdtpu7.webp",
+      "imageAlt": "Figure 1 from Swarms of Large Language Model Agents for Protein Sequence Design with Experimental Validation: Complete four-panel Figure 1 comparing swarm and single-model approaches, shared reasoning, local context, and iteration outputs.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1039/D6DD00282J",
+      "attachmentKey": "KHPAJU73",
+      "sourceSha256": "47919ab94e918076aedf9aaeab12f1a2a594c6e337ed8c2adbbfad7380c48897",
+      "page": 7,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        38.76,
+        186.66,
+        297.84,
+        470.22
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 14-page attached article PDF; visually reviewed pages 1, 2, 7, 14. Publisher website not checked.",
+      "width": 776,
+      "height": 850
+    },
+    "RJAWBNZR": {
+      "image": "/images/literature/rjawbnzr.webp",
+      "imageAlt": "Figure 1 from AutoProteinEngine: A Large Language Model Driven Agent Framework for Multimodal AutoML in Protein Engineering: Framework diagram linking the chat interface, task validation, model selection, data retrieval, and hyperparameter optimization.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://aclanthology.org/2025.coling-industry.36/",
+      "attachmentKey": "SQ2KXZX4",
+      "sourceSha256": "38f863ee119d7d2e0eb0ccf57b3e05707e2c997e50ed2d36a0a0a829210a8e43",
+      "page": 3,
+      "pageSize": [
+        595.28,
+        841.89
+      ],
+      "crop": [
+        79.37,
+        72.43,
+        514.91,
+        315.5
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 9-page attached article PDF; visually reviewed pages 1, 2, 3, 9. Publisher website not checked.",
+      "width": 1100,
+      "height": 614
+    },
+    "TL7NVHXV": {
+      "image": "/images/literature/tl7nvhxv.webp",
+      "imageAlt": "Figure 1 from ProteinCrow: A Language Model Agent That Can Design Proteins: Two-panel schematic of the available tools, design environment, agent state, and an example task decomposition.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://openreview.net/forum?id=ljXgWDtqCu",
+      "attachmentKey": "9H84PRKS",
+      "sourceSha256": "f2b71bd772a6dc39d340bc70c528608009437dcb20b066015ddffeb280328d49",
+      "page": 2,
+      "pageSize": [
+        612,
+        792
+      ],
+      "crop": [
+        62.22,
+        66.3,
+        528.36,
+        329.46
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 16-page attached article PDF; visually reviewed pages 1, 2, 16. Publisher website not checked.",
+      "width": 1100,
+      "height": 620
+    },
+    "ARCRHSLY": {
+      "image": "/images/literature/arcrhsly.webp",
+      "imageAlt": "Figure 1 from ProtAgents: protein discovery via large language model multi-agent collaborations combining physics and machine learning: Complete three-panel diagram of agent profiles and functions, customized tools, and a collaborating team of agents.",
+      "kind": "figure-1",
+      "figureLabel": "Figure 1",
+      "sourceUrl": "https://doi.org/10.1039/d4dd00013g",
+      "attachmentKey": "3PTYJ6CH",
+      "sourceSha256": "e595334ac9edb05b6a3ee37bcab153f46348d251c237d7eaaeee2d8a5b35902c",
+      "page": 4,
+      "pageSize": [
+        595.28,
+        779.53
+      ],
+      "crop": [
+        85.32,
+        47.62,
+        510.95,
+        223.23
+      ],
+      "reviewedOn": "2026-10-06",
+      "graphicalAbstractCheck": "No graphical-abstract text marker found in the 21-page attached article PDF; visually reviewed pages 1, 2, 4, 21. Publisher website not checked.",
+      "width": 1100,
+      "height": 453
     }
   }
 }

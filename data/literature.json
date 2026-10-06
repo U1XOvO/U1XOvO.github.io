@@ -3,16 +3,18 @@
     "provider": "Zotero",
     "collection": "AI+Protein",
     "collectionKey": "DEMEZICD",
-    "snapshotDate": "2026-10-02",
-    "collectionVersion": "10504",
-    "totalItems": 169,
-    "includedItems": 162,
-    "excludedReviewCount": 7,
+    "snapshotDate": "2026-10-06",
+    "collectionVersion": "11103",
+    "totalItems": 190,
+    "includedItems": 181,
+    "excludedReviewCount": 9,
     "exclusionRule": "Exclude records carrying the Zotero tag “Review”.",
     "excludedReviewKeys": [
+      "574C5C6Y",
       "5BGK5IR4",
       "BGP8JG5X",
       "E3GRTM7I",
+      "GHYG44FY",
       "IKTRWEF8",
       "JLQTTJJK",
       "VEHTSE5K",
@@ -29,7 +31,7 @@
       "y": 50,
       "mobileX": 50,
       "mobileY": 10,
-      "count": 162
+      "count": 181
     },
     {
       "id": "kinetic-prediction",
@@ -40,7 +42,7 @@
       "y": 24,
       "mobileX": 27,
       "mobileY": 32,
-      "count": 49
+      "count": 55
     },
     {
       "id": "protein-language-models",
@@ -51,7 +53,7 @@
       "y": 24,
       "mobileX": 73,
       "mobileY": 32,
-      "count": 33
+      "count": 34
     },
     {
       "id": "directed-evolution",
@@ -62,7 +64,7 @@
       "y": 76,
       "mobileX": 27,
       "mobileY": 59,
-      "count": 26
+      "count": 24
     },
     {
       "id": "de-novo-design",
@@ -73,7 +75,7 @@
       "y": 86,
       "mobileX": 73,
       "mobileY": 59,
-      "count": 15
+      "count": 16
     },
     {
       "id": "enzyme-discovery",
@@ -84,7 +86,7 @@
       "y": 76,
       "mobileX": 27,
       "mobileY": 84,
-      "count": 22
+      "count": 24
     },
     {
       "id": "agent",
@@ -95,7 +97,7 @@
       "y": 14,
       "mobileX": 73,
       "mobileY": 84,
-      "count": 21
+      "count": 30
     }
   ],
   "edges": [
@@ -103,37 +105,37 @@
       "source": "all",
       "target": "kinetic-prediction",
       "relation": "collection topic",
-      "count": 49
+      "count": 55
     },
     {
       "source": "all",
       "target": "protein-language-models",
       "relation": "collection topic",
-      "count": 33
+      "count": 34
     },
     {
       "source": "all",
       "target": "directed-evolution",
       "relation": "collection topic",
-      "count": 26
+      "count": 24
     },
     {
       "source": "all",
       "target": "de-novo-design",
       "relation": "collection topic",
-      "count": 15
+      "count": 16
     },
     {
       "source": "all",
       "target": "enzyme-discovery",
       "relation": "collection topic",
-      "count": 22
+      "count": 24
     },
     {
       "source": "all",
       "target": "agent",
       "relation": "collection topic",
-      "count": 21
+      "count": 30
     }
   ],
   "records": [
@@ -231,42 +233,6 @@
         "Bioinformatics",
         "Discovery",
         "Enzymes"
-      ]
-    },
-    {
-      "id": "zotero-sffv49jw",
-      "zoteroKey": "SFFV49JW",
-      "itemType": "journalArticle",
-      "title": "A multi-agent system for automating scientific discovery",
-      "date": "2026-07",
-      "year": "2026",
-      "authors": [
-        "Ali E. Ghareeb",
-        "Benjamin Chang",
-        "Ludovico Mitchener",
-        "Angela Yiu",
-        "Caralyn J. Szostkiewicz",
-        "Dmytro Shved",
-        "Gavin J. Gyimesi",
-        "Jon M. Laurent",
-        "Samantha M. Wright",
-        "Muhammed T. Razzak",
-        "Andrew D. White",
-        "Silvia C. Finnemann",
-        "Michaela M. Hinks",
-        "Samuel G. Rodriques"
-      ],
-      "venue": "Nature",
-      "doi": "10.1038/s41586-026-10652-y",
-      "url": "https://doi.org/10.1038/s41586-026-10652-y",
-      "theme": "agent",
-      "topics": [
-        "agent"
-      ],
-      "tags": [
-        "Computational platforms and environments",
-        "AGENT",
-        "Target identification"
       ]
     },
     {
@@ -500,6 +466,34 @@
       ]
     },
     {
+      "id": "zotero-ilq75vqe",
+      "zoteroKey": "ILQ75VQE",
+      "itemType": "preprint",
+      "title": "Agentic BAIM-LLM Evaluation (ABLE): Benchmarking LLM Use of Protein Design Tools",
+      "date": "2026-09-05",
+      "year": "2026",
+      "authors": [
+        "Bryce Cai",
+        "Geetha Jeyapragasan",
+        "Samira Nedungadi",
+        "Jake Yukich",
+        "Seth Donoughe"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2609.05818",
+      "url": "https://doi.org/10.48550/arXiv.2609.05818",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "AGENT",
+        "Computer Science - Artificial Intelligence",
+        "Computer Science - Computers and Society",
+        "Quantitative Biology - Quantitative Methods"
+      ]
+    },
+    {
       "id": "zotero-c4yhq5yy",
       "zoteroKey": "C4YHQ5YY",
       "itemType": "preprint",
@@ -521,6 +515,30 @@
       ],
       "tags": [
         "AGENT"
+      ]
+    },
+    {
+      "id": "zotero-cpakpx6c",
+      "zoteroKey": "CPAKPX6C",
+      "itemType": "preprint",
+      "title": "AgentPLM: Agentic Protein Language Models with Reasoning-Augmented Decoding for Protein Sequence Design",
+      "date": "2026-06-09",
+      "year": "2026",
+      "authors": [
+        "Sahil Rahman",
+        "Maxx Richard Rahman"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2606.02386",
+      "url": "https://doi.org/10.48550/arXiv.2606.02386",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "Computer Science - Artificial Intelligence",
+        "AGENT",
+        "Quantitative Biology - Quantitative Methods"
       ]
     },
     {
@@ -620,7 +638,7 @@
     {
       "id": "zotero-dfzxzbut",
       "zoteroKey": "DFZXZBUT",
-      "itemType": "webpage",
+      "itemType": "preprint",
       "title": "An AI-Native Biofoundry for Autonomous Enzyme Engineering: Integrating Active Learning with Automated Experimentation",
       "date": "2026-06-03",
       "year": "2026",
@@ -628,6 +646,44 @@
       "venue": "",
       "doi": "10.64898/2026.02.01.703093",
       "url": "https://doi.org/10.64898/2026.02.01.703093",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "AGENT"
+      ]
+    },
+    {
+      "id": "zotero-9i4w75bf",
+      "zoteroKey": "9I4W75BF",
+      "itemType": "preprint",
+      "title": "An AI-powered cloud biofoundry for autonomous biological research",
+      "date": "2026-10-01",
+      "year": "2026",
+      "authors": [
+        "Junyu Chen",
+        "Michael Volk",
+        "Saman Shafaei",
+        "Shih-I. Tan",
+        "Vikas Upadhyay",
+        "Nilmani Singh",
+        "Xianrui Zhong",
+        "Katherine Arneson",
+        "Wenqi He",
+        "Chen Wang",
+        "Jingxia Lu",
+        "Aurosish Sharma",
+        "John McLaughlin",
+        "Matthew Berry",
+        "Steven Harmon",
+        "Sophia Reyes",
+        "George Heintz",
+        "Huimin Zhao"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.09.30.750244",
+      "url": "https://doi.org/10.64898/2026.09.30.750244",
       "theme": "agent",
       "topics": [
         "agent"
@@ -696,6 +752,35 @@
       ]
     },
     {
+      "id": "zotero-rvjb6flv",
+      "zoteroKey": "RVJB6FLV",
+      "itemType": "preprint",
+      "title": "Assay-Aware BindingDB: Curating Experimental Context for Binding Affinity Prediction",
+      "date": "2026-09-27",
+      "year": "2026",
+      "authors": [
+        "Ming-Hsiu Wu",
+        "Xuejiao Shirley Guo",
+        "Bingsong Zeng",
+        "Ziqian Xie",
+        "Shuiwang Ji",
+        "Wenshe Liu",
+        "Cui Tao",
+        "Degui Zhi"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2609.34001",
+      "url": "https://doi.org/10.48550/arXiv.2609.34001",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "Quantitative Biology - Biomolecules",
+        "AGENT"
+      ]
+    },
+    {
       "id": "zotero-meug4ecq",
       "zoteroKey": "MEUG4ECQ",
       "itemType": "journalArticle",
@@ -730,6 +815,70 @@
         "Denovo",
         "Protein design",
         "Enzymes"
+      ]
+    },
+    {
+      "id": "zotero-q2cqirmf",
+      "zoteroKey": "Q2CQIRMF",
+      "itemType": "journalArticle",
+      "title": "AUKAT: Conditional VAE-Driven Augmentation and Neural Modeling of Enzyme Turnover Numbers",
+      "date": "2026/7",
+      "year": "2026",
+      "authors": [
+        "Mengmeng Liu",
+        "Xialong Ni",
+        "Michal Brylinski"
+      ],
+      "venue": "Biomolecules",
+      "doi": "10.3390/biom16071049",
+      "url": "https://doi.org/10.3390/biom16071049",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic",
+        "deep learning",
+        "enzyme kinetics",
+        "conditional variational autoencoder",
+        "kcat prediction",
+        "synthetic data augmentation",
+        "transformer models"
+      ]
+    },
+    {
+      "id": "zotero-d7fcg7ia",
+      "zoteroKey": "D7FCG7IA",
+      "itemType": "preprint",
+      "title": "AutoBinder Agent: An MCP-Based Agent for End-to-End Protein Binder Design",
+      "date": "2026-01-16",
+      "year": "2026",
+      "authors": [
+        "Fukang Ge",
+        "Jiarui Zhu",
+        "Linjie Zhang",
+        "Haowen Xiao",
+        "Xiangcheng Bao",
+        "Fangnan Xie",
+        "Danyang Chen",
+        "Yanrui Lu",
+        "Yuting Wang",
+        "Ziqian Guan",
+        "Lin Gu",
+        "Jinhao Bi",
+        "Yingying Zhu"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2602.00019",
+      "url": "https://doi.org/10.48550/arXiv.2602.00019",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "Computer Science - Artificial Intelligence",
+        "Quantitative Biology - Biomolecules",
+        "AGENT"
       ]
     },
     {
@@ -854,35 +1003,6 @@
       ],
       "tags": [
         "Predict Kinetic"
-      ]
-    },
-    {
-      "id": "zotero-xxpltygl",
-      "zoteroKey": "XXPLTYGL",
-      "itemType": "journalArticle",
-      "title": "CellVoyager: AI CompBio agent generates new insights by autonomously analyzing biological data",
-      "date": "2026-04",
-      "year": "2026",
-      "authors": [
-        "Samuel Alber",
-        "Bowen Chen",
-        "Eric Sun",
-        "Alina Isakova",
-        "Aaron J. Wilk",
-        "James Zou"
-      ],
-      "venue": "Nature Methods",
-      "doi": "10.1038/s41592-026-03029-6",
-      "url": "https://doi.org/10.1038/s41592-026-03029-6",
-      "theme": "agent",
-      "topics": [
-        "agent"
-      ],
-      "tags": [
-        "Machine learning",
-        "Software",
-        "AGENT",
-        "Transcriptomics"
       ]
     },
     {
@@ -1206,6 +1326,63 @@
         "nanoplastics",
         "PETase",
         "synthetic biology"
+      ]
+    },
+    {
+      "id": "zotero-wb2rr5h3",
+      "zoteroKey": "WB2RR5H3",
+      "itemType": "preprint",
+      "title": "Designing enzymes for new-to-nature chemistry and non-natural substrates with AlphaProtein Novo",
+      "date": "2026-10-05",
+      "year": "2026",
+      "authors": [
+        "Zachary Wu",
+        "Joshua Abramson",
+        "Thomas Frerix",
+        "Alexander E. Chu",
+        "Ruijie K. Zhang",
+        "Luca Schulz",
+        "Amy E. Danson",
+        "Tristan O. C. Kwan",
+        "Wenliang K. Li",
+        "Jacob Kelly",
+        "Zi-Qi Li",
+        "Rosalia G. Schneider",
+        "Ashok Thillaisundaram",
+        "Harshnira Patani",
+        "Vinicius F. Zambaldi",
+        "Sukhdeep Singh",
+        "David La",
+        "Masy Domecillo",
+        "Ariane N. Mora",
+        "Julia C. Reisenbauer",
+        "Yu Zhang",
+        "Eliseo Papa",
+        "Akvile Zemgulyte",
+        "Yu-Han Wu",
+        "Augustin Zidek",
+        "Jiaxin Shi",
+        "Grace Margand",
+        "Naila Assem",
+        "Kate Stephen",
+        "Charlie Emrich",
+        "Peng Liu",
+        "Colwell Lucy",
+        "Demis Hassabis",
+        "Rob Fergus",
+        "Frances H. Arnold",
+        "Pushmeet Kohli",
+        "Jue Wang"
+      ],
+      "venue": "bioRxiv",
+      "doi": "10.64898/2026.10.01.756017",
+      "url": "https://doi.org/10.64898/2026.10.01.756017",
+      "theme": "de-novo-design",
+      "topics": [
+        "de-novo-design"
+      ],
+      "tags": [
+        "Denovo"
       ]
     },
     {
@@ -1637,15 +1814,45 @@
       "url": "https://doi.org/10.1038/s41467-026-69855-6",
       "theme": "agent",
       "topics": [
+        "protein-language-models",
         "agent"
       ],
       "tags": [
+        "LLM",
         "Machine learning",
         "Protein design",
         "Bioinformatics",
         "Enzymes",
         "Computational platforms and environments",
         "AGENT"
+      ]
+    },
+    {
+      "id": "zotero-nikq22ys",
+      "zoteroKey": "NIKQ22YS",
+      "itemType": "journalArticle",
+      "title": "GAPEK: A General Framework for Multiparameter Enzyme Kinetic Prediction with Adaptive Learning",
+      "date": "2026-09-14",
+      "year": "2026",
+      "authors": [
+        "Chenghao Zhu",
+        "Weiping Ding",
+        "Wei Zhang",
+        "Shu Jiang",
+        "Rui Zhou",
+        "Zhaohong Deng",
+        "Dong-Jun Yu",
+        "Jian Liu"
+      ],
+      "venue": "Journal of Chemical Information and Modeling",
+      "doi": "10.1021/acs.jcim.6c02546",
+      "url": "https://doi.org/10.1021/acs.jcim.6c02546",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
       ]
     },
     {
@@ -1759,6 +1966,34 @@
       ]
     },
     {
+      "id": "zotero-ffuq7p72",
+      "zoteroKey": "FFUQ7P72",
+      "itemType": "journalArticle",
+      "title": "GMSF: A Dual-PathMultimodal Framework for EnzymeFunction Prediction via Difference Graph Encoding and Multiscale SemanticFusion",
+      "date": "2026-09-30",
+      "year": "2026",
+      "authors": [
+        "Xin Zhao",
+        "Haoshu Chen",
+        "Tao Zhang",
+        "Yahui Cao",
+        "Haotong Li",
+        "Zhuoran Song",
+        "Bingzhi Li",
+        "Shuo Zheng"
+      ],
+      "venue": "Journal of Chemical Information and Modeling",
+      "doi": "10.1021/acs.jcim.6c02672",
+      "url": "https://doi.org/10.1021/acs.jcim.6c02672",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
+      ]
+    },
+    {
       "id": "zotero-zjk9et7w",
       "zoteroKey": "ZJK9ET7W",
       "itemType": "journalArticle",
@@ -1784,6 +2019,108 @@
       "venue": "Nucleic Acids Research",
       "doi": "10.1093/nar/gkaf1053",
       "url": "https://doi.org/10.1093/nar/gkaf1053",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-aifwvs8t",
+      "zoteroKey": "AIFWVS8T",
+      "itemType": "journalArticle",
+      "title": "Information Leakage in Enzyme Substrate Prediction",
+      "date": "2026-10-01",
+      "year": "2026",
+      "authors": [
+        "Vahid Atabaigi Elmi",
+        "Roman Joeres",
+        "Olga V Kalinina"
+      ],
+      "venue": "Bioinformatics",
+      "doi": "10.1093/bioinformatics/btag733",
+      "url": "https://doi.org/10.1093/bioinformatics/btag733",
+      "theme": "enzyme-discovery",
+      "topics": [
+        "enzyme-discovery"
+      ],
+      "tags": [
+        "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-s8uahnd4",
+      "zoteroKey": "S8UAHND4",
+      "itemType": "journalArticle",
+      "title": "Integrating Arrhenius Constraints with Lineage-Aware Meta-Learning for Few-Shot Prediction of Temperature-Dependent Enzyme Kinetics",
+      "date": "2026-05-11",
+      "year": "2026",
+      "authors": [
+        "Xuanhe Liu",
+        "Rui Zhou",
+        "Siyu Qi",
+        "Qiao Ning",
+        "Zhaohong Deng"
+      ],
+      "venue": "Journal of Chemical Information and Modeling",
+      "doi": "10.1021/acs.jcim.6c00032",
+      "url": "https://doi.org/10.1021/acs.jcim.6c00032",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-tmsf65bt",
+      "zoteroKey": "TMSF65BT",
+      "itemType": "journalArticle",
+      "title": "Katalyst: Knowledge-Guided Semantic Alignment via Contrastive Learning for Enzyme Turnover Prediction",
+      "date": "2026-10-03",
+      "year": "2026",
+      "authors": [
+        "Ruilin Li",
+        "Senyu Tang",
+        "Jiaqi Deng",
+        "Taixing Qiu",
+        "Fei Guo",
+        "Jijun Tang",
+        "Xiaoyi Liu"
+      ],
+      "venue": "Bioinformatics",
+      "doi": "10.1093/bioinformatics/btag709",
+      "url": "https://doi.org/10.1093/bioinformatics/btag709",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic"
+      ]
+    },
+    {
+      "id": "zotero-p6yfzbqu",
+      "zoteroKey": "P6YFZBQU",
+      "itemType": "journalArticle",
+      "title": "KinEAGER: An Evidence-AwareMultitask Model with CalibratedUncertainty for Enzyme Kinetics Prediction",
+      "date": "2026-09-28",
+      "year": "2026",
+      "authors": [
+        "Xinran Wang",
+        "Wuruiyang Li",
+        "Shuaiwen Ding",
+        "Yi Deng",
+        "Haijuan Zhang",
+        "Hong-Yu Li",
+        "Yang Li"
+      ],
+      "venue": "Journal of Chemical Information and Modeling",
+      "doi": "10.1021/acs.jcim.6c02075",
+      "url": "https://doi.org/10.1021/acs.jcim.6c02075",
       "theme": "kinetic-prediction",
       "topics": [
         "kinetic-prediction"
@@ -1898,14 +2235,12 @@
       "venue": "bioRxiv",
       "doi": "10.64898/2026.08.14.744985",
       "url": "https://doi.org/10.64898/2026.08.14.744985",
-      "theme": "directed-evolution",
+      "theme": "agent",
       "topics": [
-        "directed-evolution",
         "agent"
       ],
       "tags": [
-        "AGENT",
-        "DE"
+        "AGENT"
       ]
     },
     {
@@ -1930,6 +2265,32 @@
       ],
       "tags": [
         "Discovery"
+      ]
+    },
+    {
+      "id": "zotero-9mfbxhec",
+      "zoteroKey": "9MFBXHEC",
+      "itemType": "preprint",
+      "title": "LLM sequential decision making under uncertainty in biochemical domains",
+      "date": "2026-09-27",
+      "year": "2026",
+      "authors": [
+        "Mattias Akke",
+        "Soojung Yang",
+        "Jurgis Ruža",
+        "Sathya Edamadaka",
+        "Rafael Gómez-Bombarelli"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2609.33061",
+      "url": "https://doi.org/10.48550/arXiv.2609.33061",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "Computer Science - Artificial Intelligence",
+        "AGENT"
       ]
     },
     {
@@ -1981,6 +2342,38 @@
         "Discovery",
         "Enzyme mechanisms",
         "Biophysics"
+      ]
+    },
+    {
+      "id": "zotero-3hjth5b9",
+      "zoteroKey": "3HJTH5B9",
+      "itemType": "journalArticle",
+      "title": "Metabolic engineering and deep learning-driven protein engineering for N-Acetylneuraminic acid biosynthesis in Escherichia coli",
+      "date": "2026-09-05",
+      "year": "2026",
+      "authors": [
+        "Nan-Kai Wang",
+        "Song Yue",
+        "Jin-Ping Chen",
+        "Chang Su",
+        "Zhen-Ming Lu",
+        "Jin-Song Gong",
+        "Wei E. Huang",
+        "Zheng-Hong Xu",
+        "Jin-Song Shi"
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-026-77406-2",
+      "url": "https://doi.org/10.1038/s41467-026-77406-2",
+      "theme": "kinetic-prediction",
+      "topics": [
+        "kinetic-prediction"
+      ],
+      "tags": [
+        "Predict Kinetic",
+        "Enzymes",
+        "Industrial microbiology",
+        "Metabolic engineering"
       ]
     },
     {
@@ -2074,6 +2467,33 @@
       ]
     },
     {
+      "id": "zotero-gvf8v72v",
+      "zoteroKey": "GVF8V72V",
+      "itemType": "conferencePaper",
+      "title": "PDAgent: An LLM-Driven Autonomous Agent Framework Towards *In Silico* Protein Design via Directed Mutation",
+      "date": "2026-09-29",
+      "year": "2026",
+      "authors": [
+        "Song Ouyang",
+        "Zhijie Dong",
+        "Yong Luo",
+        "Kehua Su",
+        "Huangxuan Zhao",
+        "Miaojing Shi",
+        "Bo Du"
+      ],
+      "venue": "Proceedings of the 43rd International Conference on Machine Learning",
+      "doi": "",
+      "url": "https://proceedings.mlr.press/v306/ouyang26a.html",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "AGENT"
+      ]
+    },
+    {
       "id": "zotero-4yk7clgq",
       "zoteroKey": "4YK7CLGQ",
       "itemType": "journalArticle",
@@ -2135,6 +2555,38 @@
       ]
     },
     {
+      "id": "zotero-36cys44k",
+      "zoteroKey": "36CYS44K",
+      "itemType": "journalArticle",
+      "title": "ProteinMCP: An agentic AI framework for autonomous protein engineering",
+      "date": "2026",
+      "year": "2026",
+      "authors": [
+        "Xiaopeng Xu",
+        "Chenjie Feng",
+        "Chao Zha",
+        "Wenjia He",
+        "Maolin He",
+        "Bin Xiao",
+        "Xin Gao"
+      ],
+      "venue": "Protein Science",
+      "doi": "10.1002/pro.70547",
+      "url": "https://doi.org/10.1002/pro.70547",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "AGENT",
+        "large language models",
+        "agentic AI",
+        "computational protein design",
+        "model context protocol",
+        "workflow autonomation"
+      ]
+    },
+    {
       "id": "zotero-whtna4ss",
       "zoteroKey": "WHTNA4SS",
       "itemType": "preprint",
@@ -2158,6 +2610,36 @@
       ],
       "tags": [
         "LLM"
+      ]
+    },
+    {
+      "id": "zotero-ezbzn8vi",
+      "zoteroKey": "EZBZN8VI",
+      "itemType": "conferencePaper",
+      "title": "ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design",
+      "date": "2026-07",
+      "year": "2026",
+      "authors": [
+        "Yutang Ge",
+        "Guojiang Zhao",
+        "Sihang Li",
+        "Zheng Cheng",
+        "Zifeng Zhao",
+        "Hanchen Xia",
+        "Guolin Ke",
+        "Linfeng Zhang",
+        "Zhifeng Gao",
+        "Yu Guang Wang"
+      ],
+      "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+      "doi": "10.18653/v1/2026.findings-acl.763",
+      "url": "https://doi.org/10.18653/v1/2026.findings-acl.763",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "AGENT"
       ]
     },
     {
@@ -2400,6 +2882,82 @@
       ]
     },
     {
+      "id": "zotero-5trgrpld",
+      "zoteroKey": "5TRGRPLD",
+      "itemType": "journalArticle",
+      "title": "Speak to a Protein: An Interactive Multimodal Co-Scientistfor Protein Analysis",
+      "date": "2026-09-30",
+      "year": "2026",
+      "authors": [
+        "Carles Navarro",
+        "Mariona Torrens-Fontanals",
+        "Philipp Tholke",
+        "Stefan Doerr",
+        "Gianni De Fabritiis"
+      ],
+      "venue": "Journal of Chemical Information and Modeling",
+      "doi": "10.1021/acs.jcim.6c01738",
+      "url": "https://doi.org/10.1021/acs.jcim.6c01738",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "AGENT"
+      ]
+    },
+    {
+      "id": "zotero-b8ju34gh",
+      "zoteroKey": "B8JU34GH",
+      "itemType": "preprint",
+      "title": "Structure-aware Reinforcement Learning for Protein Directed Evolution",
+      "date": "2026-09-30",
+      "year": "2026",
+      "authors": [
+        "Zikun Nie",
+        "Suyuan Zhao",
+        "Yizhen Luo",
+        "Siqi Fan",
+        "Zaiqing Nie"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2609.39048",
+      "url": "https://doi.org/10.48550/arXiv.2609.39048",
+      "theme": "directed-evolution",
+      "topics": [
+        "directed-evolution"
+      ],
+      "tags": [
+        "DE",
+        "Computer Science - Artificial Intelligence",
+        "Computer Science - Machine Learning"
+      ]
+    },
+    {
+      "id": "zotero-2uvdtpu7",
+      "zoteroKey": "2UVDTPU7",
+      "itemType": "journalArticle",
+      "title": "Swarms of Large Language Model Agents for Protein Sequence Design with Experimental Validation",
+      "date": "2026-08-25",
+      "year": "2026",
+      "authors": [
+        "Di Sheng Lee",
+        "Markus J. Buehler",
+        "Fiona Wang",
+        "David Kaplan"
+      ],
+      "venue": "Digital Discovery",
+      "doi": "10.1039/D6DD00282J",
+      "url": "https://doi.org/10.1039/D6DD00282J",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "AGENT"
+      ]
+    },
+    {
       "id": "zotero-jg9vmdj7",
       "zoteroKey": "JG9VMDJ7",
       "itemType": "preprint",
@@ -2424,69 +2982,6 @@
         "LLM",
         "Computer Science - Machine Learning",
         "Quantitative Biology - Biomolecules"
-      ]
-    },
-    {
-      "id": "zotero-rf3yqjlp",
-      "zoteroKey": "RF3YQJLP",
-      "itemType": "preprint",
-      "title": "ToolUniverse: An open platform for democratizing AI scientists",
-      "date": "2026-08-07",
-      "year": "2026",
-      "authors": [
-        "Shanghua Gao",
-        "Richard Zhu",
-        "Pengwei Sui",
-        "Zhenglun Kong",
-        "Sufian Aldogom",
-        "Yepeng Huang",
-        "Ayush Noori",
-        "Reza Shamji",
-        "Krishna Parvataneni",
-        "Theodoros Tsiligkaridis",
-        "Marinka Zitnik"
-      ],
-      "venue": "arXiv",
-      "doi": "10.48550/arXiv.2509.23426",
-      "url": "https://doi.org/10.48550/arXiv.2509.23426",
-      "theme": "agent",
-      "topics": [
-        "agent"
-      ],
-      "tags": [
-        "Computer Science - Artificial Intelligence",
-        "Computer Science - Machine Learning",
-        "AGENT"
-      ]
-    },
-    {
-      "id": "zotero-dbejv9zc",
-      "zoteroKey": "DBEJV9ZC",
-      "itemType": "journalArticle",
-      "title": "Towards end-to-end automation of AI research",
-      "date": "2026-03",
-      "year": "2026",
-      "authors": [
-        "Chris Lu",
-        "Cong Lu",
-        "Robert Tjarko Lange",
-        "Yutaro Yamada",
-        "Shengran Hu",
-        "Jakob Foerster",
-        "David Ha",
-        "Jeff Clune"
-      ],
-      "venue": "Nature",
-      "doi": "10.1038/s41586-026-10265-5",
-      "url": "https://doi.org/10.1038/s41586-026-10265-5",
-      "theme": "agent",
-      "topics": [
-        "agent"
-      ],
-      "tags": [
-        "Mathematics and computing",
-        "AGENT",
-        "Computer science"
       ]
     },
     {
@@ -2592,13 +3087,11 @@
       "url": "https://doi.org/10.1038/s41467-025-61209-y",
       "theme": "agent",
       "topics": [
-        "directed-evolution",
         "agent"
       ],
       "tags": [
         "Machine learning",
         "Protein design",
-        "DE",
         "Biocatalysis",
         "Synthetic biology",
         "AGENT"
@@ -2825,6 +3318,30 @@
         "Biophysical chemistry",
         "Computational platforms and environments",
         "Proteins"
+      ]
+    },
+    {
+      "id": "zotero-rjawbnzr",
+      "zoteroKey": "RJAWBNZR",
+      "itemType": "conferencePaper",
+      "title": "AutoProteinEngine: A Large Language Model Driven Agent Framework for Multimodal AutoML in Protein Engineering",
+      "date": "2025-01",
+      "year": "2025",
+      "authors": [
+        "Yungeng Liu",
+        "Zan Chen",
+        "Yuguang Wang",
+        "Yiqing Shen"
+      ],
+      "venue": "Proceedings of the 31st International Conference on Computational Linguistics: Industry Track",
+      "doi": "",
+      "url": "https://aclanthology.org/2025.coling-industry.36/",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "AGENT"
       ]
     },
     {
@@ -3518,6 +4035,37 @@
         "Enzyme turnover number",
         "Molecular graph",
         "Representation learning"
+      ]
+    },
+    {
+      "id": "zotero-tl7nvhxv",
+      "zoteroKey": "TL7NVHXV",
+      "itemType": "conferencePaper",
+      "title": "ProteinCrow: A Language Model Agent That Can Design Proteins",
+      "date": "2025/07/18",
+      "year": "2025",
+      "authors": [
+        "Manvitha Ponnapati",
+        "Sam Cox",
+        "Cade W. Gordon",
+        "Michael J. Hammerling",
+        "Siddharth Narayanan",
+        "Jon M. Laurent",
+        "James D. Braza",
+        "Michaela M. Hinks",
+        "Michael D. Skarlinski",
+        "Samuel G. Rodriques",
+        "Andrew White"
+      ],
+      "venue": "ICML 2025 Generative AI and Biology (GenBio) Workshop",
+      "doi": "",
+      "url": "https://openreview.net/forum?id=ljXgWDtqCu",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "AGENT"
       ]
     },
     {
@@ -4277,6 +4825,28 @@
       ]
     },
     {
+      "id": "zotero-arcrhsly",
+      "zoteroKey": "ARCRHSLY",
+      "itemType": "journalArticle",
+      "title": "ProtAgents: protein discovery via large language model multi-agent collaborations combining physics and machine learning",
+      "date": "2024-07-01",
+      "year": "2024",
+      "authors": [
+        "Alireza Ghafarollahi",
+        "Markus J. Buehler"
+      ],
+      "venue": "Digital Discovery",
+      "doi": "10.1039/d4dd00013g",
+      "url": "https://doi.org/10.1039/d4dd00013g",
+      "theme": "agent",
+      "topics": [
+        "agent"
+      ],
+      "tags": [
+        "AGENT"
+      ]
+    },
+    {
       "id": "zotero-3burh7ex",
       "zoteroKey": "3BURH7EX",
       "itemType": "journalArticle",
@@ -4325,12 +4895,10 @@
       "url": "https://doi.org/10.1038/s44286-023-00002-4",
       "theme": "agent",
       "topics": [
-        "directed-evolution",
         "agent"
       ],
       "tags": [
         "Protein design",
-        "DE",
         "Biotechnology",
         "AGENT"
       ]
@@ -4396,32 +4964,6 @@
         "Protein function predictions",
         "Discovery",
         "Enzymes"
-      ]
-    },
-    {
-      "id": "zotero-sjjicuhx",
-      "zoteroKey": "SJJICUHX",
-      "itemType": "journalArticle",
-      "title": "Autonomous chemical research with large language models",
-      "date": "2023-12",
-      "year": "2023",
-      "authors": [
-        "Daniil A. Boiko",
-        "Robert MacKnight",
-        "Ben Kline",
-        "Gabe Gomes"
-      ],
-      "venue": "Nature",
-      "doi": "10.1038/s41586-023-06792-0",
-      "url": "https://doi.org/10.1038/s41586-023-06792-0",
-      "theme": "agent",
-      "topics": [
-        "agent"
-      ],
-      "tags": [
-        "AGENT",
-        "Computer science",
-        "Chemistry"
       ]
     },
     {
