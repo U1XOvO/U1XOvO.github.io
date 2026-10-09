@@ -78,11 +78,13 @@ npm run sync:anime-covers
 
 The command keeps anime covers in `public/images/anime/`, records their AniList CDN source in the data snapshot, and leaves the rendered page independent of remote image URLs.
 
-After refreshing Steam, Nintendo Switch, or Anime covers, regenerate the browser-ready thumbnails:
+After refreshing Steam, Nintendo Switch, Anime covers, or project images, regenerate the browser-ready thumbnails:
 
 ```bash
 python3 scripts/generate-image-thumbnails.py
 ```
+
+For project images only, use `python3 scripts/generate-image-thumbnails.py --collections projects`. Project previews preserve the source aspect ratio and are bounded to 1200 pixels wide; the original artwork and its provenance remain in `data/projects.json`.
 
 The maintenance script requires Python 3 and Pillow with WebP and AVIF encoder support. It writes bounded-size AVIF and WebP variants under `public/images/thumbnails/`; the original local cover remains the final browser fallback. This does not add a dependency to the static Node.js build or to the deployed site.
 

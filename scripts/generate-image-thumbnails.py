@@ -1,4 +1,4 @@
-"""Generate local AVIF and WebP thumbnails for game and Anime covers."""
+"""Generate local AVIF and WebP thumbnails for game, Anime, and project images."""
 
 from __future__ import annotations
 
@@ -17,6 +17,7 @@ COLLECTIONS = {
     "steam": (360, 360),
     "nintendo-switch": (360, 360),
     "anime": (400, 100_000),
+    "projects": (1200, 100_000),
 }
 ANIME_DEITY_BOUNDING_BOX = (520, 100_000)
 SOURCE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
@@ -24,6 +25,13 @@ SOURCE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--collections",
+        nargs="+",
+        choices=sorted(COLLECTIONS),
+        default=list(COLLECTIONS),
+        help="Process only the selected image collections (default: all).",
+    )
     parser.add_argument(
         "--force",
         action="store_true",
@@ -79,14 +87,14 @@ def generate_source(collection: str, source: Path, bounding_box: tuple[int, int]
         image,
         output_path(collection, source, "avif"),
         "AVIF",
-        quality=55,
+        quality=65 if collection == "projects" else 55,
         speed=6,
     )
     atomic_save(
         image,
         output_path(collection, source, "webp"),
         "WEBP",
-        quality=78,
+        quality=86 if collection == "projects" else 78,
         method=6,
     )
 
@@ -99,7 +107,8 @@ def main() -> None:
         Path(work["image"]).stem for work in acgn["anime"]["deity"]["works"]
     }
     inputs: list[tuple[str, Path, tuple[int, int]]] = []
-    for collection, bounding_box in COLLECTIONS.items():
+    for collection in args.collections:
+        bounding_box = COLLECTIONS[collection]
         source_directory = IMAGE_ROOT / collection
         sources = sorted(
             path

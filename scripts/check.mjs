@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { access, readFile, readdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { access, readFile, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { jpegDimensions, isSteamLandscapeHeader } from "./image-utils.mjs";
@@ -42,6 +43,16 @@ for (const project of projects.projects) {
     assert.ok(step.label?.trim() && step.value?.trim(), `${project.id} workflow steps need a label and value`);
   }
   assert.ok(project.example?.label?.trim() && project.example.caption?.trim(), `${project.id} needs a described example`);
+  if (project.cover) {
+    const cover = project.cover;
+    assert.match(cover.image, /^\/images\/projects\/[a-z0-9-]+\.png$/, `${project.id} cover must use a local PNG path`);
+    for (const field of ["imageAlt", "label", "source", "generationPrompt"]) assert.ok(cover[field]?.trim(), `${project.id} cover needs ${field}`);
+    assert.match(cover.createdOn, /^\d{4}-\d{2}-\d{2}$/, `${project.id} cover needs a generation date`);
+    const image = await readFile(path.join(root, "public", cover.image.slice(1)));
+    assert.equal(image.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", `${project.id} cover must be a valid PNG`);
+    assert.deepEqual([cover.width, cover.height], [image.readUInt32BE(16), image.readUInt32BE(20)], `${project.id} cover dimensions must match its native image`);
+    assert.equal(createHash("sha256").update(image).digest("hex"), cover.sha256, `${project.id} cover checksum must match the selected generated artwork`);
+  }
   if (project.example.image) {
     const example = project.example;
     assert.match(example.image, /^\/images\/projects\/[a-z0-9-]+\.png$/, `${project.id} example image must use a local PNG path`);
@@ -50,6 +61,13 @@ for (const project of projects.projects) {
     const image = await readFile(path.join(root, "public", example.image.slice(1)));
     assert.equal(image.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", `${project.id} example must be a valid PNG`);
     assert.deepEqual([example.width, example.height], [image.readUInt32BE(16), image.readUInt32BE(20)], `${project.id} example dimensions must preserve its native aspect ratio`);
+  }
+  const visual = project.cover || project.example;
+  assert.ok(visual?.image, `${project.id} needs a local project image`);
+  for (const extension of ["avif", "webp"]) {
+    const thumbnail = await stat(thumbnailFile(visual.image, extension));
+    assert.ok(thumbnail.size > 0, `${project.id} needs a non-empty ${extension} thumbnail`);
+    await access(path.join(dist, thumbnailVariant(visual.image, extension).slice(1)));
   }
 }
 assert.ok(Array.isArray(profile.featuredProjectIds), "homepage featured projects must be data-driven");
@@ -335,7 +353,15 @@ const paperHtml = await readFile(path.join(dist, "paper", "index.html"), "utf8")
 const acgnHtml = await readFile(path.join(dist, "acgn", "index.html"), "utf8");
 const animeHtml = await readFile(path.join(dist, "anime", "index.html"), "utf8");
 const homeHtml = await readFile(path.join(dist, "index.html"), "utf8");
+const projectsHtml = await readFile(path.join(dist, "projects", "index.html"), "utf8");
 const libraryHtml = await readFile(path.join(dist, "library", "index.html"), "utf8");
+for (const [html, entries] of [[homeHtml, projects.projects.filter(({ id }) => profile.featuredProjectIds.includes(id))], [projectsHtml, projects.projects]]) {
+  for (const project of entries) {
+    const visual = project.cover || project.example;
+    for (const extension of ["avif", "webp"]) assert.ok(html.includes(`<source type="image/${extension}" srcset="${thumbnailVariant(visual.image, extension)}">`), `${project.id} must render its ${extension} thumbnail`);
+    assert.ok(html.includes(`<img src="${visual.image}" alt="${escapeHtml(visual.imageAlt)}" width="${visual.width}" height="${visual.height}" loading="lazy" decoding="async">`), `${project.id} must retain its original image, dimensions, alternative text, and lazy loading`);
+  }
+}
 assert.doesNotMatch(homeHtml, /class="profile-github"/, "homepage profile header must not render the GitHub handle row");
 assert.match(homeHtml, /<footer class="site-footer shell">[\s\S]*?<a href="https:\/\/github\.com\/U1XOvO"/, "footer must retain the GitHub link");
 assert.match(libraryHtml, /<section class="reading-filter-section" aria-label="Filter research papers">/, "Literature page must retain its paper filters");
@@ -343,13 +369,7 @@ assert.doesNotMatch(libraryHtml, /Knowledge archipelago|data-knowledge-map|data-
 assert.match(libraryHtml, /<body class="page-library">/, "Literature page must expose its page class for scoped scrolling performance styles");
 assert.match(acgnHtml, /<h1>Gamer<\/h1>/, "Gamer page must render its page title");
 assert.match(acgnHtml, /<body class="page-acgn">/, "Gamer page must expose its page class for scoped performance styles");
-assert.equal((acgnHtml.match(/data-steam-profile/g) || []).length, 1, "Gamer page must render one Steam profile card");
-assert.match(acgnHtml, /<h2 class="sr-only" id="steam-profile-title">@U1X0217 Steam profile<\/h2>/, "Steam profile screenshot needs an accessible title");
-assert.match(acgnHtml, /<a class="steam-profile-card steam-profile-screenshot-link" href="https:\/\/steamcommunity\.com\/id\/U1X0217\/" rel="noreferrer" aria-label="Open @U1X0217 on Steam Community">/, "Steam profile screenshot must link to the provided public profile");
-assert.match(acgnHtml, /<source media="\(max-width: 680px\)" srcset="\/images\/steam-profile-header-mobile\.png">/, "Steam profile screenshot must provide the mobile crop");
-assert.match(acgnHtml, /<img src="\/images\/steam-profile-header\.png" alt="Steam Community profile header with an anime avatar, profile name, level badge, and illustrated background" width="2080" height="465" decoding="async">/, "Steam profile screenshot must use the local verified image");
-assert.doesNotMatch(acgnHtml, /steam-profile-(?:emblem|copy|actions|library|link)|games in library/, "Steam profile text card must be replaced by the screenshot");
-assert.ok(acgnHtml.indexOf("data-steam-profile") < acgnHtml.indexOf('id="steam-games-title"'), "Steam profile card must render above Steam games");
+assert.doesNotMatch(acgnHtml, /data-steam-profile|steam-profile-screenshot|steamcommunity\.com|store\.steampowered\.com/, "Gamer must display the owned-game collection without account screenshots or external profile/store links");
 assert.match(acgnHtml, /<h2 class="game-platform-title steam-platform-title"[^>]*>Steam Games<\/h2>/, "Gamer page must emphasize Steam Games");
 assert.match(acgnHtml, /Steam Games[\s\S]*Nintendo Switch/, "Steam games must render above Nintendo Switch games");
 assert.equal((acgnHtml.match(/class="game-card steam-game-card"/g) || []).length, acgn.steam.games.length, "rendered Steam card count must match its data");
@@ -420,9 +440,11 @@ for (const [, key, card] of readingCards) {
   assert.ok(card.includes(`alt="${escapeHtml(source.imageAlt)}"`), `${key} must preserve image alternative text`);
   assert.ok(card.includes(`width="${source.width}" height="${source.height}" loading="lazy"`), `${key} must reserve image dimensions and lazy load`);
   assert.ok(card.includes(`data-figure-label="${source.figureLabel}" data-source-page="${source.page}"`), `${key} must retain figure provenance for the viewer`);
-  assert.doesNotMatch(card, /<figcaption|reading-item-meta|>Journal article<|>Preprint<|>Conference paper</, `${key} must omit figure and item-type badges`);
-  assert.ok(card.includes('class="reading-card-content"'), `${key} must group text beside the figure`);
+  assert.ok(card.includes(`<figcaption>${escapeHtml(source.figureLabel)}</figcaption>`), `${key} must visibly identify its source figure`);
+  assert.ok(card.includes('class="reading-card-content"'), `${key} must group its paper metadata`);
   const record = literature.records.find(({ zoteroKey }) => zoteroKey === key);
+  const itemTypeLabel = { journalArticle: "Journal article", preprint: "Preprint", conferencePaper: "Conference paper" }[record.itemType];
+  assert.ok(card.includes(`<span class="reading-category">${itemTypeLabel}</span>`), `${key} must identify its item type`);
   const renderedTopics = [...card.matchAll(/<span class="reading-topic tone-([^"]+)">([^<]+)<\/span>/g)].map(([, tone, label]) => ({ tone, label }));
   assert.deepEqual(renderedTopics, record.topics.map((id) => {
     const topic = literature.topics.find((topic) => topic.id === id);
@@ -436,7 +458,7 @@ assert.equal((libraryHtml.match(/<dialog\b/g) || []).length, 1, "Literature must
 assert.doesNotMatch(libraryHtml, /corpus-meta|Zotero snapshot|Browse results|Copy filtered link|data-reading-share|Source: Zotero/, "Literature must omit removed summary and utility copy");
 assert.match(libraryHtml, /<dialog[^>]+aria-labelledby="viewer-title"/, "image viewer must have an accessible title");
 assert.equal((libraryHtml.match(/class="reading-featured"/g) || []).length, featuredRecordCount, "featured reading-card star count must match the venue policy");
-assert.equal((libraryHtml.match(/<div class="reading-topics"[^>]*>(?:<span class="reading-topic[^>]+>[^<]+<\/span>)+<\/div>\s*<span class="reading-featured"/g) || []).length, featuredRecordCount, "featured stars must follow the complete topic badge group");
+assert.equal((libraryHtml.match(/<span class="reading-category">[^<]+<\/span><span class="reading-featured"/g) || []).length, featuredRecordCount, "featured stars must immediately follow the item type in the shared metadata group");
 assert.equal((libraryHtml.match(/data-reading-featured="true"/g) || []).length, featuredRecordCount, "featured filter data must match the venue policy");
 assert.match(libraryHtml, new RegExp(`data-reading-featured-filter data-reading-featured-label="${literatureFeaturedVenues.label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}" aria-pressed="false"`), "Literature page must render the featured-journal toggle in its default off state");
 assert.match(libraryHtml, new RegExp(`<span class="reading-featured-filter-count" aria-hidden="true">${featuredRecordCount}<\\/span>`), "featured-journal toggle must show its paper count");

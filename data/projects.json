@@ -36,6 +36,17 @@
     },
     {
       "id": "pekp",
+      "cover": {
+        "image": "/images/projects/pekp-cover.png",
+        "imageAlt": "AI-generated concept illustration for PEKP: an abstract protein ribbon, substrate-like beads, and translucent mint and sky-blue parameter tiles.",
+        "width": 1672,
+        "height": 941,
+        "label": "Concept illustration",
+        "source": "OpenAI imagegen built-in tool; AI-generated conceptual artwork",
+        "createdOn": "2026-10-09",
+        "sha256": "c18662e42f0f5bf864fd630fc24aefafd44f76147241ad847f3747d5bdddb1fd",
+        "generationPrompt": "Use case: stylized-concept.\nAsset type: landscape project cover for PEKP, a public collection of enzyme kinetic parameter prediction models.\nPrimary request: a refined, premium editorial 3D concept illustration for enzyme kinetics, consistent with a warm-white, low-saturation personal portfolio and soft liquid-glass surfaces.\nScene/backdrop: a clean seamless warm-white studio with a very subtle pale mint gradient.\nSubject: one sculptural abstract protein ribbon with a gentle central pocket, a few small substrate-like beads nearby, and three understated translucent mint and sky-blue glass tiles suggesting organized kinetic parameters. This is conceptual artwork, not a validated molecular structure or an experimental result.\nStyle/medium: sophisticated 3D still life, frosted glass and satin ceramic, precise soft forms, restrained details.\nComposition/framing: wide horizontal 16:9 composition; a balanced central arrangement that reads clearly at a small website thumbnail size; generous breathing room; objects occupy about two thirds of the frame.\nLighting/mood: diffuse daylight, subtle contact shadows, calm and analytical.\nColor palette: warm white, pale mint green, soft sky blue, tiny lavender accents; no neon and no black background.\nText: no text, no equations, no numbers, no logos or watermark.\nConstraints: create an original conceptual project cover; avoid interface screenshots, charts, performance metrics, scientific claims, stock-photo lab props and busy decoration."
+      },
       "useCase": "Find a starting point for choosing an enzyme kinetic parameter prediction model.",
       "workflow": [
         {"label": "Choose", "value": "A target parameter: kcat, Km, or kcat/Km"},
@@ -64,6 +75,17 @@
     },
     {
       "id": "haru",
+      "cover": {
+        "image": "/images/projects/haru-cover.png",
+        "imageAlt": "AI-generated concept illustration for Haru: an open learning notebook, a hiragana flashcard with あ, and cherry blossoms in blush pink and lavender.",
+        "width": 1672,
+        "height": 941,
+        "label": "Concept illustration",
+        "source": "OpenAI imagegen built-in tool; AI-generated conceptual artwork",
+        "createdOn": "2026-10-09",
+        "sha256": "2c0ee9c403084132645a9fd8366b4f59cb844a5b5bada69b23364efe2ce9ddfc",
+        "generationPrompt": "Use case: stylized-concept.\nAsset type: landscape project cover for Haru, a desktop Japanese-learning app with daily lessons, flashcards and reading practice.\nPrimary request: a refined, premium editorial 3D concept illustration for Japanese learning, paired aesthetically with an enzyme-kinetics cover using the same warm-white studio, soft frosted glass, satin materials, restrained shadows and balanced composition.\nScene/backdrop: a clean seamless warm-white studio with a very subtle blush-pink gradient.\nSubject: an elegant open learning notebook, a small arranged stack of frosted flashcards, one main card carrying the single Japanese hiragana character \"あ\", and a delicate cherry-blossom sprig. Secondary cards are blank.\nStyle/medium: sophisticated 3D still life, tactile paper and frosted glass, polished soft shapes, refined rather than cartoonish.\nComposition/framing: wide horizontal 16:9 composition; a balanced central arrangement that reads clearly at a small website thumbnail size; generous breathing room; objects occupy about two thirds of the frame.\nLighting/mood: soft daylight, gentle contact shadows, fresh, welcoming and focused.\nColor palette: warm white, pale blush pink, soft lavender and tiny sky-blue accents; no neon and no dark background.\nText (verbatim): only \"あ\" on the main flashcard. No other lettering, title, logo or watermark.\nConstraints: create an original conceptual project cover, not an application screenshot; no people or anime characters, no invented UI, no extra decorative objects or dense patterns."
+      },
       "useCase": "Learn Japanese from the beginning with Chinese explanations and daily practice on a desktop computer.",
       "workflow": [
         {"label": "Set up", "value": "Add a Chat Completions-compatible AI service and model in Preferences"},

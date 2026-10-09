@@ -27,10 +27,10 @@ const thumbnailVariant = (image, extension) => {
   return `/images/thumbnails/${image.slice(prefix.length, extensionIndex)}.${extension}`;
 };
 
-const thumbnailPicture = ({ image, alt }) => `<picture>
+const thumbnailPicture = ({ image, alt, width, height }) => `<picture>
   <source type="image/avif" srcset="${escapeHtml(thumbnailVariant(image, "avif"))}">
   <source type="image/webp" srcset="${escapeHtml(thumbnailVariant(image, "webp"))}">
-  <img src="${escapeHtml(image)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async">
+  <img src="${escapeHtml(image)}" alt="${escapeHtml(alt)}"${width && height ? ` width="${escapeHtml(width)}" height="${escapeHtml(height)}"` : ""} loading="lazy" decoding="async">
 </picture>`;
 
 const site = await readJson("data/site.json");
@@ -122,18 +122,24 @@ function layout({ title, description, pathname, content, pageClass = "", languag
 </html>`;
 }
 
-const profileDetails = profile.details
-  .map(({ label, value }) => `<div class="profile-detail${label === "Email" ? " profile-detail-email" : ""}">
-    <dt>${escapeHtml(label)}</dt>
-    <dd>${value ? label === "Email" ? `<a href="mailto:${escapeHtml(value)}">${escapeHtml(value)}</a>` : escapeHtml(value) : '<span class="profile-placeholder">To be added</span>'}</dd>
-  </div>`)
-  .join("");
-
-const contactEmail = profile.details.find(({ label }) => label === "Email")?.value;
-const homeProjectCards = profile.featuredProjectIds.map((id) => {
+const profileValues = Object.fromEntries(profile.details.map(({ label, value }) => [label, value]));
+const contactEmail = profileValues.Email;
+const researchWords = (profileValues["Research Interests"] || profile.name).split(/\s+/);
+let headingLetterIndex = 0;
+const animatedTitleWord = (word) => `<span class="hero-title-word">${Array.from(word).map((letter) => `<span class="hero-letter" style="--letter-index:${headingLetterIndex++}"><span data-hero-letter>${escapeHtml(letter)}</span></span>`).join("")}</span>`;
+const researchHeading = `${researchWords.length > 1 ? `<span class="hero-title-line hero-title-lead" aria-hidden="true">${researchWords.slice(0, -1).map(animatedTitleWord).join(" ")}</span>\n` : ""}<span class="hero-title-line hero-title-biology" aria-hidden="true">${animatedTitleWord(researchWords.at(-1))}</span>`;
+const projectVisual = (project) => {
+  const visual = project.cover || project.example;
+  if (!visual?.image) throw new Error(`Project ${project.id} needs a local image`);
+  return `<div class="work-visual image-visual${project.cover ? " cover-visual" : ""}">${thumbnailPicture({ image: visual.image, alt: visual.imageAlt, width: visual.width, height: visual.height })}</div>`;
+};
+const homeProjectCards = profile.featuredProjectIds.map((id, index) => {
   const project = projectsData.projects.find((entry) => entry.id === id);
   if (!project) throw new Error(`Unknown featured project: ${id}`);
-  return `<article class="home-work-card"><p class="card-label">Open-source project</p><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.description)}</p><a class="text-link" href="/projects/#${escapeHtml(project.id)}">Explore project <span aria-hidden="true">→</span></a></article>`;
+  return `<article class="home-work-card tone-${["blue", "green", "pink"][index % 3]}">
+    ${projectVisual(project)}<div class="home-work-content"><div class="project-meta"><span>${String(index + 1).padStart(2, "0")}</span><span>Open-source project</span></div>
+    <h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.description)}</p><a class="text-link" href="/projects/#${escapeHtml(project.id)}">Explore project <span aria-hidden="true">↗</span></a></div>
+  </article>`;
 }).join("");
 const homePaper = papersData.papers.find(({ id }) => id === profile.featuredPaperId);
 if (!homePaper) throw new Error(`Unknown featured publication: ${profile.featuredPaperId}`);
@@ -142,26 +148,31 @@ const home = layout({
   title: "",
   description: site.description,
   pathname: "/",
+  pageClass: "page-home",
   content: `
-    <section class="home-profile shell" aria-labelledby="profile-title">
-      <a class="avatar-panel reveal" href="${escapeHtml(profile.github)}" rel="noreferrer" aria-label="Open ${escapeHtml(profile.handle)} on GitHub">
-        <img src="${escapeHtml(profile.avatar)}" alt="${escapeHtml(profile.handle)} GitHub avatar" width="1149" height="1149">
-      </a>
-      <div class="profile-information reveal reveal-delay">
-        <p class="eyebrow">Personal profile</p>
-        <h1 id="profile-title">${escapeHtml(profile.name)}</h1>
-        <div class="hero-actions profile-actions">
-          <a class="button button-primary" href="/projects/">Explore projects <span aria-hidden="true">→</span></a>
-          <a class="button button-quiet" href="/paper/">Publications</a>
-          ${contactEmail ? `<a class="profile-contact" href="mailto:${escapeHtml(contactEmail)}">Get in touch <span aria-hidden="true">↗</span></a>` : ""}
-        </div>
-        <dl class="profile-details">${profileDetails}</dl>
+    <section class="home-profile editorial-hero shell" aria-labelledby="profile-title">
+      <div class="hero-copy" data-hero-playground>
+        <h1 class="hero-title" id="profile-title" aria-label="${escapeHtml(researchWords.join(" "))}">${researchHeading}</h1>
+        <button class="hero-molecule" type="button" data-hero-remix aria-label="Animate the molecule" title="Animate the molecule" disabled><img class="hero-molecule-art" src="/images/hero-molecule.svg" alt="" width="80" height="80" decoding="async"></button>
+        <div class="hero-actions"><a class="button button-primary" href="/projects/">Explore projects <span aria-hidden="true">↗</span></a><a class="button button-quiet" href="/paper/">Publications <span aria-hidden="true">↗</span></a></div>
       </div>
+      <aside class="profile-information hero-profile">
+        <a class="hero-avatar" href="${escapeHtml(profile.github)}" rel="noreferrer" aria-label="Open ${escapeHtml(profile.handle)} on GitHub"><img src="${escapeHtml(profile.avatar)}" alt="${escapeHtml(profile.handle)} GitHub avatar" width="1149" height="1149" fetchpriority="high" decoding="async"></a>
+        <p class="portrait-caption">Personal profile</p>
+        <div class="identity-copy"><strong>${escapeHtml(profileValues.Name || profile.name)}</strong><span>${escapeHtml(profileValues.Affiliation || "Affiliation to be added")}</span></div>
+        ${profileValues.Location ? `<p class="profile-location">${escapeHtml(profileValues.Location)}</p>` : ""}
+        ${contactEmail ? `<p class="profile-email">email: ${escapeHtml(contactEmail)}</p>` : ""}
+      </aside>
     </section>
     <section class="home-work shell" aria-labelledby="home-work-title">
-      <div class="section-heading"><h2 id="home-work-title">${escapeHtml(profile.workHeading)}</h2><p>${escapeHtml(profile.workIntro)}</p></div>
-      <div class="home-work-grid">${homeProjectCards}<article class="home-work-card"><p class="card-label">${escapeHtml(homePaper.year)} · ${escapeHtml(homePaper.venue)}</p><h3>${escapeHtml(homePaper.title)}</h3><a class="text-link" href="/paper/">Explore publication <span aria-hidden="true">→</span></a></article></div>
-    </section>`
+      <div class="section-heading editorial-section-heading"><div><p class="eyebrow">Selected work</p><h2 id="home-work-title">${escapeHtml(profile.workHeading)}</h2></div><a class="text-link" href="/projects/">All projects <span aria-hidden="true">↗</span></a></div>
+      <div class="home-work-grid">${homeProjectCards}</div>
+    </section>
+    <section class="home-publication shell" aria-labelledby="home-publication-title">
+      <figure class="home-publication-figure"><img src="${escapeHtml(homePaper.image)}" alt="${escapeHtml(homePaper.imageAlt)}" width="520" height="337" loading="lazy" decoding="async"><figcaption>${escapeHtml(homePaper.imageCredit)}</figcaption></figure>
+      <div class="home-publication-copy"><p class="eyebrow">Publication · ${escapeHtml(homePaper.year)} · ${escapeHtml(homePaper.venue)}</p><h2 id="home-publication-title">${escapeHtml(homePaper.title)}</h2><p>${escapeHtml(homePaper.citation)}</p><a class="text-link" href="/paper/">Explore publication <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <section class="home-library shell" aria-labelledby="home-library-title"><div><p class="eyebrow">Reading collection</p><h2 id="home-library-title">${escapeHtml(literature.source.collection.replaceAll("+", " + "))}</h2><p>${literature.records.length} papers · ${literature.topics.filter(({ id }) => id !== "all").length} topics</p></div><a class="button button-quiet" href="/library/">Explore Literature <span aria-hidden="true">↗</span></a></section>`
 });
 
 const pageTitle = (title, sizeClass = "") => `
@@ -202,15 +213,13 @@ const projectCards = projectsData.projects.length ? projectsData.projects.map((p
     : "";
   const workflow = `<dl class="project-workflow">${project.workflow.map(({ label, value }) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}</dl>`;
   const example = project.example;
-  const exampleMarkup = example.image
-    ? `<details class="project-example"><summary>${escapeHtml(example.label)}</summary><figure><img src="${escapeHtml(example.image)}" alt="${escapeHtml(example.imageAlt)}" width="${example.width}" height="${example.height}" loading="lazy" decoding="async"><figcaption>${escapeHtml(example.caption)}</figcaption></figure></details>`
-    : `<div class="project-example-copy"><strong>${escapeHtml(example.label)}</strong><p>${escapeHtml(example.caption)}</p></div>`;
-  return `<article class="project-card tone-${["pink", "blue", "green"][index % 3]}" id="${escapeHtml(project.id)}">
-    <div class="project-meta"><span>0${index + 1}</span><span>${escapeHtml(project.status)}</span></div>
+  const exampleMarkup = `<figure class="project-showcase-visual">${projectVisual(project)}<figcaption><strong>${escapeHtml(project.cover?.label || example.label)}</strong><p>${escapeHtml(example.caption)}</p></figcaption></figure>`;
+  return `<article class="project-card tone-${["blue", "green", "pink"][index % 3]}" id="${escapeHtml(project.id)}">
+    <div class="project-showcase-copy"><div class="project-meta"><span>${String(index + 1).padStart(2, "0")}</span><span>${escapeHtml(project.status)}</span></div>
     <h2>${escapeHtml(project.title)}</h2>
     <p>${escapeHtml(project.description)}</p>
     ${link}
-    ${workflow}
+    ${workflow}</div>
     ${exampleMarkup}
     <details class="project-details"><summary>Features &amp; use case</summary><p>${escapeHtml(project.useCase)}</p><div class="tag-list">${tagList}</div><ul>${highlights}</ul></details>
   </article>`;
@@ -220,6 +229,7 @@ const projects = layout({
   title: "Projects",
   description: "Explore U1X's public GitHub projects in protein embeddings, enzyme kinetic prediction, and Japanese learning.",
   pathname: "/projects/",
+  pageClass: "page-projects",
   content: `<div class="shell page-shell content-page-shell">
     ${pageTitle("Projects", "page-title-medium page-title-projects")}
     <section class="project-grid" aria-label="Project list">${projectCards}</section>
@@ -247,6 +257,7 @@ const readingYearMenuOptions = [
   <span class="reading-year-option-count">${count}</span>
 </button>`).join("");
 const readingRecordMarkupByYear = new Map(literatureYears.map((year) => [year, []]));
+const itemTypeLabels = { journalArticle: "Journal article", preprint: "Preprint", conferencePaper: "Conference paper" };
 
 literature.records.forEach((record) => {
   const image = literatureImages.images[record.zoteroKey];
@@ -256,6 +267,7 @@ literature.records.forEach((record) => {
     <img src="${escapeHtml(image.image)}" alt="${escapeHtml(image.imageAlt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async">
     <span class="reading-image-hint" aria-hidden="true">⤢ <span>Enlarge</span></span>
     </button>
+    <figcaption>${escapeHtml(image.figureLabel)}</figcaption>
   </figure>`;
   const topicBadges = record.topics.map((id) => {
     const topic = topicById.get(id);
@@ -288,9 +300,9 @@ literature.records.forEach((record) => {
       ${figure}
       <div class="reading-card-content">
       <div class="reading-meta">
-        <div class="reading-topics" aria-label="Paper topics">${topicBadges}</div>
-        ${featuredStar}
+        <span class="reading-category">${escapeHtml(itemTypeLabels[record.itemType] || record.itemType)}</span>${featuredStar}
       </div>
+      <div class="reading-topics" aria-label="Paper topics">${topicBadges}</div>
       <h3>${escapeHtml(record.title)}</h3>
       ${authorDisplay}
       <p class="reading-venue${record.venue ? "" : " metadata-gap"}">${escapeHtml(record.venue || "Venue unavailable in Zotero")}</p>
@@ -448,6 +460,7 @@ const paperPage = layout({
   title: "Paper",
   description: papersData.description,
   pathname: "/paper/",
+  pageClass: "page-paper",
   content: `<div class="shell page-shell content-page-shell">
     ${pageTitle("Paper", "page-title-paper")}
     <section class="paper-grid" aria-label="Paper list">${paperCards}</section>
@@ -476,18 +489,6 @@ const gameCards = (games, platform) => games.length
 
 const steamGames = gameCards(acgn.steam.games, "steam");
 const switchGames = gameCards(acgn.nintendoSwitch.games, "switch");
-const steamProfile = acgn.steam.profile;
-const steamProfileCard = `<section class="steam-profile" aria-labelledby="steam-profile-title" data-steam-profile>
-  <h2 class="sr-only" id="steam-profile-title">@${escapeHtml(steamProfile.handle)} Steam profile</h2>
-  <a class="steam-profile-card steam-profile-screenshot-link" href="${escapeHtml(steamProfile.sourceUrl)}" rel="noreferrer" aria-label="Open @${escapeHtml(steamProfile.handle)} on Steam Community">
-    <picture class="steam-profile-screenshot">
-      <source media="(max-width: 680px)" srcset="${escapeHtml(steamProfile.screenshotMobile)}">
-      <img src="${escapeHtml(steamProfile.screenshot)}" alt="${escapeHtml(steamProfile.screenshotAlt)}" width="${steamProfile.screenshotWidth}" height="${steamProfile.screenshotHeight}" decoding="async">
-    </picture>
-  </a>
-  <p class="sr-only">Source: ${escapeHtml(steamProfile.source)}. Checked ${escapeHtml(steamProfile.checkedOn)}.</p>
-</section>`;
-
 const acgnPage = layout({
   title: "Gamer",
   description: "Explore U1X's Steam and Nintendo Switch game collections.",
@@ -501,7 +502,6 @@ const acgnPage = layout({
       <button class="utility-button" type="button" data-game-reset disabled>Clear search</button>
       <p class="game-search-status" role="status" aria-live="polite" data-game-status>Browse by name or jump to a platform.</p>
     </div>
-    ${steamProfileCard}
     <section class="game-platform steam-platform" aria-labelledby="steam-games-title">
       <h2 class="game-platform-title steam-platform-title" id="steam-games-title">Steam Games</h2>
       <div class="game-grid" aria-label="Steam game collection">${steamGames}</div>
@@ -560,6 +560,7 @@ const notFound = layout({
   title: "Page not found",
   description: "The requested page does not exist.",
   pathname: "/404.html",
+  pageClass: "page-404",
   content: `<div class="shell not-found"><p class="section-kicker">404</p><h1>This page has not grown yet.</h1><p>Return home or wander through the literature garden.</p><div class="hero-actions"><a class="button button-primary" href="/">Back home</a><a class="button button-quiet" href="/library/">Literature garden</a></div></div>`
 });
 

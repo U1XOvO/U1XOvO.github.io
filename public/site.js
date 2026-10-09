@@ -3,6 +3,92 @@ const navigation = document.querySelector(".site-nav");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const normalizeText = (value) => String(value || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase().trim();
 
+const heroPlayground = document.querySelector("[data-hero-playground]");
+if (heroPlayground) {
+  const letters = [...heroPlayground.querySelectorAll("[data-hero-letter]")];
+  const remix = heroPlayground.querySelector("[data-hero-remix]");
+  const molecule = remix.querySelector("img");
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const offsets = letters.map(() => ({ lift: "0.00px", tilt: "0.00deg" }));
+  let visible = true, pageActive = true, frame = 0, pointer = null, centers = [], burst = [];
+  const clearPointer = () => {
+    if (!frame && !pointer) return;
+    cancelAnimationFrame(frame);
+    frame = 0;
+    pointer = null;
+    letters.forEach((letter, index) => {
+      const offset = offsets[index];
+      if (offset.lift !== "0.00px") { letter.style.removeProperty("--letter-lift"); offset.lift = "0.00px"; }
+      if (offset.tilt !== "0.00deg") { letter.style.removeProperty("--letter-tilt"); offset.tilt = "0.00deg"; }
+    });
+  };
+  const cancelBurst = () => { burst.forEach((animation) => animation.cancel()); burst = []; };
+  const updateMotion = () => {
+    const active = visible && pageActive && !document.hidden && !reduceMotion.matches;
+    heroPlayground.dataset.motionActive = String(active);
+    remix.disabled = !active || typeof molecule.animate !== "function";
+    if (!active) { clearPointer(); cancelBurst(); }
+  };
+  const measureLetters = () => {
+    centers = letters.map((letter) => {
+      const rect = letter.parentElement.getBoundingClientRect();
+      return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+    });
+  };
+  const paintPointer = () => {
+    frame = 0;
+    if (!pointer) return;
+    if (!centers.length) measureLetters();
+    letters.forEach((letter, index) => {
+      const center = centers[index];
+      const strength = Math.max(0, 1 - Math.hypot(pointer.x - center.x, pointer.y - center.y) / 115);
+      const offset = offsets[index];
+      const lift = `${(-6 * strength * strength).toFixed(2)}px`;
+      const tilt = `${(2 * strength * (pointer.x < center.x ? -1 : 1)).toFixed(2)}deg`;
+      if (offset.lift !== lift) { letter.style.setProperty("--letter-lift", lift); offset.lift = lift; }
+      if (offset.tilt !== tilt) { letter.style.setProperty("--letter-tilt", tilt); offset.tilt = tilt; }
+    });
+  };
+  heroPlayground.addEventListener("pointerenter", () => {
+    if (finePointer.matches && !remix.disabled) measureLetters();
+  });
+  // Refresh invalidated geometry on demand and skip unchanged style writes.
+  heroPlayground.addEventListener("pointermove", (event) => {
+    if (event.pointerType === "touch" || !finePointer.matches || remix.disabled) return;
+    pointer = { x: event.clientX, y: event.clientY };
+    if (!frame) frame = requestAnimationFrame(paintPointer);
+  }, { passive: true });
+  heroPlayground.addEventListener("pointerleave", clearPointer);
+  window.addEventListener("scroll", () => { clearPointer(); centers = []; }, { passive: true });
+  window.addEventListener("resize", () => { clearPointer(); centers = []; }, { passive: true });
+  remix.addEventListener("click", () => {
+    if (remix.disabled) return;
+    cancelBurst();
+    const animations = letters.map((letter, index) => letter.animate([
+      { transform: "translateY(0) rotate(0)" },
+      { transform: `translateY(-12px) rotate(${index % 2 ? 3 : -3}deg)`, offset: .32 },
+      { transform: "translateY(3px) rotate(0)", offset: .65 },
+      { transform: "translateY(0) rotate(0)" }
+    ], { duration: 720, delay: index * 32, easing: "cubic-bezier(.22,1,.36,1)" }));
+    animations.push(molecule.animate([
+      { transform: "rotate(0) scale(1)" },
+      { transform: "rotate(180deg) scale(1.06)", offset: .5 },
+      { transform: "rotate(360deg) scale(1)" }
+    ], { duration: 1120, easing: "cubic-bezier(.22,1,.36,1)" }));
+    burst = animations;
+    Promise.allSettled(animations.map((animation) => animation.finished)).then(() => {
+      if (burst === animations) burst = [];
+    });
+  });
+  new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; updateMotion(); }).observe(heroPlayground);
+  document.addEventListener("visibilitychange", updateMotion);
+  reduceMotion.addEventListener("change", updateMotion);
+  finePointer.addEventListener("change", clearPointer);
+  window.addEventListener("pagehide", () => { pageActive = false; updateMotion(); });
+  window.addEventListener("pageshow", () => { pageActive = true; updateMotion(); });
+  updateMotion();
+}
+
 if (toggle && navigation) {
   const menuLabel = toggle.querySelector(".sr-only");
   const japanese = document.documentElement.lang === "ja";
