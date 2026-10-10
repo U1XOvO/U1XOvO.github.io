@@ -505,7 +505,7 @@ const paperCardBodies = [...paperHtml.matchAll(/<article class="paper-card">([\s
 assert.equal(paperCardBodies.length, papers.papers.length, "rendered paper card count must match papers.json");
 for (const [index, cardBody] of paperCardBodies.entries()) {
   assert.equal((cardBody.match(/<a\b/g) || []).length, 1, `${papers.papers[index].id} paper card must contain exactly one link`);
-  assert.match(cardBody, /<a class="text-link"[^>]*>View publication /, `${papers.papers[index].id} paper card link must be View publication`);
+  assert.match(cardBody, /<a class="text-link"[^>]*>View publication<\/a>/, `${papers.papers[index].id} paper card link must be View publication`);
   const metrics = papers.journalMetrics[papers.papers[index].venue];
   assert.match(cardBody, new RegExp(`<span>IF<\\/span><strong>${metrics.impactFactor.replace(".", "\\.")}<\\/strong>`), `${papers.papers[index].id} missing current IF`);
   assert.match(cardBody, new RegExp(`<span>5Y IF<\\/span><strong>${metrics.fiveYearImpactFactor.replace(".", "\\.")}<\\/strong>`), `${papers.papers[index].id} missing current 5Y IF`);

@@ -115,7 +115,7 @@ function layout({ title, description, pathname, content, pageClass = "", languag
     <main id="main">${content}</main>
     <footer class="site-footer shell">
       <p>© ${new Date().getFullYear()} ${escapeHtml(profile.name)}</p>
-      <a href="${escapeHtml(profile.github)}" rel="noreferrer">GitHub ↗</a>
+      <a href="${escapeHtml(profile.github)}" rel="noreferrer">GitHub</a>
     </footer>
     <script type="module" src="/site.js"></script>
   </body>
@@ -137,8 +137,8 @@ const homeProjectCards = profile.featuredProjectIds.map((id, index) => {
   const project = projectsData.projects.find((entry) => entry.id === id);
   if (!project) throw new Error(`Unknown featured project: ${id}`);
   return `<article class="home-work-card tone-${["blue", "green", "pink"][index % 3]}">
-    ${projectVisual(project)}<div class="home-work-content"><div class="project-meta"><span>${String(index + 1).padStart(2, "0")}</span><span>Open-source project</span></div>
-    <h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.description)}</p><a class="text-link" href="/projects/#${escapeHtml(project.id)}">Explore project <span aria-hidden="true">↗</span></a></div>
+    ${projectVisual(project)}<div class="home-work-content">
+    <h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.description)}</p><a class="text-link" href="/projects/#${escapeHtml(project.id)}">Explore project</a></div>
   </article>`;
 }).join("");
 const homePaper = papersData.papers.find(({ id }) => id === profile.featuredPaperId);
@@ -152,9 +152,8 @@ const home = layout({
   content: `
     <section class="home-profile editorial-hero shell" aria-labelledby="profile-title">
       <div class="hero-copy" data-hero-playground>
-        <h1 class="hero-title" id="profile-title" aria-label="${escapeHtml(researchWords.join(" "))}">${researchHeading}</h1>
         <button class="hero-molecule" type="button" data-hero-remix aria-label="Animate the molecule" title="Animate the molecule" disabled><img class="hero-molecule-art" src="/images/hero-molecule.svg" alt="" width="80" height="80" decoding="async"></button>
-        <div class="hero-actions"><a class="button button-primary" href="/projects/">Explore projects <span aria-hidden="true">↗</span></a><a class="button button-quiet" href="/paper/">Publications <span aria-hidden="true">↗</span></a></div>
+        <h1 class="hero-title" id="profile-title" aria-label="${escapeHtml(researchWords.join(" "))}">${researchHeading}</h1>
       </div>
       <aside class="profile-information hero-profile">
         <a class="hero-avatar" href="${escapeHtml(profile.github)}" rel="noreferrer" aria-label="Open ${escapeHtml(profile.handle)} on GitHub"><img src="${escapeHtml(profile.avatar)}" alt="${escapeHtml(profile.handle)} GitHub avatar" width="1149" height="1149" fetchpriority="high" decoding="async"></a>
@@ -165,14 +164,14 @@ const home = layout({
       </aside>
     </section>
     <section class="home-work shell" aria-labelledby="home-work-title">
-      <div class="section-heading editorial-section-heading"><div><p class="eyebrow">Selected work</p><h2 id="home-work-title">${escapeHtml(profile.workHeading)}</h2></div><a class="text-link" href="/projects/">All projects <span aria-hidden="true">↗</span></a></div>
+      <div class="section-heading editorial-section-heading"><div><h2 id="home-work-title">${escapeHtml(profile.workHeading)}</h2></div></div>
       <div class="home-work-grid">${homeProjectCards}</div>
     </section>
     <section class="home-publication shell" aria-labelledby="home-publication-title">
       <figure class="home-publication-figure"><img src="${escapeHtml(homePaper.image)}" alt="${escapeHtml(homePaper.imageAlt)}" width="520" height="337" loading="lazy" decoding="async"><figcaption>${escapeHtml(homePaper.imageCredit)}</figcaption></figure>
-      <div class="home-publication-copy"><p class="eyebrow">Publication · ${escapeHtml(homePaper.year)} · ${escapeHtml(homePaper.venue)}</p><h2 id="home-publication-title">${escapeHtml(homePaper.title)}</h2><p>${escapeHtml(homePaper.citation)}</p><a class="text-link" href="/paper/">Explore publication <span aria-hidden="true">↗</span></a></div>
+      <div class="home-publication-copy"><h2 id="home-publication-title">${escapeHtml(homePaper.title)}</h2><p>${escapeHtml(homePaper.citation)}</p><a class="text-link" href="/paper/">Explore publication</a></div>
     </section>
-    <section class="home-library shell" aria-labelledby="home-library-title"><div><p class="eyebrow">Reading collection</p><h2 id="home-library-title">${escapeHtml(literature.source.collection.replaceAll("+", " + "))}</h2><p>${literature.records.length} papers · ${literature.topics.filter(({ id }) => id !== "all").length} topics</p></div><a class="button button-quiet" href="/library/">Explore Literature <span aria-hidden="true">↗</span></a></section>`
+    <section class="home-library shell" aria-labelledby="home-library-title"><div><p class="eyebrow">Reading collection</p><h2 id="home-library-title">${escapeHtml(literature.source.collection.replaceAll("+", " + "))}</h2><p>${literature.records.length} papers · ${literature.topics.filter(({ id }) => id !== "all").length} topics</p></div><a class="button button-quiet" href="/library/">Explore Literature</a></section>`
 });
 
 const pageTitle = (title, sizeClass = "") => `
@@ -209,7 +208,7 @@ const projectCards = projectsData.projects.length ? projectsData.projects.map((p
   const tagList = project.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
   const highlights = project.highlights.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
   const link = project.url
-    ? `<a class="text-link" href="${escapeHtml(project.url)}"${project.url.startsWith("http") ? ' rel="noreferrer"' : ""}>View repository <span aria-hidden="true">↗</span></a>`
+    ? `<a class="text-link" href="${escapeHtml(project.url)}"${project.url.startsWith("http") ? ' rel="noreferrer"' : ""}>View repository</a>`
     : "";
   const workflow = `<dl class="project-workflow">${project.workflow.map(({ label, value }) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}</dl>`;
   const example = project.example;
@@ -285,7 +284,7 @@ literature.records.forEach((record) => {
         </details>`;
   const searchText = [record.title, ...record.authors, record.venue, record.doi, ...record.tags].join(" ");
   const publicationLink = record.url
-    ? `<a class="text-link" href="${escapeHtml(record.url)}" rel="noreferrer">View publication <span aria-hidden="true">↗</span></a>`
+    ? `<a class="text-link" href="${escapeHtml(record.url)}" rel="noreferrer">View publication</a>`
     : '<span class="reading-link-gap">Publication link unavailable in Zotero</span>';
   const doi = record.doi
     ? `<span class="reading-doi">DOI ${escapeHtml(record.doi)}</span>`
@@ -449,7 +448,7 @@ const paperCards = papersData.papers.length
               <span class="journal-metric journal-metric-5y"><span>5Y IF</span><strong>${escapeHtml(journalMetrics.fiveYearImpactFactor)}</strong></span>
             </div>
           </div>
-          <a class="text-link" href="${paperLink}" rel="noreferrer">View publication <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="${paperLink}" rel="noreferrer">View publication</a>
           <p class="paper-doi">DOI: ${escapeHtml(paper.doi)}</p>
         </div>
       </article>`;
