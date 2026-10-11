@@ -1,7 +1,6 @@
 const toggle = document.querySelector(".nav-toggle");
 const navigation = document.querySelector(".site-nav");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const normalizeText = (value) => String(value || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase().trim();
 
 const heroPlayground = document.querySelector("[data-hero-playground]");
 if (heroPlayground) {
@@ -115,25 +114,6 @@ if (toggle && navigation) {
     if (event.relatedTarget && !navigation.contains(event.relatedTarget) && !toggle.contains(event.relatedTarget)) setMenuOpen(false);
   });
   window.matchMedia("(min-width: 901px)").addEventListener("change", () => setMenuOpen(false));
-}
-
-const gameSearch = document.querySelector("[data-game-search]");
-if (gameSearch) {
-  const cards = [...document.querySelectorAll("[data-game-name]")].map((node) => ({node, name: normalizeText(node.dataset.gameName)}));
-  const platforms = [...document.querySelectorAll(".game-platform")];
-  const status = document.querySelector("[data-game-status]");
-  const reset = document.querySelector("[data-game-reset]");
-  const update = () => {
-    const query = normalizeText(gameSearch.value);
-    let visible = 0;
-    cards.forEach(({node, name}) => { node.hidden = Boolean(query) && !name.includes(query); if (!node.hidden) visible += 1; });
-    platforms.forEach((platform) => { platform.querySelector("[data-game-empty]").hidden = Boolean(platform.querySelector(".game-card:not([hidden])")); });
-    status.textContent = query ? `Showing ${visible} of ${cards.length} games matching “${gameSearch.value.trim()}”` : "Browse by name or jump to a platform.";
-    reset.disabled = !gameSearch.value;
-  };
-  gameSearch.addEventListener("input", update);
-  gameSearch.addEventListener("search", update);
-  reset.addEventListener("click", () => { gameSearch.value = ""; update(); gameSearch.focus(); });
 }
 
 const imageViewer = document.querySelector("#literature-viewer");

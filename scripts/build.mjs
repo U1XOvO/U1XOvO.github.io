@@ -191,7 +191,7 @@ const formatAnimeDate = (value) => {
 };
 
 const orderAnimeWorks = (works) => [...works].sort((left, right) =>
-  left.firstReleased.localeCompare(right.firstReleased) || left.id.localeCompare(right.id, "ja")
+  right.firstReleased.localeCompare(left.firstReleased) || left.id.localeCompare(right.id, "ja")
 );
 
 const animeCard = (work, variant = "") => `<article class="anime-card${variant ? ` ${variant}` : ""} tone-${escapeHtml(work.tone)}" data-anime-id="${escapeHtml(work.id)}">
@@ -478,7 +478,7 @@ const shelfCards = acgn.shelves.length ? acgn.shelves.map((shelf) => {
 }).join("") : "";
 
 const gameCards = (games, platform) => games.length
-  ? games.map((game) => `<figure class="game-card ${platform}-game-card" data-game-name="${escapeHtml(game.name)}">
+  ? games.map((game) => `<figure class="game-card ${platform}-game-card">
       <div class="game-cover ${platform}-game-cover">
         ${thumbnailPicture({ image: game.image, alt: game.imageAlt })}
       </div>
@@ -488,6 +488,15 @@ const gameCards = (games, platform) => games.length
 
 const steamGames = gameCards(acgn.steam.games, "steam");
 const switchGames = gameCards(acgn.nintendoSwitch.games, "switch");
+const steamProfile = acgn.steam.profile;
+// Display crops preserve the uploaded screenshot's pixels at every breakpoint.
+const profileCropStyle = (crop, prefix) => [
+  `--${prefix}-ratio:${crop.width} / ${crop.height}`,
+  `--${prefix}-width:${(100 * steamProfile.screenshotWidth / crop.width).toFixed(6)}%`,
+  `--${prefix}-left:${(-100 * crop.x / crop.width).toFixed(6)}%`,
+  `--${prefix}-top:${(-100 * crop.y / crop.height).toFixed(6)}%`
+].join(";");
+const steamProfileStyle = `${profileCropStyle(steamProfile.crop, "profile")};${profileCropStyle(steamProfile.mobileCrop, "profile-mobile")}`;
 const acgnPage = layout({
   title: "Gamer",
   description: "Explore U1X's Steam and Nintendo Switch game collections.",
@@ -495,35 +504,23 @@ const acgnPage = layout({
   pageClass: "page-acgn",
   content: `<div class="shell page-shell content-page-shell">
     ${pageTitle("Gamer", "page-title-acgn")}
-    <div class="game-browse" id="game-browse">
-      <label class="reading-control game-search"><span>Find a game</span><input type="search" data-game-search placeholder="Search Steam &amp; Nintendo Switch" autocomplete="off"></label>
-      <nav class="game-platform-nav" aria-label="Game platforms"><a class="utility-button" href="#steam-games-title">Steam <span aria-hidden="true">↓</span></a><a class="utility-button" href="#switch-games-title">Nintendo Switch <span aria-hidden="true">↓</span></a></nav>
-      <button class="utility-button" type="button" data-game-reset disabled>Clear search</button>
-      <p class="game-search-status" role="status" aria-live="polite" data-game-status>Browse by name or jump to a platform.</p>
-    </div>
     <section class="game-platform steam-platform" aria-labelledby="steam-games-title">
       <h2 class="game-platform-title steam-platform-title" id="steam-games-title">Steam Games</h2>
+      <a class="steam-profile-card" href="${escapeHtml(steamProfile.sourceUrl)}" aria-label="Visit ${escapeHtml(steamProfile.handle)} on Steam" style="${steamProfileStyle}">
+        <span class="steam-profile-shot"><img class="steam-profile-screenshot" src="${escapeHtml(steamProfile.screenshot)}" alt="${escapeHtml(steamProfile.screenshotAlt)}" width="${steamProfile.screenshotWidth}" height="${steamProfile.screenshotHeight}" decoding="async" draggable="false"></span>
+        <span class="steam-profile-action" aria-hidden="true">Steam profile <span>↗</span></span>
+      </a>
       <div class="game-grid" aria-label="Steam game collection">${steamGames}</div>
-      <p data-game-empty hidden>No Steam games match this search.</p>
-      <a class="back-to-top" href="#game-browse">Back to search <span aria-hidden="true">↑</span></a>
     </section>
     <section class="game-platform switch-platform" aria-labelledby="switch-games-title">
       <h2 class="game-platform-title switch-platform-title" id="switch-games-title">Nintendo Switch</h2>
       <div class="game-grid" aria-label="Nintendo Switch game collection">${switchGames}</div>
-      <p data-game-empty hidden>No Nintendo Switch games match this search.</p>
-      <a class="back-to-top" href="#game-browse">Back to top <span aria-hidden="true">↑</span></a>
     </section>
     ${shelfCards ? `<section class="shelf-grid" aria-label="Other ACGN collection categories">${shelfCards}</section>` : ""}
   </div>`
 });
 
 const anime = acgn.anime;
-const nijigenCategories = [
-  { pathname: "/anime/", label: "アニメ" }
-];
-const nijigenSubnavigation = (pathname) => `<nav class="nijigen-subnav" aria-label="にじげんのカテゴリ">${nijigenCategories
-  .map(({ pathname: categoryPath, label }) => `<a href="${categoryPath}"${categoryPath === pathname ? ' aria-current="page"' : ""}>${escapeHtml(label)}</a>`)
-  .join("")}</nav>`;
 const animeDeityWorks = orderAnimeWorks(anime.deity.works);
 const animeFavoriteWorks = orderAnimeWorks(anime.favorites);
 const animeDeityCards = animeDeityWorks.map((work) => animeCard(work, "anime-deity-card")).join("");
@@ -538,7 +535,6 @@ const animePage = layout({
   navigationLanguage: "en",
   content: `<div class="shell page-shell content-page-shell">
     ${pageTitle(anime.title, "page-title-anime")}
-    ${nijigenSubnavigation("/anime/")}
     <section class="anime-section anime-deity-section" aria-labelledby="anime-deity-title">
       <div class="anime-section-heading anime-deity-heading">
         <p class="anime-deity-label">${escapeHtml(anime.deity.heading)}</p>
@@ -583,7 +579,7 @@ for (const [relativePath, html] of pages) {
   await writeFile(output, html, "utf8");
 }
 
-const sitemapPaths = [...new Set([...navigation.map(([pathname]) => pathname), ...nijigenCategories.map(({ pathname }) => pathname)])];
+const sitemapPaths = navigation.map(([pathname]) => pathname);
 const sitemap = sitemapPaths.map((pathname) => `  <url><loc>${new URL(pathname, site.url).href}</loc></url>`).join("\n");
 await writeFile(path.join(dist, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemap}\n</urlset>\n`, "utf8");
 

@@ -260,17 +260,17 @@
     "sourceUrl": "https://steamcommunity.com/id/U1X0217/games/?tab=all",
     "checkedOn": "2026-08-22",
     "profile": {
-      "source": "Steam Community public profile",
+      "source": "User-provided Steam Community profile screenshot",
       "sourceUrl": "https://steamcommunity.com/id/U1X0217/",
-      "checkedOn": "2026-08-22",
+      "checkedOn": "2026-10-11",
       "handle": "U1X0217",
-      "screenshot": "/images/steam-profile-header.png",
-      "screenshotMobile": "/images/steam-profile-header-mobile.png",
+      "screenshot": "/images/steam-profile-2026-10-11.png",
       "screenshotAlt": "Steam Community profile header with an anime avatar, profile name, level badge, and illustrated background",
-      "screenshotWidth": 2080,
-      "screenshotHeight": 465,
-      "screenshotMobileWidth": 1100,
-      "screenshotMobileHeight": 465
+      "screenshotWidth": 2558,
+      "screenshotHeight": 1108,
+      "sourceSha256": "0a86d8d3191edb124070f4d0df0c4c58a8069cdc454eac7b85f7ff258360277f",
+      "crop": { "x": 660, "y": 24, "width": 1220, "height": 256 },
+      "mobileCrop": { "x": 660, "y": 24, "width": 810, "height": 256 }
     },
     "totalGames": 181,
     "games": [
@@ -1367,7 +1367,7 @@
   },
   "anime": {
     "title": "アニメ",
-    "description": "好きなアニメーション作品を、最初の公開日順に並べた記録。",
+    "description": "好きなアニメーション作品を、最初の公開日が新しい順に並べた記録。",
     "coverProvider": "AniList",
     "deity": {
       "heading": "唯一真神！",
@@ -1928,6 +1928,19 @@
         "coverCheckedOn": "2026-08-22"
       },
       {
+        "id": "mahou-shoujo-ikusei-keikaku",
+        "title": "魔法少女育成計画",
+        "firstReleased": "2016-10-02",
+        "firstReleasedSource": "https://mahoiku.jp/about/onair.html",
+        "firstReleasedNote": "2016年10月1日24:00の放送を日本の暦日で2016年10月2日として記録。",
+        "metadataCheckedOn": "2026-10-11",
+        "tone": "pink",
+        "anilistId": 21340,
+        "image": "/images/anime/mahou-shoujo-ikusei-keikaku.jpg",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21340-0fOhJK8Qynmy.jpg",
+        "coverCheckedOn": "2026-10-11"
+      },
+      {
         "id": "fate-grand-order-first-order",
         "title": "Fate/Grand Order -First Order-",
         "firstReleased": "2016-12-31",
@@ -2326,6 +2339,56 @@
         "image": "/images/anime/yanineko.jpg",
         "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207141-h5q5KJPd6vaX.jpg",
         "coverCheckedOn": "2026-08-22"
+      },
+      {
+        "id": "fx-senshi-kurumi-chan",
+        "title": "FX戦士くるみちゃん",
+        "firstReleased": "2026-10-01",
+        "firstReleasedSource": "https://fxkurumi-info.com/onair/",
+        "metadataCheckedOn": "2026-10-11",
+        "tone": "green",
+        "anilistId": 206401,
+        "image": "/images/anime/fx-senshi-kurumi-chan.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206401-8cAebkI0i8BA.png",
+        "coverCheckedOn": "2026-10-11"
+      },
+      {
+        "id": "toaru-anbu-no-item",
+        "title": "とある暗部の少女共棲",
+        "firstReleased": "2026-10-03",
+        "firstReleasedSource": "https://toaru-project.com/item/onair/",
+        "firstReleasedNote": "第1話のABEMA一般公開先行配信日を記録。通常のテレビ放送は2026年10月9日開始。",
+        "metadataCheckedOn": "2026-10-11",
+        "tone": "blue",
+        "anilistId": 186742,
+        "image": "/images/anime/toaru-anbu-no-item.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx186742-v7yfbefc8fuO.png",
+        "coverCheckedOn": "2026-10-11"
+      },
+      {
+        "id": "seitokai-ni-mo-ana-wa-aru",
+        "title": "生徒会にも穴はある！",
+        "firstReleased": "2026-10-04",
+        "firstReleasedSource": "https://www.aniplex.co.jp/lineup/nama-anaru/",
+        "firstReleasedNote": "2026年10月3日24:30の放送を日本の暦日で2026年10月4日として記録。",
+        "metadataCheckedOn": "2026-10-11",
+        "tone": "pink",
+        "anilistId": 191656,
+        "image": "/images/anime/seitokai-ni-mo-ana-wa-aru.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx191656-xFHtxM8SUTdU.png",
+        "coverCheckedOn": "2026-10-11"
+      },
+      {
+        "id": "kyouran-reijou-nia-liston",
+        "title": "凶乱令嬢ニア・リストン 病弱令嬢に転生した神殺しの武人の華麗なる無双録",
+        "firstReleased": "2026-10-06",
+        "firstReleasedSource": "https://kyoranreijo-pr.com/",
+        "metadataCheckedOn": "2026-10-11",
+        "tone": "purple",
+        "anilistId": 206949,
+        "image": "/images/anime/kyouran-reijou-nia-liston.png",
+        "coverSource": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx206949-4HYI3YuP0eLI.png",
+        "coverCheckedOn": "2026-10-11"
       }
     ]
   }

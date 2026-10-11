@@ -76,7 +76,7 @@ Anime favorites are stored in `data/acgn.json`. After adding or changing an anim
 npm run sync:anime-covers
 ```
 
-The command keeps anime covers in `public/images/anime/`, records their AniList CDN source in the data snapshot, and leaves the rendered page independent of remote image URLs.
+The command keeps anime covers in `public/images/anime/`, records their AniList CDN source in the data snapshot, and leaves the rendered page independent of remote image URLs. To refresh selected entries, pass their stable IDs, for example `npm run sync:anime-covers -- mahou-shoujo-ikusei-keikaku`. The page displays each collection in descending first-release order.
 
 After refreshing Steam, Nintendo Switch, Anime covers, or project images, regenerate the browser-ready thumbnails:
 

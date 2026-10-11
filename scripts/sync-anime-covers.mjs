@@ -8,7 +8,12 @@ const dataPath = path.join(root, "data", "acgn.json");
 const outputDirectory = path.join(root, "public", "images", "anime");
 const data = JSON.parse(await readFile(dataPath, "utf8"));
 const anime = data.anime;
-const works = anime ? [...(anime.deity?.works || []), ...(anime.favorites || [])] : [];
+const allWorks = anime ? [...(anime.deity?.works || []), ...(anime.favorites || [])] : [];
+const selectedIds = new Set(process.argv.slice(2));
+for (const id of selectedIds) {
+  if (!allWorks.some((work) => work.id === id)) throw new Error(`unknown Anime work id: ${id}`);
+}
+const works = selectedIds.size ? allWorks.filter((work) => selectedIds.has(work.id)) : allWorks;
 
 if (!anime || !Array.isArray(anime.deity?.works) || !Array.isArray(anime.favorites) || works.length === 0) {
   throw new Error("data/acgn.json does not contain an Anime collection");

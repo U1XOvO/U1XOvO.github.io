@@ -86,7 +86,8 @@ button { color: inherit; font: inherit; }
 .page-title-projects h1 { color: #a85f79; }
 .page-title-literature h1 { color: #527c98; }
 .page-title-paper h1 { color: #56836a; }
-.page-title-acgn h1 { color: #8068a6; }
+/* Align the large G's visible edge with the smaller Steam Games heading. */
+.page-title-acgn h1 { color: #8068a6; transform: translateX(-0.025em); }
 .page-title-switch h1 { color: #a85f79; }
 .page-title-anime h1 { color: #8068a6; }
 .card-label { margin: 0 0 14px; color: var(--muted); font-size: 0.7rem; font-weight: 760; letter-spacing: 0.13em; text-transform: uppercase; }
@@ -300,10 +301,6 @@ html.image-viewer-open { overflow: hidden; scrollbar-gutter: stable; }
 .game-platform + .shelf-grid { margin-top: 100px; }
 
 .anime-section + .anime-section { margin-top: clamp(82px, 11vw, 144px); }
-.nijigen-subnav { width: fit-content; max-width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: calc(-1 * clamp(20px, 3vw, 36px)) 0 clamp(48px, 6vw, 78px); padding: 6px; border-radius: 999px; }
-.nijigen-subnav a { min-height: 38px; display: inline-flex; align-items: center; justify-content: center; padding: 0 16px; border: 1px solid transparent; border-radius: 999px; color: var(--muted); font-family: var(--sans); font-size: 0.82rem; font-weight: 760; letter-spacing: 0.02em; white-space: nowrap; transition: color 180ms ease, transform 180ms var(--liquid-ease), background 180ms ease, box-shadow 180ms ease; }
-.nijigen-subnav a:hover { color: var(--ink); transform: translateY(-1px); }
-.nijigen-subnav a[aria-current="page"] { border-color: rgba(255,255,255,0.78); background: rgba(232,225,248,0.58); box-shadow: inset 0 1px 0 rgba(255,255,255,0.84), 0 5px 13px rgba(102,84,142,0.12); color: #715895; }
 .anime-section-heading { max-width: 780px; margin-bottom: 28px; }
 .anime-section-heading h2 { margin: 0; font-family: var(--sans); font-size: clamp(2.45rem, 5.8vw, 5.25rem); font-weight: 620; line-height: 0.9; letter-spacing: 0.045em; }
 .anime-section-heading > p { max-width: 640px; margin: 18px 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.8; }
@@ -316,10 +313,10 @@ html.image-viewer-open { overflow: hidden; scrollbar-gutter: stable; }
 .anime-card { min-width: 0; display: flex; flex-direction: column; padding: 8px; border-radius: 22px; }
 .anime-deity-card { grid-column: span 2; padding: 8px; border-radius: 22px; }
 .anime-deity-card:nth-child(5) { grid-column: 2 / span 2; }
-.anime-cover { overflow: hidden; border: 1px solid rgba(255,255,255,0.75); border-bottom-color: rgba(80,94,122,0.16); border-radius: 15px; background: linear-gradient(145deg, rgba(248,220,230,0.27), rgba(220,238,250,0.25)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.78); }
+.anime-cover { position: relative; aspect-ratio: 2 / 3; flex-shrink: 0; overflow: hidden; border: 1px solid rgba(255,255,255,0.75); border-bottom-color: rgba(80,94,122,0.16); border-radius: 15px; background: linear-gradient(145deg, rgba(248,220,230,0.27), rgba(220,238,250,0.25)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.78); }
 .anime-deity-card .anime-cover { border-radius: 15px; }
-.anime-cover picture { display: block; }
-.anime-cover img { width: 100%; height: auto; display: block; }
+.anime-cover picture { position: absolute; inset: 0; display: block; }
+.anime-cover img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
 .anime-card-content { display: flex; flex: 1; flex-direction: column; padding: 13px 5px 5px; }
 .anime-deity-card .anime-card-content { align-items: center; padding: 11px 4px 4px; font-family: var(--sans); text-align: center; }
 .anime-release { color: var(--tone-strong); font-size: 0.68rem; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: 0.04em; }
@@ -359,8 +356,9 @@ html.image-viewer-open { overflow: hidden; scrollbar-gutter: stable; }
 .reading-card,
 .paper-card,
 .game-card,
+.steam-profile-card,
+.steam-profile-action,
 .anime-card,
-.nijigen-subnav,
 .anime-deity-heading,
 .shelf-card,
 .empty-state {
@@ -387,8 +385,8 @@ html.image-viewer-open { overflow: hidden; scrollbar-gutter: stable; }
 .reading-card::before,
 .paper-card::before,
 .game-card::before,
+.steam-profile-card::before,
 .anime-card::before,
-.nijigen-subnav::before,
 .anime-deity-heading::before,
 .shelf-card::before,
 .empty-state::before {
@@ -534,8 +532,6 @@ code,
   .game-card { border-radius: 18px; }
   .game-cover { border-radius: 13px; }
   .anime-section + .anime-section { margin-top: 82px; }
-  .nijigen-subnav { width: 100%; margin: -12px 0 46px; border-radius: 24px; }
-  .nijigen-subnav a { flex: 1 1 122px; padding: 0 12px; }
   .anime-section-heading { margin-bottom: 22px; }
   .anime-section-heading h2 { font-size: clamp(2.25rem, 12vw, 3.45rem); }
   .anime-deity-heading { --anime-deity-heading-size: clamp(1.7rem, 8.7vw, 2.5rem); padding: 24px 20px; border-radius: 26px; }
@@ -584,16 +580,7 @@ code,
 .reading-footer .text-link { min-height: 44px; display: inline-flex; align-items: center; padding-top: 0; }
 .reading-empty { margin-top: 20px; }
 #reading-list { scroll-margin-top: 100px; }
-.game-browse { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px; align-items: end; margin-bottom: 28px; scroll-margin-top: 100px; }
-.game-search input { width: 100%; min-height: 50px; padding: 12px 15px; border: 1px solid var(--glass-border); border-bottom-color: var(--glass-edge); border-radius: 16px; background: var(--glass-fill-strong); font: inherit; }
-.game-platform-nav { display: flex; flex-wrap: wrap; gap: 8px; }
-.game-search-status { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 0.82rem; }
 .game-platform-title { scroll-margin-top: 100px; }
-.back-to-top { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 20px; color: #527c98; font-size: 0.86rem; font-weight: 720; }
-@media (max-width: 900px) {
-  .game-browse { grid-template-columns: minmax(0, 1fr) auto; }
-  .game-search { grid-column: 1 / -1; }
-}
 @media (max-width: 680px) {
   .project-card { padding: 24px 20px; border-radius: 26px; }
   .project-card h2 { font-size: 2rem; overflow-wrap: anywhere; }
@@ -602,9 +589,6 @@ code,
   .topic-filter { flex: 1 1 125px; padding: 10px; font-size: 0.7rem; text-align: left; }
   .reading-actions { gap: 8px; }
   .reading-browse-layout .reading-card { padding: 20px; }
-  .game-browse { grid-template-columns: 1fr; }
-  .game-browse > .utility-button { justify-self: start; }
-  .game-platform-nav .utility-button { flex: 1; font-size: 0.74rem; }
   .anime-release, .anime-deity-card .anime-release { font-size: 0.65rem; }
 }
 
@@ -746,7 +730,28 @@ code,
 .game-cover { border-radius: 9px; }
 .steam-game-cover img { object-fit: contain; }
 .game-card figcaption { font-size: 11px; }
-.game-search input { border-radius: 999px; }
+.steam-profile-card { display: block; margin-bottom: 28px; padding: 7px; border-radius: 22px; background: linear-gradient(135deg, var(--glass-fill-strong), var(--glass-fill)); user-select: none; transition: transform 300ms var(--liquid-ease), box-shadow 300ms var(--liquid-ease), border-color 300ms ease; }
+.steam-profile-shot { position: relative; display: block; overflow: hidden; aspect-ratio: var(--profile-ratio); border-radius: 15px; }
+.steam-profile-screenshot { position: absolute; display: block; width: var(--profile-width); max-width: none; height: auto; left: var(--profile-left); top: var(--profile-top); transition: transform 500ms var(--liquid-ease); }
+.steam-profile-card::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.18) 48%, transparent 62%); transform: translateX(-105%); transition: transform 700ms var(--liquid-ease); }
+.steam-profile-action { position: absolute; right: 20px; bottom: 20px; z-index: 2; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 12px; color: var(--ink); background: var(--glass-fill-strong); font-size: 12px; font-weight: 700; opacity: 0; transform: translateY(4px); transition: opacity 250ms ease, transform 250ms var(--liquid-ease); pointer-events: none; }
+.steam-profile-card:focus-visible { transform: translateY(-2px); border-color: var(--blue-strong); box-shadow: var(--glass-shadow-hover); }
+.steam-profile-card:focus-visible .steam-profile-screenshot { transform: scale(1.015); }
+.steam-profile-card:focus-visible::after { transform: translateX(105%); }
+.steam-profile-card:focus-visible .steam-profile-action { opacity: 1; transform: none; }
+@media (hover: hover) {
+  .steam-profile-card:hover { transform: translateY(-2px); border-color: var(--blue-strong); box-shadow: var(--glass-shadow-hover); }
+  .steam-profile-card:hover .steam-profile-screenshot { transform: scale(1.015); }
+  .steam-profile-card:hover::after { transform: translateX(105%); }
+  .steam-profile-card:hover .steam-profile-action { opacity: 1; transform: none; }
+}
+@media (hover: none) { .steam-profile-action { opacity: 1; transform: none; } }
+@media (max-width: 680px) {
+  .steam-profile-card { padding: 5px; border-radius: 18px; }
+  .steam-profile-shot { aspect-ratio: var(--profile-mobile-ratio); border-radius: 12px; }
+  .steam-profile-screenshot { width: var(--profile-mobile-width); left: var(--profile-mobile-left); top: var(--profile-mobile-top); }
+  .steam-profile-action { right: 12px; bottom: 12px; padding: 6px 9px; font-size: 10px; }
+}
 .anime-section + .anime-section { margin-top: 64px; }
 .anime-section-heading h2 { font-size: 32px; }
 .anime-deity-heading { --anime-deity-heading-size: clamp(1.5rem,2.8vw,2.25rem); padding: 28px; border-radius: 24px; }
@@ -859,8 +864,9 @@ code,
   .reading-card,
   .paper-card,
   .game-card,
+  .steam-profile-card,
+  .steam-profile-action,
   .anime-card,
-  .nijigen-subnav,
   .shelf-card,
   .empty-state,
   .anime-deity-heading {
@@ -873,7 +879,6 @@ code,
   .page-library .topic-filter,
   .page-library .reading-topic { background: var(--tone); }
   .reading-control input,
-  .game-search input,
   .reading-year-trigger,
   .reading-featured-filter-button,
   .reading-year-menu,
@@ -893,4 +898,6 @@ code,
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .hero-letter, .hero-molecule-art, .profile-information.hero-profile { animation: none !important; }
   .hero-letter > span { transform: none !important; }
+  .steam-profile-card, .steam-profile-screenshot, .steam-profile-action { transform: none !important; }
+  .steam-profile-card::after { display: none; }
 }

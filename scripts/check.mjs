@@ -205,20 +205,27 @@ for (const field of ["source", "sourceUrl", "checkedOn"]) {
 assert.equal(acgn.steam.sourceUrl, "https://steamcommunity.com/id/U1X0217/games/?tab=all", "Steam source URL must match the provided public games page");
 assert.match(acgn.steam.checkedOn, /^\d{4}-\d{2}-\d{2}$/, "Steam checkedOn must be an ISO date");
 assert.ok(acgn.steam.profile && typeof acgn.steam.profile === "object", "Steam profile metadata must be present");
-for (const field of ["source", "sourceUrl", "checkedOn", "handle", "screenshot", "screenshotMobile", "screenshotAlt", "screenshotWidth", "screenshotHeight", "screenshotMobileWidth", "screenshotMobileHeight"]) {
+for (const field of ["source", "sourceUrl", "checkedOn", "handle", "screenshot", "screenshotAlt", "screenshotWidth", "screenshotHeight", "sourceSha256", "crop", "mobileCrop"]) {
   assert.ok(acgn.steam.profile[field], `Steam profile metadata missing ${field}`);
 }
 assert.equal(acgn.steam.profile.sourceUrl, "https://steamcommunity.com/id/U1X0217/", "Steam profile URL must match the provided public profile");
 assert.match(acgn.steam.profile.checkedOn, /^\d{4}-\d{2}-\d{2}$/, "Steam profile checkedOn must be an ISO date");
 assert.equal(acgn.steam.profile.handle, "U1X0217", "Steam profile handle must match the public profile URL");
-assert.equal(acgn.steam.profile.screenshot, "/images/steam-profile-header.png", "Steam profile screenshot must use the local canonical path");
-assert.equal(acgn.steam.profile.screenshotMobile, "/images/steam-profile-header-mobile.png", "Steam profile mobile screenshot must use the local canonical path");
+assert.match(acgn.steam.profile.screenshot, /^\/images\/steam-profile-[\w-]+\.png$/, "Steam profile screenshot must use a local PNG path");
 assert.match(acgn.steam.profile.screenshotAlt, /\S/, "Steam profile screenshot needs meaningful alternative text");
-for (const field of ["screenshotWidth", "screenshotHeight", "screenshotMobileWidth", "screenshotMobileHeight"]) {
+for (const field of ["screenshotWidth", "screenshotHeight"]) {
   assert.ok(Number.isInteger(acgn.steam.profile[field]) && acgn.steam.profile[field] > 0, `Steam profile ${field} must be a positive integer`);
 }
-await access(path.join(root, "public", acgn.steam.profile.screenshot.slice(1)));
-await access(path.join(root, "public", acgn.steam.profile.screenshotMobile.slice(1)));
+const steamProfileBytes = await readFile(path.join(root, "public", acgn.steam.profile.screenshot.slice(1)));
+assert.equal(createHash("sha256").update(steamProfileBytes).digest("hex"), acgn.steam.profile.sourceSha256, "Steam profile screenshot must match its source hash");
+assert.equal(steamProfileBytes.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", "Steam profile screenshot must be PNG");
+assert.equal(steamProfileBytes.readUInt32BE(16), acgn.steam.profile.screenshotWidth, "Steam profile screenshot width must match the file");
+assert.equal(steamProfileBytes.readUInt32BE(20), acgn.steam.profile.screenshotHeight, "Steam profile screenshot height must match the file");
+for (const crop of [acgn.steam.profile.crop, acgn.steam.profile.mobileCrop]) {
+  for (const field of ["x", "y", "width", "height"]) assert.ok(Number.isInteger(crop[field]) && crop[field] >= 0, `Steam profile crop ${field} must be a nonnegative integer`);
+  assert.ok(crop.width > 0 && crop.height > 0, "Steam profile crop must have positive dimensions");
+  assert.ok(crop.x + crop.width <= acgn.steam.profile.screenshotWidth && crop.y + crop.height <= acgn.steam.profile.screenshotHeight, "Steam profile crop must remain inside the screenshot");
+}
 assert.ok(Array.isArray(acgn.steam.games), "Steam games must be an array");
 assert.ok(acgn.steam.games.length > 0, "Steam games must not be empty");
 assert.equal(acgn.steam.totalGames, acgn.steam.games.length, "Steam game count must match the game array");
@@ -369,7 +376,9 @@ assert.doesNotMatch(libraryHtml, /Knowledge archipelago|data-knowledge-map|data-
 assert.match(libraryHtml, /<body class="page-library">/, "Literature page must expose its page class for scoped scrolling performance styles");
 assert.match(acgnHtml, /<h1>Gamer<\/h1>/, "Gamer page must render its page title");
 assert.match(acgnHtml, /<body class="page-acgn">/, "Gamer page must expose its page class for scoped performance styles");
-assert.doesNotMatch(acgnHtml, /data-steam-profile|steam-profile-screenshot|steamcommunity\.com|store\.steampowered\.com/, "Gamer must display the owned-game collection without account screenshots or external profile/store links");
+assert.doesNotMatch(acgnHtml, /store\.steampowered\.com/, "Game cards must omit external store links");
+assert.ok(acgnHtml.includes(`<a class="steam-profile-card" href="${escapeHtml(acgn.steam.profile.sourceUrl)}"`), "Steam profile screenshot must link to the specified profile");
+assert.ok(acgnHtml.includes(`class="steam-profile-screenshot" src="${escapeHtml(acgn.steam.profile.screenshot)}"`), "Steam profile must render the provided local screenshot");
 assert.match(acgnHtml, /<h2 class="game-platform-title steam-platform-title"[^>]*>Steam Games<\/h2>/, "Gamer page must emphasize Steam Games");
 assert.match(acgnHtml, /Steam Games[\s\S]*Nintendo Switch/, "Steam games must render above Nintendo Switch games");
 assert.equal((acgnHtml.match(/class="game-card steam-game-card"/g) || []).length, acgn.steam.games.length, "rendered Steam card count must match its data");
@@ -382,8 +391,7 @@ for (const game of [...acgn.steam.games, ...acgn.nintendoSwitch.games]) {
 assert.match(homeHtml, /<a href="\/acgn\/">Gamer<\/a><a href="\/anime\/">にじげん<\/a>/, "primary navigation must end with Gamer and にじげん");
 assert.match(animeHtml, /<html lang="ja">/, "Anime page must declare Japanese document language");
 assert.match(animeHtml, /<nav class="site-nav" id="site-nav" lang="en" aria-label="Primary navigation"><a href="\/">Home<\/a><a href="\/projects\/">Projects<\/a><a href="\/library\/">Literature<\/a><a href="\/paper\/">Paper<\/a><a href="\/acgn\/">Gamer<\/a><a href="\/anime\/" aria-current="page">にじげん<\/a><\/nav>/, "Anime page navigation must keep English shared labels and the にじげん route label");
-const nijigenSubnavigation = '<nav class="nijigen-subnav" aria-label="にじげんのカテゴリ"><a href="/anime/" aria-current="page">アニメ</a></nav>';
-assert.ok(animeHtml.includes(nijigenSubnavigation), "Anime page must retain the single-entry にじげん subnavigation");
+assert.doesNotMatch(animeHtml, /nijigen-subnav|にじげんのカテゴリ/, "Anime page must omit the removed category subnavigation");
 assert.match(animeHtml, /<nav class="site-nav" id="site-nav" lang="en" aria-label="Primary navigation">[\s\S]*?<a href="\/anime\/" aria-current="page">にじげん<\/a><\/nav>/, "Anime page must keep the parent にじげん link active in the shared navigation");
 assert.match(animeHtml, /<h1>アニメ<\/h1>/, "Anime page must render its Japanese title");
 assert.doesNotMatch(animeHtml, /\/manga\/|\/virtual-liver\/|漫畫|バーチャルライバー/, "Anime subnavigation must not retain removed category entries");
@@ -393,9 +401,9 @@ assert.match(animeHtml, /<h2 id="anime-favorites-title">お気に入り<\/h2>/, 
 assert.doesNotMatch(animeHtml, /<h1>Anime<\/h1>|Explore U1X's anime collection\.|No content yet|Content will be added later\.|初公開日順。同じ作品の複数シーズンはひとつにまとめています|『プリズマ☆イリヤ』だけは、各作品をひとつずつ並べています。/, "Anime page must omit removed explanatory copy");
 const renderedAnimeIds = [...animeHtml.matchAll(/data-anime-id="([^"]+)"/g)].map((match) => match[1]);
 const orderedAnimeIds = (works) => [...works]
-  .sort((left, right) => left.firstReleased.localeCompare(right.firstReleased) || left.id.localeCompare(right.id, "ja"))
+  .sort((left, right) => right.firstReleased.localeCompare(left.firstReleased) || left.id.localeCompare(right.id, "ja"))
   .map(({ id }) => id);
-assert.deepEqual(renderedAnimeIds, [...orderedAnimeIds(anime.deity.works), ...orderedAnimeIds(anime.favorites)], "rendered anime cards must follow first-release order");
+assert.deepEqual(renderedAnimeIds, [...orderedAnimeIds(anime.deity.works), ...orderedAnimeIds(anime.favorites)], "rendered anime cards must show newest first within each collection");
 assert.equal((animeHtml.match(/anime-deity-card/g) || []).length, anime.deity.works.length, "rendered deity card count must match data");
 assert.equal((animeHtml.match(/<article class="anime-card(?:\s|")/g) || []).length, animeWorks.length, "rendered anime card count must match data");
 for (const work of animeWorks) {
@@ -407,7 +415,6 @@ for (const work of animeWorks) {
 }
 const styles = await readFile(path.join(root, "public", "styles.css"), "utf8");
 assert.match(styles, /\.anime-grid\s*\{[^}]*grid-template-columns:\s*repeat\(6,\s*minmax\(0,\s*1fr\)\)/s, "favorite Anime grid must use six desktop columns");
-assert.match(styles, /\.nijigen-subnav\s*\{[^}]*display:\s*flex;[^}]*flex-wrap:\s*wrap/s, "にじげん subnavigation must remain responsive");
 assert.doesNotMatch(styles, /\.virtual-liver-/, "removed virtual-liver styles must not remain");
 assert.match(styles, /\.anime-deity-grid\s*\{[^}]*grid-template-columns:\s*repeat\(8,\s*minmax\(0,\s*1fr\)\)/s, "Prisma Illya grid must use paired tracks for four desktop cards per row");
 assert.match(styles, /\.anime-deity-card\s*\{[^}]*grid-column:\s*span 2/s, "Prisma Illya cards must span two tracks");
@@ -418,8 +425,7 @@ assert.match(styles, /\.anime-deity-heading\s*>\s*\.anime-deity-label\s*\{[^}]*w
 assert.match(styles, /\.anime-deity-heading h2\s*\{[^}]*font-size:\s*var\(--anime-deity-heading-size\)/s, "Prisma Illya label and title must share one font size");
 assert.match(styles, /\.anime-deity-card \.anime-card-content\s*\{[^}]*align-items:\s*center;[^}]*text-align:\s*center/s, "Prisma Illya card text must be centered");
 const animeCoverRule = styles.match(/\.anime-cover img\s*\{([^}]*)\}/)?.[1] || "";
-assert.match(animeCoverRule, /height:\s*auto/, "anime covers must preserve their native height");
-assert.doesNotMatch(animeCoverRule, /object-fit/, "anime covers must not crop their native aspect ratio");
+assert.match(animeCoverRule, /object-fit:\s*cover/, "anime covers must fill their shared frame with proportional cropping");
 assert.match(libraryHtml, /<section class="reading-section"/, "Literature page must render the reading list section");
 assert.equal((libraryHtml.match(/<section class=/g) || []).length, 2, "Literature page must contain exactly two content sections");
 assert.equal((libraryHtml.match(/class="reading-list-item"/g) || []).length, literature.records.length, "rendered reading list count must match literature records");
