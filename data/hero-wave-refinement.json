@@ -1,0 +1,24 @@
+{
+  "refinedOn": "2026-10-18",
+  "sourceRigRecord": "data/hero-rig-provenance.json",
+  "assetsChanged": false,
+  "reason": "Correct the hand registration, align the pivot to the wrist root, and reduce the stiff side-to-side wave.",
+  "canvas": [1254, 1254],
+  "hand": {
+    "offsetPercent": [0.16, -1.6],
+    "offsetPixels": [2.0064, -20.064],
+    "pivotPercent": [84.5, 57.3],
+    "pivotPixels": [1059.63, 718.542],
+    "angleRangeDegrees": [-4, 5],
+    "durationSeconds": 6.8,
+    "timing": "cubic-bezier(.45,0,.55,1), with neutral pauses",
+    "cuffForegroundSource": "/images/bio-mascot-rig-neutral.webp",
+    "cuffForegroundClip": "polygon(81.8% 56.6%,84.6% 57.3%,88.9% 58.6%,91% 65%,79% 65%)"
+  },
+  "centering": {
+    "basis": "Horizontal alpha envelope over the complete revised wave and hair motion, alpha threshold > 16",
+    "envelopePixels": [-4.323585117849291, 1222.8967804743552],
+    "offsetPercent": 1.4126
+  },
+  "visualReview": "Neutral pose and both angular limits were reviewed at 1000px character width in the built-in browser."
+}

@@ -31,6 +31,8 @@ const thumbnailVariant = (image, extension) => {
   return `/images/thumbnails/${image.slice(prefix.length, extensionIndex)}.${extension}`;
 };
 const thumbnailFile = (image, extension) => path.join(root, "public", thumbnailVariant(image, extension).slice(1));
+const attributeValue = (tag, name) => tag.match(new RegExp(`\\b${escapeRegExp(name)}="([^"]*)"`))?.[1];
+const tagsWithAttribute = (html, tagName, attribute) => [...html.matchAll(new RegExp(`<${tagName}\\b[^>]*\\s${escapeRegExp(attribute)}(?:="[^"]*")?(?=\\s|>)[^>]*>`, "g"))].map(([tag]) => tag);
 
 assert.ok(Array.isArray(projects.projects), "projects.json must contain a projects array");
 for (const project of projects.projects) {
@@ -74,6 +76,10 @@ assert.ok(Array.isArray(profile.featuredProjectIds), "homepage featured projects
 assert.equal(new Set(profile.featuredProjectIds).size, profile.featuredProjectIds.length, "homepage featured projects must be unique");
 for (const id of profile.featuredProjectIds) assert.ok(projects.projects.some((project) => project.id === id), `unknown homepage project: ${id}`);
 assert.ok(papers.papers.some((paper) => paper.id === profile.featuredPaperId), "homepage publication must reference a real paper");
+assert.match(profile.heroMascot?.image || "", /^\/images\/[a-z0-9-]+\.webp$/, "homepage mascot must use a local WebP path");
+assert.ok(profile.heroMascot.imageAlt?.trim(), "homepage mascot needs meaningful alternative text");
+assert.ok(profile.heroMascot.interactionLabel?.trim(), "homepage mascot interaction needs an accessible label");
+assert.ok(Number.isInteger(profile.heroMascot.width) && profile.heroMascot.width > 0 && Number.isInteger(profile.heroMascot.height) && profile.heroMascot.height > 0, "homepage mascot needs positive native dimensions");
 
 assert.ok(Array.isArray(literature.topics), "literature.json topics must be an array");
 assert.ok(Array.isArray(literature.edges), "literature.json edges must be an array");
@@ -339,6 +345,27 @@ for (const relativeHtml of htmlFiles) {
   assert.match(html, /<meta name="description" content="[^"]+">/, `${relativeHtml} needs a description`);
   assert.match(html, /<link rel="canonical" href="https:\/\/u1xovo\.github\.io\//, `${relativeHtml} needs a canonical URL`);
   assert.doesNotMatch(html, /codex-preview|Starter Project|react-loading-skeleton/i, `${relativeHtml} contains starter metadata`);
+  for (const property of ["og:title", "og:description", "og:url", "og:image"]) {
+    assert.match(html, new RegExp(`<meta property="${property}" content="[^"]+">`), `${relativeHtml} needs ${property} metadata`);
+  }
+  for (const name of ["twitter:card", "twitter:title", "twitter:description", "twitter:image"]) {
+    assert.match(html, new RegExp(`<meta name="${name}" content="[^"]+">`), `${relativeHtml} needs ${name} metadata`);
+  }
+  const fontPreload = tagsWithAttribute(html, "link", "href").find((tag) => attributeValue(tag, "href") === "/fonts/inter-latin-variable.woff2");
+  assert.ok(fontPreload, `${relativeHtml} must preload the local Inter font`);
+  assert.equal(attributeValue(fontPreload, "rel"), "preload", `${relativeHtml} font hint must preload`);
+  assert.equal(attributeValue(fontPreload, "as"), "font", `${relativeHtml} font preload must identify its resource type`);
+  assert.equal(attributeValue(fontPreload, "type"), "font/woff2", `${relativeHtml} font preload must identify its format`);
+  assert.match(fontPreload, /\scrossorigin(?:="(?:anonymous)?")?(?=\s|>)/, `${relativeHtml} font preload needs matching CORS mode`);
+  const footers = [...html.matchAll(/<footer\b[^>]*class="[^"]*\bsite-footer\b[^"]*"[^>]*>([\s\S]*?)<\/footer>/g)];
+  assert.equal(footers.length, 1, `${relativeHtml} must contain one shared site footer`);
+  const footer = footers[0][1];
+  assert.ok(tagsWithAttribute(footer, "a", "href").some((tag) => attributeValue(tag, "href") === escapeHtml(profile.github)), `${relativeHtml} footer must retain the profile GitHub link`);
+  assert.equal(tagsWithAttribute(footer, "time", "data-local-clock").length, 1, `${relativeHtml} footer must contain one semantic local clock`);
+  assert.match(footer, /Shanghai|上海/, `${relativeHtml} footer must identify the clock location`);
+  if (relativeHtml !== "library/index.html") {
+    assert.equal(tagsWithAttribute(html, "[a-z][a-z0-9]*", "data-reading-preview").length, 0, `${relativeHtml} must not contain the Literature preview`);
+  }
 
   for (const match of html.matchAll(linkPattern)) {
     const reference = match[1].split("#")[0].split("?")[0];
@@ -356,12 +383,62 @@ for (const relativeHtml of htmlFiles) {
 }
 
 assert.deepEqual(missing, [], `broken internal links:\n${missing.join("\n")}`);
+const interFont = await readFile(path.join(root, "public", "fonts", "inter-latin-variable.woff2"));
+assert.equal(interFont.toString("ascii", 0, 4), "wOF2", "self-hosted Inter asset must be a WOFF2 font");
+assert.equal(interFont.readUInt32BE(8), interFont.length, "self-hosted Inter font must have a complete WOFF2 payload");
+assert.deepEqual(await readFile(path.join(dist, "fonts", "inter-latin-variable.woff2")), interFont, "build must preserve the local font bytes");
 const paperHtml = await readFile(path.join(dist, "paper", "index.html"), "utf8");
 const acgnHtml = await readFile(path.join(dist, "acgn", "index.html"), "utf8");
 const animeHtml = await readFile(path.join(dist, "anime", "index.html"), "utf8");
 const homeHtml = await readFile(path.join(dist, "index.html"), "utf8");
 const projectsHtml = await readFile(path.join(dist, "projects", "index.html"), "utf8");
 const libraryHtml = await readFile(path.join(dist, "library", "index.html"), "utf8");
+const notFoundHtml = await readFile(path.join(dist, "404.html"), "utf8");
+assert.equal(tagsWithAttribute(homeHtml, "[a-z][a-z0-9]*", "data-hero-scroll").length, 1, "homepage must contain one hero scroll wrapper");
+assert.doesNotMatch(homeHtml, /\b(?:data-helix-node|hero-guide)\b/, "homepage must omit the removed helix guide cards");
+assert.doesNotMatch(homeHtml, /\b(?:data-helix-canvas|data-dna-[\w-]+)\b/, "homepage must replace the old animated DNA artwork");
+const mascotImages = tagsWithAttribute(homeHtml, "img", "data-hero-mascot-art");
+assert.equal(mascotImages.length, 1, "homepage must contain one biology mascot image");
+for (const [attribute, value] of [["src", profile.heroMascot.image], ["alt", profile.heroMascot.imageAlt], ["width", String(profile.heroMascot.width)], ["height", String(profile.heroMascot.height)]]) {
+  assert.equal(attributeValue(mascotImages[0], attribute), escapeHtml(value), `homepage mascot ${attribute} must match its configured artwork`);
+}
+for (const className of ["home-publication", "home-library"]) {
+  const section = tagsWithAttribute(homeHtml, "section", "data-reveal").find((tag) => attributeValue(tag, "class")?.split(/\s+/).includes(className));
+  assert.ok(section, `homepage ${className} must participate in progressive scroll reveals`);
+}
+assert.equal(tagsWithAttribute(homeHtml, "article", "data-reveal").filter((tag) => attributeValue(tag, "class")?.split(/\s+/).includes("home-work-card")).length, profile.featuredProjectIds.length, "every featured project card must participate in progressive scroll reveals");
+assert.equal(tagsWithAttribute(projectsHtml, "[a-z][a-z0-9]*", "data-project-filmstrip").length, 1, "Projects must contain one filmstrip");
+const projectTracks = tagsWithAttribute(projectsHtml, "section", "data-project-track");
+assert.equal(projectTracks.length, 1, "Projects must contain one filmstrip track");
+for (const [attribute, value] of [["id", "project-track"], ["tabindex", "0"], ["role", "region"], ["aria-label", "Project list"]]) {
+  assert.equal(attributeValue(projectTracks[0], attribute), value, `project track must expose ${attribute}=${value}`);
+}
+assert.deepEqual(tagsWithAttribute(projectsHtml, "article", "data-project-item").map((tag) => attributeValue(tag, "id")), projects.projects.map(({ id }) => id), "project filmstrip must preserve every project exactly once in data order");
+for (const direction of ["prev", "next"]) {
+  const buttons = tagsWithAttribute(projectsHtml, "button", `data-project-${direction}`);
+  assert.equal(buttons.length, 1, `Projects must have one ${direction} control`);
+  assert.equal(attributeValue(buttons[0], "aria-controls"), "project-track", `project ${direction} control must identify its track`);
+  assert.equal(attributeValue(buttons[0], "type"), "button", `project ${direction} control must not submit forms`);
+  assert.ok(attributeValue(buttons[0], "aria-label"), `project ${direction} control must have an accessible name`);
+}
+assert.equal(tagsWithAttribute(projectsHtml, "output", "data-project-progress").length, 1, "Projects must expose one semantic progress output");
+const readingPreviews = tagsWithAttribute(libraryHtml, "[a-z][a-z0-9]*", "data-reading-preview");
+assert.equal(readingPreviews.length, 1, "Literature must reuse one hover preview");
+assert.match(readingPreviews[0], /\shidden(?=\s|>)/, "Literature hover preview must start hidden");
+assert.equal(attributeValue(readingPreviews[0], "aria-hidden"), "true", "hover preview must not duplicate accessible viewer content");
+const previewImages = tagsWithAttribute(libraryHtml, "img", "data-preview-image");
+assert.equal(previewImages.length, 1, "Literature preview must reuse one image");
+assert.equal(attributeValue(previewImages[0], "alt"), "", "decorative hover image must not repeat thumbnail alternative text");
+assert.equal(attributeValue(previewImages[0], "src"), undefined, "hover preview must not load an image until requested");
+assert.equal(tagsWithAttribute(libraryHtml, "[a-z][a-z0-9]*", "data-preview-label").length, 1, "Literature preview must include a figure label");
+assert.equal(tagsWithAttribute(notFoundHtml, "[a-z][a-z0-9]*", "data-lost-playground").length, 1, "404 must contain one molecule playground");
+const lostRemix = tagsWithAttribute(notFoundHtml, "button", "data-lost-remix");
+assert.equal(lostRemix.length, 1, "404 must contain one molecule remix control");
+assert.equal(attributeValue(lostRemix[0], "aria-label"), "Remix the molecule", "404 remix must have an accessible name");
+assert.match(notFoundHtml, /<svg\b[^>]*aria-hidden="true"/, "404 molecule artwork must be decorative");
+assert.match(notFoundHtml, /This page has not grown yet\./, "404 must preserve its existing heading");
+assert.match(notFoundHtml, /href="\/">Back home<\/a>/, "404 must retain its homepage escape route");
+assert.match(notFoundHtml, /href="\/library\/">Literature garden<\/a>/, "404 must retain its Literature escape route");
 for (const [html, entries] of [[homeHtml, projects.projects.filter(({ id }) => profile.featuredProjectIds.includes(id))], [projectsHtml, projects.projects]]) {
   for (const project of entries) {
     const visual = project.cover || project.example;
@@ -370,12 +447,11 @@ for (const [html, entries] of [[homeHtml, projects.projects.filter(({ id }) => p
   }
 }
 assert.doesNotMatch(homeHtml, /class="profile-github"/, "homepage profile header must not render the GitHub handle row");
-assert.match(homeHtml, /<footer class="site-footer shell">[\s\S]*?<a href="https:\/\/github\.com\/U1XOvO"/, "footer must retain the GitHub link");
 assert.match(libraryHtml, /<section class="reading-filter-section" aria-label="Filter research papers">/, "Literature page must retain its paper filters");
 assert.doesNotMatch(libraryHtml, /Knowledge archipelago|data-knowledge-map|data-map-stage|knowledge-island|map-bridge|graph-paper-node/, "Literature page must omit the knowledge map");
-assert.match(libraryHtml, /<body class="page-library">/, "Literature page must expose its page class for scoped scrolling performance styles");
+assert.ok(tagsWithAttribute(libraryHtml, "body", "class").some((tag) => attributeValue(tag, "class")?.split(/\s+/).includes("page-library")), "Literature page must expose its page class for scoped scrolling performance styles");
 assert.match(acgnHtml, /<h1>Gamer<\/h1>/, "Gamer page must render its page title");
-assert.match(acgnHtml, /<body class="page-acgn">/, "Gamer page must expose its page class for scoped performance styles");
+assert.ok(tagsWithAttribute(acgnHtml, "body", "class").some((tag) => attributeValue(tag, "class")?.split(/\s+/).includes("page-acgn")), "Gamer page must expose its page class for scoped performance styles");
 assert.doesNotMatch(acgnHtml, /store\.steampowered\.com/, "Game cards must omit external store links");
 assert.ok(acgnHtml.includes(`<a class="steam-profile-card" href="${escapeHtml(acgn.steam.profile.sourceUrl)}"`), "Steam profile screenshot must link to the specified profile");
 assert.ok(acgnHtml.includes(`class="steam-profile-screenshot" src="${escapeHtml(acgn.steam.profile.screenshot)}"`), "Steam profile must render the provided local screenshot");

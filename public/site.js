@@ -6,10 +6,19 @@ const heroPlayground = document.querySelector("[data-hero-playground]");
 if (heroPlayground) {
   const letters = [...heroPlayground.querySelectorAll("[data-hero-letter]")];
   const remix = heroPlayground.querySelector("[data-hero-remix]");
-  const molecule = remix.querySelector("img");
+  const mascot = remix.querySelector("[data-hero-mascot-art]");
+  const mascotEntry = remix.querySelector("[data-mascot-entry]") || mascot;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
   const offsets = letters.map(() => ({ lift: "0.00px", tilt: "0.00deg" }));
-  let visible = true, pageActive = true, frame = 0, pointer = null, centers = [], burst = [];
+  let visible = !("IntersectionObserver" in window), pageActive = true;
+  let mascotReady = false, mascotEntered = false, preparingMascot = false;
+  let frame = 0, pointer = null, centers = [], burst = [], decodeTimer;
+  heroPlayground.dataset.mascotReady = "false";
+  // A stalled request must not leave the no-JavaScript-visible artwork hidden.
+  const preparationTimer = setTimeout(() => { heroPlayground.dataset.mascotReady = "true"; }, 8000);
+  const arrivalAnimations = () => typeof mascotEntry.getAnimations === "function"
+    ? mascotEntry.getAnimations({ subtree: true }).filter((animation) => animation.animationName?.startsWith("mascot-arrive-"))
+    : [];
   const clearPointer = () => {
     if (!frame && !pointer) return;
     cancelAnimationFrame(frame);
@@ -23,11 +32,87 @@ if (heroPlayground) {
   };
   const cancelBurst = () => { burst.forEach((animation) => animation.cancel()); burst = []; };
   const updateMotion = () => {
-    const active = visible && pageActive && !document.hidden && !reduceMotion.matches;
+    const foreground = visible && pageActive && !document.hidden;
+    if (mascotReady && foreground && !mascotEntered) {
+      mascotEntered = true;
+      heroPlayground.dataset.mascotEntered = "true";
+    }
+    const active = mascotReady && foreground && !reduceMotion.matches;
     heroPlayground.dataset.motionActive = String(active);
-    remix.disabled = !active || typeof molecule.animate !== "function";
+    remix.disabled = !active || typeof mascot.animate !== "function";
     if (!active) { clearPointer(); cancelBurst(); }
+    arrivalAnimations().forEach((animation) => {
+      if (!active && animation.playState === "running") animation.pause();
+      else if (active && animation.playState === "paused") animation.play();
+    });
   };
+  const finishMascotPreparation = () => {
+    if (mascotReady) return;
+    mascotReady = true;
+    clearTimeout(preparationTimer);
+    clearTimeout(decodeTimer);
+    heroPlayground.dataset.mascotReady = "true";
+    updateMotion();
+  };
+  const prepareMascot = () => {
+    if (preparingMascot || mascotReady) return;
+    preparingMascot = true;
+    if (!mascot.naturalWidth || typeof mascot.decode !== "function") {
+      finishMascotPreparation();
+      return;
+    }
+    // Loading has completed; decode failures or a hung decode still release the artwork.
+    decodeTimer = setTimeout(finishMascotPreparation, 8000);
+    try { Promise.resolve(mascot.decode()).then(finishMascotPreparation, finishMascotPreparation); }
+    catch { finishMascotPreparation(); }
+  };
+  mascot.addEventListener("load", prepareMascot, { once: true });
+  mascot.addEventListener("error", finishMascotPreparation, { once: true });
+  // Reveal the articulated character only after every layer is usable. The
+  // complete illustration remains visible if a request or decode fails.
+  const mascotParts = [...remix.querySelectorAll("[data-mascot-part]")];
+  if (mascotParts.length === 4) {
+    let rigSettled = false, preparedParts = 0;
+    const rigListeners = [];
+    const finishRigPreparation = (ready) => {
+      if (rigSettled) return;
+      rigSettled = true;
+      clearTimeout(rigTimer);
+      rigListeners.forEach(([part, loaded, failed]) => {
+        part.removeEventListener("load", loaded);
+        part.removeEventListener("error", failed);
+      });
+      heroPlayground.dataset.mascotRig = ready ? "ready" : "fallback";
+    };
+    const rigTimer = setTimeout(() => finishRigPreparation(false), 8000);
+    mascotParts.forEach((part) => {
+      if (rigSettled) return;
+      let preparing = false;
+      const failed = () => finishRigPreparation(false);
+      const loaded = () => {
+        if (preparing || rigSettled) return;
+        preparing = true;
+        if (!part.naturalWidth || !part.naturalHeight || typeof part.decode !== "function") {
+          failed();
+          return;
+        }
+        const decoded = () => {
+          if (rigSettled) return;
+          if (!part.naturalWidth || !part.naturalHeight) { failed(); return; }
+          preparedParts += 1;
+          if (preparedParts === mascotParts.length) finishRigPreparation(true);
+        };
+        try { Promise.resolve(part.decode()).then(decoded, failed); }
+        catch { failed(); }
+      };
+      part.addEventListener("load", loaded, { once: true });
+      part.addEventListener("error", failed, { once: true });
+      rigListeners.push([part, loaded, failed]);
+      if (part.complete) loaded();
+    });
+  } else if (mascotParts.length) {
+    heroPlayground.dataset.mascotRig = "fallback";
+  }
   const measureLetters = () => {
     centers = letters.map((letter) => {
       const rect = letter.parentElement.getBoundingClientRect();
@@ -65,26 +150,33 @@ if (heroPlayground) {
     cancelBurst();
     const animations = letters.map((letter, index) => letter.animate([
       { transform: "translateY(0) rotate(0)" },
-      { transform: `translateY(-12px) rotate(${index % 2 ? 3 : -3}deg)`, offset: .32 },
+      { transform: `translateY(-6px) rotate(${index % 2 ? 2 : -2}deg)`, offset: .32 },
       { transform: "translateY(3px) rotate(0)", offset: .65 },
       { transform: "translateY(0) rotate(0)" }
     ], { duration: 720, delay: index * 32, easing: "cubic-bezier(.22,1,.36,1)" }));
-    animations.push(molecule.animate([
-      { transform: "rotate(0) scale(1)" },
-      { transform: "rotate(180deg) scale(1.06)", offset: .5 },
-      { transform: "rotate(360deg) scale(1)" }
-    ], { duration: 1120, easing: "cubic-bezier(.22,1,.36,1)" }));
+    const arrivals = arrivalAnimations();
+    arrivals.forEach((animation) => { animation.currentTime = 0; animation.play(); });
+    // Older markup still gets the small greeting jump without stacking two entrances.
+    if (!arrivals.length) animations.push(mascot.animate([
+      { transform: "translateY(0) rotate(0)" },
+      { transform: "translateY(-6px) rotate(-2deg)", offset: .32 },
+      { transform: "translateY(-2px) rotate(1.5deg)", offset: .65 },
+      { transform: "translateY(0) rotate(0)" }
+    ], { duration: 900, easing: "cubic-bezier(.22,1,.36,1)" }));
     burst = animations;
     Promise.allSettled(animations.map((animation) => animation.finished)).then(() => {
       if (burst === animations) burst = [];
     });
   });
-  new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; updateMotion(); }).observe(heroPlayground);
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; updateMotion(); }).observe(remix);
+  }
   document.addEventListener("visibilitychange", updateMotion);
   reduceMotion.addEventListener("change", updateMotion);
   finePointer.addEventListener("change", clearPointer);
   window.addEventListener("pagehide", () => { pageActive = false; updateMotion(); });
   window.addEventListener("pageshow", () => { pageActive = true; updateMotion(); });
+  if (mascot.complete) prepareMascot();
   updateMotion();
 }
 
@@ -312,6 +404,354 @@ if (imageViewer) {
   stage.addEventListener("pointercancel", endPointer);
   stage.addEventListener("lostpointercapture", endPointer);
   window.addEventListener("resize", resize, { passive: true });
+}
+
+// Enhancement state is scoped to this document, including back/forward-cache restores.
+const fineHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+let enhancementsActive = true;
+window.addEventListener("pagehide", () => { enhancementsActive = false; });
+window.addEventListener("pageshow", () => { enhancementsActive = true; });
+
+const hoverPreview = document.querySelector("[data-reading-preview]");
+const readingList = document.querySelector("#reading-list");
+if (hoverPreview && readingList) {
+  const previewImage = hoverPreview.querySelector("[data-preview-image]");
+  const previewLabel = hoverPreview.querySelector("[data-preview-label]");
+  let sourceButton = null, generation = 0, frame = 0, point = null;
+  let previewWidth = 0, previewHeight = 0, viewportWidth = innerWidth, viewportHeight = innerHeight;
+  const hidePreview = () => {
+    ++generation;
+    sourceButton = null;
+    point = null;
+    cancelAnimationFrame(frame);
+    frame = 0;
+    hoverPreview.hidden = true;
+    previewImage.removeAttribute("src");
+  };
+  const paintPreview = () => {
+    frame = 0;
+    if (!point || hoverPreview.hidden) return;
+    const gap = 22, edge = 12;
+    const left = point.x + gap + previewWidth <= viewportWidth - edge ? point.x + gap : point.x - gap - previewWidth;
+    const top = Math.min(point.y + gap, viewportHeight - previewHeight - edge);
+    hoverPreview.style.transform = `translate3d(${Math.max(edge, left)}px, ${Math.max(edge, top)}px, 0)`;
+  };
+  const queuePreview = () => { if (!frame) frame = requestAnimationFrame(paintPreview); };
+  readingList.addEventListener("pointerover", (event) => {
+    const button = event.target.closest("[data-reading-image]");
+    if (!button || button === sourceButton || button.contains(event.relatedTarget)
+      || event.pointerType === "touch" || !fineHover.matches || !enhancementsActive
+      || imageViewer?.open || button.closest("[hidden]")) return;
+    hidePreview();
+    const source = button.querySelector("img");
+    if (!source || !source.complete || !source.naturalWidth) return;
+    const token = ++generation;
+    sourceButton = button;
+    point = { x: event.clientX, y: event.clientY };
+    const scale = Math.min(296 / source.naturalWidth, 220 / source.naturalHeight, 1);
+    const width = source.naturalWidth * scale, height = source.naturalHeight * scale;
+    previewWidth = width + 24;
+    previewHeight = height + 48;
+    hoverPreview.style.width = `${previewWidth}px`;
+    previewImage.style.height = `${height}px`;
+    previewImage.alt = source.alt;
+    previewLabel.textContent = `${button.dataset.figureLabel} · Page ${button.dataset.sourcePage}`;
+    previewImage.src = source.currentSrc || source.src;
+    const decoded = typeof previewImage.decode === "function" ? previewImage.decode() : Promise.resolve();
+    decoded.then(() => {
+      if (generation !== token || sourceButton !== button || !fineHover.matches || !enhancementsActive || imageViewer?.open) return;
+      hoverPreview.hidden = false;
+      queuePreview();
+    }).catch(() => { if (generation === token) hidePreview(); });
+  });
+  readingList.addEventListener("pointermove", (event) => {
+    if (!sourceButton || event.pointerType === "touch") return;
+    point = { x: event.clientX, y: event.clientY };
+    queuePreview();
+  }, { passive: true });
+  readingList.addEventListener("pointerout", (event) => {
+    if (sourceButton && sourceButton.contains(event.target) && !sourceButton.contains(event.relatedTarget)) hidePreview();
+  });
+  readingList.addEventListener("pointercancel", hidePreview);
+  document.addEventListener("pointerdown", hidePreview, { passive: true, capture: true });
+  document.addEventListener("click", (event) => {
+    if (event.target.closest("[data-reading-image], [data-topic-filter], [data-reading-featured-filter], [data-reading-reset], [data-reading-year-option]")) hidePreview();
+  }, true);
+  document.addEventListener("input", (event) => { if (event.target.matches("[data-reading-search-input]")) hidePreview(); }, true);
+  document.addEventListener("change", (event) => { if (event.target.matches("[data-reading-year-filter]")) hidePreview(); }, true);
+  document.addEventListener("keydown", (event) => { if (event.key === "Escape" || event.key === "Tab") hidePreview(); });
+  document.addEventListener("visibilitychange", () => { if (document.hidden) hidePreview(); });
+  window.addEventListener("scroll", hidePreview, { passive: true, capture: true });
+  window.addEventListener("resize", () => { viewportWidth = innerWidth; viewportHeight = innerHeight; hidePreview(); }, { passive: true });
+  window.addEventListener("popstate", hidePreview);
+  window.addEventListener("pagehide", hidePreview);
+  fineHover.addEventListener("change", hidePreview);
+  // Filtering is owned by literature.js; observing only hidden attributes keeps that contract independent.
+  const filterObserver = new MutationObserver(() => { if (sourceButton) hidePreview(); });
+  filterObserver.observe(readingList, { subtree: true, attributes: true, attributeFilter: ["hidden"] });
+  if (imageViewer) new MutationObserver(() => { if (imageViewer.open) hidePreview(); }).observe(imageViewer, { attributes: true, attributeFilter: ["open"] });
+}
+
+const revealItems = [...document.querySelectorAll("[data-reveal]")];
+if (revealItems.length && "IntersectionObserver" in window) {
+  let revealObserver;
+  const reveal = (item) => {
+    item.dataset.revealState = "visible";
+    revealObserver?.unobserve(item);
+  };
+  const initializeReveals = () => {
+    revealObserver?.disconnect();
+    if (reduceMotion.matches) { revealItems.forEach(reveal); return; }
+    revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.closest("[hidden]")) reveal(entry.target);
+      });
+    }, { rootMargin: "0px 0px -20px 0px", threshold: 0.04 });
+    const siblings = new Map();
+    revealItems.forEach((item) => {
+      if (item.dataset.revealState === "visible") return;
+      const position = siblings.get(item.parentElement) || 0;
+      siblings.set(item.parentElement, position + 1);
+      item.style.setProperty("--reveal-delay", `${(position % 5) * 45}ms`);
+      // Do not conceal above-the-fold content or an item currently removed by filtering.
+      if (item.closest("[hidden]") || item.getBoundingClientRect().top < innerHeight - 20) { reveal(item); return; }
+      revealObserver.observe(item);
+      item.dataset.revealState = "pending";
+    });
+  };
+  document.addEventListener("focusin", (event) => {
+    const item = event.target.closest("[data-reveal]");
+    if (item) reveal(item);
+  });
+  reduceMotion.addEventListener("change", initializeReveals);
+  window.addEventListener("pagehide", () => revealObserver?.disconnect());
+  window.addEventListener("pageshow", initializeReveals);
+  initializeReveals();
+}
+
+const footer = document.querySelector("[data-footer-glow]");
+if (footer) {
+  const clock = footer.querySelector("[data-local-clock]");
+  const japanese = document.documentElement.lang === "ja";
+  let clockTimer = 0, glowFrame = 0, glowPoint = null, bounds = null;
+  const updateClock = () => {
+    clearTimeout(clockTimer);
+    if (!clock || !enhancementsActive || document.hidden) return;
+    const now = new Date();
+    clock.dateTime = now.toISOString();
+    clock.textContent = new Intl.DateTimeFormat(japanese ? "ja-JP" : "en-GB", {
+      timeZone: "Asia/Shanghai", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+    }).format(now);
+    clock.title = japanese ? "上海 · UTC+08:00" : "Shanghai · UTC+08:00";
+    clockTimer = setTimeout(updateClock, 60000 - now.getSeconds() * 1000 - now.getMilliseconds());
+  };
+  const clearGlow = () => {
+    cancelAnimationFrame(glowFrame);
+    glowFrame = 0;
+    glowPoint = null;
+    bounds = null;
+    delete footer.dataset.glowActive;
+  };
+  footer.addEventListener("pointerenter", (event) => {
+    if (event.pointerType !== "touch" && fineHover.matches && !reduceMotion.matches) bounds = footer.getBoundingClientRect();
+  });
+  footer.addEventListener("pointermove", (event) => {
+    if (!bounds || !fineHover.matches || reduceMotion.matches || !enhancementsActive || event.pointerType === "touch") return;
+    glowPoint = { x: event.clientX - bounds.left, y: event.clientY - bounds.top };
+    if (!glowFrame) glowFrame = requestAnimationFrame(() => {
+      glowFrame = 0;
+      if (!glowPoint) return;
+      footer.style.setProperty("--glow-x", `${glowPoint.x}px`);
+      footer.style.setProperty("--glow-y", `${glowPoint.y}px`);
+      footer.dataset.glowActive = "true";
+    });
+  }, { passive: true });
+  footer.addEventListener("pointerleave", clearGlow);
+  footer.addEventListener("pointercancel", clearGlow);
+  fineHover.addEventListener("change", clearGlow);
+  reduceMotion.addEventListener("change", clearGlow);
+  window.addEventListener("scroll", clearGlow, { passive: true });
+  window.addEventListener("resize", clearGlow, { passive: true });
+  document.addEventListener("visibilitychange", () => { clearGlow(); updateClock(); });
+  window.addEventListener("pagehide", () => { clearGlow(); clearTimeout(clockTimer); });
+  window.addEventListener("pageshow", updateClock);
+  updateClock();
+}
+
+const filmstrip = document.querySelector("[data-project-filmstrip]");
+if (filmstrip) {
+  const track = filmstrip.querySelector("[data-project-track]");
+  const cards = [...track.querySelectorAll("[data-project-item]")];
+  const controls = filmstrip.querySelector("[data-project-controls]");
+  const previous = filmstrip.querySelector("[data-project-prev]");
+  const next = filmstrip.querySelector("[data-project-next]");
+  const progress = filmstrip.querySelector("[data-project-progress]");
+  const desktop = window.matchMedia("(min-width: 901px)");
+  let trackFrame = 0, offsets = [], maximum = 0, current = 0, active = false;
+  const updateTrack = () => {
+    trackFrame = 0;
+    if (!enhancementsActive) return;
+    const position = track.scrollLeft;
+    current = offsets.reduce((nearest, value, index) => Math.abs(value - position) < Math.abs(offsets[nearest] - position) ? index : nearest, 0);
+    if (maximum > 0 && position >= maximum - 2) current = cards.length - 1;
+    previous.disabled = !active || position <= 2;
+    next.disabled = !active || position >= maximum - 2;
+    const label = `${cards.length ? current + 1 : 0} / ${cards.length}`;
+    if (progress.textContent !== label) progress.textContent = label;
+    filmstrip.style.setProperty("--project-progress", String(maximum > 0 ? position / maximum : 0));
+  };
+  const queueTrack = () => { if (!trackFrame && enhancementsActive) trackFrame = requestAnimationFrame(updateTrack); };
+  const measureTrack = () => {
+    const rect = track.getBoundingClientRect();
+    // Align controls with the CSS snap port; the track's leading padding is not a separate slide.
+    const snapPadding = parseFloat(getComputedStyle(track).scrollPaddingLeft) || 0;
+    offsets = cards.map((card) => Math.max(0, card.getBoundingClientRect().left - rect.left + track.scrollLeft - snapPadding));
+    maximum = Math.max(0, track.scrollWidth - track.clientWidth);
+    active = desktop.matches && maximum > 2;
+    controls.hidden = !active;
+    track.tabIndex = active ? 0 : -1;
+    track.setAttribute("aria-roledescription", active ? "carousel" : "project collection");
+    queueTrack();
+  };
+  const moveTrack = (index, behavior = reduceMotion.matches ? "instant" : "smooth") => {
+    if (!active || !cards.length) return;
+    track.scrollTo({ left: Math.max(0, Math.min(maximum, offsets[Math.max(0, Math.min(cards.length - 1, index))])), behavior });
+  };
+  const stepTrack = (direction) => {
+    if (!active) return;
+    const positions = [...new Set(offsets.map((offset) => Math.max(0, Math.min(maximum, offset))))];
+    const position = direction > 0 ? positions.find((offset) => offset > track.scrollLeft + 2)
+      : positions.reverse().find((offset) => offset < track.scrollLeft - 2);
+    if (position !== undefined) track.scrollTo({ left: position, behavior: reduceMotion.matches ? "instant" : "smooth" });
+  };
+  previous.addEventListener("click", () => stepTrack(-1));
+  next.addEventListener("click", () => stepTrack(1));
+  track.addEventListener("scroll", queueTrack, { passive: true });
+  track.addEventListener("keydown", (event) => {
+    if (!active || event.target !== track || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") stepTrack(event.key === "ArrowLeft" ? -1 : 1);
+    else moveTrack(event.key === "Home" ? 0 : cards.length - 1);
+  });
+  const restoreProjectHash = () => {
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const index = cards.findIndex((card) => card.id === id);
+    if (index >= 0) moveTrack(index, "instant");
+  };
+  const positionKey = () => `project-position:${location.pathname}${location.search}${location.hash}`;
+  const restoreProjectPosition = () => {
+    // Recreated history entries cannot rely on the browser retaining this nested scroller.
+    if (performance.getEntriesByType("navigation")[0]?.type === "back_forward") {
+      try {
+        const id = sessionStorage.getItem(positionKey());
+        const index = cards.findIndex((card) => card.id === id);
+        if (index >= 0) { moveTrack(index, "instant"); return; }
+      } catch { /* Storage may be disabled; the canonical anchor remains usable. */ }
+    }
+    restoreProjectHash();
+  };
+  window.addEventListener("hashchange", restoreProjectHash);
+  window.addEventListener("resize", measureTrack, { passive: true });
+  desktop.addEventListener("change", measureTrack);
+  if ("ResizeObserver" in window) new ResizeObserver(measureTrack).observe(track);
+  window.addEventListener("pagehide", () => {
+    cancelAnimationFrame(trackFrame);
+    trackFrame = 0;
+    if (!active || !cards.length) return;
+    const position = track.scrollLeft;
+    const nearest = position >= maximum - 2 ? cards.length - 1
+      : offsets.reduce((index, offset, candidate) => Math.abs(offset - position) < Math.abs(offsets[index] - position) ? candidate : index, 0);
+    try { sessionStorage.setItem(positionKey(), cards[nearest].id); } catch { /* Browsing does not require storage. */ }
+  });
+  window.addEventListener("pageshow", (event) => { measureTrack(); if (!event.persisted) restoreProjectPosition(); });
+  measureTrack();
+  restoreProjectPosition();
+}
+
+const lostPlayground = document.querySelector("[data-lost-playground]");
+if (lostPlayground) {
+  const remix = lostPlayground.querySelector("[data-lost-remix]");
+  const pieces = [...lostPlayground.querySelectorAll("[data-lost-atom]")];
+  const molecule = remix.querySelector("svg, img");
+  let lostFrame = 0, lostPoint = null, bounds = null, animations = [];
+  const resetLost = () => {
+    cancelAnimationFrame(lostFrame);
+    lostFrame = 0;
+    lostPoint = null;
+    bounds = null;
+    ["--lost-x", "--lost-y", "--lost-rotation"].forEach((property) => lostPlayground.style.removeProperty(property));
+  };
+  const stopLost = () => {
+    resetLost();
+    animations.forEach((animation) => animation.cancel());
+    animations = [];
+    remix.disabled = reduceMotion.matches || !enhancementsActive || document.hidden || typeof molecule?.animate !== "function";
+  };
+  lostPlayground.addEventListener("pointerenter", (event) => {
+    if (event.pointerType !== "touch" && fineHover.matches && !remix.disabled) bounds = lostPlayground.getBoundingClientRect();
+  });
+  lostPlayground.addEventListener("pointermove", (event) => {
+    if (!bounds || event.pointerType === "touch" || !fineHover.matches || remix.disabled) return;
+    lostPoint = { x: Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1)), y: Math.max(-1, Math.min(1, (event.clientY - bounds.top) / bounds.height * 2 - 1)) };
+    if (!lostFrame) lostFrame = requestAnimationFrame(() => {
+      lostFrame = 0;
+      if (!lostPoint) return;
+      lostPlayground.style.setProperty("--lost-x", `${lostPoint.x * 10}px`);
+      lostPlayground.style.setProperty("--lost-y", `${lostPoint.y * 8}px`);
+      lostPlayground.style.setProperty("--lost-rotation", `${lostPoint.x * 3}deg`);
+    });
+  }, { passive: true });
+  lostPlayground.addEventListener("pointerleave", resetLost);
+  lostPlayground.addEventListener("pointercancel", resetLost);
+  remix.addEventListener("click", () => {
+    if (remix.disabled) return;
+    animations.forEach((animation) => animation.cancel());
+    const targets = pieces.length ? pieces : [molecule];
+    animations = targets.map((piece, index) => {
+      const angle = index * Math.PI * 2 / targets.length;
+      return piece.animate([
+        { transform: "translate(0, 0) rotate(0) scale(1)" },
+        { transform: `translate(${Math.cos(angle) * 20}px, ${Math.sin(angle) * 20}px) rotate(${index % 2 ? 14 : -14}deg) scale(.92)`, offset: .36 },
+        { transform: "translate(0, 0) rotate(0) scale(1)" }
+      ], { duration: 900, delay: index * 30, easing: "cubic-bezier(.22,1,.36,1)" });
+    });
+    const current = animations;
+    Promise.allSettled(current.map((animation) => animation.finished)).then(() => { if (animations === current) animations = []; });
+  });
+  window.addEventListener("scroll", resetLost, { passive: true });
+  window.addEventListener("resize", resetLost, { passive: true });
+  fineHover.addEventListener("change", resetLost);
+  reduceMotion.addEventListener("change", stopLost);
+  document.addEventListener("visibilitychange", stopLost);
+  window.addEventListener("pagehide", stopLost);
+  window.addEventListener("pageshow", stopLost);
+  stopLost();
+}
+
+const ambianceSections = [...document.querySelectorAll("[data-section-ambiance]")];
+if (ambianceSections.length && "IntersectionObserver" in window) {
+  const visibleSections = new Map();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) visibleSections.set(entry.target, entry.intersectionRatio);
+      else visibleSections.delete(entry.target);
+    });
+    if (reduceMotion.matches || !enhancementsActive) return;
+    const current = [...visibleSections].sort((a, b) => b[1] - a[1])[0]?.[0];
+    if (current) document.body.dataset.ambiance = current.dataset.sectionAmbiance;
+  }, { rootMargin: "-15% 0px -20% 0px", threshold: [0, .15, .35, .6] });
+  const observeSections = () => {
+    observer.disconnect();
+    visibleSections.clear();
+    if (reduceMotion.matches) { delete document.body.dataset.ambiance; return; }
+    ambianceSections.forEach((section) => observer.observe(section));
+  };
+  reduceMotion.addEventListener("change", observeSections);
+  window.addEventListener("pagehide", () => observer.disconnect());
+  window.addEventListener("pageshow", observeSections);
+  observeSections();
 }
 
 import "./literature.js";

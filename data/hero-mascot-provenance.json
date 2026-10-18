@@ -1,0 +1,17 @@
+{
+  "image": "/images/bio-researcher-mascot.webp",
+  "source": "OpenAI ImageGen",
+  "mode": "built-in",
+  "generatedOn": "2026-10-18",
+  "selectedVariant": "Natural standing pose replacing the rejected seated illustration",
+  "originalDimensions": {
+    "width": 1024,
+    "height": 1536
+  },
+  "originalFormat": "PNG RGBA",
+  "webFormat": "WebP, quality 92, original dimensions, original alpha preserved",
+  "prompt": "Create ONE polished original cute anime biology researcher girl mascot for a light personal website, on actual transparent alpha background. This is a NEW anatomically coherent full-body illustration. Use a calm natural STANDING pose, near frontal with a very slight three-quarter turn. Her body is easy to read as one continuous structure: aligned ribcage and pelvis, natural neck and shoulders, two arms with correctly connected upper arms, elbows and forearms, two separate legs naturally descending from the hips, visible knees and ankles, feet side by side bearing her weight. No crossed legs, no sitting, no foreshortened limbs, no twisted torso. Cute stylized anime proportions about 4 heads tall, lovely moe face and large soft rose eyes, proportions internally consistent and natural within the anime style. Soft pale-lavender shoulder-length hair with faint mint tips and a tiny leaf-shaped hair clip, a small gentle smile and blush. A warm-white lab coat with open front over a mint blouse, a lavender bow, a neat knee-length lavender A-line skirt, opaque ivory tights, flat mint Mary Jane shoes. Sleeves and coat must not hide or confuse the limb attachments. Hold ONE small transparent petri dish at waist level with both hands in a simple relaxed pose: the left palm supports the dish from below, right hand lightly holds the near edge; natural fingers and wrists, hands clearly separated. The petri dish contains a few mint-green round bacterial colonies, and a capped specimen tube sits in her lab-coat breast pocket. Small understated protein-ribbon embroidery on her coat. Biology cues must be gentle and legible, character remains the focus. High-quality Japanese 2D anime illustration, fine crisp linework, soft cel shading and delicate pastel highlights; charming and elegant, not a corporate vector, not 3D. Warm white, blush pink, mint green, sky blue, soft lavender only. Entire head, hair, hands, shoes and coat fully inside frame, a little clear margin on every side. Portrait-oriented cutout composition, no scene, no furniture, no additional characters, no drawn checkerboard, no colored backdrop, no white rectangle or frame. No text, no watermark, no logo, no sexualized elements. Visually verify the whole body's anatomy and hand placements before finalizing. Output a single finished standalone transparent character asset, not a mockup.",
+  "originalSha256": "c24f84f2ae59d33155186a9f50aeea08aa4660a4d7b793b75d0e76f987a32aef",
+  "imageSha256": "344229be6f0e80ca5f700441fbe096bf03703bf7fb254b375fb03815b2ec1541",
+  "alphaValidation": "Original RGBA alpha channel and WebP alpha channel matched pixel for pixel."
+}

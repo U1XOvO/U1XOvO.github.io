@@ -19,7 +19,8 @@ const mime = {
   ".json": "application/json; charset=utf-8",
   ".png": "image/png",
   ".svg": "image/svg+xml",
-  ".webp": "image/webp"
+  ".webp": "image/webp",
+  ".woff2": "font/woff2"
 };
 
 const server = createServer(async (request, response) => {

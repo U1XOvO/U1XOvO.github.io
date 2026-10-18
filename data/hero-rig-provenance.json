@@ -1,0 +1,105 @@
+{
+  "source": "OpenAI ImageGen",
+  "mode": "built-in",
+  "generatedOn": "2026-10-18",
+  "reference": "Existing silver-haired mascot based on the user-supplied character",
+  "referenceImage": "/images/bio-researcher-silver-chibi.webp",
+  "referenceSha256": "fc9aea4ed25b2516727de57e5d8c649fc654015ffb9dda7f82d27889bf36eae8",
+  "assets": {
+    "neutral": {
+      "image": "/images/bio-mascot-rig-neutral.webp",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        27,
+        2,
+        1208,
+        1248
+      ],
+      "originalSha256": "181ce576dafd27f13c16626cadb14cfff658fb67a80a560c4e293c6c2ef43175",
+      "imageSha256": "40faf1bf6ecac548ebf5ea1c2ffa2df7fe06cfd4b302b272ffdbadb070de438f",
+      "bytes": 382590
+    },
+    "blink": {
+      "image": "/images/bio-mascot-rig-blink.webp",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        26,
+        3,
+        1209,
+        1248
+      ],
+      "originalSha256": "c718473e547221fed7872599d09759c6354e18ce93b38bbddd430d0b5505f073",
+      "imageSha256": "2d9ebdd03ae97ea0568caf0b7868658c855a4c9730407a4a941eddf4afdc6357",
+      "bytes": 382400
+    },
+    "body": {
+      "image": "/images/bio-mascot-rig-body.webp",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        214,
+        3,
+        1166,
+        1248
+      ],
+      "originalSha256": "87d4fe0e550a39507c0407d161eaf98df86a9dc20815a43c2545e4af45c4ea7b",
+      "imageSha256": "b776928b6c0bcd79890a0ed21e26912d1d429f56e85253ebb27d555212a8bc92",
+      "bytes": 300222
+    },
+    "hand": {
+      "image": "/images/bio-mascot-rig-hand.webp",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        1024,
+        544,
+        1211,
+        744
+      ],
+      "originalSha256": "cd2944685484fd3991bc64eb43a97d23055d484d467b8fc75bc38e8303e4702a",
+      "imageSha256": "e527ea8dca782c657d38eee0e19b41afef747ef1d2abcb5eb48cf9db5621c362",
+      "bytes": 18540
+    },
+    "hair": {
+      "image": "/images/bio-mascot-rig-hair.webp",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        33,
+        29,
+        614,
+        1217
+      ],
+      "originalSha256": "c96af41741d852ec5a46ab39893635b090b394fb0c0efcf641ef6b17b8463623",
+      "imageSha256": "b773a6747f5826fec46cc72bc35a670cb6e98154b98f3edf8286ecd46fb6b2dd",
+      "bytes": 172202
+    }
+  },
+  "prompts": {
+    "neutral": "Use case: identity-preserve\nAsset type: full-body transparent anime chibi mascot artwork designed for subtle cutout-puppet animation on a website.\nImage 1 is the EDIT TARGET and exact character identity reference. Preserve her silver-white / pale-lavender hair, dark-violet crystal bow on the viewer's left, pink-violet DNA hair ornament, dark cat hair clip on the viewer's right, white lab coat with cat emblem, dark dress, cat badge, violet shoes and polished delicate illustration style. Preserve the two-head-tall cute Q-version proportions.\nChange the pose so real local animations can be made:\n1. Face nearly front-on, BOTH large violet eyes open and smiling, mouth cheerful and small. No wink in this neutral frame.\n2. Her arm on the viewer's RIGHT reaches outward to the right, bent at the elbow with a small open palm raised in a friendly wave BESIDE her head. The whole waving hand and forearm must be OUTSIDE the hair and face silhouette, clearly outlined against transparency, not overlapping hair or face. Keep a small transparent gap between hand and hair. The coat shoulder stays attached naturally; elbow, sleeve, wrist and hand must form one clear continuous arm. Exactly five small simple fingers.\n3. Her other hand on the viewer's LEFT holds the small dark tablet with a lavender protein-ribbon icon at waist level. Put a tiny capped specimen tube in the coat pocket instead of a hand-held pipette.\n4. A long silver side ponytail attached under the bow on the viewer's LEFT curls down and fans slightly out to the far left below the head. The lower flowing locks must form an easy-to-read separate silhouette outside the torso, away from the waving arm on the opposite side. Keep delicate lavender strands and coherent hair structure.\n5. Two short legs stand naturally, feet apart. No crossed limbs. The body and feet should feel still and balanced.\nComposition: square canvas, one complete full-body character centered, narrow transparent margins, entire bow, wave hand, ponytail tips and both shoes inside the frame. The silhouette should fill about 90% of canvas height. Keep head and body extremely cute and compact, no elongated torso or legs. The wave can widen her silhouette a little but never crop the fingers.\nBackground: actual transparent alpha, no scene, no effects, no sparkles, no floating diagrams, no text, logos or watermark. This is ONE cohesive finished character, not a sprite sheet or a parts sheet. Retain the input's premium crisp linework and soft pastel shading. No new characters.",
+    "blink": "Use case: identity-preserve\nImage 1 is the EDIT TARGET: a finished transparent full-body chibi character that must remain perfectly registered for an eyelid-animation overlay.\nMake exactly ONE local edit: gently CLOSE BOTH violet eyes into cute relaxed curved anime eyelids, as a natural blink. Preserve the same face shape, skin color, cheeks, eyebrow positions, smile, hair strands overlapping the eyes, and all existing shading.\nEverything outside the two small eye areas must stay unchanged: exact full-canvas composition, dimensions, character position and scale, bow, DNA clip, cat hair clip, head, hair silhouette, raised open waving hand and fingers, coat, tablet, body and shoes. Do not redraw or shift the character. No change of pose or expression besides the eyelids. This should look like the next blink frame of the exact same illustration.\nKeep actual transparent alpha background, full original square framing, no new text, effects, objects or border. The eye edits will be locally masked over the original frame, so alignment and matching the adjacent face colors are essential.",
+    "body": "Use case: precise-object-edit\nAsset type: an animation CLEAN PLATE / static body layer for a layered chibi puppet. Image 1 is the EDIT TARGET and must keep exactly the same square canvas, character scale, pixel registration and illustration style.\nCreate the static layer by removing ONLY these two regions:\nA. Remove the raised waving HAND, dark fingerless glove and the small exposed wrist on the viewer's RIGHT. Keep the entire white coat sleeve and purple cuff unchanged, including its opening. Reconstruct any silver hair that was hidden behind the thumb/wrist, and leave actual transparency where the removed fingers were outside the hair silhouette. This hand will be supplied later as a separate moving layer; do not replace it with another hand.\nB. Remove the long flowing rear SIDE PONYTAIL on the viewer's LEFT, below and behind the dark bow. Keep the dark bow, its ribbons and the entire front hair/head silhouette unchanged. Remove only the long silver locks outside the left of the body and tablet, particularly the hanging curls that reach down near her knees; use actual transparency in this region. Preserve front cheek locks, the hair right next to the face, and body/tablet edges.\nDo not move or alter ANY other part: both eyes remain OPEN, face and smile identical, head shape, DNA hair ornament, cat clip, bow, lab coat, tablet and holding hand, both legs and shoes. The result is intentionally a partial puppet layer, not a complete character. Do not invent substitute limbs or a shorter ponytail. Keep all original dimensions and exact alignment to Image 1 so the original hand and ponytail can be composited back seamlessly. No text, effects, shadows or background. Real transparent alpha.",
+    "hand": "Use case: precise-object-edit\nImage 1 is the EDIT TARGET, an exact registered character frame for a cutout-puppet rig.\nExtract ONLY the raised waving hand on the viewer's RIGHT: the five fingers, open palm, dark fingerless glove, and exposed wrist down to where it enters the white coat cuff. Remove ALL other content including the face, all hair behind the thumb, coat/sleeve/cuff, tablet, body, bow and shoes. All removed regions must be truly transparent.\nKeep the extracted hand EXACTLY the same size, pose, orientation and location on the ORIGINAL FULL SQUARE CANVAS, in the upper-right quadrant (roughly x=1040..1210, y=525..710 on the 1254-square reference). Do NOT enlarge, center, crop or reposition the isolated hand; the empty canvas around it is intentional for layer registration. Preserve every finger, dark outline and skin/glove shading from Image 1. This is an animation layer, not a finished standalone composition. Do not add any sleeve, background, text, other parts or effects. Actual transparent alpha.",
+    "hair": "Use case: precise-object-edit\nImage 1 is the EDIT TARGET, an exact registered character frame for a cutout-puppet rig.\nExtract ONLY the long silver rear SIDE PONYTAIL on the viewer's LEFT, the flowing rear locks that extend out left of the head and hang down beside the tablet to near knee height. Include the full natural silver curls and their lavender outlines; this is the hair that attaches under/behind the dark bow. Do NOT include the dark bow, its ribbons, DNA ornament, front cheek locks, face, head/scalp hair, tablet, hand, coat, body or feet. Remove all other content to true transparency. Keep full delicate curl silhouettes.\nKeep the extracted ponytail EXACTLY the same size, location and orientation on the ORIGINAL FULL SQUARE CANVAS: left side around x=20..420, from y=300 down to y=1145 on the 1254-square reference. Do NOT enlarge, center, crop or reposition it; the surrounding empty canvas is intentional for registered animation. Preserve the reference linework and highlights. This is a partial animation layer, not a new hairstyle or complete character. No text, labels, effects, background or extra objects. Actual transparent alpha."
+  },
+  "alphaValidation": "All five generated PNG alpha channels match their WebP alpha channels pixel for pixel. Original dimensions preserved; no bitmap painting or removal was performed during WebP conversion.",
+  "animation": {
+    "body": "Static; no full-picture float or breathing transform",
+    "hand": "Independent wrist rotation -7 to 9 degrees with pauses, 5.2-second loop",
+    "hair": "Independent rear ponytail sway -1.1 to 1.2 degrees, 5.6-second loop",
+    "blink": "Locally masked closed-eye artwork, brief double blink in a 6.8-second loop",
+    "fallback": "Complete neutral frame remains visible until all rig layers load and decode; failure retains the complete neutral frame."
+  },
+  "centering": {
+    "basis": "Maximum horizontal alpha envelope across each animated part's motion, alpha threshold > 16",
+    "canvasWidth": 1254,
+    "envelope": [
+      -4.323585117849291,
+      1237.7766629171372
+    ],
+    "offsetPercent": 0.8193,
+    "layout": "max-content title, centered flexible middle track, responsive fixed-width profile card; equal 24px grid gaps"
+  }
+}

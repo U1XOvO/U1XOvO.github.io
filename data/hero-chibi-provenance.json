@@ -1,0 +1,17 @@
+{
+  "image": "/images/bio-researcher-chibi.webp",
+  "source": "OpenAI ImageGen",
+  "mode": "built-in",
+  "generatedOn": "2026-10-18",
+  "selectedVariant": "Completely new two-head-tall Q-version biology researcher mascot",
+  "originalDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "originalFormat": "PNG RGBA",
+  "webFormat": "WebP, quality 92, original dimensions, original alpha preserved",
+  "prompt": "Use case: stylized-concept\nAsset type: transparent full-body chibi character cutout for the center of a personal AI-for-biology website hero.\nPrimary request: Draw a COMPLETELY NEW original kawaii anime girl biology-researcher mascot. True Japanese Q-version / super-deformed chibi proportions, only TWO HEADS TALL in total: an oversized round head taking roughly half of her height, tiny compact torso, short stubby legs and short little arms. The silhouette should be compact and almost square, never a normally proportioned tall anime girl.\nSubject and outfit: a cheerful female researcher depicted as a wholesome chibi mascot, fluffy pastel-lavender bob hair with two small rounded side bunches, a tiny mint leaf hair clip, large sparkling expressive lavender eyes, a gentle happy smile and rosy cheeks. A short warm-white lab coat over a simple mint dress, little lavender shoes. She stands naturally with two separate feet planted clearly. Exactly two arms: one hand gently holds a single small transparent petri dish with two mint leaf-shaped colonies at waist height, the other hand gives a small friendly open-palm wave beside her shoulder. Keep hands simple, clean, anatomically coherent stylized chibi hands; clearly connected wrists, elbows, shoulders, hips, knees, and feet.\nStyle/medium: premium polished 2D Japanese chibi sticker illustration, delicate confident linework, softly shaded pastel colors, subtle hand-painted details, charming and crisp at website display sizes.\nComposition/framing: one single centered full-body character on a square canvas. Fill about 90 percent of image height, with a narrow clear transparent margin. All hair, hands, lab coat and shoes fully visible. The petri dish and leaf hair clip provide the biology theme; no floating diagrams or surrounding decoration.\nColor palette: soft lavender, mint green, blush pink, warm white and a little sky blue, restrained low saturation.\nConstraints: real transparent alpha background, no ground or cast-shadow plate, no background scene, no framing shape, no text or logos, no watermark, no additional characters, no extra limbs or fingers, no crossed limbs, no seated pose, no long legs or elongated torso, no realistic body proportions, no photorealism. The very large head and tiny body are essential.",
+  "originalSha256": "7faaf89575747db0720ed3b99339fe4868d9def65376bcd0bf3504f73a5e6e4f",
+  "imageSha256": "06c7d9dce6f323dc1ab46bc4e11432bcedf1064f5434a8773c55ac7ebcda7787",
+  "alphaValidation": "Original RGBA alpha channel and WebP alpha channel matched pixel for pixel."
+}

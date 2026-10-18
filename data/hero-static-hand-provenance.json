@@ -1,0 +1,23 @@
+{
+  "updatedOn": "2026-10-18",
+  "request": "Remove the waving animation and use the hand position in the supplied original image.",
+  "suppliedImageSha256": "abef3a7c8ec6f76642b747317f00404ceff6c94d1b73d9591f7ec1b937371aa6",
+  "referenceValidation": "The supplied PNG and the original generated neutral PNG have identical decoded RGBA pixels at 1254 by 1254.",
+  "image": "/images/bio-mascot-rig-neutral.webp",
+  "sourceRigRecord": "data/hero-rig-provenance.json",
+  "hand": {
+    "mode": "Static registered arm region from the complete original image",
+    "offsetPercent": [0, 0],
+    "transform": "none",
+    "animation": "none",
+    "clip": "polygon(79% 40%,100% 40%,100% 67%,75% 67%,75% 55%)",
+    "removed": ["separate hand layer", "cuff patch", "mascot-idle-wave keyframes"]
+  },
+  "retainedMotion": ["blink", "rear ponytail sway", "entrance effects"],
+  "centering": {
+    "basis": "Static original arm and the complete rear-hair motion envelope, alpha threshold greater than 16",
+    "canvasWidth": 1254,
+    "envelopePixels": [-4.323585117849291, 1207],
+    "offsetPercent": 2.0464
+  }
+}

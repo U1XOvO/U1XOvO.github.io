@@ -6,6 +6,18 @@
   "workHeading": "Research & tools",
   "featuredProjectIds": ["visualize-prtebd", "pekp", "haru"],
   "featuredPaperId": "magnetic-hydrogel-biosensor",
+  "heroMascot": {
+    "image": "/images/bio-mascot-rig-neutral.webp",
+    "imageAlt": "Silver-haired chibi biology researcher with violet eyes, cat and DNA hair clips, a white lab coat, a protein-model tablet, and a raised open hand in the original pose.",
+    "width": 1254,
+    "height": 1254,
+    "interactionLabel": "Replay the biology mascot entrance",
+    "rig": {
+      "hair": "/images/bio-mascot-rig-hair.webp",
+      "body": "/images/bio-mascot-rig-body.webp",
+      "blink": "/images/bio-mascot-rig-blink.webp"
+    }
+  },
   "details": [
     {
       "label": "Name",

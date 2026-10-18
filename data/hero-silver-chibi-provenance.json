@@ -1,0 +1,19 @@
+{
+  "image": "/images/bio-researcher-silver-chibi.webp",
+  "source": "OpenAI ImageGen",
+  "mode": "built-in",
+  "generatedOn": "2026-10-18",
+  "reference": "User-supplied character illustration",
+  "referenceSha256": "44e5e03f769cc8ac48c254066921d22852a2e8d7e8227e8bd4e01141fa097e86",
+  "originalDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "originalFormat": "PNG RGBA",
+  "webFormat": "WebP, quality 92, original dimensions, original alpha preserved",
+  "prompt": "Use case: stylized-concept\nAsset type: a transparent full-body chibi character cutout for the center of a light personal AI-for-biology website.\nInput image: Image 1 is the user's CHARACTER IDENTITY REFERENCE, not a background or layout to copy.\nPrimary request: Reimagine this exact silver-haired violet-eyed anime girl as an adorable complete two-head-tall Q-version mascot. Preserve her recognizable character design: pearly silver-white hair with a faint lavender tint and long fluffy side ponytail, the large dark-violet bow with small purple crystal accents on the viewer's left, a small pink-violet DNA double-helix hair ornament, the dark cat-shaped hair clip on the viewer's right, one large shining violet eye and one happy winking eye, rosy cheeks and an open cheerful smile. Keep the reference's polished Japanese anime linework and sparkling eyes.\nOutfit: tiny warm-white scientist lab coat with understated lavender trim and small cat emblem over a modest dark-violet high-neck dress, a tiny cat ID badge, short dark fingerless gloves, opaque pale stockings and little dark-violet Mary Jane shoes. Cute and wholesome, no sexualized elements.\nBiology props and simple anatomy: stand naturally with two short separate legs and two feet bearing her weight. Exactly two arms. Her right hand on the viewer's left holds a small micropipette with a single lavender droplet; her left hand on the viewer's right cradles one small dark tablet showing a simple lavender protein-ribbon icon with NO letters or text. Both shoulders, elbows and wrists must connect clearly. Props should not hide her face or confuse the limbs. Keep hands simple and anatomically coherent for chibi stylization.\nProportions: a VERY large round head about half the entire figure height, tiny compact body, very short legs and little arms, true Japanese super-deformed Q-version. Do not draw a normally proportioned tall anime girl.\nComposition: one single full-body character, front-facing with a tiny playful tilt. Square canvas, character fills roughly 88 percent of the height. Entire hair bow, pipette, tablet, coat and both shoes fully visible, narrow transparent margins on all sides. No robot companion or other characters.\nPalette: keep the reference's silver-white and dark-violet identity with muted soft-lavender and blush highlights so the cutout fits a warm-white pastel website. No neon aura.\nBackground: ACTUAL transparent alpha, no background scene, no panel, no rounded-square frame, no cast-shadow plate, no surrounding sparkles or diagrams; website effects will be separate.\nConstraints: no text, typography, watermark or logos. No extra limbs or fingers, no crossed limbs, no sitting, no elongated torso or legs. Create a fresh polished full-body illustration of the supplied character, not a crop of the reference.",
+  "originalSha256": "1b3904ea1ad177b6695791596cfd69a9266e82d850242bd0b719d6b876f690b2",
+  "imageSha256": "fc9aea4ed25b2516727de57e5d8c649fc654015ffb9dda7f82d27889bf36eae8",
+  "alphaValidation": "Original PNG RGBA alpha and WebP alpha matched pixel for pixel.",
+  "animation": "CSS entrance pop, expanding ring and sparkles; continuous float, subtle breathing and molecule drift; pauses offscreen or in background and honors reduced motion."
+}

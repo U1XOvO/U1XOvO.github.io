@@ -56,13 +56,15 @@ const pageUi = {
     skipLink: "Skip to content",
     brandLabel: "U1X home",
     navToggle: "Open navigation",
-    navigationLabel: "Primary navigation"
+    navigationLabel: "Primary navigation",
+    localTime: "Shanghai local time"
   },
   ja: {
     skipLink: "本文へ移動",
     brandLabel: "U1X ホーム",
     navToggle: "メニューを開く",
-    navigationLabel: "メインナビゲーション"
+    navigationLabel: "メインナビゲーション",
+    localTime: "上海の現地時刻"
   }
 };
 
@@ -97,10 +99,11 @@ function layout({ title, description, pathname, content, pageClass = "", languag
     <meta name="twitter:image" content="${site.url}/images/og.png">
     <link rel="canonical" href="${canonical}">
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/styles.css">
     <title>${escapeHtml(pageTitle)}</title>
   </head>
-  <body${pageClass ? ` class="${escapeHtml(pageClass)}"` : ""}>
+  <body${pageClass ? ` class="${escapeHtml(pageClass)}"` : ""} data-ambiance="${({ "page-projects": "pink", "page-library": "blue", "page-paper": "mint", "page-acgn": "lavender", "page-anime": "lavender" })[pageClass] || "mint"}">
     <a class="skip-link" href="#main">${escapeHtml(ui.skipLink)}</a>
     <header class="site-header shell">
       <a class="brand" href="/" aria-label="${escapeHtml(ui.brandLabel)}">
@@ -113,9 +116,11 @@ function layout({ title, description, pathname, content, pageClass = "", languag
       <nav class="site-nav" id="site-nav" lang="${escapeHtml(navigationLanguage)}" aria-label="${escapeHtml(navigationUi.navigationLabel)}">${nav}</nav>
     </header>
     <main id="main">${content}</main>
-    <footer class="site-footer shell">
-      <p>© ${new Date().getFullYear()} ${escapeHtml(profile.name)}</p>
-      <a href="${escapeHtml(profile.github)}" rel="noreferrer">GitHub</a>
+    <footer class="site-footer shell" data-footer-glow>
+      <div class="footer-bottom"><p>© ${new Date().getFullYear()} ${escapeHtml(profile.name)}</p>
+        <p class="footer-clock"><span>${escapeHtml(ui.localTime)}</span><time data-local-clock>UTC+08:00</time></p>
+        <a class="footer-github" href="${escapeHtml(profile.github)}" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
     </footer>
     <script type="module" src="/site.js"></script>
   </body>
@@ -136,13 +141,34 @@ const projectVisual = (project) => {
 const homeProjectCards = profile.featuredProjectIds.map((id, index) => {
   const project = projectsData.projects.find((entry) => entry.id === id);
   if (!project) throw new Error(`Unknown featured project: ${id}`);
-  return `<article class="home-work-card tone-${["blue", "green", "pink"][index % 3]}">
+  return `<article class="home-work-card tone-${["blue", "green", "pink"][index % 3]}" data-reveal>
     ${projectVisual(project)}<div class="home-work-content">
     <h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.description)}</p><a class="text-link" href="/projects/#${escapeHtml(project.id)}">Explore project</a></div>
   </article>`;
 }).join("");
 const homePaper = papersData.papers.find(({ id }) => id === profile.featuredPaperId);
 if (!homePaper) throw new Error(`Unknown featured publication: ${profile.featuredPaperId}`);
+const heroMascot = `<span class="hero-mascot-entry" data-mascot-entry>
+  <span class="hero-mascot-effects" aria-hidden="true">
+    <span class="mascot-arrival-flash"></span><span class="mascot-arrival-ring"></span>
+    ${Array.from({ length: 6 }, (_, index) => `<span class="mascot-spark mascot-spark-${index + 1}"></span>`).join("")}
+    <span class="mascot-molecule mascot-molecule-one"></span><span class="mascot-molecule mascot-molecule-two"></span>
+    <span class="mascot-ambient">
+      <span class="mascot-ambient-orbit mascot-ambient-orbit-one"></span><span class="mascot-ambient-orbit mascot-ambient-orbit-two"></span>
+      ${Array.from({ length: 6 }, (_, index) => `<span class="mascot-ambient-cell mascot-ambient-cell-${index + 1}"></span>`).join("")}
+      ${Array.from({ length: 5 }, (_, index) => `<span class="mascot-ambient-star mascot-ambient-star-${index + 1}"></span>`).join("")}
+    </span>
+  </span>
+  <span class="hero-mascot-idle">
+    <img class="hero-mascot-art" data-hero-mascot-art src="${escapeHtml(profile.heroMascot.image)}" alt="${escapeHtml(profile.heroMascot.imageAlt)}" width="${profile.heroMascot.width}" height="${profile.heroMascot.height}" decoding="async" fetchpriority="high">
+    <span class="mascot-rig" aria-hidden="true">
+      <span class="mascot-rig-hair mascot-rig-motion"><img data-mascot-part src="${escapeHtml(profile.heroMascot.rig.hair)}" alt="" width="${profile.heroMascot.width}" height="${profile.heroMascot.height}" decoding="async"></span>
+      <img class="mascot-rig-body" data-mascot-part src="${escapeHtml(profile.heroMascot.rig.body)}" alt="" width="${profile.heroMascot.width}" height="${profile.heroMascot.height}" decoding="async">
+      <img class="mascot-rig-arm" data-mascot-part src="${escapeHtml(profile.heroMascot.image)}" alt="" width="${profile.heroMascot.width}" height="${profile.heroMascot.height}" decoding="async">
+      <img class="mascot-rig-blink mascot-rig-motion" data-mascot-part src="${escapeHtml(profile.heroMascot.rig.blink)}" alt="" width="${profile.heroMascot.width}" height="${profile.heroMascot.height}" decoding="async">
+    </span>
+  </span>
+</span>`;
 
 const home = layout({
   title: "",
@@ -150,11 +176,12 @@ const home = layout({
   pathname: "/",
   pageClass: "page-home",
   content: `
-    <section class="home-profile editorial-hero shell" aria-labelledby="profile-title">
-      <div class="hero-copy" data-hero-playground>
-        <button class="hero-molecule" type="button" data-hero-remix aria-label="Animate the molecule" title="Animate the molecule" disabled><img class="hero-molecule-art" src="/images/hero-molecule.svg" alt="" width="80" height="80" decoding="async"></button>
+    <div class="hero-scroll" data-hero-scroll data-section-ambiance="mint">
+    <section class="home-profile editorial-hero shell" data-hero-playground aria-labelledby="profile-title">
+      <div class="hero-copy">
         <h1 class="hero-title" id="profile-title" aria-label="${escapeHtml(researchWords.join(" "))}">${researchHeading}</h1>
       </div>
+      <button class="hero-mascot" type="button" data-hero-remix aria-label="${escapeHtml(profile.heroMascot.interactionLabel)}" title="${escapeHtml(profile.heroMascot.interactionLabel)}" disabled>${heroMascot}</button>
       <aside class="profile-information hero-profile">
         <a class="hero-avatar" href="${escapeHtml(profile.github)}" rel="noreferrer" aria-label="Open ${escapeHtml(profile.handle)} on GitHub"><img src="${escapeHtml(profile.avatar)}" alt="${escapeHtml(profile.handle)} GitHub avatar" width="1149" height="1149" fetchpriority="high" decoding="async"></a>
         <p class="portrait-caption">Personal profile</p>
@@ -163,19 +190,20 @@ const home = layout({
         ${contactEmail ? `<p class="profile-email">email: ${escapeHtml(contactEmail)}</p>` : ""}
       </aside>
     </section>
-    <section class="home-work shell" aria-labelledby="home-work-title">
+    </div>
+    <section class="home-work shell" aria-labelledby="home-work-title" data-section-ambiance="pink">
       <div class="section-heading editorial-section-heading"><div><h2 id="home-work-title">${escapeHtml(profile.workHeading)}</h2></div></div>
       <div class="home-work-grid">${homeProjectCards}</div>
     </section>
-    <section class="home-publication shell" aria-labelledby="home-publication-title">
+    <section class="home-publication shell" aria-labelledby="home-publication-title" data-reveal data-section-ambiance="mint">
       <figure class="home-publication-figure"><img src="${escapeHtml(homePaper.image)}" alt="${escapeHtml(homePaper.imageAlt)}" width="520" height="337" loading="lazy" decoding="async"><figcaption>${escapeHtml(homePaper.imageCredit)}</figcaption></figure>
       <div class="home-publication-copy"><h2 id="home-publication-title">${escapeHtml(homePaper.title)}</h2><p>${escapeHtml(homePaper.citation)}</p><a class="text-link" href="/paper/">Explore publication</a></div>
     </section>
-    <section class="home-library shell" aria-labelledby="home-library-title"><div><p class="eyebrow">Reading collection</p><h2 id="home-library-title">${escapeHtml(literature.source.collection.replaceAll("+", " + "))}</h2><p>${literature.records.length} papers · ${literature.topics.filter(({ id }) => id !== "all").length} topics</p></div><a class="button button-quiet" href="/library/">Explore Literature</a></section>`
+    <section class="home-library shell" aria-labelledby="home-library-title" data-reveal data-section-ambiance="blue"><div><p class="eyebrow">Reading collection</p><h2 id="home-library-title">${escapeHtml(literature.source.collection.replaceAll("+", " + "))}</h2><p>${literature.records.length} papers · ${literature.topics.filter(({ id }) => id !== "all").length} topics</p></div><a class="button button-quiet" href="/library/">Explore Literature</a></section>`
 });
 
 const pageTitle = (title, sizeClass = "") => `
-  <header class="page-title${sizeClass ? ` ${sizeClass}` : ""} reveal">
+  <header class="page-title${sizeClass ? ` ${sizeClass}` : ""} reveal" data-reveal>
     <h1>${escapeHtml(title)}</h1>
   </header>`;
 
@@ -213,7 +241,7 @@ const projectCards = projectsData.projects.length ? projectsData.projects.map((p
   const workflow = `<dl class="project-workflow">${project.workflow.map(({ label, value }) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}</dl>`;
   const example = project.example;
   const exampleMarkup = `<figure class="project-showcase-visual">${projectVisual(project)}<figcaption><strong>${escapeHtml(project.cover?.label || example.label)}</strong><p>${escapeHtml(example.caption)}</p></figcaption></figure>`;
-  return `<article class="project-card tone-${["blue", "green", "pink"][index % 3]}" id="${escapeHtml(project.id)}">
+  return `<article class="project-card tone-${["blue", "green", "pink"][index % 3]}" id="${escapeHtml(project.id)}" data-project-item>
     <div class="project-showcase-copy"><div class="project-meta"><span>${String(index + 1).padStart(2, "0")}</span><span>${escapeHtml(project.status)}</span></div>
     <h2>${escapeHtml(project.title)}</h2>
     <p>${escapeHtml(project.description)}</p>
@@ -231,7 +259,14 @@ const projects = layout({
   pageClass: "page-projects",
   content: `<div class="shell page-shell content-page-shell">
     ${pageTitle("Projects", "page-title-medium page-title-projects")}
-    <section class="project-grid" aria-label="Project list">${projectCards}</section>
+    <div class="project-filmstrip" data-project-filmstrip>
+      <div class="project-filmstrip-controls" data-project-controls hidden>
+        <p class="project-strip-hint">Scroll to explore</p>
+        <div class="project-strip-navigation"><button class="utility-button" type="button" data-project-prev aria-controls="project-track" aria-label="Previous project">←</button><output data-project-progress aria-live="polite" aria-label="Current project">1 / ${projectsData.projects.length}</output><button class="utility-button" type="button" data-project-next aria-controls="project-track" aria-label="Next project">→</button></div>
+        <span class="project-strip-meter" aria-hidden="true"><span></span></span>
+      </div>
+      <section class="project-grid" id="project-track" data-project-track tabindex="0" role="region" aria-label="Project list">${projectCards}</section>
+    </div>
   </div>`
 });
 
@@ -294,7 +329,7 @@ literature.records.forEach((record) => {
     ? `<span class="reading-featured" title="${escapeHtml(featuredVenueLabel)}" aria-label="${escapeHtml(featuredVenueLabel)}"><span aria-hidden="true">★</span></span>`
     : "";
 
-  const markup = `<li class="reading-list-item" id="reading-${escapeHtml(record.id)}" tabindex="-1" data-record-id="${escapeHtml(record.id)}" data-reading-topics="${escapeHtml(record.topics.join(" "))}" data-reading-search="${escapeHtml(searchText)}" data-reading-year="${escapeHtml(record.year)}" data-reading-featured="${isFeaturedVenue}">
+  const markup = `<li class="reading-list-item" id="reading-${escapeHtml(record.id)}" tabindex="-1" data-reveal data-record-id="${escapeHtml(record.id)}" data-reading-topics="${escapeHtml(record.topics.join(" "))}" data-reading-search="${escapeHtml(searchText)}" data-reading-year="${escapeHtml(record.year)}" data-reading-featured="${isFeaturedVenue}">
     <article class="reading-card" data-zotero-key="${escapeHtml(record.zoteroKey)}">
       ${figure}
       <div class="reading-card-content">
@@ -391,6 +426,7 @@ const library = layout({
     ${pageTitle("Literature", "page-title-long page-title-literature")}
     ${literatureSections}
   </div>
+  <div class="reading-hover-preview" data-reading-preview hidden aria-hidden="true"><img data-preview-image alt=""><span data-preview-label></span></div>
   <dialog class="literature-viewer" id="literature-viewer" aria-labelledby="viewer-title" aria-describedby="viewer-help">
     <div class="viewer-shell">
       <header class="viewer-header">
@@ -505,7 +541,7 @@ const acgnPage = layout({
   content: `<div class="shell page-shell content-page-shell">
     ${pageTitle("Gamer", "page-title-acgn")}
     <section class="game-platform steam-platform" aria-labelledby="steam-games-title">
-      <h2 class="game-platform-title steam-platform-title" id="steam-games-title">Steam Games</h2>
+      <h2 class="game-platform-title steam-platform-title" id="steam-games-title" data-reveal>Steam Games</h2>
       <a class="steam-profile-card" href="${escapeHtml(steamProfile.sourceUrl)}" aria-label="Visit ${escapeHtml(steamProfile.handle)} on Steam" style="${steamProfileStyle}">
         <span class="steam-profile-shot"><img class="steam-profile-screenshot" src="${escapeHtml(steamProfile.screenshot)}" alt="${escapeHtml(steamProfile.screenshotAlt)}" width="${steamProfile.screenshotWidth}" height="${steamProfile.screenshotHeight}" decoding="async" draggable="false"></span>
         <span class="steam-profile-action" aria-hidden="true">Steam profile <span>↗</span></span>
@@ -513,7 +549,7 @@ const acgnPage = layout({
       <div class="game-grid" aria-label="Steam game collection">${steamGames}</div>
     </section>
     <section class="game-platform switch-platform" aria-labelledby="switch-games-title">
-      <h2 class="game-platform-title switch-platform-title" id="switch-games-title">Nintendo Switch</h2>
+      <h2 class="game-platform-title switch-platform-title" id="switch-games-title" data-reveal>Nintendo Switch</h2>
       <div class="game-grid" aria-label="Nintendo Switch game collection">${switchGames}</div>
     </section>
     ${shelfCards ? `<section class="shelf-grid" aria-label="Other ACGN collection categories">${shelfCards}</section>` : ""}
@@ -536,14 +572,14 @@ const animePage = layout({
   content: `<div class="shell page-shell content-page-shell">
     ${pageTitle(anime.title, "page-title-anime")}
     <section class="anime-section anime-deity-section" aria-labelledby="anime-deity-title">
-      <div class="anime-section-heading anime-deity-heading">
+      <div class="anime-section-heading anime-deity-heading" data-reveal>
         <p class="anime-deity-label">${escapeHtml(anime.deity.heading)}</p>
         <h2 id="anime-deity-title">${escapeHtml(anime.deity.title)}</h2>
       </div>
       <div class="anime-grid anime-deity-grid" aria-label="${escapeHtml(anime.deity.title)}">${animeDeityCards}</div>
     </section>
     <section class="anime-section anime-favorites-section" aria-labelledby="anime-favorites-title">
-      <div class="anime-section-heading">
+      <div class="anime-section-heading" data-reveal>
         <h2 id="anime-favorites-title">${escapeHtml(anime.favoritesHeading)}</h2>
       </div>
       <div class="anime-grid" aria-label="${escapeHtml(anime.favoritesHeading)}">${animeFavoriteCards}</div>
@@ -556,7 +592,18 @@ const notFound = layout({
   description: "The requested page does not exist.",
   pathname: "/404.html",
   pageClass: "page-404",
-  content: `<div class="shell not-found"><p class="section-kicker">404</p><h1>This page has not grown yet.</h1><p>Return home or wander through the literature garden.</p><div class="hero-actions"><a class="button button-primary" href="/">Back home</a><a class="button button-quiet" href="/library/">Literature garden</a></div></div>`
+  content: `<div class="shell not-found" data-lost-playground>
+    <button class="lost-molecule" type="button" data-lost-remix aria-label="Remix the molecule" disabled>
+      <svg viewBox="0 0 240 160" fill="none" aria-hidden="true" focusable="false">
+        <path d="M60 80 100 38 150 48 182 100 126 126 60 80M100 38 126 126M60 80 182 100" stroke="#a8bab7" stroke-width="2"/>
+        <g data-lost-atom><circle cx="60" cy="80" r="19" fill="#dceefa" stroke="#78a8c7" stroke-width="2"/></g>
+        <g data-lost-atom><circle cx="100" cy="38" r="15" fill="#ddf0e4" stroke="#79aa8a" stroke-width="2"/></g>
+        <g data-lost-atom><circle cx="150" cy="48" r="12" fill="#e8e1f8" stroke="#9a82c1" stroke-width="2"/></g>
+        <g data-lost-atom><circle cx="182" cy="100" r="20" fill="#f8dce6" stroke="#d99bb1" stroke-width="2"/></g>
+        <g data-lost-atom><circle cx="126" cy="126" r="14" fill="#ddf0e4" stroke="#79aa8a" stroke-width="2"/></g>
+      </svg>
+    </button>
+    <p class="section-kicker">404</p><h1>This page has not grown yet.</h1><p>Return home or wander through the literature garden.</p><div class="hero-actions"><a class="button button-primary" href="/">Back home</a><a class="button button-quiet" href="/library/">Literature garden</a></div></div>`
 });
 
 const pages = [
