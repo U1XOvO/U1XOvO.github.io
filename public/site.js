@@ -134,10 +134,12 @@ if (heroPlayground) {
     });
   };
   heroPlayground.addEventListener("pointerenter", () => {
+    if (heroPlayground.hasAttribute("data-glass-lab")) return;
     if (finePointer.matches && !remix.disabled) measureLetters();
   });
   // Refresh invalidated geometry on demand and skip unchanged style writes.
   heroPlayground.addEventListener("pointermove", (event) => {
+    if (heroPlayground.hasAttribute("data-glass-lab")) return;
     if (event.pointerType === "touch" || !finePointer.matches || remix.disabled) return;
     pointer = { x: event.clientX, y: event.clientY };
     if (!frame) frame = requestAnimationFrame(paintPointer);
@@ -147,6 +149,8 @@ if (heroPlayground) {
   window.addEventListener("resize", () => { clearPointer(); centers = []; }, { passive: true });
   remix.addEventListener("click", () => {
     if (remix.disabled) return;
+    // The homepage laboratory coordinates the character and ribbon as one scene.
+    if (heroPlayground.hasAttribute("data-glass-lab")) return;
     cancelBurst();
     const animations = letters.map((letter, index) => letter.animate([
       { transform: "translateY(0) rotate(0)" },
@@ -178,6 +182,148 @@ if (heroPlayground) {
   window.addEventListener("pageshow", () => { pageActive = true; updateMotion(); });
   if (mascot.complete) prepareMascot();
   updateMotion();
+}
+
+// A bounded, event-driven scene: no idle rendering loop or layout reads on move/scroll.
+const glassLab = document.querySelector("[data-glass-lab]");
+if (glassLab) {
+  const trigger = glassLab.querySelector("[data-hero-remix]");
+  const character = glassLab.querySelector("[data-mascot-entry]");
+  const pulse = glassLab.querySelector("[data-lab-pulse]");
+  const front = glassLab.querySelector(".lab-ribbon-front");
+  const ribbonLayers = [glassLab.querySelector(".lab-ribbon-back"), front, glassLab.querySelector(".lab-energy")];
+  const orbit = glassLab.querySelector(".lab-orbit");
+  const status = glassLab.querySelector("[data-lab-status]");
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+  let frame = 0, bounds = null, point = null, inView = true, pageActive = true;
+  let measurePending = true, animations = [], awakeCount = 0, lastFrameTime = 0;
+  const position = { x: 0, y: 0, scroll: 0 };
+  const layerTransforms = new Map();
+  const written = new Map();
+  const write = (key, value) => {
+    if (written.get(key) === value) return;
+    glassLab.style.setProperty(key, value);
+    written.set(key, value);
+  };
+  const stopAwakening = () => {
+    animations.forEach((animation) => animation.cancel());
+    animations = [];
+    delete glassLab.dataset.labAwake;
+  };
+  const motionAllowed = () => pageActive && !document.hidden && !reduceMotion.matches;
+  const paint = (timestamp) => {
+    frame = 0;
+    if (!motionAllowed() || !inView) return;
+    if (measurePending || !bounds) {
+      const rect = glassLab.getBoundingClientRect();
+      bounds = { left: rect.left, top: rect.top + scrollY, width: rect.width, height: rect.height };
+      measurePending = false;
+    }
+    const target = {
+      scroll: Math.max(0, Math.min(1, (scrollY - bounds.top + 45) / (bounds.height * .85))),
+      x: point ? Math.max(-1, Math.min(1, (point.x - bounds.left) / bounds.width * 2 - 1)) * 14 : 0,
+      y: point ? Math.max(-1, Math.min(1, (point.y - (bounds.top - scrollY)) / bounds.height * 2 - 1)) * 9 : 0
+    };
+    // Time-based damping feels the same on 60/120/144 Hz displays. Stop once settled.
+    const elapsed = lastFrameTime ? Math.min(64, timestamp - lastFrameTime) : 1000 / 60;
+    lastFrameTime = timestamp;
+    const blend = 1 - Math.exp(-elapsed / 75);
+    let settling = false;
+    for (const key of ["x", "y", "scroll"]) {
+      position[key] += (target[key] - position[key]) * blend;
+      if (Math.abs(target[key] - position[key]) < (key === "scroll" ? .0003 : .015)) position[key] = target[key];
+      else settling = true;
+    }
+    // Pointer movement changes only composited layer transforms, not inherited
+    // variables or gradient paint coordinates across the entire hero subtree.
+    write("--lab-scroll", position.scroll.toFixed(3));
+    const transform = `perspective(1200px) translate3d(${position.x.toFixed(2)}px,${(position.y - position.scroll * 75).toFixed(2)}px,0) rotateY(${(position.x * .06).toFixed(3)}deg) rotate(${(-position.scroll * 7).toFixed(3)}deg) scale(${(1 - position.scroll * .065).toFixed(4)})`;
+    ribbonLayers.forEach((layer) => {
+      if (layerTransforms.get(layer) === transform) return;
+      layer.style.transform = transform;
+      layerTransforms.set(layer, transform);
+    });
+    if (settling) queue();
+    else lastFrameTime = 0;
+  };
+  const queue = () => { if (!frame && motionAllowed() && inView) frame = requestAnimationFrame(paint); };
+  const clearPointer = () => { point = null; queue(); };
+  const synchronize = () => {
+    glassLab.dataset.labComposited = String(motionAllowed() && inView);
+    if (!motionAllowed()) {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      point = null;
+      lastFrameTime = 0;
+      position.x = position.y = position.scroll = 0;
+      stopAwakening();
+      write("--lab-scroll", "0");
+      ribbonLayers.forEach((layer) => layer.style.removeProperty("transform"));
+      layerTransforms.clear();
+    } else { measurePending = true; queue(); }
+  };
+  glassLab.addEventListener("pointerenter", () => { measurePending = true; queue(); });
+  glassLab.addEventListener("pointermove", (event) => {
+    if (event.pointerType === "touch" || !finePointer.matches || !motionAllowed()) return;
+    point = { x: event.clientX, y: event.clientY };
+    queue();
+  }, { passive: true });
+  glassLab.addEventListener("pointerleave", clearPointer);
+  glassLab.addEventListener("pointercancel", clearPointer);
+  window.addEventListener("scroll", clearPointer, { passive: true });
+  window.addEventListener("resize", () => { point = null; measurePending = true; queue(); }, { passive: true });
+  trigger.addEventListener("click", () => {
+    if (trigger.disabled || !motionAllowed()) return;
+    stopAwakening();
+    glassLab.dataset.labAwake = "true";
+    status.textContent = "";
+    const easing = "cubic-bezier(.22,1,.36,1)";
+    const current = [
+      character.animate([
+        { transform: "translateY(0) rotate(0)" },
+        { transform: "translateY(-10px) rotate(-2deg)", offset: .3 },
+        { transform: "translateY(2px) rotate(1deg)", offset: .68 },
+        { transform: "translateY(0) rotate(0)" }
+      ], { duration: 1100, easing }),
+      pulse.animate([
+        { strokeDashoffset: "1.12", opacity: 0 },
+        { strokeDashoffset: ".95", opacity: .95, offset: .12 },
+        { strokeDashoffset: "-.9", opacity: .9, offset: .85 },
+        { strokeDashoffset: "-1.12", opacity: 0 }
+      ], { duration: 1750, easing: "linear" }),
+      front.animate([{ opacity: .75 }, { opacity: 1, offset: .4 }, { opacity: .9 }], { duration: 1500, easing }),
+      orbit.animate([{ opacity: 1 }, { opacity: .25, offset: .35 }, { opacity: 1 }], { duration: 1700, easing }),
+      ...[...orbit.children].map((pearl, index) => pearl.animate([
+        { transform: "translate(0,0) scale(1)" },
+        { transform: `translate(${(index - 1) * 18}px,-18px) scale(1.6)`, offset: .4 },
+        { transform: "translate(0,0) scale(1)" }
+      ], { duration: 1400, delay: index * 80, easing }))
+    ];
+    animations = current;
+    Promise.allSettled(current.map((animation) => animation.finished)).then(() => {
+      if (animations !== current) return;
+      animations = [];
+      delete glassLab.dataset.labAwake;
+      awakeCount += 1;
+      status.textContent = `Light pulse played${awakeCount > 1 ? ` ${awakeCount} times` : ""}.`;
+    });
+  });
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      glassLab.dataset.labComposited = String(motionAllowed() && inView);
+      if (inView) { measurePending = true; queue(); }
+      else { cancelAnimationFrame(frame); frame = 0; lastFrameTime = 0; point = null; stopAwakening(); }
+    }, { rootMargin: "80px" }).observe(glassLab);
+  }
+  if ("ResizeObserver" in window) new ResizeObserver(() => { measurePending = true; queue(); }).observe(glassLab);
+  document.fonts?.ready.then(() => { measurePending = true; queue(); });
+  finePointer.addEventListener("change", clearPointer);
+  reduceMotion.addEventListener("change", synchronize);
+  document.addEventListener("visibilitychange", synchronize);
+  window.addEventListener("pagehide", () => { pageActive = false; synchronize(); });
+  window.addEventListener("pageshow", () => { pageActive = true; synchronize(); });
+  synchronize();
 }
 
 if (toggle && navigation) {

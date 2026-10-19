@@ -177,11 +177,16 @@ const home = layout({
   pageClass: "page-home",
   content: `
     <div class="hero-scroll" data-hero-scroll data-section-ambiance="mint">
-    <section class="home-profile editorial-hero shell" data-hero-playground aria-labelledby="profile-title">
+    <section class="home-profile editorial-hero shell" data-hero-playground data-glass-lab aria-labelledby="profile-title">
+      <div class="lab-ribbon lab-ribbon-back" aria-hidden="true"><img src="/images/lab-ribbon-back.svg" alt="" width="1400" height="850" decoding="async" fetchpriority="high"></div>
+      <div class="lab-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="hero-copy">
         <h1 class="hero-title" id="profile-title" aria-label="${escapeHtml(researchWords.join(" "))}">${researchHeading}</h1>
       </div>
+      <div class="lab-ribbon lab-ribbon-front" aria-hidden="true"><img src="/images/lab-ribbon-front.svg" alt="" width="1400" height="850" decoding="async"></div>
+      <svg class="lab-energy" viewBox="0 0 1400 850" fill="none" aria-hidden="true"><path data-lab-pulse pathLength="1" d="M-80 642C180 750 353 611 473 343C590 82 802 56 972 207C1140 356 1110 532 963 570C806 610 690 465 810 333C921 212 1178 208 1490 294"/></svg>
       <button class="hero-mascot" type="button" data-hero-remix aria-label="${escapeHtml(profile.heroMascot.interactionLabel)}" title="${escapeHtml(profile.heroMascot.interactionLabel)}" disabled>${heroMascot}</button>
+      <p class="sr-only" data-lab-status role="status"></p>
       <aside class="profile-information hero-profile">
         <a class="hero-avatar" href="${escapeHtml(profile.github)}" rel="noreferrer" aria-label="Open ${escapeHtml(profile.handle)} on GitHub"><img src="${escapeHtml(profile.avatar)}" alt="${escapeHtml(profile.handle)} GitHub avatar" width="1149" height="1149" fetchpriority="high" decoding="async"></a>
         <p class="portrait-caption">Personal profile</p>
@@ -190,6 +195,7 @@ const home = layout({
         ${contactEmail ? `<p class="profile-email">email: ${escapeHtml(contactEmail)}</p>` : ""}
       </aside>
     </section>
+    <div class="lab-growth" aria-hidden="true"><svg viewBox="0 0 1200 150" preserveAspectRatio="none"><path d="M850-20C850 90 500 15 500 150"/><path d="M874-20C874 114 524 39 524 150"/></svg><span></span></div>
     </div>
     <section class="home-work shell" aria-labelledby="home-work-title" data-section-ambiance="pink">
       <div class="section-heading editorial-section-heading"><div><h2 id="home-work-title">${escapeHtml(profile.workHeading)}</h2></div></div>

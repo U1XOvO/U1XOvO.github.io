@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850" fill="none">
+  <defs>
+    <linearGradient id="surface" x1="250" y1="620" x2="1170" y2="670" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c1ded6" stop-opacity="0"/>
+      <stop offset=".22" stop-color="#a6cbbf" stop-opacity=".3"/>
+      <stop offset=".45" stop-color="#ecf6ef" stop-opacity=".58"/>
+      <stop offset=".67" stop-color="#c6c2df" stop-opacity=".32"/>
+      <stop offset=".85" stop-color="#e8d3e2" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="280" y1="570" x2="1200" y2="660" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff"/><stop offset=".65" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#c4b6d3" stop-opacity="0"/></linearGradient>
+  </defs>
+  <!-- Foreground return, separated from the large membrane to cross the type. -->
+  <path d="M204 584C419 417 550 438 735 550C921 663 1102 710 1350 590L1364 622C1112 765 900 702 709 590C528 482 411 468 204 584Z" fill="url(#surface)"/>
+  <path d="M204 584C419 417 550 438 735 550C921 663 1102 710 1350 590" stroke="url(#edge)" stroke-width="2"/>
+  <path d="M204 584C411 468 528 482 709 590C900 702 1112 765 1364 622" stroke="#9ebbb5" stroke-opacity=".23"/>
+  <path d="M330 517C471 449 585 487 724 569C918 684 1100 733 1300 633" stroke="url(#edge)" stroke-opacity=".5" stroke-width=".7"/>
+</svg>
