@@ -184,7 +184,7 @@ const home = layout({
         <h1 class="hero-title" id="profile-title" aria-label="${escapeHtml(researchWords.join(" "))}">${researchHeading}</h1>
       </div>
       <div class="lab-ribbon lab-ribbon-front" aria-hidden="true"><img src="/images/lab-ribbon-front.svg" alt="" width="1400" height="850" decoding="async"></div>
-      <svg class="lab-energy" viewBox="0 0 1400 850" fill="none" aria-hidden="true"><path data-lab-pulse pathLength="1" d="M-80 642C180 750 353 611 473 343C590 82 802 56 972 207C1140 356 1110 532 963 570C806 610 690 465 810 333C921 212 1178 208 1490 294"/></svg>
+      <svg class="lab-energy" viewBox="0 0 1400 850" preserveAspectRatio="none" fill="none" aria-hidden="true"><path data-lab-pulse pathLength="1" d="M-80 642C180 750 353 611 473 343C590 82 802 56 972 207C1140 356 1110 532 963 570C806 610 690 465 810 333C921 212 1178 208 1490 294"/></svg>
       <button class="hero-mascot" type="button" data-hero-remix aria-label="${escapeHtml(profile.heroMascot.interactionLabel)}" title="${escapeHtml(profile.heroMascot.interactionLabel)}" disabled>${heroMascot}</button>
       <p class="sr-only" data-lab-status role="status"></p>
       <aside class="profile-information hero-profile">
